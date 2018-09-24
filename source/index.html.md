@@ -2,13 +2,12 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - shell: cUrl
+  - csharp: C#
+  - javascript: JS
+  - java: Java
 
-toc_footers:
-  - <a href='#'>Test 5</a>
+toc_footers:  
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -29,13 +28,13 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
-```ruby
+```java
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
-```python
+```csharp
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -69,14 +68,14 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Get All Kittens
 
-```ruby
+```java
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get
 ```
 
-```python
+```csharp
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -135,14 +134,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```ruby
+```java
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get(2)
 ```
 
-```python
+```csharp
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -189,14 +188,14 @@ ID | The ID of the kitten to retrieve
 
 ## Delete a Specific Kitten
 
-```ruby
+```java
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.delete(2)
 ```
 
-```python
+```csharp
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
