@@ -1,9 +1,5 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
 API requests that result in errors will return an appropriate HTTP status code to help you identify the type of error and fix it. You can use the table below to understand what each code means. 
 
 HTTP Status Code | Text | Description

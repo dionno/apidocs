@@ -255,11 +255,12 @@ This API allows you to view the details of a project.
 
 <span class="http-method http-get">GET</span> `  /api/projects/[id]`
 
+<aside class="notice">
 Use 'include' to embed additional details in the response.
 
 List of includes go here
+</aside>
 
-To do
 >Example
 
 ```shell
@@ -328,6 +329,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 <span class="http-method http-get">GET</span> `  /api/projects`
 
 Using this API, you'd be able to fetch a list of projects.
+
 >Example
 
 ```shell

@@ -51,6 +51,7 @@ curl -H "Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpu
 ## Embedding
 
 You can request for additional entities using the "include" keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.
+
 >Example
 
 ```shell
@@ -59,7 +60,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 	 -X GET https://devapps.nutcache.com/webapi/projects?**include=organizations**
 ```
 
+<aside class="notice">
 Refer to each resource for more information on which entities can be included.
+</aside>
 
 ## Pagination
 

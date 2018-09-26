@@ -168,11 +168,12 @@ This API allows you to view the details of a customer.
 
 <span class="http-method http-get">GET</span> `  /api/customers/[id]`
 
+<aside class="notice">
 Use 'include' to embed additional details in the response.
 
 List of includes go here
+</aside>
 
-To do
 >Example
 
 ```shell
@@ -237,6 +238,7 @@ api-version: 3
 Using this API, you'd be able to fetch a list of customers.
 
 <span class="http-method http-get">GET</span> `/webapi/customers`
+
 >Example
 
 ```shell

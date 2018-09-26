@@ -290,12 +290,13 @@ URL Parameters
   </tr>
 </table>
 
-
+<aside class="notice">
 Use 'include' to embed additional details in the response.
 
 List of includes go here
 
 Countries, states, currencies
+</aside>
 
 >Example
 

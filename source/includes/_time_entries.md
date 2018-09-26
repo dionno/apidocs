@@ -145,11 +145,12 @@ This API allows you to view the details of a time entry.
 
 <span class="http-method http-get">GET</span> `  /api/timeentries/[id]`
 
+<aside class="notice">
 Use 'include' to embed additional details in the response.
 
 List of includes go here
+</aside>
 
-To do
 >Example
 
 ```shell
@@ -207,6 +208,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 Using this API, you'd be able to fetch a list of time entries.
 
 <span class="http-method http-get">GET</span> `/api/timeentries`
+
 >Example
 
 ```shell
