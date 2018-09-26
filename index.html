@@ -381,11 +381,19 @@ If the time zone information is not present, it will be assumed to be in UTC. \
 A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,    2010-03-23T12:00</p>
 <h2 id='organization-context'>Organization Context</h2>
 <p>An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="</span>
      -H <span class="s2">"api-version: 3"</span> <span class="k">**</span>-H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span><span class="k">**</span>
      -X GET https://devapps.nutcache.com/webapi/customers
 </code></pre><h2 id='embedding'>Embedding</h2>
 <p>You can request for additional entities using the &quot;include&quot; keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
      -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'CompanyGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://devapps.nutcache.com/webapi/projects?<span class="k">**</span><span class="nv">include</span><span class="o">=</span>organizations<span class="k">**</span>
@@ -393,6 +401,10 @@ A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,  
 <p>Refer to each resource for more information on which entities can be included.</p>
 <h2 id='pagination'>Pagination</h2>
 <p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you&#39;d like to retrieve the Time Entries from 11 to 20 use,</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -i -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="</span> 
      -H <span class="s2">"api-version: 3"</span> -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET <span class="s2">"https://devapps.nutcache.com/webapi/customers?limit=10&amp;page=2
@@ -690,6 +702,10 @@ include=states
 <p>List of includes go here</p>
 
 <p>Countries, states, currencies</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>
 curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://devapps.nutcache.com/webapi/organizations/6745
 
@@ -749,6 +765,10 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6b
 
 </span></code></pre><h2 id='list-all-organizations'>List all Organizations</h2>
 <p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>
 <span class="sb">`</span>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://devapps.nutcache.com/webapi/organizations
 
@@ -1119,6 +1139,10 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6b
 <p>List of includes go here</p>
 
 <p>To do</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X GET https://devapps.nutcache.com/webapi/projects/6640
 </code></pre>
 <blockquote>
@@ -1180,6 +1204,10 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6b
 <p><span class="http-method http-get">GET</span> <code>/api/projects</code></p>
 
 <p>Using this API, you&#39;d be able to fetch a list of projects.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X GET https://devapps.nutcache.com/webapi/projects
 </code></pre>
 <blockquote>
@@ -1878,6 +1906,10 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6b
 <p>List of includes go here</p>
 
 <p>To do</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="</span> -H <span class="s2">"api-version: 3"</span> -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> -X GET https://devapps.nutcache.com/webapi/customers
 </code></pre>
 <p>GET https://devapps.nutcache.com/webapi/customers/143222 HTTP/1.1
@@ -1935,6 +1967,10 @@ api-version: 3</p>
 <p>Using this API, you&#39;d be able to fetch a list of customers.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="</span> -H <span class="s2">"api-version: 3"</span> -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> -X GET https://devapps.nutcache.com/webapi/customers
 </code></pre>
 <blockquote>
@@ -2383,6 +2419,10 @@ Read only; Can not be updated
 <p>List of includes go here</p>
 
 <p>To do</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
 </code></pre>
 <blockquote>
@@ -2433,6 +2473,10 @@ Read only; Can not be updated
 <p>Using this API, you&#39;d be able to fetch a list of time entries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/api/timeentries</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span> -X GET <span class="s2">"[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"</span>
 </code></pre>
 <blockquote>
@@ -2950,6 +2994,10 @@ Start and Endtime is timespan only \</p>
 <p>List of includes go here</p>
 
 <p>To do</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
 </code></pre>
 <blockquote>
@@ -2994,6 +3042,10 @@ Start and Endtime is timespan only \</p>
 <p>Using this API, you&#39;d be able to fetch a list of timers.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/api/timers</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span> -X GET <span class="s2">"[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"</span>
 </code></pre>
 <blockquote>
@@ -3332,6 +3384,10 @@ Start and Endtime is timespan only \</p>
 <p>List of includes go here</p>
 
 <p>To do</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
 </code></pre>
 <blockquote>
@@ -3368,6 +3424,10 @@ Start and Endtime is timespan only \</p>
 <p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/api/currencies</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span> -X GET <span class="s2">"[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"</span>
 </code></pre>
 <blockquote>
@@ -3654,7 +3714,11 @@ Start and Endtime is timespan only \</p>
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'Content-Type:application/json'</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X POST https://devapps.nutcache.com/webapi/customers/filtered -d <span class="s1">'{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'</span>
+</span></code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'Content-Type:application/json'</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X POST https://devapps.nutcache.com/webapi/customers/filtered -d <span class="s1">'{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'</span>
 </code></pre><h2 id='filter-operators'>Filter Operators</h2>
 <table>
   <tr>
