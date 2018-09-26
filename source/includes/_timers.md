@@ -125,6 +125,7 @@ Use 'include' to embed additional details in the response.
 List of includes go here
 
 To do
+>Example
 
 ```shell
 curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json"-X GET "https://domain.freshsales.io/api/leads/1"
@@ -175,6 +176,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 Using this API, you'd be able to fetch a list of timers.
 
 <span class="http-method http-get">GET</span> `/api/timers`
+>Example
 
 ```shell
 curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json" -X GET "[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"

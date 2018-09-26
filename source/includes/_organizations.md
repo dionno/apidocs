@@ -297,6 +297,8 @@ List of includes go here
 
 Countries, states, currencies
 
+>Example
+
 ```shell
 
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://devapps.nutcache.com/webapi/organizations/6745
@@ -362,6 +364,8 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 ## List all Organizations
 
 Using this API, you'd be able to fetch a list of organizations.
+
+>Example
 
 ```shell
 
