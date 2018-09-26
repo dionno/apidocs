@@ -42,6 +42,7 @@ Filtered searches can be used to find entities that match specific search criter
   ]
 }
 ```
+
 >Example
 
 ```shell
