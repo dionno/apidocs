@@ -3,15 +3,14 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cUrl
-  - csharp: C#
-  - javascript: JS
-  - java: Java
+#  - csharp: C#
+#  - javascript: JS
+#  - java: Java
 
 toc_footers:  
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.nutcache.com'>Powered by Nutcache</a>
 
-includes:
-  - introduction
+includes: 
   - getting_started
   - organizations
   - projects
