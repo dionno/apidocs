@@ -14,6 +14,17 @@ Authentication info must be provided along with your request within the Authoriz
 
 Authorization: nut-basic [Base64(_public-key_:_username_:_password_)]
 
+## Organization Context
+
+An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.
+
+>Example
+
+```shell
+curl -H "Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="
+	 -H "api-version: 3" **-H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"**
+	 -X GET https://devapps.nutcache.com/webapi/customers
+```
 
 ## Schema
 
@@ -35,19 +46,6 @@ YYYY-MM-DDTHH:MM:SS±hh  \
 YYYY-MM-DDTHH:MM:SS±hhmm  \
 If the time zone information is not present, it will be assumed to be in UTC. \
 A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,    2010-03-23T12:00
-
-
-## Organization Context
-
-An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.
-
->Example
-
-```shell
-curl -H "Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="
-	 -H "api-version: 3" **-H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"**
-	 -X GET https://devapps.nutcache.com/webapi/customers
-```
 
 ## Embedding
 
@@ -76,3 +74,16 @@ curl -i -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1E
 	 -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET "https://devapps.nutcache.com/webapi/customers?limit=10&page=2
 ```
+
+## Rate Limit
+
+A rate limit of 10 000 api calls per day. This limit is applied on an account wide basis irrespective of factors such as the number of agents or IP addresses used to make the calls.
+
+If you go over these limits when using our HTTP based APIs, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
+
+HTTP/1.1 429 Too Many Requests
+Retry-After: 30
+
+<aside class="notice">
+There is a also a burst limit of 3 api calls per second and 100 per minute.
+<aside>
