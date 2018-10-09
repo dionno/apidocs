@@ -323,7 +323,7 @@
             <a href="#search" class="toc-h1 toc-link" data-title="Search">Search</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#filtered-search" class="toc-h2 toc-link" data-title="Filtered Search">Filtered Search</a>
+                    <a href="#filtered-searches" class="toc-h2 toc-link" data-title="Filtered Searches">Filtered Searches</a>
                   </li>
                   <li>
                     <a href="#usage" class="toc-h2 toc-link" data-title="Usage">Usage</a>
@@ -333,6 +333,9 @@
                   </li>
                   <li>
                     <a href="#sorting" class="toc-h2 toc-link" data-title="Sorting">Sorting</a>
+                  </li>
+                  <li>
+                    <a href="#sort-directions" class="toc-h2 toc-link" data-title="Sort Directions">Sort Directions</a>
                   </li>
               </ul>
           </li>
@@ -362,27 +365,27 @@
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM="</span>
-     -H <span class="s2">"api-version: 3"</span> <span class="k">**</span>-H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span><span class="k">**</span>
+     -H <span class="s2">"api-version: 3"</span> -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span>
      -X GET https://devapps.nutcache.com/webapi/customers
 </code></pre><h2 id='schema'>Schema</h2>
-<p>Blank Fields:  \
+<p>Blank Fields: </br>
 Blank fields are made null instead of being omitted.</p>
 
-<p>Timestamps: \
-All timestamps are returned in the UTC format, YYYY-MM-DDTHH:MM:SSZ. For example, 2016-02-13T23:27:49Z \
- \
-Date Fields: \
-Input for date fields is expected to be in one of the following formats: \
-YYYY-MM-DD  \
-YYYY-MM-DDTHH:MM  \
-YYYY-MM-DDTHH:MMZ  \
-YYYY-MM-DDTHH:MM:SS  \
-YYYY-MM-DDTHH:MM:SSZ  \
-YYYY-MM-DDTHH:MM:SS±hh:mm  \
-YYYY-MM-DDTHH:MM:SS±hh  \
-YYYY-MM-DDTHH:MM:SS±hhmm  \
-If the time zone information is not present, it will be assumed to be in UTC. \
-A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,    2010-03-23T12:00</p>
+<p>Timestamps: </br>
+All timestamps are returned in the UTC format, YYYY-MM-DDTHH:MM:SSZ. For example, 2016-02-13T23:27:49Z </br>
+</br>
+Date Fields: </br>
+Input for date fields is expected to be in one of the following formats: </br>
+YYYY-MM-DD  </br>
+YYYY-MM-DDTHH:MM  </br>
+YYYY-MM-DDTHH:MMZ  </br>
+YYYY-MM-DDTHH:MM:SS  </br>
+YYYY-MM-DDTHH:MM:SSZ  </br>
+YYYY-MM-DDTHH:MM:SS±hh:mm  </br>
+YYYY-MM-DDTHH:MM:SS±hh  </br>
+YYYY-MM-DDTHH:MM:SS±hhmm  </br>
+If the time zone information is not present, it will be assumed to be in UTC. </br>
+A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010-03-23T12:00</p>
 <h2 id='embedding'>Embedding</h2>
 <p>You can request for additional entities using the &quot;include&quot; keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.</p>
 
@@ -391,7 +394,7 @@ A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,  
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
      -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'CompanyGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
-     -X GET https://devapps.nutcache.com/webapi/projects?<span class="k">**</span><span class="nv">include</span><span class="o">=</span>organizations<span class="k">**</span>
+     -X GET https://devapps.nutcache.com/webapi/projects?include<span class="o">=</span>organizations
 </code></pre>
 <aside class="notice">
 Refer to each resource for more information on which entities can be included.
@@ -406,17 +409,16 @@ Refer to each resource for more information on which entities can be included.
      -H <span class="s2">"api-version: 3"</span> -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET <span class="s2">"https://devapps.nutcache.com/webapi/customers?limit=10&amp;page=2
 </span></code></pre><h2 id='rate-limit'>Rate Limit</h2>
-<p>A rate limit of 10 000 api calls per day. This limit is applied on an account wide basis irrespective of factors such as the number of agents or IP addresses used to make the calls.</p>
+<p>A rate limit of 20 000 api calls per API key is allowed.</p>
 
-<p>If you go over these limits when using our HTTP based APIs, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
+<p>If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
 
-<p><code>
-HTTP/1.1 429 Too Many Requests
-Retry-After: 30
-</code></p>
+<p><code>HTTP/1.1 429 Too Many Requests</code></p>
+
+<p><code>Retry-After: 30</code></p>
 
 <aside class="warning">
-There is a also a burst limit of 3 api calls per second and 100 per minute.
+There is a also a burst limit of 5 api calls per second and 200 per minute.
 </aside>
 <h1 id='organizations'>Organizations</h1>
 <p>A Nutcache organization is an entity comprising multiple members with various roles and projects with varying constraints and goals.</p>
@@ -899,248 +901,159 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6b
 
 <p>Using the API you can do the following with project data.</p>
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>billing_approved_entries_only
-   </td>
-   <td>True|False
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_invoice_method_fixed_fee
-   </td>
-   <td>number
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_invoice_method_hourly_rate
-   </td>
-   <td>number
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_method
-   </td>
-   <td>string
-   </td>
-   <td>Billing method.????bug returns string
-   </td>
-  </tr>
-  <tr>
-   <td>budget_approved_only
-   </td>
-   <td>True|False
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_restrictive
-   </td>
-   <td>True|False
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_scope
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_type
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>code
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>organization
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for an organization.
-   </td>
-  </tr>
-  <tr>
-   <td>customer
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for a customer.
-   </td>
-  </tr>
-  <tr>
-   <td>description
-   </td>
-   <td>string
-   </td>
-   <td>Project description.
-   </td>
-  </tr>
-  <tr>
-   <td>display_color
-   </td>
-   <td>string
-   </td>
-   <td>HTML color
-   </td>
-  </tr>
-  <tr>
-   <td>EffectiveBudgetAmount
-   </td>
-   <td>number
-   </td>
-   <td>??????
-   </td>
-  </tr>
-  <tr>
-   <td>EffectiveBudgetMinutes
-   </td>
-   <td>number
-   </td>
-   <td>??????
-   </td>
-  </tr>
-  <tr>
-   <td>end_date
-   </td>
-   <td>datetime
-   </td>
-   <td>Phone number.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_email
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact email.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_name
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact name.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_phone
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact phone
-   </td>
-  </tr>
-  <tr>
-   <td>project_budget
-   </td>
-   <td>number
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>project_type
-   </td>
-   <td>number
-   </td>
-   <td>Type of project.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_email
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact email.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_name
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact name.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_phone
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact phone.
-   </td>
-  </tr>
-  <tr>
-   <td>start_date
-   </td>
-   <td>datetime
-   </td>
-   <td>Project start date.
-   </td>
-  </tr>
-  <tr>
-   <td>status
-   </td>
-   <td>number
-   </td>
-   <td>Project status(to enumerate)
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type(projects)
-   </td>
-  </tr>
-  <tr>
-   <td>Vision
-   </td>
-   <td>string
-   </td>
-   <td>Project vision
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>billing_approved_entries_only</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>billing_invoice_method_fixed_fee</td>
+<td>number</td>
+<td>?????</td>
+</tr>
+<tr>
+<td>billing_invoice_method_hourly_rate</td>
+<td>number</td>
+<td>?????</td>
+</tr>
+<tr>
+<td>billing_method</td>
+<td>string</td>
+<td>Billing method.????bug returns string</td>
+</tr>
+<tr>
+<td>budget_approved_only</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>budget_restrictive</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>budget_scope</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>budget_type</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>organization</td>
+<td>number</td>
+<td>Unique identifier for an organization.</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>number</td>
+<td>Unique identifier for a customer.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Project description.</td>
+</tr>
+<tr>
+<td>display_color</td>
+<td>string</td>
+<td>HTML color</td>
+</tr>
+<tr>
+<td>EffectiveBudgetAmount</td>
+<td>number</td>
+<td>??????</td>
+</tr>
+<tr>
+<td>EffectiveBudgetMinutes</td>
+<td>number</td>
+<td>??????</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>datetime</td>
+<td>Phone number.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>primary_contact_email</td>
+<td>string</td>
+<td>Primary contact email.</td>
+</tr>
+<tr>
+<td>primary_contact_name</td>
+<td>string</td>
+<td>Primary contact name.</td>
+</tr>
+<tr>
+<td>primary_contact_phone</td>
+<td>string</td>
+<td>Primary contact phone</td>
+</tr>
+<tr>
+<td>project_budget</td>
+<td>number</td>
+<td>????</td>
+</tr>
+<tr>
+<td>project_type</td>
+<td>number</td>
+<td>Type of project.</td>
+</tr>
+<tr>
+<td>secondary_contact_email</td>
+<td>string</td>
+<td>Secondary contact email.</td>
+</tr>
+<tr>
+<td>secondary_contact_name</td>
+<td>string</td>
+<td>Secondary contact name.</td>
+</tr>
+<tr>
+<td>secondary_contact_phone</td>
+<td>string</td>
+<td>Secondary contact phone.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>datetime</td>
+<td>Project start date.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>Project status(to enumerate)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Payload type(projects)</td>
+</tr>
+<tr>
+<td>Vision</td>
+<td>string</td>
+<td>Project vision</td>
+</tr>
+</tbody></table>
 <h2 id='viewing-a-project'>Viewing a Project</h2>
 <p>This API allows you to view the details of a project.</p>
 
@@ -1754,160 +1667,104 @@ List of includes go here
 
 <p>Using the API&#39;s you can do the following with project data.</p>
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>address
-   </td>
-   <td>string
-   </td>
-   <td>Address
-   </td>
-  </tr>
-  <tr>
-   <td>city
-   </td>
-   <td>string
-   </td>
-   <td>City
-   </td>
-  </tr>
-  <tr>
-   <td>communication_culture_code
-   </td>
-   <td>string
-   </td>
-   <td>Communication culture code
-   </td>
-  </tr>
-  <tr>
-   <td>Organization
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for organization.
-   </td>
-  </tr>
-  <tr>
-   <td>contact
-   </td>
-   <td>string
-   </td>
-   <td>Contact
-   </td>
-  </tr>
-  <tr>
-   <td>country
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for country.
-   </td>
-  </tr>
-  <tr>
-   <td>email
-   </td>
-   <td>string
-   </td>
-   <td>Email address
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>legal_notice
-   </td>
-   <td>string
-   </td>
-   <td>Legal notice
-   </td>
-  </tr>
-  <tr>
-   <td>mobile_phone
-   </td>
-   <td>string
-   </td>
-   <td>Mobile phone number.
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>string
-   </td>
-   <td>Name
-   </td>
-  </tr>
-  <tr>
-   <td>notes
-   </td>
-   <td>string
-   </td>
-   <td>Notes
-   </td>
-  </tr>
-  <tr>
-   <td>phone
-   </td>
-   <td>string
-   </td>
-   <td>Phone
-   </td>
-  </tr>
-  <tr>
-   <td>state
-   </td>
-   <td>string
-   </td>
-   <td>State
-   </td>
-  </tr>
-  <tr>
-   <td>Status
-   </td>
-   <td>number
-   </td>
-   <td>Status
-   </td>
-  </tr>
-  <tr>
-   <td>tax
-   </td>
-   <td>number
-   </td>
-   <td>Tax
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-  <tr>
-   <td>zip_code
-   </td>
-   <td>string
-   </td>
-   <td>Zip code.
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+<tr>
+<td>communication_culture_code</td>
+<td>string</td>
+<td>Communication culture code</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td>number</td>
+<td>Unique identifier for organization.</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>string</td>
+<td>Contact</td>
+</tr>
+<tr>
+<td>country</td>
+<td>number</td>
+<td>Unique identifier for country.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>legal_notice</td>
+<td>string</td>
+<td>Legal notice</td>
+</tr>
+<tr>
+<td>mobile_phone</td>
+<td>string</td>
+<td>Mobile phone number.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>string</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>Phone</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>number</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>number</td>
+<td>Tax</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+<tr>
+<td>zip_code</td>
+<td>string</td>
+<td>Zip code.</td>
+</tr>
+</tbody></table>
 <h2 id='viewing-a-customer'>Viewing a Customer</h2>
 <p>This API allows you to view the details of a customer.</p>
 
@@ -2290,137 +2147,89 @@ api-version: 3</p>
 
 <p>Using the API you can do the following with time entry data.</p>
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>billable_minutes
-   </td>
-   <td>number
-   </td>
-   <td>Number of active members.
-   </td>
-  </tr>
-  <tr>
-   <td>creation_date
-   </td>
-   <td>datetime
-   </td>
-   <td>When this entry has been logged; \
-Read only; Can not be updated
-   </td>
-  </tr>
-  <tr>
-   <td>creation_userprofile
-   </td>
-   <td>number
-   </td>
-   <td>Member that created originally the time entry; Read only; Can not be updated.
-   </td>
-  </tr>
-  <tr>
-   <td>end_time
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>invoice
-   </td>
-   <td>number
-   </td>
-   <td>Invoice unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>member
-   </td>
-   <td>number
-   </td>
-   <td>Member unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>minutes
-   </td>
-   <td>number
-   </td>
-   <td>Number of minutes logged.
-   </td>
-  </tr>
-  <tr>
-   <td>note
-   </td>
-   <td>string
-   </td>
-   <td>Note
-   </td>
-  </tr>
-  <tr>
-   <td>project
-   </td>
-   <td>number
-   </td>
-   <td>Project unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>project_feature
-   </td>
-   <td>number
-   </td>
-   <td>Project Feature unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>start_time
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-  <tr>
-   <td>working_date
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the day for the time entry.
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>billable_minutes</td>
+<td>number</td>
+<td>Number of active members.</td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td>datetime</td>
+<td>When this entry has been logged; \ Read only; Can not be updated</td>
+</tr>
+<tr>
+<td>creation_userprofile</td>
+<td>number</td>
+<td>Member that created originally the time entry; Read only; Can not be updated.</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.</td>
+</tr>
+<tr>
+<td>guid</td>
+<td>string</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>invoice</td>
+<td>number</td>
+<td>Invoice unique identifier.</td>
+</tr>
+<tr>
+<td>member</td>
+<td>number</td>
+<td>Member unique identifier.</td>
+</tr>
+<tr>
+<td>minutes</td>
+<td>number</td>
+<td>Number of minutes logged.</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>Note</td>
+</tr>
+<tr>
+<td>project</td>
+<td>number</td>
+<td>Project unique identifier.</td>
+</tr>
+<tr>
+<td>project_feature</td>
+<td>number</td>
+<td>Project Feature unique identifier.</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+<tr>
+<td>working_date</td>
+<td>datetime</td>
+<td>A date time that represents the day for the time entry.</td>
+</tr>
+</tbody></table>
 <h2 id='viewing-a-time-entry'>Viewing a Time Entry</h2>
 <p>This API allows you to view the details of a time entry.</p>
 
@@ -2890,112 +2699,74 @@ Start and Endtime is timespan only \</p>
 
 <p>Using the API you can do the following with timer data.</p>
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>email_reminder_sent
-   </td>
-   <td>True|False
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>max_end_time_utc
-   </td>
-   <td>datetime
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>member
-   </td>
-   <td>number
-   </td>
-   <td>Member unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>minutes
-   </td>
-   <td>number
-   </td>
-   <td>Minutes
-   </td>
-  </tr>
-  <tr>
-   <td>project
-   </td>
-   <td>number
-   </td>
-   <td>Project unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>project_feature
-   </td>
-   <td>number
-   </td>
-   <td>Project feature unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>status
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>time_start_local
-   </td>
-   <td>datetime
-   </td>
-   <td>Timer start(local time)
-   </td>
-  </tr>
-  <tr>
-   <td>time_start_utc
-   </td>
-   <td>datetime
-   </td>
-   <td>Timer start(utc time)
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email_reminder_sent</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>guid</td>
+<td>string</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>max_end_time_utc</td>
+<td>datetime</td>
+<td>?????</td>
+</tr>
+<tr>
+<td>member</td>
+<td>number</td>
+<td>Member unique identifier.</td>
+</tr>
+<tr>
+<td>minutes</td>
+<td>number</td>
+<td>Minutes</td>
+</tr>
+<tr>
+<td>project</td>
+<td>number</td>
+<td>Project unique identifier.</td>
+</tr>
+<tr>
+<td>project_feature</td>
+<td>number</td>
+<td>Project feature unique identifier.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Unique identifier.</td>
+</tr>
+<tr>
+<td>time_start_local</td>
+<td>datetime</td>
+<td>Timer start(local time)</td>
+</tr>
+<tr>
+<td>time_start_utc</td>
+<td>datetime</td>
+<td>Timer start(utc time)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+</tbody></table>
 <h2 id='viewing-a-timer'>Viewing a Timer</h2>
 <p>This API allows you to view the details of a timer.</p>
 
@@ -3272,120 +3043,79 @@ List of includes go here
 
 <p>Using the API you can do the following with currency data.</p>
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>code
-   </td>
-   <td>string
-   </td>
-   <td>Currency code.
-   </td>
-  </tr>
-  <tr>
-   <td>decimal_count
-   </td>
-   <td>number
-   </td>
-   <td>Number of decimal places.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>name_dede
-   </td>
-   <td>string
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>name_enus
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in US english.
-   </td>
-  </tr>
-  <tr>
-   <td>name_eses
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Spanish.
-   </td>
-  </tr>
-  <tr>
-   <td>name_frca
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in French / Canada
-   </td>
-  </tr>
-  <tr>
-   <td>name_frfr
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in French / France
-   </td>
-  </tr>
-  <tr>
-   <td>name_itit
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Italian
-   </td>
-  </tr>
-  <tr>
-   <td>name_plpl
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Polish
-   </td>
-  </tr>
-  <tr>
-   <td>name_ptbr
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Portuguese
-   </td>
-  </tr>
-  <tr>
-   <td>name_ruru
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Russian
-   </td>
-  </tr>
-  <tr>
-   <td>type=currencies
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>Currency code.</td>
+</tr>
+<tr>
+<td>decimal_count</td>
+<td>number</td>
+<td>Number of decimal places.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>name_dede</td>
+<td>string</td>
+<td>?????</td>
+</tr>
+<tr>
+<td>name_enus</td>
+<td>string</td>
+<td>Currency name in US english.</td>
+</tr>
+<tr>
+<td>name_eses</td>
+<td>string</td>
+<td>Currency name in Spanish.</td>
+</tr>
+<tr>
+<td>name_frca</td>
+<td>string</td>
+<td>Currency name in French / Canada</td>
+</tr>
+<tr>
+<td>name_frfr</td>
+<td>string</td>
+<td>Currency name in French / France</td>
+</tr>
+<tr>
+<td>name_itit</td>
+<td>string</td>
+<td>Currency name in Italian</td>
+</tr>
+<tr>
+<td>name_plpl</td>
+<td>string</td>
+<td>Currency name in Polish</td>
+</tr>
+<tr>
+<td>name_ptbr</td>
+<td>string</td>
+<td>Currency name in Portuguese</td>
+</tr>
+<tr>
+<td>name_ruru</td>
+<td>string</td>
+<td>Currency name in Russian</td>
+</tr>
+<tr>
+<td>type=currencies</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+</tbody></table>
 <h2 id='viewing-a-currency'>Viewing a Currency</h2>
 <p>This API allows you to view the details of a timer.</p>
 
@@ -3691,16 +3421,16 @@ List of includes go here
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='search'>Search</h1><h2 id='filtered-search'>Filtered Search</h2>
+</span></code></pre><h1 id='search'>Search</h1><h2 id='filtered-searches'>Filtered Searches</h2>
 <p>Filtered searches can be used to find entities that match specific search criteria.</p>
 <h2 id='usage'>Usage</h2>
-<p><span class="http-method http-post">POST</span> <code>_entity_/**filtered**</code></p>
+<p><span class="http-method http-post">POST</span> <code>_entity_/filtered</code></p>
 
 <blockquote>
 <p>Filter Construct</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"**filter_rules**"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_name_"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_operator_"</span><span class="p">,</span><span class="w">
@@ -3710,7 +3440,7 @@ List of includes go here
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Filters can be and chained together as follows:</p>
+<p>Filters can be combined together as follows:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3727,73 +3457,58 @@ List of includes go here
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<aside class="notice">
+Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+</aside>
+
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'Content-Type:application/json'</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X POST https://devapps.nutcache.com/webapi/customers/filtered -d <span class="s1">'{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'</span>
 </code></pre><h2 id='filter-operators'>Filter Operators</h2>
-<table>
-  <tr>
-   <td><strong>Operator</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>eq
-   </td>
-   <td>equals
-   </td>
-  </tr>
-  <tr>
-   <td>ne
-   </td>
-   <td>not equal
-   </td>
-  </tr>
-  <tr>
-   <td>gt
-   </td>
-   <td>greater than
-   </td>
-  </tr>
-  <tr>
-   <td>gte
-   </td>
-   <td>greater than or equal
-   </td>
-  </tr>
-  <tr>
-   <td>lt
-   </td>
-   <td>less than
-   </td>
-  </tr>
-  <tr>
-   <td>lte
-   </td>
-   <td>less than or equal
-   </td>
-  </tr>
-  <tr>
-   <td>ct
-   </td>
-   <td>contain
-   </td>
-  </tr>
-  <tr>
-   <td>sw
-   </td>
-   <td>starts with
-   </td>
-  </tr>
-  <tr>
-   <td>ew
-   </td>
-   <td>ends with
-   </td>
-  </tr>
-</table>
+<table><thead>
+<tr>
+<th>Operator</th>
+<th> Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eq</td>
+<td> Equals</td>
+</tr>
+<tr>
+<td>neq</td>
+<td> Not Equals</td>
+</tr>
+<tr>
+<td>gt</td>
+<td> Greater Than</td>
+</tr>
+<tr>
+<td>lt</td>
+<td> Less Than</td>
+</tr>
+<tr>
+<td>gte</td>
+<td> Greater Than or Equals</td>
+</tr>
+<tr>
+<td>lte</td>
+<td> Less Than or Equals</td>
+</tr>
+<tr>
+<td>ct</td>
+<td> Contains</td>
+</tr>
+<tr>
+<td>sw</td>
+<td> Starts With</td>
+</tr>
+<tr>
+<td>ew</td>
+<td> Ends With</td>
+</tr>
+</tbody></table>
 <h2 id='sorting'>Sorting</h2>
 <p>Results from filtered searches can be sorted using filtered actions with sorting rules.</p>
 
@@ -3811,55 +3526,64 @@ List of includes go here
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Supported sort direction terms: \
- \
-asc \
-ASC \
-ascending \
-ASCENDING \
-desc \
-DESC \
-descending \
-DESCENDING</p>
+<aside class="notice">
+Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+</aside>
+<h2 id='sort-directions'>Sort Directions</h2>
+<table><thead>
+<tr>
+<th>Direction</th>
+<th> Supported Terms</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Ascending</td>
+<td>asc, ASC, ascending, ASCENDING</td>
+</tr>
+<tr>
+<td>Descending</td>
+<td>desc, DESC, descending, DESCENDING</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
-<p>API requests that result in errors will return an appropriate HTTP status code to help you identify the type of error and fix it. You can use the table below to understand what each code means. </p>
+<p>API requests that result in errors will return an appropriate HTTP code to help you identify the type of error and fix it. You can use the table below to understand what each code means. </p>
 
 <table><thead>
 <tr>
-<th>HTTP Status Code</th>
+<th>Code</th>
 <th> Text</th>
 <th> Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>400</td>
-<td> Client or Validation Error</td>
+<td>Client or Validation Error</td>
 <td>Indicates that the request is not in the correct format.</td>
 </tr>
 <tr>
 <td>401</td>
 <td>Access Denied</td>
-<td> Indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header</td>
+<td> Indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header <a href="#authentication">here</a></td>
 </tr>
 <tr>
 <td>403</td>
-<td> Client or Validation Error</td>
+<td>Client or Validation Error</td>
 <td>This indicates that the user whose credentials were used in making this request was not authorized to perform this API call.</td>
 </tr>
 <tr>
 <td>404</td>
 <td>Requested Resource not Found</td>
-<td>This status code is returned when the request contains invalid ID/Nutcache domain in the URL or an invalid URL itself. For example, an API call to retrieve a project with an invalid ID will return a HTTP 404 status code to let you know that no such project exists.</td>
+<td>This code is returned when the request contains invalid ID/Nutcache domain in the URL or an invalid URL itself. For example, an API call to retrieve a project with an invalid ID will return a HTTP 404 status code to let you know that no such project exists.</td>
 </tr>
 <tr>
 <td>429</td>
 <td>Too Many Requests</td>
-<td>This status code appears when the user has exceeded the API limit set per ??? per account. In Nutcache, this limit is ???? API requests per ???? per account.</td>
+<td>This code appears when the user has exceeded the API rate limit. In Nutcache, this limit is 20000 API requests per day per API key.</td>
 </tr>
 <tr>
 <td>500</td>
-<td> Unexpected Server Error</td>
-<td>This indicates an error on Nutcache&#39;s side. Please email us at <a href="mailto:support@nutcache.com">support@nutcache.com</a> with your API script along with the response headers. We will reach out to you and fix this ASAP.</td>
+<td>Unexpected Server Error</td>
+<td>This indicates an error on Nutcache&#39;s side. Please email us at <a href="mailto:support@nutcache.com">support@nutcache.com</a> with any relevant informations. We will reach out to you and fix this ASAP.</td>
 </tr>
 </tbody></table>
 
