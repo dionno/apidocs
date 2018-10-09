@@ -4,268 +4,34 @@ A Nutcache organization is an entity comprising multiple members with various ro
 
 Using the API, you can do the following with organization data.
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>active_user_count
-   </td>
-   <td>number
-   </td>
-   <td>Number of active members.
-   </td>
-  </tr>
-  <tr>
-   <td>address
-   </td>
-   <td>string
-   </td>
-   <td>Address
-   </td>
-  </tr>
-  <tr>
-   <td>city
-   </td>
-   <td>string
-   </td>
-   <td>Name of the city.
-   </td>
-  </tr>
-  <tr>
-   <td>country
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for a country. 
-<p>
-include=countries
-   </td>
-  </tr>
-  <tr>
-   <td>currency
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for a currency.
-<p>
-include=currencies
-   </td>
-  </tr>
-  <tr>
-   <td>date_format
-   </td>
-   <td>number
-   </td>
-   <td>Enum for date format set for the organization:
-<p>
-0 = ISO format (yyyy-MM-dd)
-<p>
-1 = US format w/ dash (MM-dd-yyyy)
-<p>
-2 = US format w/ slash (MM/dd/yyyy)
-<p>
-3 = International format w/ dash    
-<p>
-      (dd-MM-yyyy)
-<p>
-4 = International format w/ slash 
-<p>
-      (dd/MM/yyyy)
-<p>
-5 = International format w/ dots 
-<p>
-      (dd.MM.yyyy)
-   </td>
-  </tr>
-  <tr>
-   <td>email
-   </td>
-   <td>string
-   </td>
-   <td>Email contact.
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>string
-   </td>
-   <td>Alternative unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>is_demo
-   </td>
-   <td>True|False
-   </td>
-   <td>Indicates if the organization is for demo purposes.
-   </td>
-  </tr>
-  <tr>
-   <td>is_owner
-   </td>
-   <td>True|False
-   </td>
-   <td>Indicates if the current user is the owner.
-   </td>
-  </tr>
-  <tr>
-   <td>last_activity_date
-   </td>
-   <td>datetime
-   </td>
-   <td>Last date/time this Organization was accessed.
-   </td>
-  </tr>
-  <tr>
-   <td>logo_url
-   </td>
-   <td>string
-   </td>
-   <td>URL for organization logo.
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>string
-   </td>
-   <td>Organization name.
-   </td>
-  </tr>
-  <tr>
-   <td>notification_count
-   </td>
-   <td>number
-   </td>
-   <td>Number of notifications.
-   </td>
-  </tr>
-  <tr>
-   <td>phone
-   </td>
-   <td>string
-   </td>
-   <td>Phone number.
-   </td>
-  </tr>
-  <tr>
-   <td>state
-   </td>
-   <td>state
-   </td>
-   <td>State
-<p>
-include=states
-   </td>
-  </tr>
-  <tr>
-   <td>status
-   </td>
-   <td>number
-   </td>
-   <td>0 = Active  \
-1 = Inactive \
-2 = Expired
-   </td>
-  </tr>
-  <tr>
-   <td>time_format
-   </td>
-   <td>number
-   </td>
-   <td>Enum for time format set for the organization:
-<p>
-0 = ISO format (HH:mm) 
-<p>
-1 = AM/PM format (hh:mm tt)
-   </td>
-  </tr>
-  <tr>
-   <td>time_rounding
-   </td>
-   <td>number
-   </td>
-   <td>Enum for time rounding set for time entries in the organization:
-<p>
-0 = None
-<p>
-1 = Round to nearest
-<p>
-2 = Round up to nearest
-   </td>
-  </tr>
-  <tr>
-   <td>time_rounding_minutes
-   </td>
-   <td>number
-   </td>
-   <td>Number, in minutes, set to automatically round time entries, if time rounding is set.
-   </td>
-  </tr>
-  <tr>
-   <td>time_span_format
-   </td>
-   <td>number
-   </td>
-   <td>Enum for duration (time) format set for the organization:
-<p>
-0 = Decimal (e.g. 2.5)
-<p>
-1 = Short time (e.g. 2:30)
-   </td>
-  </tr>
-  <tr>
-   <td>time_tracking_type
-   </td>
-   <td>number
-   </td>
-   <td>Enum for time tracking mode set for the organization:
-<p>
-0 = Duration
-<p>
-1 = Start/End time
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>organizations
-   </td>
-   <td>Type of response
-   </td>
-  </tr>
-  <tr>
-   <td>website
-   </td>
-   <td>string
-   </td>
-   <td>Site identifier for the organization.
-   </td>
-  </tr>
-  <tr>
-   <td>zip_code
-   </td>
-   <td>string
-   </td>
-   <td>Zip code.
-   </td>
-  </tr>
-</table>
+| Attribute             | Type          | Description
+|-----------------------|---------------|------------
+| active_user_count     | number        | Number of active members.                                                                                                                                                                                                                                                           
+| address               | string        | Address                                                                                                                                                                                                                                                                             
+| city                  | string        | Name of the city.                                                                                                                                                                                                                                                                   
+| country               | number        | Unique identifier for a country.include=countries                                                                                                                                                                                                                                   
+| currency              | number        | Unique identifier for a currency.include=currencies                                                                                                                                                                                                                                 
+| date_format           | number        | Enum for date format set for the organization: </br>0 = ISO format (yyyy-MM-dd) </br>1 = US format w/ dash (MM-dd-yyyy) </br>2 = US format w/ slash (MM/dd/yyyy) </br>3 = International format w/ dash(dd-MM-yyyy) </br>4 = International format w/ slash(dd/MM/yyyy) </br>5 = International format w/ dots(dd.MM.yyyy)
+| email                 | string        | Email contact.                                                                                                                                                                                                                                                                    
+| guid                  | string        | Alternative unique identifier.                                                                                                                                                                                                                                                    
+| id                    | number        | Unique identifier.                                                                                                                                                                                                                                                                
+| is_demo               | True|False    | Indicates if the organization is for demo purposes.                                                                                                                                                                                                                               
+| is_owner              | True|False    | Indicates if the current user is the owner.                                                                                                                                                                                                                                       
+| last_activity_date    | datetime      | Last date/time this Organization was accessed.                                                                                                                                                                                                                                    
+| logo_url              | string        | URL for organization logo.                                                                                                                                                                                                                                                        
+| name                  | string        | Organization name.                                                                                                                                                                                                                                                                
+| notification_count    | number        | Number of notifications.                                                                                                                                                                                                                                                          
+| phone                 | string        | Phone number.                                                                                                                                                                                                                                                                     
+| state                 | state         | Stateinclude=states                                                                                                                                                                                                                                                               
+| status                | number        | 0 = Active </br>1 = Inactive </br>2 = Expired                                                                                                                                                                                                                                             
+| time_format           | number        | Enum for time format set for the organization: </br>0 = ISO format (HH:mm), </br>1 = AM/PM format (hh:mm tt)                                                                                                                                                                                   
+| time_rounding         | number        | Enum for time rounding set for time entries in the organization: </br>0 = None </br>1 = Round to nearest </br>2 = Round up to nearest                                                                                                                                                               
+| time_rounding_minutes | number        | Number, in minutes, set to automatically round time entries, if time rounding is set.                                                                                                                                                                                             
+| time_span_format      | number        | Enum for duration (time) format set for the organization: </br>0 = Decimal (e.g. 2.5) </br>1 = Short time (e.g. 2:30)                                                                                                                                                                         
+| time_tracking_type    | number        | Enum for time tracking mode set for the organization: </br>0 = Duration </br>1 = Start/End time                                                                                                                                                                                               
+| type                  | organizations | Type of response                                                                                                                                                                                                                                                                  
+| website               | string        | Site identifier for the organization.                                                                                                                                                                                                                                             
+| zip_code              | string        | Zip code.                                                                                                                                                                                                                                                                         
 
 ## Viewing an Organization
 
@@ -275,20 +41,9 @@ This API allows you to view the details of an organization.
 
 URL Parameters
 
-<table>
-  <tr>
-   <td>Parameter
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>The organization id to retrieve.
-   </td>
-  </tr>
-</table>
+| Parameter | Description                      |
+|-----------|----------------------------------|
+| id        | The organization id to retrieve. |
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.

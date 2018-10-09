@@ -4,23 +4,23 @@ A time entry is a recording of the amount of time a member spent on a specific t
 
 Using the API you can do the following with time entry data.
 
-Attribute | Type | Description
-----------|------|------------
-billable_minutes | number | Number of active members.
-creation_date | datetime | When this entry has been logged; \ Read only; Can not be updated
-creation_userprofile | number | Member that created originally the time entry; Read only; Can not be updated.
-end_time | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-guid | string | Unique identifier.
-id | number | Unique identifier.
-invoice | number | Invoice unique identifier.
-member | number | Member unique identifier.
-minutes | number | Number of minutes logged.
-note | string | Note
-project | number | Project unique identifier.
-project_feature | number | Project Feature unique identifier.
-start_time | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-type | string | Payload type.
-working_date | datetime | A date time that represents the day for the time entry.
+| Attribute            | Type     | Description                                                                                                                               |
+|----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| billable_minutes     | number   | Number of active members.                                                                                                                 |
+| creation_date        | datetime | When this entry has been logged; \ Read only; Can not be updated                                                                          |
+| creation_userprofile | number   | Member that created originally the time entry; Read only; Can not be updated.                                                             |
+| end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.   |
+| guid                 | string   | Unique identifier.                                                                                                                        |
+| id                   | number   | Unique identifier.                                                                                                                        |
+| invoice              | number   | Invoice unique identifier.                                                                                                                |
+| member               | number   | Member unique identifier.                                                                                                                 |
+| minutes              | number   | Number of minutes logged.                                                                                                                 |
+| note                 | string   | Note                                                                                                                                      |
+| project              | number   | Project unique identifier.                                                                                                                |
+| project_feature      | number   | Project Feature unique identifier.                                                                                                        |
+| start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
+| type                 | string   | Payload type.                                                                                                                             |
+| working_date         | datetime | A date time that represents the day for the time entry.                                                                                   |
 
 ## Viewing a Time Entry
 

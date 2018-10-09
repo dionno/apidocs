@@ -4,20 +4,20 @@ A Nutcache timer is a stopwatch used to record time spent on a task.
 
 Using the API you can do the following with timer data.
 
-Attribute | Type | Description
-----------|------|------------
-email_reminder_sent | True|False | ????
-guid | string | Unique identifier
-id | number | Unique identifier
-max_end_time_utc | datetime | ?????
-member | number | Member unique identifier.
-minutes | number | Minutes
-project | number | Project unique identifier.
-project_feature | number | Project feature unique identifier.
-status | string | Unique identifier.
-time_start_local | datetime | Timer start(local time)
-time_start_utc | datetime | Timer start(utc time)
-type | string | Payload type.
+| Attribute           | Type     | Description                        
+|---------------------|----------|------------------------------------
+| email_reminder_sent | True     | False  ?????                            
+| guid                | string   | Unique identifier                  
+| id                  | number   | Unique identifier                  
+| max_end_time_utc    | datetime | ?????                              
+| member              | number   | Member unique identifier.          
+| minutes             | number   | Minutes                            
+| project             | number   | Project unique identifier.         
+| project_feature     | number   | Project feature unique identifier. 
+| status              | string   | Unique identifier.                 
+| time_start_local    | datetime | Timer start(local time)            
+| time_start_utc      | datetime | Timer start(utc time)              
+| type                | string   | Payload type.                      
 
 ## Viewing a Timer
 

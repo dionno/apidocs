@@ -55,17 +55,17 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ## Filter Operators
 
-Operator | Description
-----|------------------
-eq  | Equals
-neq | Not Equals
-gt  | Greater Than
-lt  | Less Than
-gte | Greater Than or Equals
-lte | Less Than or Equals
-ct  | Contains
-sw  | Starts With
-ew  | Ends With
+| Operator | Description            |
+|----------|------------------------|
+| eq       | Equals                 |
+| neq      | Not Equals             |
+| gt       | Greater Than           |
+| lt       | Less Than              |
+| gte      | Greater Than or Equals |
+| lte      | Less Than or Equals    |
+| ct       | Contains               |
+| sw       | Starts With            |
+| ew       | Ends With              |
 
 ## Sorting
 
@@ -92,7 +92,7 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 
 ## Sort Directions
 
-Direction | Supported Terms
-----------|----------------
-Ascending | asc, ASC, ascending, ASCENDING
-Descending | desc, DESC, descending, DESCENDING
+| Direction  | Supported Terms                    |
+|------------|------------------------------------|
+| Ascending  | asc, ASC, ascending, ASCENDING     |
+| Descending | desc, DESC, descending, DESCENDING |
