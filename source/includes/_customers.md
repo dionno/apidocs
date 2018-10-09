@@ -4,163 +4,26 @@ An individual or party with whom you conduct business.
 
 Using the API's you can do the following with project data.
 
-
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>address
-   </td>
-   <td>string
-   </td>
-   <td>Address
-   </td>
-  </tr>
-  <tr>
-   <td>city
-   </td>
-   <td>string
-   </td>
-   <td>City
-   </td>
-  </tr>
-  <tr>
-   <td>communication_culture_code
-   </td>
-   <td>string
-   </td>
-   <td>Communication culture code
-   </td>
-  </tr>
-  <tr>
-   <td>Organization
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for organization.
-   </td>
-  </tr>
-  <tr>
-   <td>contact
-   </td>
-   <td>string
-   </td>
-   <td>Contact
-   </td>
-  </tr>
-  <tr>
-   <td>country
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for country.
-   </td>
-  </tr>
-  <tr>
-   <td>email
-   </td>
-   <td>string
-   </td>
-   <td>Email address
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>legal_notice
-   </td>
-   <td>string
-   </td>
-   <td>Legal notice
-   </td>
-  </tr>
-  <tr>
-   <td>mobile_phone
-   </td>
-   <td>string
-   </td>
-   <td>Mobile phone number.
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>string
-   </td>
-   <td>Name
-   </td>
-  </tr>
-  <tr>
-   <td>notes
-   </td>
-   <td>string
-   </td>
-   <td>Notes
-   </td>
-  </tr>
-  <tr>
-   <td>phone
-   </td>
-   <td>string
-   </td>
-   <td>Phone
-   </td>
-  </tr>
-  <tr>
-   <td>state
-   </td>
-   <td>string
-   </td>
-   <td>State
-   </td>
-  </tr>
-  <tr>
-   <td>Status
-   </td>
-   <td>number
-   </td>
-   <td>Status
-   </td>
-  </tr>
-  <tr>
-   <td>tax
-   </td>
-   <td>number
-   </td>
-   <td>Tax
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-  <tr>
-   <td>zip_code
-   </td>
-   <td>string
-   </td>
-   <td>Zip code.
-   </td>
-  </tr>
-</table>
-
-
+Attribute | Type | Description
+----------|------|------------
+address | string | Address
+city | string | City
+communication_culture_code | string | Communication culture code
+Organization | number | Unique identifier for organization.
+contact | string | Contact
+country | number | Unique identifier for country.
+email | string | Email address
+id | number | Unique identifier.
+legal_notice | string | Legal notice
+mobile_phone | string | Mobile phone number.
+name | string | Name
+notes | string | Notes
+phone | string | Phone
+state | string | State
+Status | number | Status
+tax | number | Tax
+type | string | Payload type.
+zip_code | string | Zip code.
 
 ## Viewing a Customer
 

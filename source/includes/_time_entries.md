@@ -4,140 +4,23 @@ A time entry is a recording of the amount of time a member spent on a specific t
 
 Using the API you can do the following with time entry data.
 
-
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>billable_minutes
-   </td>
-   <td>number
-   </td>
-   <td>Number of active members.
-   </td>
-  </tr>
-  <tr>
-   <td>creation_date
-   </td>
-   <td>datetime
-   </td>
-   <td>When this entry has been logged; \
-Read only; Can not be updated
-   </td>
-  </tr>
-  <tr>
-   <td>creation_userprofile
-   </td>
-   <td>number
-   </td>
-   <td>Member that created originally the time entry; Read only; Can not be updated.
-   </td>
-  </tr>
-  <tr>
-   <td>end_time
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>invoice
-   </td>
-   <td>number
-   </td>
-   <td>Invoice unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>member
-   </td>
-   <td>number
-   </td>
-   <td>Member unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>minutes
-   </td>
-   <td>number
-   </td>
-   <td>Number of minutes logged.
-   </td>
-  </tr>
-  <tr>
-   <td>note
-   </td>
-   <td>string
-   </td>
-   <td>Note
-   </td>
-  </tr>
-  <tr>
-   <td>project
-   </td>
-   <td>number
-   </td>
-   <td>Project unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>project_feature
-   </td>
-   <td>number
-   </td>
-   <td>Project Feature unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>start_time
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization.
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-  <tr>
-   <td>working_date
-   </td>
-   <td>datetime
-   </td>
-   <td>A date time that represents the day for the time entry.
-   </td>
-  </tr>
-</table>
-
-
+Attribute | Type | Description
+----------|------|------------
+billable_minutes | number | Number of active members.
+creation_date | datetime | When this entry has been logged; \ Read only; Can not be updated
+creation_userprofile | number | Member that created originally the time entry; Read only; Can not be updated.
+end_time | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.
+guid | string | Unique identifier.
+id | number | Unique identifier.
+invoice | number | Invoice unique identifier.
+member | number | Member unique identifier.
+minutes | number | Number of minutes logged.
+note | string | Note
+project | number | Project unique identifier.
+project_feature | number | Project Feature unique identifier.
+start_time | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization.
+type | string | Payload type.
+working_date | datetime | A date time that represents the day for the time entry.
 
 ## Viewing a Time Entry
 

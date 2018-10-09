@@ -4,122 +4,21 @@ A Nutcache currency ???.
 
 Using the API you can do the following with currency data.
 
-
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>code
-   </td>
-   <td>string
-   </td>
-   <td>Currency code.
-   </td>
-  </tr>
-  <tr>
-   <td>decimal_count
-   </td>
-   <td>number
-   </td>
-   <td>Number of decimal places.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>name_dede
-   </td>
-   <td>string
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>name_enus
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in US english.
-   </td>
-  </tr>
-  <tr>
-   <td>name_eses
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Spanish.
-   </td>
-  </tr>
-  <tr>
-   <td>name_frca
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in French / Canada
-   </td>
-  </tr>
-  <tr>
-   <td>name_frfr
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in French / France
-   </td>
-  </tr>
-  <tr>
-   <td>name_itit
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Italian
-   </td>
-  </tr>
-  <tr>
-   <td>name_plpl
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Polish
-   </td>
-  </tr>
-  <tr>
-   <td>name_ptbr
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Portuguese
-   </td>
-  </tr>
-  <tr>
-   <td>name_ruru
-   </td>
-   <td>string
-   </td>
-   <td>Currency name in Russian
-   </td>
-  </tr>
-  <tr>
-   <td>type=currencies
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-</table>
-
+Attribute | Type | Description
+----------|------|------------
+code | string | Currency code.
+decimal_count | number | Number of decimal places.
+id | number | Unique identifier
+name_dede | string | ?????
+name_enus | string | Currency name in US english.
+name_eses | string | Currency name in Spanish.
+name_frca | string | Currency name in French / Canada
+name_frfr | string | Currency name in French / France
+name_itit | string | Currency name in Italian
+name_plpl | string | Currency name in Polish
+name_ptbr | string | Currency name in Portuguese
+name_ruru | string | Currency name in Russian
+type=currencies | string | Payload type.
 
 ## Viewing a Currency
 

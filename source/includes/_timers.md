@@ -4,115 +4,20 @@ A Nutcache timer is a stopwatch used to record time spent on a task.
 
 Using the API you can do the following with timer data.
 
-
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>email_reminder_sent
-   </td>
-   <td>True|False
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier
-   </td>
-  </tr>
-  <tr>
-   <td>max_end_time_utc
-   </td>
-   <td>datetime
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>member
-   </td>
-   <td>number
-   </td>
-   <td>Member unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>minutes
-   </td>
-   <td>number
-   </td>
-   <td>Minutes
-   </td>
-  </tr>
-  <tr>
-   <td>project
-   </td>
-   <td>number
-   </td>
-   <td>Project unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>project_feature
-   </td>
-   <td>number
-   </td>
-   <td>Project feature unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>status
-   </td>
-   <td>string
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>time_start_local
-   </td>
-   <td>datetime
-   </td>
-   <td>Timer start(local time)
-   </td>
-  </tr>
-  <tr>
-   <td>time_start_utc
-   </td>
-   <td>datetime
-   </td>
-   <td>Timer start(utc time)
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type.
-   </td>
-  </tr>
-</table>
-
-
+Attribute | Type | Description
+----------|------|------------
+email_reminder_sent | True|False | ????
+guid | string | Unique identifier
+id | number | Unique identifier
+max_end_time_utc | datetime | ?????
+member | number | Member unique identifier.
+minutes | number | Minutes
+project | number | Project unique identifier.
+project_feature | number | Project feature unique identifier.
+status | string | Unique identifier.
+time_start_local | datetime | Timer start(local time)
+time_start_utc | datetime | Timer start(utc time)
+type | string | Payload type.
 
 ## Viewing a Timer
 

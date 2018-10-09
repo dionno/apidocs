@@ -4,250 +4,37 @@ A Nutcache project is a planned work or activity that is to be completed over a 
 
 Using the API you can do the following with project data.
 
-<table>
-  <tr>
-   <td><strong>Attribute</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>billing_approved_entries_only
-   </td>
-   <td>True|False
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_invoice_method_fixed_fee
-   </td>
-   <td>number
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_invoice_method_hourly_rate
-   </td>
-   <td>number
-   </td>
-   <td>?????
-   </td>
-  </tr>
-  <tr>
-   <td>billing_method
-   </td>
-   <td>string
-   </td>
-   <td>Billing method.????bug returns string
-   </td>
-  </tr>
-  <tr>
-   <td>budget_approved_only
-   </td>
-   <td>True|False
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_restrictive
-   </td>
-   <td>True|False
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_scope
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>budget_type
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>code
-   </td>
-   <td>string
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>organization
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for an organization.
-   </td>
-  </tr>
-  <tr>
-   <td>customer
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier for a customer.
-   </td>
-  </tr>
-  <tr>
-   <td>description
-   </td>
-   <td>string
-   </td>
-   <td>Project description.
-   </td>
-  </tr>
-  <tr>
-   <td>display_color
-   </td>
-   <td>string
-   </td>
-   <td>HTML color
-   </td>
-  </tr>
-  <tr>
-   <td>EffectiveBudgetAmount
-   </td>
-   <td>number
-   </td>
-   <td>??????
-   </td>
-  </tr>
-  <tr>
-   <td>EffectiveBudgetMinutes
-   </td>
-   <td>number
-   </td>
-   <td>??????
-   </td>
-  </tr>
-  <tr>
-   <td>end_date
-   </td>
-   <td>datetime
-   </td>
-   <td>Phone number.
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>number
-   </td>
-   <td>Unique identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_email
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact email.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_name
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact name.
-   </td>
-  </tr>
-  <tr>
-   <td>primary_contact_phone
-   </td>
-   <td>string
-   </td>
-   <td>Primary contact phone
-   </td>
-  </tr>
-  <tr>
-   <td>project_budget
-   </td>
-   <td>number
-   </td>
-   <td>????
-   </td>
-  </tr>
-  <tr>
-   <td>project_type
-   </td>
-   <td>number
-   </td>
-   <td>Type of project.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_email
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact email.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_name
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact name.
-   </td>
-  </tr>
-  <tr>
-   <td>secondary_contact_phone
-   </td>
-   <td>string
-   </td>
-   <td>Secondary contact phone.
-   </td>
-  </tr>
-  <tr>
-   <td>start_date
-   </td>
-   <td>datetime
-   </td>
-   <td>Project start date.
-   </td>
-  </tr>
-  <tr>
-   <td>status
-   </td>
-   <td>number
-   </td>
-   <td>Project status(to enumerate)
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>Payload type(projects)
-   </td>
-  </tr>
-  <tr>
-   <td>Vision
-   </td>
-   <td>string
-   </td>
-   <td>Project vision
-   </td>
-  </tr>
-</table>
-
-
+Attribute | Type | Description
+----------|------|------------
+billing_approved_entries_only | True|False | ????
+billing_invoice_method_fixed_fee | number | ?????
+billing_invoice_method_hourly_rate | number | ?????
+billing_method | string | Billing method.????bug returns string
+budget_approved_only | True|False | 
+budget_restrictive | True|False | 
+budget_scope | string | 
+budget_type | string | 
+code | string | 
+organization | number | Unique identifier for an organization.
+customer | number | Unique identifier for a customer.
+description | string | Project description.
+display_color | string | HTML color
+EffectiveBudgetAmount | number | ??????
+EffectiveBudgetMinutes | number | ??????
+end_date | datetime | Phone number.
+id | number | Unique identifier.
+primary_contact_email | string | Primary contact email.
+primary_contact_name | string | Primary contact name.
+primary_contact_phone | string | Primary contact phone
+project_budget | number | ????
+project_type | number | Type of project.
+secondary_contact_email | string | Secondary contact email.
+secondary_contact_name | string | Secondary contact name.
+secondary_contact_phone | string | Secondary contact phone.
+start_date | datetime | Project start date.
+status | number | Project status(to enumerate)
+type | string | Payload type(projects)
+Vision | string | Project vision
 
 ## Viewing a Project
 

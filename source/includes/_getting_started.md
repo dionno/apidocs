@@ -28,24 +28,24 @@ curl -H "Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpu
 
 ## Schema
 
-Blank Fields:  \
+Blank Fields: </br>
 Blank fields are made null instead of being omitted.
 
-Timestamps: \
-All timestamps are returned in the UTC format, YYYY-MM-DDTHH:MM:SSZ. For example, 2016-02-13T23:27:49Z \
- \
-Date Fields: \
-Input for date fields is expected to be in one of the following formats: \
-YYYY-MM-DD  \
-YYYY-MM-DDTHH:MM  \
-YYYY-MM-DDTHH:MMZ  \
-YYYY-MM-DDTHH:MM:SS  \
-YYYY-MM-DDTHH:MM:SSZ  \
-YYYY-MM-DDTHH:MM:SS±hh:mm  \
-YYYY-MM-DDTHH:MM:SS±hh  \
-YYYY-MM-DDTHH:MM:SS±hhmm  \
-If the time zone information is not present, it will be assumed to be in UTC. \
-A few valid date fields - 2016-02-15T21:16:25Z ,    2012-12-24T12:56:15+05:30,    2010-03-23T12:00
+Timestamps: </br>
+All timestamps are returned in the UTC format, YYYY-MM-DDTHH:MM:SSZ. For example, 2016-02-13T23:27:49Z </br>
+</br>
+Date Fields: </br>
+Input for date fields is expected to be in one of the following formats: </br>
+YYYY-MM-DD  </br>
+YYYY-MM-DDTHH:MM  </br>
+YYYY-MM-DDTHH:MMZ  </br>
+YYYY-MM-DDTHH:MM:SS  </br>
+YYYY-MM-DDTHH:MM:SSZ  </br>
+YYYY-MM-DDTHH:MM:SS±hh:mm  </br>
+YYYY-MM-DDTHH:MM:SS±hh  </br>
+YYYY-MM-DDTHH:MM:SS±hhmm  </br>
+If the time zone information is not present, it will be assumed to be in UTC. </br>
+A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010-03-23T12:00
 
 ## Embedding
 
@@ -77,16 +77,14 @@ curl -i -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1E
 
 ## Rate Limit
 
-A rate limit of 10 000 api calls per day. This limit is applied on an account wide basis irrespective of factors such as the number of agents or IP addresses used to make the calls.
+A rate limit of 20 000 api calls per API key is allowed.
 
-If you go over these limits when using our HTTP based APIs, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
+If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
 
-<code>
-HTTP/1.1 429 Too Many Requests
-Retry-After: 30
-</code>
+`HTTP/1.1 429 Too Many Requests`
 
+`Retry-After: 30`
 
 <aside class="warning">
-There is a also a burst limit of 3 api calls per second and 100 per minute.
+There is a also a burst limit of 5 api calls per second and 200 per minute.
 </aside>
