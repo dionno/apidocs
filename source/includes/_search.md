@@ -92,7 +92,7 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 
 ## Sort Directions
 
-| Direction  | Supported Terms                    |
-|------------|------------------------------------|
-| Ascending  | asc, ASC, ascending, ASCENDING     |
-| Descending | desc, DESC, descending, DESCENDING |
+| Direction  | Supported Terms  |
+|------------|------------------|
+| Ascending  | asc, ascending   |
+| Descending | desc, descending |
