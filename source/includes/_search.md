@@ -1,20 +1,20 @@
 # Search
 
-## Filtered Search
+## Filtered Searches
 
 Filtered searches can be used to find entities that match specific search criteria.
 
 
 ## Usage
 
-<span class="http-method http-post">POST</span> ` _entity_/**filtered**`
+<span class="http-method http-post">POST</span> ` _entity_/filtered`
 
 
 >Filter Construct
 
 ```json
 {
-  "**filter_rules**": [
+  "filter_rules": [
     {
       "property": "_name_",
       "operator": "_operator_",
@@ -24,7 +24,7 @@ Filtered searches can be used to find entities that match specific search criter
 }
 ```
 
->Filters can be and chained together as follows:
+>Filters can be combined together as follows:
 
 ```json
 {
@@ -43,6 +43,10 @@ Filtered searches can be used to find entities that match specific search criter
 }
 ```
 
+<aside class="notice">
+Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+</aside>
+
 >Example
 
 ```shell
@@ -51,74 +55,21 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ## Filter Operators
 
-<table>
-  <tr>
-   <td><strong>Operator</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>eq
-   </td>
-   <td>equals
-   </td>
-  </tr>
-  <tr>
-   <td>ne
-   </td>
-   <td>not equal
-   </td>
-  </tr>
-  <tr>
-   <td>gt
-   </td>
-   <td>greater than
-   </td>
-  </tr>
-  <tr>
-   <td>gte
-   </td>
-   <td>greater than or equal
-   </td>
-  </tr>
-  <tr>
-   <td>lt
-   </td>
-   <td>less than
-   </td>
-  </tr>
-  <tr>
-   <td>lte
-   </td>
-   <td>less than or equal
-   </td>
-  </tr>
-  <tr>
-   <td>ct
-   </td>
-   <td>contain
-   </td>
-  </tr>
-  <tr>
-   <td>sw
-   </td>
-   <td>starts with
-   </td>
-  </tr>
-  <tr>
-   <td>ew
-   </td>
-   <td>ends with
-   </td>
-  </tr>
-</table>
-
+Operator | Description
+----|------------------
+eq  | Equals
+neq | Not Equals
+gt  | Greater Than
+lt  | Less Than
+gte | Greater Than or Equals
+lte | Less Than or Equals
+ct  | Contains
+sw  | Starts With
+ew  | Ends With
 
 ## Sorting
 
 Results from filtered searches can be sorted using filtered actions with sorting rules.
-
 
 >Sorting Construct
 
@@ -134,14 +85,14 @@ Results from filtered searches can be sorted using filtered actions with sorting
     }
   ]
 ```
-  
-Supported sort direction terms: \
- \
-asc \
-ASC \
-ascending \
-ASCENDING \
-desc \
-DESC \
-descending \
-DESCENDING
+
+<aside class="notice">
+Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+</aside>
+
+## Sort Directions
+
+Direction | Supported Terms
+----------|----------------
+Ascending | asc, ASC, ascending, ASCENDING
+Descending | desc, DESC, descending, DESCENDING
