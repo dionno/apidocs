@@ -4,37 +4,38 @@ A Nutcache project is a planned work or activity that is to be completed over a 
 
 Using the API you can do the following with project data.
 
-Attribute | Type | Description
-----------|------|------------
-billing_approved_entries_only | True|False | ????
-billing_invoice_method_fixed_fee | number | ?????
-billing_invoice_method_hourly_rate | number | ?????
-billing_method | string | Billing method.????bug returns string
-budget_approved_only | True|False | 
-budget_restrictive | True|False | 
-budget_scope | string | 
-budget_type | string | 
-code | string | 
-organization | number | Unique identifier for an organization.
-customer | number | Unique identifier for a customer.
-description | string | Project description.
-display_color | string | HTML color
-EffectiveBudgetAmount | number | ??????
-EffectiveBudgetMinutes | number | ??????
-end_date | datetime | Phone number.
-id | number | Unique identifier.
-primary_contact_email | string | Primary contact email.
-primary_contact_name | string | Primary contact name.
-primary_contact_phone | string | Primary contact phone
-project_budget | number | ????
-project_type | number | Type of project.
-secondary_contact_email | string | Secondary contact email.
-secondary_contact_name | string | Secondary contact name.
-secondary_contact_phone | string | Secondary contact phone.
-start_date | datetime | Project start date.
-status | number | Project status(to enumerate)
-type | string | Payload type(projects)
-Vision | string | Project vision
+| Attribute                          | Type     | Description                            |
+|------------------------------------|----------|----------------------------------------|
+| billing_approved_entries_only      | True     | False     ????                         |
+| billing_invoice_method_fixed_fee   | number   | ?????                                  |
+| billing_invoice_method_hourly_rate | number   | ?????                                  |
+| billing_method                     | string   | Billing method.????bug returns string  |
+| budget_approved_only               | True     | False                                  |
+| budget_restrictive                 | True     | False                                  |
+| budget_scope                       | string   |                                        |
+| budget_type                        | string   |                                        |
+| code                               | string   |                                        |
+| organization                       | number   | Unique identifier for an organization. |
+| customer                           | number   | Unique identifier for a customer.      |
+| description                        | string   | Project description.                   |
+| display_color                      | string   | HTML color                             |
+| EffectiveBudgetAmount              | number   | ??????                                 |
+| EffectiveBudgetMinutes             | number   | ??????                                 |
+| end_date                           | datetime | Phone number.                          |
+| id                                 | number   | Unique identifier.                     |
+| primary_contact_email              | string   | Primary contact email.                 |
+| primary_contact_name               | string   | Primary contact name.                  |
+| primary_contact_phone              | string   | Primary contact phone                  |
+| project_budget                     | number   | ????                                   |
+| project_type                       | number   | Type of project.                       |
+| secondary_contact_email            | string   | Secondary contact email.               |
+| secondary_contact_name             | string   | Secondary contact name.                |
+| secondary_contact_phone            | string   | Secondary contact phone.               |
+| start_date                         | datetime | Project start date.                    |
+| status                             | number   | Project status(to enumerate)           |
+| type                               | string   | Payload type(projects)                 |
+| Vision                             | string   | Project vision                         |
+
 
 ## Viewing a Project
 

@@ -4,26 +4,26 @@ An individual or party with whom you conduct business.
 
 Using the API's you can do the following with project data.
 
-Attribute | Type | Description
-----------|------|------------
-address | string | Address
-city | string | City
-communication_culture_code | string | Communication culture code
-Organization | number | Unique identifier for organization.
-contact | string | Contact
-country | number | Unique identifier for country.
-email | string | Email address
-id | number | Unique identifier.
-legal_notice | string | Legal notice
-mobile_phone | string | Mobile phone number.
-name | string | Name
-notes | string | Notes
-phone | string | Phone
-state | string | State
-Status | number | Status
-tax | number | Tax
-type | string | Payload type.
-zip_code | string | Zip code.
+| Attribute                  | Type   | Description                         |
+|----------------------------|--------|-------------------------------------|
+| address                    | string | Address                             |
+| city                       | string | City                                |
+| communication_culture_code | string | Communication culture code          |
+| Organization               | number | Unique identifier for organization. |
+| contact                    | string | Contact                             |
+| country                    | number | Unique identifier for country.      |
+| email                      | string | Email address                       |
+| id                         | number | Unique identifier.                  |
+| legal_notice               | string | Legal notice                        |
+| mobile_phone               | string | Mobile phone number.                |
+| name                       | string | Name                                |
+| notes                      | string | Notes                               |
+| phone                      | string | Phone                               |
+| state                      | string | State                               |
+| Status                     | number | Status                              |
+| tax                        | number | Tax                                 |
+| type                       | string | Payload type.                       |
+| zip_code                   | string | Zip code.                           |
 
 ## Viewing a Customer
 

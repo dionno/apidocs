@@ -82,7 +82,6 @@ A rate limit of 20 000 api calls per API key is allowed.
 If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
 
 `HTTP/1.1 429 Too Many Requests`
-
 `Retry-After: 30`
 
 <aside class="warning">
