@@ -128,14 +128,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ```json
 {
-  "links": [
+  "links": [    
     {
-      "href": "projects?limit=10&reference_id=6640&seek_direction=previous",
-      "rel": "navigation-previous",
-      "type": "GET"
-    },
-    {
-      "href": "projects?limit=10&reference_id=6691&seek_direction=next",
+      "href": "projects?limit=10&page=2",
       "rel": "navigation-next",
       "type": "GET"
     }
