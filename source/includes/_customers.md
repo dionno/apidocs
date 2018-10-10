@@ -114,12 +114,7 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 {
   "links": [
     {
-      "href": "customers?limit=10&reference_id=143222&seek_direction=previous",
-      "rel": "navigation-previous",
-      "type": "GET"
-    },
-    {
-      "href": "customers?limit=10&reference_id=153745&seek_direction=next",
+      "href": "customers?limit=10&page=2",
       "rel": "navigation-next",
       "type": "GET"
     }

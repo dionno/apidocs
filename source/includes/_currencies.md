@@ -88,12 +88,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 {
   "links": [
     {
-      "href": "currencies?limit=10&reference_id=1&seek_direction=previous",
-      "rel": "navigation-previous",
-      "type": "GET"
-    },
-    {
-      "href": "currencies?limit=10&reference_id=10&seek_direction=next",
+      "href": "currencies?limit=10&page=2",
       "rel": "navigation-next",
       "type": "GET"
     }

@@ -102,14 +102,9 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 
 ```json
 {
-  "links": [
+  "links": [    
     {
-      "href": "timeentries?limit=10&reference_id=201001&seek_direction=previous",
-      "rel": "navigation-previous",
-      "type": "GET"
-    },
-    {
-      "href": "timeentries?limit=10&reference_id=206770&seek_direction=next",
+      "href": "timeentries?limit=10&page=2",
       "rel": "navigation-next",
       "type": "GET"
     }
