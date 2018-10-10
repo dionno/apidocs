@@ -57,42 +57,58 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ```json
 {
-  "invoices": [
-{
-"type":"invoices",
-"id":9287,
-"invoice_number":"0005",
-"customer_name":"Sample client",
-"balance":1225.7900,
-"paid_to_date":100.0000,
-"organization":1686,
-"customer":143222,
-"customer_address":null,
-"customer_city":null,
-"customer_contact":"Sample contact name",
-"customer_country":"Canada",
-"customer_email":"143222@yopmail.com",
-"customer_legal_notice":null,
-"customer_phone":"123-456-7890",
-"customer_phone_mobile":null,
-"customer_postal_zip_code":null,
-"customer_province_state":null,
-"custom_title":null,
-"description":null,
-"due_date":"2018-04-18T00:00:00",
-"estimate":null,
-"invoice_date":"2018-04-18T00:00:00",
-"notes":null,
-"terms":null,
-"purchase_order":null,
-"responsible":9015,
-"status":3,
-"taxes_amount":13.7900,
-"total":1325.7900,
-"total_amount_before_taxes":1312.0000,
-"links":[
-{"href":"organizations/1686","rel":"organizations","type":"GET"},{"href":"customers/143222","rel":"customers","type":"GET"},{"href":"invoices/9287","rel":"self","type":"GET"}
-]
+ 	"invoices": [
+		{
+			"type":"invoices",
+			"id":9287,
+			"invoice_number":"0005",
+			"customer_name":"Sample client",
+			"balance":1225.7900,
+			"paid_to_date":100.0000,
+			"organization":1686,
+			"customer":143222,
+			"customer_address":null,
+			"customer_city":null,
+			"customer_contact":"Sample contact name",
+			"customer_country":"Canada",
+			"customer_email":"143222@yopmail.com",
+			"customer_legal_notice":null,
+			"customer_phone":"123-456-7890",
+			"customer_phone_mobile":null,
+			"customer_postal_zip_code":null,
+			"customer_province_state":null,
+			"custom_title":null,
+			"description":null,
+			"due_date":"2018-04-18T00:00:00",
+			"estimate":null,
+			"invoice_date":"2018-04-18T00:00:00",
+			"notes":null,
+			"terms":null,
+			"purchase_order":null,
+			"responsible":9015,
+			"status":3,
+			"taxes_amount":13.7900,
+			"total":1325.7900,
+			"total_amount_before_taxes":1312.0000,
+			"links":[
+				{
+				"href":"organizations/1686",
+				"rel":"organizations",
+				"type":"GET"
+				},
+				{
+				"href":"customers/143222",
+				"rel":"customers",
+				"type":"GET"
+				},
+				{
+				"href":"invoices/9287",
+				"rel":"self",
+				"type":"GET"
+				}
+			]
+		}
+	]
 }
 ```
 ## List all invoices
@@ -111,9 +127,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ```json
 {
-  "links": [    
+  "links": [
     {
-      "href": "projects?limit=10&page=2",
+      "href": "projects?limit=10&reference_id=6640&seek_direction=previous",
+      "rel": "navigation-previous",
+      "type": "GET"
+    },
+    {
+      "href": "projects?limit=10&reference_id=6691&seek_direction=next",
       "rel": "navigation-next",
       "type": "GET"
     }
