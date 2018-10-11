@@ -254,7 +254,7 @@
                     <a href="#list-all-organizations" class="toc-h2 toc-link" data-title="List all Organizations">List all Organizations</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-organizations" class="toc-h2 toc-link" data-title="Include (Organizations)">Include (Organizations)</a>
                   </li>
               </ul>
           </li>
@@ -268,7 +268,7 @@
                     <a href="#list-all-projects" class="toc-h2 toc-link" data-title="List all Projects">List all Projects</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-projects" class="toc-h2 toc-link" data-title="Include (Projects)">Include (Projects)</a>
                   </li>
               </ul>
           </li>
@@ -282,7 +282,7 @@
                     <a href="#list-all-customers" class="toc-h2 toc-link" data-title="List all Customers">List all Customers</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-customers" class="toc-h2 toc-link" data-title="Include (Customers)">Include (Customers)</a>
                   </li>
               </ul>
           </li>
@@ -302,7 +302,7 @@
                     <a href="#creating-time-entry" class="toc-h2 toc-link" data-title="Creating Time Entry">Creating Time Entry</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-time-entries" class="toc-h2 toc-link" data-title="Include (Time entries)">Include (Time entries)</a>
                   </li>
               </ul>
           </li>
@@ -316,7 +316,7 @@
                     <a href="#list-all-timers" class="toc-h2 toc-link" data-title="List all Timers">List all Timers</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-timers" class="toc-h2 toc-link" data-title="Include (Timers)">Include (Timers)</a>
                   </li>
               </ul>
           </li>
@@ -330,7 +330,29 @@
                     <a href="#list-all-invoices" class="toc-h2 toc-link" data-title="List all invoices">List all invoices</a>
                   </li>
                   <li>
-                    <a href="#include" class="toc-h2 toc-link" data-title="Include">Include</a>
+                    <a href="#include-invoices" class="toc-h2 toc-link" data-title="Include (Invoices)">Include (Invoices)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#countries" class="toc-h1 toc-link" data-title="Countries">Countries</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#viewing-a-country" class="toc-h2 toc-link" data-title="Viewing a Country">Viewing a Country</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-countries" class="toc-h2 toc-link" data-title="List all Countries">List all Countries</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#states" class="toc-h1 toc-link" data-title="States">States</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#viewing-a-currency" class="toc-h2 toc-link" data-title="Viewing a Currency">Viewing a Currency</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-currencies" class="toc-h2 toc-link" data-title="List all Currencies">List all Currencies</a>
                   </li>
               </ul>
           </li>
@@ -790,7 +812,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h2 id='include'>Include</h2>
+</span></code></pre><h2 id='include-organizations'>Include (Organizations)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -1571,7 +1593,7 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include'>Include</h2>
+</span></code></pre><h2 id='include-projects'>Include (Projects)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -2078,7 +2100,7 @@ api-version: 3</p>
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include'>Include</h2>
+</span></code></pre><h2 id='include-customers'>Include (Customers)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -2195,7 +2217,7 @@ api-version: 3</p>
 <h2 id='viewing-a-time-entry'>Viewing a Time Entry</h2>
 <p>This API allows you to view the details of a time entry.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/timeentries/[id]</code></p>
+<p><span class="http-method http-get">GET</span> <code>/api/time_entries/[id]</code></p>
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
@@ -2204,15 +2226,15 @@ Use 'include' to embed additional details in the response.
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X GET https://devapps.nutcache.com/webapi/time_entries/1
 </code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"timeentries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"time_entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time_entries"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201001</span><span class="p">,</span><span class="w">
       </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{71094532-926e-41a1-bda5-3ce0bcb40180}"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -2231,8 +2253,8 @@ Use 'include' to embed additional details in the response.
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/106963"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features/106963"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -2241,7 +2263,7 @@ Use 'include' to embed additional details in the response.
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time_entries/201001"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -2253,7 +2275,7 @@ Use 'include' to embed additional details in the response.
 </span></code></pre><h2 id='list-all-time-entries'>List all Time Entries</h2>
 <p>Using this API, you&#39;d be able to fetch a list of time entries.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/timeentries</code></p>
+<p><span class="http-method http-get">GET</span> <code>/api/time_entries</code></p>
 
 <blockquote>
 <p>Example</p>
@@ -2266,14 +2288,14 @@ Use 'include' to embed additional details in the response.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries?limit=10&amp;page=2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time_entries?limit=10&amp;page=2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"timeentries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"time_entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time_entries"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201001</span><span class="p">,</span><span class="w">
       </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{66700be6-2d82-4fde-bd69-cd2a1161e0d4}"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -2292,7 +2314,7 @@ Use 'include' to embed additional details in the response.
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/106963"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features/106963"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -2302,340 +2324,7 @@ Use 'include' to embed additional details in the response.
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201001"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201002</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{9b6f6be9-881f-4b94-b500-2e03c9f8cf8e}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-06T22:07:02.793"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-05T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6641</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/6641"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/106963"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201002"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201003</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{c7dd6c43-3e77-4c92-8e4c-917e5c4a247b}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-06T22:07:15.97"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-05T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6641</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/6641"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/106963"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201003"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201186</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{947fe429-66ee-4530-886f-4f2f53add355}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-24T12:20:06.683"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-10T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">107871</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7289</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/107871"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201186"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201187</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{65cefc03-c6cd-4af4-a43e-cd78f8b2a4ef}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-24T12:21:03.967"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-10T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">107872</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7289</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/107872"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201187"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201331</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{6048aabb-d28f-4f26-8954-274c2570edf4}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-17T13:53:24.027"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-11T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">107872</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9280</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7289</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/107872"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9280"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201331"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201332</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{136934bf-ef97-493c-8e45-81fb10d88f2a}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-17T13:53:41.87"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-12T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Testing notes!"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">107872</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9225</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7289</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/107872"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9225"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201332"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">201333</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{035519de-aa2e-4348-a003-8eb6ecaea174}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-28T16:16:57.227"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-28T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">111911</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9231</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7289</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/111911"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9231"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/201333"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">203423</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{64f09e77-67e3-42fa-8292-6f6baf2064a7}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-09T13:03:56.833"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-09T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">119685</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7224</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7224"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/119685"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/203423"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">206770</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{33be84f1-34e3-43b8-8c11-59c1ea11eb00}"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billable_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-20T13:56:25.207"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"creation_userprofile"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-20T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">119685</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">7224</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/7224"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems/119685"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members/9015"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"members"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timeentries/206770"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time_entries/201001"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -2649,7 +2338,7 @@ Use 'include' to embed additional details in the response.
 Depends on organisation setting Time Tracking mode \
 Depends on if project is billable. \
 Start and Endtime is timespan only \</p>
-<h2 id='creating-time-entry'>Creating Time Entry</h2><h2 id='include'>Include</h2>
+<h2 id='creating-time-entry'>Creating Time Entry</h2><h2 id='include-time-entries'>Include (Time entries)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -3014,7 +2703,7 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include'>Include</h2>
+</span></code></pre><h2 id='include-timers'>Include (Timers)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -3786,7 +3475,7 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include'>Include</h2>
+</span></code></pre><h2 id='include-invoices'>Include (Invoices)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -3816,7 +3505,630 @@ Use 'include' to embed additional details in the response.
 <td>The taxes summary of this invoice</td>
 </tr>
 </tbody></table>
-<h1 id='currencies'>Currencies</h1>
+<h1 id='countries'>Countries</h1>
+<p>Get information about countries.</p>
+
+<p>Using the API you can do the following with a country data.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>Country three letter code.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>number</td>
+<td>Unique identifier for a currency</td>
+</tr>
+<tr>
+<td>date_format</td>
+<td>number</td>
+<td>Enum for date format set for the country: </br>0 = ISO format (yyyy-MM-dd) </br>1 = US format w/ dash (MM-dd-yyyy) </br>2 = US format w/ slash (MM/dd/yyyy) </br>3 = International format w/ dash(dd-MM-yyyy) </br>4 = International format w/ slash(dd/MM/yyyy) </br>5 = International format w/ dots(dd.MM.yyyy)</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>name_dede</td>
+<td>string</td>
+<td>Country name in Germain</td>
+</tr>
+<tr>
+<td>name_enus</td>
+<td>string</td>
+<td>Country name in US english.</td>
+</tr>
+<tr>
+<td>name_eses</td>
+<td>string</td>
+<td>Country name in Spanish.</td>
+</tr>
+<tr>
+<td>name_frca</td>
+<td>string</td>
+<td>Country name in French / Canada</td>
+</tr>
+<tr>
+<td>name_frfr</td>
+<td>string</td>
+<td>Country name in French / France</td>
+</tr>
+<tr>
+<td>name_itit</td>
+<td>string</td>
+<td>Country name in Italian</td>
+</tr>
+<tr>
+<td>name_plpl</td>
+<td>string</td>
+<td>Country name in Polish</td>
+</tr>
+<tr>
+<td>name_ptbr</td>
+<td>string</td>
+<td>Country name in Portuguese</td>
+</tr>
+<tr>
+<td>name_ruru</td>
+<td>string</td>
+<td>Country name in Russian</td>
+</tr>
+<tr>
+<td>short_code</td>
+<td>string</td>
+<td>Country two letter code</td>
+</tr>
+<tr>
+<td>time_format</td>
+<td>number</td>
+<td>Enum for time format set for the organization: </br>0 = ISO format (HH:mm), </br>1 = AM/PM format (hh:mm tt)</td>
+</tr>
+<tr>
+<td>type=countries</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+</tbody></table>
+<h2 id='viewing-a-country'>Viewing a Country</h2>
+<p>This API allows you to view the details of a country.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]</code></p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+<br>
+<ul>
+  <li>currencies</li>  
+</ul>
+</aside>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/countries/231?includes<span class="o">=</span>currencies
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - United States of America"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos da América"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar amerykański – Stany Zjednoczone"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Stati Uniti d'America"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Vereinigten Staaten von Amerika"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stany Zjednoczone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stati Uniti"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vereinigte Staaten von Amerika"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='list-all-countries'>List all Countries</h2>
+<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/countries</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/countries?limit<span class="o">=</span>2&amp;page<span class="o">=</span>20
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries?limit=2&amp;page=19"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries?limit=2&amp;page=21"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CMR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cameroon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cameroun"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cameroun"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Камерун"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Camarões"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kamerun"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Camerun"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Camerún"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Camerún"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kamerun"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/39"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Канада"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kanada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kanada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/40"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='states'>States</h1>
+<p>A Nutcache currency ???.</p>
+
+<p>Using the API you can do the following with currency data.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>Currency code.</td>
+</tr>
+<tr>
+<td>decimal_count</td>
+<td>number</td>
+<td>Number of decimal places.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>name_dede</td>
+<td>string</td>
+<td>?????</td>
+</tr>
+<tr>
+<td>name_enus</td>
+<td>string</td>
+<td>Currency name in US english.</td>
+</tr>
+<tr>
+<td>name_eses</td>
+<td>string</td>
+<td>Currency name in Spanish.</td>
+</tr>
+<tr>
+<td>name_frca</td>
+<td>string</td>
+<td>Currency name in French / Canada</td>
+</tr>
+<tr>
+<td>name_frfr</td>
+<td>string</td>
+<td>Currency name in French / France</td>
+</tr>
+<tr>
+<td>name_itit</td>
+<td>string</td>
+<td>Currency name in Italian</td>
+</tr>
+<tr>
+<td>name_plpl</td>
+<td>string</td>
+<td>Currency name in Polish</td>
+</tr>
+<tr>
+<td>name_ptbr</td>
+<td>string</td>
+<td>Currency name in Portuguese</td>
+</tr>
+<tr>
+<td>name_ruru</td>
+<td>string</td>
+<td>Currency name in Russian</td>
+</tr>
+<tr>
+<td>type=currencies</td>
+<td>string</td>
+<td>Payload type.</td>
+</tr>
+</tbody></table>
+<h2 id='viewing-a-currency'>Viewing a Currency</h2>
+<p>This API allows you to view the details of a timer.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/currencies/[id]</code></p>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+
+List of includes go here
+</aside>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Песо - Аргентина"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peso argentyńskie– Argentyna"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso – Argentinien"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='list-all-currencies'>List all Currencies</h2>
+<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/currencies</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span> -X GET <span class="s2">"[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=10&amp;reference_id=1&amp;seek_direction=previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=10&amp;reference_id=10&amp;seek_direction=next"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - United Arab Emirates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Дирхам - Объединенные Арабские Эмираты"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirados Árabes Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dirham ZEA – Zjednoczone Emiraty Arabskie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirati Arabi Uniti"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirhem – Vereinigte Arabische Emirate"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AFN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Афгани - Афганистан"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afegane - Afeganistão"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afgani – Afganistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afgani - Afganistán"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afgani - Afganistán"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani – Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albanie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albanie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Лек - Албания"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albânia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lek – Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alle"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/3"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Arménie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Arménie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Драм - Армения"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armênia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dram armeński – Armenia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram – Armenien"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guilder - Netherlands Antilles"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Antilles néerlandaises"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Antilles néerlandaises"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Гульден - Нидерландские Антильские острова"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florim - Antilhas Holandesas"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulden Antyli Holenderskich – Antyle Holenderskie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiorino - Antille Olandesi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Antillas Neerlandesas"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Antillas Neerlandesas"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Antillen-Gulden – Niederländische Antillen"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/5"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AOA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Кванза - Ангола"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kwanza – Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza – Angola"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/6"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Песо - Аргентина"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peso argentyńskie– Argentyna"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso – Argentinien"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Австралия"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Austrália"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar australijski – Australia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Australia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Australia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Australia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australischer Dollar – Australien"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/8"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guilder - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Гульден - Аруба"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florim - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulden arubański – Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiorino - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aruba-Florin – Aruba"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/9"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AZN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaijan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaïdjan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaïdjan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Манат - Азербайджан"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaijão"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manat azerbejdżański– Azerbejdżan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaigian"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaiyán"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaiyán"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aserbaidschan-Manat – Aserbeidschan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/10"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='currencies'>Currencies</h1>
 <p>A Nutcache currency ???.</p>
 
 <p>Using the API you can do the following with currency data.</p>
