@@ -349,10 +349,10 @@
             <a href="#states" class="toc-h1 toc-link" data-title="States">States</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-currency" class="toc-h2 toc-link" data-title="Viewing a Currency">Viewing a Currency</a>
+                    <a href="#viewing-a-state" class="toc-h2 toc-link" data-title="Viewing a State">Viewing a State</a>
                   </li>
                   <li>
-                    <a href="#list-all-currencies" class="toc-h2 toc-link" data-title="List all Currencies">List all Currencies</a>
+                    <a href="#list-all-states" class="toc-h2 toc-link" data-title="List all States">List all States</a>
                   </li>
               </ul>
           </li>
@@ -2268,6 +2268,11 @@ Use 'include' to embed additional details in the response.
 <td>Country name in Spanish.</td>
 </tr>
 <tr>
+<td>name_esus</td>
+<td>string</td>
+<td>Country name in Spanish / US</td>
+</tr>
+<tr>
 <td>name_frca</td>
 <td>string</td>
 <td>Country name in French / Canada</td>
@@ -2461,9 +2466,9 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='states'>States</h1>
-<p>A Nutcache currency ???.</p>
+<p>Get information about states.</p>
 
-<p>Using the API you can do the following with currency data.</p>
+<p>Using the API you can do the following with a state data.</p>
 
 <table><thead>
 <tr>
@@ -2475,12 +2480,12 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>code</td>
 <td>string</td>
-<td>Currency code.</td>
+<td>State code in the following format: <br>[Country 2 letter code]-[State code]</td>
 </tr>
 <tr>
-<td>decimal_count</td>
+<td>country</td>
 <td>number</td>
-<td>Number of decimal places.</td>
+<td>Unique identifier for a country</td>
 </tr>
 <tr>
 <td>id</td>
@@ -2490,109 +2495,141 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>name_dede</td>
 <td>string</td>
-<td>?????</td>
+<td>State name in Germain</td>
 </tr>
 <tr>
 <td>name_enus</td>
 <td>string</td>
-<td>Currency name in US english.</td>
+<td>State name in US english.</td>
 </tr>
 <tr>
 <td>name_eses</td>
 <td>string</td>
-<td>Currency name in Spanish.</td>
+<td>State name in Spanish</td>
+</tr>
+<tr>
+<td>name_esus</td>
+<td>string</td>
+<td>State name in Spanish / US</td>
 </tr>
 <tr>
 <td>name_frca</td>
 <td>string</td>
-<td>Currency name in French / Canada</td>
+<td>State name in French / Canada</td>
 </tr>
 <tr>
 <td>name_frfr</td>
 <td>string</td>
-<td>Currency name in French / France</td>
+<td>State name in French / France</td>
 </tr>
 <tr>
 <td>name_itit</td>
 <td>string</td>
-<td>Currency name in Italian</td>
+<td>State name in Italian</td>
 </tr>
 <tr>
 <td>name_plpl</td>
 <td>string</td>
-<td>Currency name in Polish</td>
+<td>State name in Polish</td>
 </tr>
 <tr>
 <td>name_ptbr</td>
 <td>string</td>
-<td>Currency name in Portuguese</td>
+<td>State name in Portuguese</td>
 </tr>
 <tr>
 <td>name_ruru</td>
 <td>string</td>
-<td>Currency name in Russian</td>
+<td>State name in Russian</td>
 </tr>
 <tr>
-<td>type=currencies</td>
+<td>type=states</td>
 <td>string</td>
 <td>Payload type.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-currency'>Viewing a Currency</h2>
-<p>This API allows you to view the details of a timer.</p>
+<h2 id='viewing-a-state'>Viewing a State</h2>
+<p>This API allows you to view the details of a state.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/currencies/[id]</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/states/[id]</code></p>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
-
-List of includes go here
+Use 'includes' to embed additional details in the response.
+<br>
+<ul>
+  <li>countries</li>  
+</ul>
 </aside>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span>-X GET <span class="s2">"https://domain.freshsales.io/api/leads/1"</span>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/states/12?includes<span class="o">=</span>countries
 </code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"states"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Песо - Аргентина"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peso argentyńskie– Argentyna"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso – Argentinien"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stany Zjednoczone"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stati Uniti"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vereinigte Staaten von Amerika"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US_NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Нью-Йорк"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nova York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nowy Jork"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/7"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-currencies'>List all Currencies</h2>
-<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
+</span></code></pre><h2 id='list-all-states'>List all States</h2>
+<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/currencies</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: Token token=sfg999666t673t7t82"</span> -H <span class="s2">"Content-Type: application/json"</span> -X GET <span class="s2">"[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"</span>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/states?limit<span class="o">=</span>2&amp;page<span class="o">=</span>26
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2600,243 +2637,59 @@ List of includes go here
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=10&amp;reference_id=1&amp;seek_direction=previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states?limit=2&amp;page=25"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-previous"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=10&amp;reference_id=10&amp;seek_direction=next"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states?limit=2&amp;page=27"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"states"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - United Arab Emirates"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Дирхам - Объединенные Арабские Эмираты"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirados Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dirham ZEA – Zjednoczone Emiraty Arabskie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirati Arabi Uniti"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirhem – Vereinigte Arabische Emirate"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US_SC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Carolina"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caroline du Sud"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caroline du Sud"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Южная Каролина"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carolina do Sul"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Karolina Południowa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carolina del Sud"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carolina del Sur"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carolina del Sur"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Carolina"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/1"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AFN"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Афгани - Афганистан"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afegane - Afeganistão"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afgani – Afganistan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani - Afghanistan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afgani - Afganistán"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afgani - Afganistán"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afghani – Afghanistan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA_SK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Саскачеван"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saskatchewan"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/2"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albanie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albanie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Лек - Албания"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albânia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lek – Albania"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lek - Albania"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alle"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/3"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Arménie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Arménie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Драм - Армения"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armênia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dram armeński – Armenia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram - Armenia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram – Armenien"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/4"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guilder - Netherlands Antilles"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Antilles néerlandaises"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Antilles néerlandaises"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Гульден - Нидерландские Антильские острова"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florim - Antilhas Holandesas"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulden Antyli Holenderskich – Antyle Holenderskie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiorino - Antille Olandesi"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Antillas Neerlandesas"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Antillas Neerlandesas"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Antillen-Gulden – Niederländische Antillen"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/5"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AOA"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Кванза - Ангола"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kwanza – Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza - Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwanza – Angola"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/6"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Песо - Аргентина"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peso argentyńskie– Argentyna"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso – Argentinien"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/7"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Australie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Австралия"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Austrália"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar australijski – Australia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Australia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Australia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Australia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australischer Dollar – Australien"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/8"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guilder - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florin - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Гульден - Аруба"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florim - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulden arubański – Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiorino - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florín - Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aruba-Florin – Aruba"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/9"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AZN"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaijan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaïdjan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaïdjan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Манат - Азербайджан"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaijão"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manat azerbejdżański– Azerbejdżan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaigian"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaiyán"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manat - Azerbaiyán"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aserbaidschan-Manat – Aserbeidschan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/10"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/40"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
@@ -2844,7 +2697,7 @@ List of includes go here
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='currencies'>Currencies</h1>
-<p>A Nutcache currency ???.</p>
+<p>Get information about currencies.</p>
 
 <p>Using the API you can do the following with currency data.</p>
 
@@ -2873,7 +2726,7 @@ List of includes go here
 <tr>
 <td>name_dede</td>
 <td>string</td>
-<td>?????</td>
+<td>Currency name in German</td>
 </tr>
 <tr>
 <td>name_enus</td>
@@ -2884,6 +2737,11 @@ List of includes go here
 <td>name_eses</td>
 <td>string</td>
 <td>Currency name in Spanish.</td>
+</tr>
+<tr>
+<td>name_esus</td>
+<td>string</td>
+<td>Currency name in Spanish / US</td>
 </tr>
 <tr>
 <td>name_frca</td>
@@ -2922,17 +2780,14 @@ List of includes go here
 </tr>
 </tbody></table>
 <h2 id='viewing-a-currency'>Viewing a Currency</h2>
-<p>This API allows you to view the details of a timer.</p>
+<p>This API allows you to view the details of a currency.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/currencies/[id]</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies/[id]</code></p>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk"</span> 
-     -H <span class="s2">"api-version: 3"</span> 
-     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
-     -X GET https://apps.nutcache.com/webapi/currencies/7
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/currencies/147
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2941,41 +2796,31 @@ List of includes go here
   </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentine"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Песо - Аргентина"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peso argentyńskie– Argentyna"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso - Argentina"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peso – Argentinien"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/7"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - United States of America"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos da América"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar amerykański – Stany Zjednoczone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Stati Uniti d'America"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Vereinigten Staaten von Amerika"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='list-all-currencies'>List all Currencies</h2>
 <p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/currencies</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk"</span> 
-     -H <span class="s2">"api-version: 3"</span> 
-     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
-     -X GET https://apps.nutcache.com/webapi/currencies
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/currencies?limit<span class="o">=</span>2&amp;page<span class="o">=</span>13
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2983,7 +2828,12 @@ List of includes go here
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=10&amp;page=2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=2&amp;page=12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies?limit=2&amp;page=14"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2991,26 +2841,35 @@ List of includes go here
   </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - United Arab Emirates"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Émirats arabes unis"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Дирхам - Объединенные Арабские Эмираты"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirados Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dirham ZEA – Zjednoczone Emiraty Arabskie"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emirati Arabi Uniti"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirham - Emiratos Árabes Unidos"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dirhem – Vereinigte Arabische Emirate"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/1"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Канада"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar kanadyjski – Kanada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Canadá"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kanadischer Dollar – Kanada"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CDF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Congolese Franc - Congo/Kinshasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franc congolais - République démocratique du Congo"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franc congolais - République démocratique du Congo"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Конголезский франк - Конго/Киншаса"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franco Congolês - Congo/Kinshasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frank kongijski – Kongo/Kinszasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franco - Congo/Kinshasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franco congoleño - Congo/Kinsasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Franco congoleño - Congo/Kinsasa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kongo-Franc – Demokratische Republik Kongo"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
