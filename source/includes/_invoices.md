@@ -645,7 +645,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-## Include
+## Include (Invoices)
 
 The following entity types can be included in this payload type
 

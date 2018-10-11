@@ -236,7 +236,7 @@ Using this API, you'd be able to fetch a list of organizations.
 
 ```
 
-## Include
+## Include (Organizations)
 
 The following entity types can be included in this payload type
 

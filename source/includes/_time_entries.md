@@ -491,7 +491,7 @@ Start and Endtime is timespan only \
 
 ## Creating Time Entry
 
-## Include
+## Include (Time entries)
 
 The following entity types can be included in this payload type
 

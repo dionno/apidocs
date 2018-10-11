@@ -289,7 +289,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 }
 ```
 
-## Include
+## Include (Timers)
 
 The following entity types can be included in this payload type
 
