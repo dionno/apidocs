@@ -6,12 +6,12 @@ Using the API you can do the following with project data.
 
 | Attribute                          | Type     | Description                            |
 |------------------------------------|----------|----------------------------------------|
-| billing_approved_entries_only      | True     | False     ????                         |
+| billing_approved_entries_only      | boolean  | ????                                   |
 | billing_invoice_method_fixed_fee   | number   | ?????                                  |
 | billing_invoice_method_hourly_rate | number   | ?????                                  |
 | billing_method                     | string   | Billing method.????bug returns string  |
-| budget_approved_only               | True     | False                                  |
-| budget_restrictive                 | True     | False                                  |
+| budget_approved_only               | boolean  |                                        |
+| budget_restrictive                 | boolean  |                                        |
 | budget_scope                       | string   |                                        |
 | budget_type                        | string   |                                        |
 | code                               | string   |                                        |
