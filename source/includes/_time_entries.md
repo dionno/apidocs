@@ -35,7 +35,10 @@ Use 'include' to embed additional details in the response.
 >Example
 
 ```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' -H 'api-version: 3' -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' -X GET https://apps.nutcache.com/webapi/time_entries/1
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/time_entries/1
 ```
 
 >Response
@@ -93,7 +96,10 @@ Using this API, you'd be able to fetch a list of time entries.
 >Example
 
 ```shell
-curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json" -X GET "[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/time_entries
 ```
 
 >Response
@@ -151,10 +157,13 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 
 ## Updating Time Entry
 
-Time entry \
-Depends on organisation setting Time Tracking mode \
-Depends on if project is billable. \
-Start and Endtime is timespan only \
+Time entry</br>
+
+Depends on organisation setting Time Tracking mode
+
+Depends on if project is billable
+
+Start and Endtime is timespan only
 
 ## Creating Time Entry
 

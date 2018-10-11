@@ -32,7 +32,10 @@ Use 'include' to embed additional details in the response.
 >Example
 
 ```shell
-curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json"-X GET "https://domain.freshsales.io/api/leads/1"
+curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
+     -H "api-version: 3" 
+	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
+	 -X GET https://apps.nutcache.com/webapi/timers/3546
 ```
 
 >Response
@@ -49,7 +52,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
       "max_end_time_utc": "2018-09-08T04:00:04",
       "time_start_utc": "2018-09-07T15:55:47.377",
       "minutes": 0,
-      "status": "Started",
+      "status": "1",
       "email_reminder_sent": false,
       "project": 7224,
       "links": [
@@ -84,7 +87,10 @@ Using this API, you'd be able to fetch a list of timers.
 >Example
 
 ```shell
-curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json" -X GET "[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"
+curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
+     -H "api-version: 3" 
+	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
+	 -X GET https://apps.nutcache.com/webapi/timers
 ```
 
 >Response
@@ -108,7 +114,7 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
       "max_end_time_utc": "2018-09-08T04:00:04",
       "time_start_utc": "2018-09-07T15:55:47.377",
       "minutes": 0,
-      "status": "Started",
+      "status": "1",
       "email_reminder_sent": false,
       "project": 7224,
       "links": [
@@ -124,161 +130,6 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
         },
         {
           "href": "timers/3546",
-          "rel": "self",
-          "type": "GET"
-        }
-      ],
-      "project_feature": null
-    },
-    {
-      "type": "timers",
-      "id": 3547,
-      "guid": "{f1cc59f9-2284-497f-bbe5-0b381ff73c9b}",
-      "member": 9015,
-      "time_start_local": "2018-09-07T11:56:00",
-      "max_end_time_utc": "2018-09-08T04:00:04",
-      "time_start_utc": "2018-09-07T15:56:06.517",
-      "minutes": 0,
-      "status": "Started",
-      "email_reminder_sent": false,
-      "project": 7224,
-      "links": [
-        {
-          "href": "projects/7224",
-          "rel": "projects",
-          "type": "GET"
-        },
-        {
-          "href": "members/9015",
-          "rel": "members",
-          "type": "GET"
-        },
-        {
-          "href": "timers/3547",
-          "rel": "self",
-          "type": "GET"
-        }
-      ],
-      "project_feature": null
-    },
-    {
-      "type": "timers",
-      "id": 3548,
-      "guid": "{c18e8799-ba44-436f-9bc7-62144e0100fe}",
-      "member": 9015,
-      "time_start_local": "2018-09-07T11:56:00",
-      "max_end_time_utc": "2018-09-08T04:00:04",
-      "time_start_utc": "2018-09-07T15:56:10.407",
-      "minutes": 0,
-      "status": "Started",
-      "email_reminder_sent": false,
-      "project": 7224,
-      "links": [
-        {
-          "href": "projects/7224",
-          "rel": "projects",
-          "type": "GET"
-        },
-        {
-          "href": "members/9015",
-          "rel": "members",
-          "type": "GET"
-        },
-        {
-          "href": "timers/3548",
-          "rel": "self",
-          "type": "GET"
-        }
-      ],
-      "project_feature": null
-    },
-    {
-      "type": "timers",
-      "id": 3549,
-      "guid": "{c1c136e5-6a21-4973-b135-c8c5e28541c1}",
-      "member": 9015,
-      "time_start_local": "2018-09-07T11:56:00",
-      "max_end_time_utc": "2018-09-08T04:00:04",
-      "time_start_utc": "2018-09-07T15:56:14.533",
-      "minutes": 0,
-      "status": "Started",
-      "email_reminder_sent": false,
-      "project": 7224,
-      "links": [
-        {
-          "href": "projects/7224",
-          "rel": "projects",
-          "type": "GET"
-        },
-        {
-          "href": "members/9015",
-          "rel": "members",
-          "type": "GET"
-        },
-        {
-          "href": "timers/3549",
-          "rel": "self",
-          "type": "GET"
-        }
-      ],
-      "project_feature": null
-    },
-    {
-      "type": "timers",
-      "id": 3550,
-      "guid": "{9f8d4863-4db4-442e-a879-0ba0045ee5b2}",
-      "member": 9015,
-      "time_start_local": "2018-09-07T11:56:00",
-      "max_end_time_utc": "2018-09-08T04:00:04",
-      "time_start_utc": "2018-09-07T15:56:15.937",
-      "minutes": 0,
-      "status": "Started",
-      "email_reminder_sent": false,
-      "project": 7224,
-      "links": [
-        {
-          "href": "projects/7224",
-          "rel": "projects",
-          "type": "GET"
-        },
-        {
-          "href": "members/9015",
-          "rel": "members",
-          "type": "GET"
-        },
-        {
-          "href": "timers/3550",
-          "rel": "self",
-          "type": "GET"
-        }
-      ],
-      "project_feature": null
-    },
-    {
-      "type": "timers",
-      "id": 3551,
-      "guid": "{56a51ace-f32f-4734-af65-8f01babf2c19}",
-      "member": 9015,
-      "time_start_local": "2018-09-07T11:56:00",
-      "max_end_time_utc": "2018-09-08T04:00:04",
-      "time_start_utc": "2018-09-07T15:56:16.72",
-      "minutes": 0,
-      "status": "Started",
-      "email_reminder_sent": false,
-      "project": 7224,
-      "links": [
-        {
-          "href": "projects/7224",
-          "rel": "projects",
-          "type": "GET"
-        },
-        {
-          "href": "members/9015",
-          "rel": "members",
-          "type": "GET"
-        },
-        {
-          "href": "timers/3551",
           "rel": "self",
           "type": "GET"
         }
