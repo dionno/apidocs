@@ -1,67 +1,95 @@
 # States
 
-A Nutcache currency ???.
+Get information about states.
 
-Using the API you can do the following with currency data.
+Using the API you can do the following with a state data.
 
-| Attribute       | Type   | Description                      |
-|-----------------|--------|----------------------------------|
-| code            | string | Currency code.                   |
-| decimal_count   | number | Number of decimal places.        |
-| id              | number | Unique identifier                |
-| name_dede       | string | ?????                            |
-| name_enus       | string | Currency name in US english.     |
-| name_eses       | string | Currency name in Spanish.        |
-| name_frca       | string | Currency name in French / Canada |
-| name_frfr       | string | Currency name in French / France |
-| name_itit       | string | Currency name in Italian         |
-| name_plpl       | string | Currency name in Polish          |
-| name_ptbr       | string | Currency name in Portuguese      |
-| name_ruru       | string | Currency name in Russian         |
-| type=currencies | string | Payload type.                    |
+| Attribute   | Type   | Description                                                                  |
+|-------------|--------|------------------------------------------------------------------------------|
+| code        | string | State code in the following format: <br>[Country 2 letter code]-[State code] |
+| country     | number | Unique identifier for a country                                              |
+| id          | number | Unique identifier                                                            |
+| name_dede   | string | State name in Germain                                                        |
+| name_enus   | string | State name in US english.                                                    |
+| name_eses   | string | State name in Spanish                                                        |
+| name_esus   | string | State name in Spanish / US                                                   |
+| name_frca   | string | State name in French / Canada                                                |
+| name_frfr   | string | State name in French / France                                                |
+| name_itit   | string | State name in Italian                                                        |
+| name_plpl   | string | State name in Polish                                                         |
+| name_ptbr   | string | State name in Portuguese                                                     |
+| name_ruru   | string | State name in Russian                                                        |
+| type=states | string | Payload type.                                                                |
 
-## Viewing a Currency
+## Viewing a State
 
-This API allows you to view the details of a timer.
+This API allows you to view the details of a state.
 
-<span class="http-method http-get">GET</span> `  /api/currencies/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/states/[id]`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
-
-List of includes go here
+Use 'includes' to embed additional details in the response.
+<br>
+<ul>
+  <li>countries</li>  
+</ul>
 </aside>
 
 >Example
 
 ```shell
-curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json"-X GET "https://domain.freshsales.io/api/leads/1"
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/states/12?includes=countries
 ```
 
 >Response
 
 ```json
 {
-  "currencies": [
+  "states": [
     {
-      "type": "currencies",
-      "id": 7,
-      "code": "ARS",
-      "decimal_count": 2,
-      "name_enus": "Peso - Argentina",
-      "name_frfr": "Peso - Argentine",
-      "name_frca": "Peso - Argentine",
-      "name_ruru": "Песо - Аргентина",
-      "name_ptbr": "Peso - Argentina",
-      "name_plpl": "peso argentyńskie– Argentyna",
-      "name_itit": "Peso - Argentina",
-      "name_eses": "Peso - Argentina",
-      "name_esus": "Peso - Argentina",
-      "name_dede": "Peso – Argentinien",
+      "type": "states",
+      "id": 12,
+      "country": {
+        "type": "countries",
+        "id": 231,
+        "code": "USA",
+        "short_code": "US",
+        "currency": 147,
+        "date_format": 1,
+        "time_format": 1,
+        "name_enus": "United States",
+        "name_frfr": "États-Unis",
+        "name_frca": "États-Unis",
+        "name_ruru": "Соединенные Штаты Америки",
+        "name_ptbr": "Estados Unidos",
+        "name_plpl": "Stany Zjednoczone",
+        "name_itit": "Stati Uniti",
+        "name_eses": "Estados Unidos",
+        "name_esus": "Estados Unidos",
+        "name_dede": "Vereinigte Staaten von Amerika",
+        "links": [
+          {
+            "href": "countries/231",
+            "rel": "self",
+            "type": "GET"
+          }
+        ]
+      },
+      "code": "US_NY",
+      "name_enus": "New York",
+      "name_frfr": "New York",
+      "name_frca": "New York",
+      "name_ruru": "Нью-Йорк",
+      "name_ptbr": "Nova York",
+      "name_plpl": "Nowy Jork",
+      "name_itit": "New York",
+      "name_eses": "Nueva York",
+      "name_esus": "Nueva York",
+      "name_dede": "New York",
       "links": [
         {
-          "href": "currencies/7",
-          "rel": "self",
+          "href": "countries/231",
+          "rel": "countries",
           "type": "GET"
         }
       ]
@@ -70,16 +98,16 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 }
 ```
 
-## List all Currencies
+## List all States
 
-Using this API, you'd be able to fetch a list of currencies.
+Using this API, you'd be able to fetch a list of countries.
 
-<span class="http-method http-get">GET</span> `/api/currencies`
+<span class="http-method http-get">GET</span> `/webapi/states`
 
 >Example
 
 ```shell
-curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: application/json" -X GET "[https://domain.freshsales.io/api/leads/filters](https://domain.freshsales.io/api/leads/filters)"
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/states?limit=2&page=26
 ```
 
 >Response
@@ -88,243 +116,59 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
 {
   "links": [
     {
-      "href": "currencies?limit=10&reference_id=1&seek_direction=previous",
+      "href": "states?limit=2&page=25",
       "rel": "navigation-previous",
       "type": "GET"
     },
     {
-      "href": "currencies?limit=10&reference_id=10&seek_direction=next",
+      "href": "states?limit=2&page=27",
       "rel": "navigation-next",
       "type": "GET"
     }
   ],
-  "currencies": [
+  "states": [
     {
-      "type": "currencies",
-      "id": 1,
-      "code": "AED",
-      "decimal_count": 2,
-      "name_enus": "Dirham - United Arab Emirates",
-      "name_frfr": "Dirham - Émirats arabes unis",
-      "name_frca": "Dirham - Émirats arabes unis",
-      "name_ruru": "Дирхам - Объединенные Арабские Эмираты",
-      "name_ptbr": "Dirham - Emirados Árabes Unidos",
-      "name_plpl": "dirham ZEA – Zjednoczone Emiraty Arabskie",
-      "name_itit": "Dirham - Emirati Arabi Uniti",
-      "name_eses": "Dirham - Emiratos Árabes Unidos",
-      "name_esus": "Dirham - Emiratos Árabes Unidos",
-      "name_dede": "Dirhem – Vereinigte Arabische Emirate",
+      "type": "states",
+      "id": 51,
+      "country": 231,
+      "code": "US_SC",
+      "name_enus": "South Carolina",
+      "name_frfr": "Caroline du Sud",
+      "name_frca": "Caroline du Sud",
+      "name_ruru": "Южная Каролина",
+      "name_ptbr": "Carolina do Sul",
+      "name_plpl": "Karolina Południowa",
+      "name_itit": "Carolina del Sud",
+      "name_eses": "Carolina del Sur",
+      "name_esus": "Carolina del Sur",
+      "name_dede": "South Carolina",
       "links": [
         {
-          "href": "currencies/1",
-          "rel": "self",
+          "href": "countries/231",
+          "rel": "countries",
           "type": "GET"
         }
       ]
     },
     {
-      "type": "currencies",
-      "id": 2,
-      "code": "AFN",
-      "decimal_count": 2,
-      "name_enus": "Afghani - Afghanistan",
-      "name_frfr": "Afghani - Afghanistan",
-      "name_frca": "Afghani - Afghanistan",
-      "name_ruru": "Афгани - Афганистан",
-      "name_ptbr": "Afegane - Afeganistão",
-      "name_plpl": "afgani – Afganistan",
-      "name_itit": "Afghani - Afghanistan",
-      "name_eses": "Afgani - Afganistán",
-      "name_esus": "Afgani - Afganistán",
-      "name_dede": "Afghani – Afghanistan",
+      "type": "states",
+      "id": 52,
+      "country": 40,
+      "code": "CA_SK",
+      "name_enus": "Saskatchewan",
+      "name_frfr": "Saskatchewan",
+      "name_frca": "Saskatchewan",
+      "name_ruru": "Саскачеван",
+      "name_ptbr": "Saskatchewan",
+      "name_plpl": "Saskatchewan",
+      "name_itit": "Saskatchewan",
+      "name_eses": "Saskatchewan",
+      "name_esus": "Saskatchewan",
+      "name_dede": "Saskatchewan",
       "links": [
         {
-          "href": "currencies/2",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 3,
-      "code": "ALL",
-      "decimal_count": 2,
-      "name_enus": "Lek - Albania",
-      "name_frfr": "Lek - Albanie",
-      "name_frca": "Lek - Albanie",
-      "name_ruru": "Лек - Албания",
-      "name_ptbr": "Lek - Albânia",
-      "name_plpl": "lek – Albania",
-      "name_itit": "Lek - Albania",
-      "name_eses": "Lek - Albania",
-      "name_esus": "Lek - Albania",
-      "name_dede": "Alle",
-      "links": [
-        {
-          "href": "currencies/3",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 4,
-      "code": "AMD",
-      "decimal_count": 2,
-      "name_enus": "Dram - Armenia",
-      "name_frfr": "Dram - Arménie",
-      "name_frca": "Dram - Arménie",
-      "name_ruru": "Драм - Армения",
-      "name_ptbr": "Dram - Armênia",
-      "name_plpl": "dram armeński – Armenia",
-      "name_itit": "Dram - Armenia",
-      "name_eses": "Dram - Armenia",
-      "name_esus": "Dram - Armenia",
-      "name_dede": "Dram – Armenien",
-      "links": [
-        {
-          "href": "currencies/4",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 5,
-      "code": "ANG",
-      "decimal_count": 2,
-      "name_enus": "Guilder - Netherlands Antilles",
-      "name_frfr": "Florin - Antilles néerlandaises",
-      "name_frca": "Florin - Antilles néerlandaises",
-      "name_ruru": "Гульден - Нидерландские Антильские острова",
-      "name_ptbr": "Florim - Antilhas Holandesas",
-      "name_plpl": "gulden Antyli Holenderskich – Antyle Holenderskie",
-      "name_itit": "Fiorino - Antille Olandesi",
-      "name_eses": "Florín - Antillas Neerlandesas",
-      "name_esus": "Florín - Antillas Neerlandesas",
-      "name_dede": "Antillen-Gulden – Niederländische Antillen",
-      "links": [
-        {
-          "href": "currencies/5",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 6,
-      "code": "AOA",
-      "decimal_count": 2,
-      "name_enus": "Kwanza - Angola",
-      "name_frfr": "Kwanza - Angola",
-      "name_frca": "Kwanza - Angola",
-      "name_ruru": "Кванза - Ангола",
-      "name_ptbr": "Kwanza - Angola",
-      "name_plpl": "kwanza – Angola",
-      "name_itit": "Kwanza - Angola",
-      "name_eses": "Kwanza - Angola",
-      "name_esus": "Kwanza - Angola",
-      "name_dede": "Kwanza – Angola",
-      "links": [
-        {
-          "href": "currencies/6",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 7,
-      "code": "ARS",
-      "decimal_count": 2,
-      "name_enus": "Peso - Argentina",
-      "name_frfr": "Peso - Argentine",
-      "name_frca": "Peso - Argentine",
-      "name_ruru": "Песо - Аргентина",
-      "name_ptbr": "Peso - Argentina",
-      "name_plpl": "peso argentyńskie– Argentyna",
-      "name_itit": "Peso - Argentina",
-      "name_eses": "Peso - Argentina",
-      "name_esus": "Peso - Argentina",
-      "name_dede": "Peso – Argentinien",
-      "links": [
-        {
-          "href": "currencies/7",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 8,
-      "code": "AUD",
-      "decimal_count": 2,
-      "name_enus": "Dollar - Australia",
-      "name_frfr": "Dollar - Australie",
-      "name_frca": "Dollar - Australie",
-      "name_ruru": "Доллар - Австралия",
-      "name_ptbr": "Dólar - Austrália",
-      "name_plpl": "dolar australijski – Australia",
-      "name_itit": "Dollaro - Australia",
-      "name_eses": "Dólar - Australia",
-      "name_esus": "Dólar - Australia",
-      "name_dede": "Australischer Dollar – Australien",
-      "links": [
-        {
-          "href": "currencies/8",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 9,
-      "code": "AWG",
-      "decimal_count": 2,
-      "name_enus": "Guilder - Aruba",
-      "name_frfr": "Florin - Aruba",
-      "name_frca": "Florin - Aruba",
-      "name_ruru": "Гульден - Аруба",
-      "name_ptbr": "Florim - Aruba",
-      "name_plpl": "gulden arubański – Aruba",
-      "name_itit": "Fiorino - Aruba",
-      "name_eses": "Florín - Aruba",
-      "name_esus": "Florín - Aruba",
-      "name_dede": "Aruba-Florin – Aruba",
-      "links": [
-        {
-          "href": "currencies/9",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
-    },
-    {
-      "type": "currencies",
-      "id": 10,
-      "code": "AZN",
-      "decimal_count": 2,
-      "name_enus": "Manat - Azerbaijan",
-      "name_frfr": "Manat - Azerbaïdjan",
-      "name_frca": "Manat - Azerbaïdjan",
-      "name_ruru": "Манат - Азербайджан",
-      "name_ptbr": "Manat - Azerbaijão",
-      "name_plpl": "manat azerbejdżański– Azerbejdżan",
-      "name_itit": "Manat - Azerbaigian",
-      "name_eses": "Manat - Azerbaiyán",
-      "name_esus": "Manat - Azerbaiyán",
-      "name_dede": "Aserbaidschan-Manat – Aserbeidschan",
-      "links": [
-        {
-          "href": "currencies/10",
-          "rel": "self",
+          "href": "countries/40",
+          "rel": "countries",
           "type": "GET"
         }
       ]

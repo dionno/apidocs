@@ -1,6 +1,6 @@
 # Currencies
 
-A Nutcache currency ???.
+Get information about currencies.
 
 Using the API you can do the following with currency data.
 
@@ -9,9 +9,10 @@ Using the API you can do the following with currency data.
 | code            | string | Currency code.                   |
 | decimal_count   | number | Number of decimal places.        |
 | id              | number | Unique identifier                |
-| name_dede       | string | ?????                            |
+| name_dede       | string | Currency name in German          |
 | name_enus       | string | Currency name in US english.     |
 | name_eses       | string | Currency name in Spanish.        |
+| name_esus       | string | Currency name in Spanish / US    |
 | name_frca       | string | Currency name in French / Canada |
 | name_frfr       | string | Currency name in French / France |
 | name_itit       | string | Currency name in Italian         |
@@ -22,17 +23,14 @@ Using the API you can do the following with currency data.
 
 ## Viewing a Currency
 
-This API allows you to view the details of a timer.
+This API allows you to view the details of a currency.
 
-<span class="http-method http-get">GET</span> `  /api/currencies/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/currencies/[id]`
 
 >Example
 
 ```shell
-curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
-     -H "api-version: 3" 
-	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
-	 -X GET https://apps.nutcache.com/webapi/currencies/7
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/currencies/147
 ```
 
 >Response
@@ -42,26 +40,19 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   "currencies": [
     {
       "type": "currencies",
-      "id": 7,
-      "code": "ARS",
+      "id": 147,
+      "code": "USD",
       "decimal_count": 2,
-      "name_enus": "Peso - Argentina",
-      "name_frfr": "Peso - Argentine",
-      "name_frca": "Peso - Argentine",
-      "name_ruru": "Песо - Аргентина",
-      "name_ptbr": "Peso - Argentina",
-      "name_plpl": "peso argentyńskie– Argentyna",
-      "name_itit": "Peso - Argentina",
-      "name_eses": "Peso - Argentina",
-      "name_esus": "Peso - Argentina",
-      "name_dede": "Peso – Argentinien",
-      "links": [
-        {
-          "href": "currencies/7",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
+      "name_enus": "Dollar - United States of America",
+      "name_frfr": "Dollar - Etats-Unis d'Amérique",
+      "name_frca": "Dollar - Etats-Unis d'Amérique",
+      "name_ruru": "Доллар - Соединенные Штаты Америки",
+      "name_ptbr": "Dólar - Estados Unidos da América",
+      "name_plpl": "dolar amerykański – Stany Zjednoczone",
+      "name_itit": "Dollaro - Stati Uniti d'America",
+      "name_eses": "Dólar - Estados Unidos",
+      "name_esus": "Dólar - Estados Unidos",
+      "name_dede": "Dollar - Vereinigten Staaten von Amerika"
     }
   ]
 }
@@ -71,15 +62,12 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of currencies.
 
-<span class="http-method http-get">GET</span> `/api/currencies`
+<span class="http-method http-get">GET</span> `/webapi/currencies`
 
 >Example
 
 ```shell
-curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
-     -H "api-version: 3" 
-	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
-	 -X GET https://apps.nutcache.com/webapi/currencies
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/currencies?limit=2&page=13
 ```
 
 >Response
@@ -88,7 +76,12 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 {
   "links": [
     {
-      "href": "currencies?limit=10&page=2",
+      "href": "currencies?limit=2&page=12",
+      "rel": "navigation-previous",
+      "type": "GET"
+    },
+    {
+      "href": "currencies?limit=2&page=14",
       "rel": "navigation-next",
       "type": "GET"
     }
@@ -96,26 +89,35 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   "currencies": [
     {
       "type": "currencies",
-      "id": 1,
-      "code": "AED",
+      "id": 25,
+      "code": "CAD",
       "decimal_count": 2,
-      "name_enus": "Dirham - United Arab Emirates",
-      "name_frfr": "Dirham - Émirats arabes unis",
-      "name_frca": "Dirham - Émirats arabes unis",
-      "name_ruru": "Дирхам - Объединенные Арабские Эмираты",
-      "name_ptbr": "Dirham - Emirados Árabes Unidos",
-      "name_plpl": "dirham ZEA – Zjednoczone Emiraty Arabskie",
-      "name_itit": "Dirham - Emirati Arabi Uniti",
-      "name_eses": "Dirham - Emiratos Árabes Unidos",
-      "name_esus": "Dirham - Emiratos Árabes Unidos",
-      "name_dede": "Dirhem – Vereinigte Arabische Emirate",
-      "links": [
-        {
-          "href": "currencies/1",
-          "rel": "self",
-          "type": "GET"
-        }
-      ]
+      "name_enus": "Dollar - Canada",
+      "name_frfr": "Dollar - Canada",
+      "name_frca": "Dollar - Canada",
+      "name_ruru": "Доллар - Канада",
+      "name_ptbr": "Dólar - Canadá",
+      "name_plpl": "dolar kanadyjski – Kanada",
+      "name_itit": "Dollaro - Canada",
+      "name_eses": "Dólar - Canadá",
+      "name_esus": "Dólar - Canadá",
+      "name_dede": "Kanadischer Dollar – Kanada"
+    },
+    {
+      "type": "currencies",
+      "id": 26,
+      "code": "CDF",
+      "decimal_count": 2,
+      "name_enus": "Congolese Franc - Congo/Kinshasa",
+      "name_frfr": "Franc congolais - République démocratique du Congo",
+      "name_frca": "Franc congolais - République démocratique du Congo",
+      "name_ruru": "Конголезский франк - Конго/Киншаса",
+      "name_ptbr": "Franco Congolês - Congo/Kinshasa",
+      "name_plpl": "frank kongijski – Kongo/Kinszasa",
+      "name_itit": "Franco - Congo/Kinshasa",
+      "name_eses": "Franco congoleño - Congo/Kinsasa",
+      "name_esus": "Franco congoleño - Congo/Kinsasa",
+      "name_dede": "Kongo-Franc – Demokratische Republik Kongo"
     }
   ]
 }
