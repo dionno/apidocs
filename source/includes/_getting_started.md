@@ -54,7 +54,7 @@ You can request for additional entities using the "include" keyword up to one le
 >Example
 
 ```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
 	 -H 'api-version: 3' -H 'CompanyGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://devapps.nutcache.com/webapi/projects?include=organizations
 ```
@@ -70,7 +70,7 @@ API responses that return a list of objects, such as Projects, Customers or Time
 >Example
 
 ```shell
-curl -i -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=" 
+curl -i -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
 	 -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET "https://devapps.nutcache.com/webapi/customers?limit=10&page=2
 ```

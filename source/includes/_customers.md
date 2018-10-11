@@ -40,13 +40,13 @@ List of includes go here
 >Example
 
 ```shell
-curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=" -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" -X GET https://devapps.nutcache.com/webapi/customers
+curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" -X GET https://devapps.nutcache.com/webapi/customers
 ```
 
 GET https://devapps.nutcache.com/webapi/customers/143222 HTTP/1.1
 User-Agent: Fiddler
 Host: devapps.nutcache.com
-Authorization: nut-basic pHIREh3p2PquBMmwQIqWX34EEU6MxRwL5t2BaKau:nutcache1@gmail.com:Dynacom123
+Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk
 OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E
 api-version: 3
 
@@ -105,7 +105,7 @@ Using this API, you'd be able to fetch a list of customers.
 >Example
 
 ```shell
-curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=" -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" -X GET https://devapps.nutcache.com/webapi/customers
+curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" -H "api-version: 3" -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" -X GET https://devapps.nutcache.com/webapi/customers
 ```
 
 >Response
