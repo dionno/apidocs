@@ -27,8 +27,6 @@ This API allows you to view the details of a timer.
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
 </aside>
 
 >Example
@@ -290,3 +288,14 @@ curl -H "Authorization: Token token=sfg999666t673t7t82" -H "Content-Type: applic
   ]
 }
 ```
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type             | Description                                      |
+|------------------|--------------------------------------------------|
+| projects         | The project associated with the timer            |
+| project_features | The task associated with the timer               |
+| sprint_stories   | The project board card associated with the timer |
+| members          | The member associated with the timer             |

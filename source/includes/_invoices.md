@@ -43,8 +43,6 @@ This API allows you to view an invoice.
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
 </aside>
 
 >Example
@@ -646,3 +644,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type            | Description                               |
+|-----------------|-------------------------------------------|
+| organizations   | The organization containing this invoice  |
+| customers       | The customer associated with this invoice |
+| members         | The responsible member for this invoice   |
+| invoice_details | The invoice's detail rows                 |
+| invoice_taxes   | The taxes summary of this invoice         |

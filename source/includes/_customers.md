@@ -33,8 +33,6 @@ This API allows you to view the details of a customer.
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
 </aside>
 
 >Example
@@ -404,3 +402,14 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type          | Description                               |
+|---------------|-------------------------------------------|
+| organizations | The organization containing the customer  |
+| taxes         | The taxes associated with this customer   |
+| countries     | The country associated with this customer |
+| states        | The state associated with this customer   |

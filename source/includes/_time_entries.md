@@ -30,8 +30,6 @@ This API allows you to view the details of a time entry.
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
 </aside>
 
 >Example
@@ -492,3 +490,15 @@ Depends on if project is billable. \
 Start and Endtime is timespan only \
 
 ## Creating Time Entry
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type             | Description                                 |
+|------------------|---------------------------------------------|
+| organizations    | The organisation containing this time entry |
+| projects         | The project associated with this time entry |
+| project_features | The task associated with this time entry    |
+| members          | The member associated with this time entry  |
+| invoices         | The invoice associated with this time entry |

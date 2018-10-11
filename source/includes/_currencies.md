@@ -26,12 +26,6 @@ This API allows you to view the details of a timer.
 
 <span class="http-method http-get">GET</span> `  /api/currencies/[id]`
 
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-
-List of includes go here
-</aside>
-
 >Example
 
 ```shell

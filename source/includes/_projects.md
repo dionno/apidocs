@@ -45,8 +45,6 @@ This API allows you to view the details of a project.
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
 </aside>
 
 >Example
@@ -647,3 +645,16 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type             | Description                               |
+|------------------|-------------------------------------------|
+| organizations    | The organization containing this project  |
+| customers        | The customer associated with this project |
+| project_budgets  | The budget summary of this project        |
+| project_features | The tasks associated with this project    |
+| project_members  | The members assigned to this project      |
+| project_managers | The managers assigned to this project     |

@@ -47,10 +47,6 @@ URL Parameters
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
-
-List of includes go here
-
-Countries, states, currencies
 </aside>
 
 >Example
@@ -239,3 +235,13 @@ Using this API, you'd be able to fetch a list of organizations.
 }
 
 ```
+
+## Include
+
+The following entity types can be included in this payload type
+
+| Type       | Description                                    |
+|------------|------------------------------------------------|
+| countries  | The country associated with this organization  |
+| states     | The state associated with this organization    |
+| currencies | The currency associated with this organization |
