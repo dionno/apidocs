@@ -18,6 +18,8 @@ includes:
   - time_entries
   - timers
   - invoices
+  - countries
+  - states
   - currencies
   - search
   - errors
