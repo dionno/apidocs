@@ -191,7 +191,7 @@ If you want to see the details of an invoice
 <span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
 
 <aside class="notice">
-The details of an invoice can also be filtered using ==link==
+The details of an invoice can also be filtered using filtered searches
 </aside>
 
 >Example
@@ -271,7 +271,7 @@ If you want to see the taxes of an invoice
 <span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using ==link==
+The taxes of an invoice can also be filtered using filtered searches
 </aside>
 
 >Example
