@@ -290,6 +290,8 @@ If you want to see the taxes of an invoice
 The taxes of an invoice can also be filtered using filtered searches
 </aside>
 
+Invoice taxes data
+
 | Attribute       | Type    | Description                           |
 |-----------------|---------|---------------------------------------|
 | code            | string  |                                       |
