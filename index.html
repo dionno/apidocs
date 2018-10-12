@@ -2195,8 +2195,69 @@ Use 'include' to embed additional details in the response.
 <p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_details</code></p>
 
 <aside class="notice">
-The details of an invoice can also be filtered using ==link==
+The details of an invoice can also be filtered using filtered searches
 </aside>
+
+<p>Invoice details data</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>description</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier for an invoice detail.</td>
+</tr>
+<tr>
+<td>invoice</td>
+<td>number</td>
+<td>Unique identifier for an invoice.</td>
+</tr>
+<tr>
+<td>invoice_detail_type</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>item</td>
+<td>number</td>
+<td>Unique identifier for an item.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td></td>
+</tr>
+<tr>
+<td>project</td>
+<td>number</td>
+<td>Unique identifier for a project.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>decimal</td>
+<td></td>
+</tr>
+<tr>
+<td>tax</td>
+<td>number</td>
+<td>Unique identifier for an invoice tax.</td>
+</tr>
+<tr>
+<td>total_price</td>
+<td>decimal</td>
+<td></td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>Example</p>
@@ -2272,8 +2333,59 @@ The details of an invoice can also be filtered using ==link==
 <p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_taxes</code></p>
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using ==link==
+The taxes of an invoice can also be filtered using filtered searches
 </aside>
+
+<p>Invoice taxes data</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>compound</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>identification</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>invoice</td>
+<td>number</td>
+<td>Unique identifier for an invoice.</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>decimal</td>
+<td></td>
+</tr>
+<tr>
+<td>sequence_number</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>tax</td>
+<td>number</td>
+<td>Unique identifier for an invoice tax.</td>
+</tr>
+<tr>
+<td>total</td>
+<td>decimal</td>
+<td></td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>Example</p>
