@@ -330,6 +330,12 @@
                     <a href="#list-all-invoices" class="toc-h2 toc-link" data-title="List all invoices">List all invoices</a>
                   </li>
                   <li>
+                    <a href="#view-invoice-details" class="toc-h2 toc-link" data-title="View invoice details">View invoice details</a>
+                  </li>
+                  <li>
+                    <a href="#view-invoice-taxes" class="toc-h2 toc-link" data-title="View invoice taxes">View invoice taxes</a>
+                  </li>
+                  <li>
                     <a href="#include-invoices" class="toc-h2 toc-link" data-title="Include (Invoices)">Include (Invoices)</a>
                   </li>
               </ul>
@@ -705,9 +711,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>
-<span class="sb">`</span>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
-      -H <span class="s1">'api-version: 3'</span> 
-      -X GET https://apps.nutcache.com/webapi/organizations
+curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/organizations
 
 </code></pre>
 <blockquote>
@@ -1300,13 +1306,6 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers
 </code></pre>
-<p>GET https://apps.nutcache.com/webapi/customers/143222 HTTP/1.1
-User-Agent: Fiddler
-Host: apps.nutcache.com
-Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk
-OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E
-api-version: 3</p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -2190,6 +2189,164 @@ Use 'include' to embed additional details in the response.
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='view-invoice-details'>View invoice details</h2>
+<p>If you want to see the details of an invoice </p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_details</code></p>
+
+<aside class="notice">
+The details of an invoice can also be filtered using ==link==
+</aside>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
+     -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"invoice_details"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"invoice_details"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">23925</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Administration - non taxable"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">60.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_price"</span><span class="p">:</span><span class="mf">60.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice_detail_type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="mi">7289</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"projects/7289"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"invoices/9287"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"invoices"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"item"</span><span class="p">:</span><span class="mi">337521</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax"</span><span class="p">:</span><span class="mi">375</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="mi">9287</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"invoice_details"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">23926</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Administration - taxable"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">40.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_price"</span><span class="p">:</span><span class="mf">40.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice_detail_type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="mi">7224</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"projects/7224"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"invoices/9287"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"invoices"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"item"</span><span class="p">:</span><span class="mi">337523</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax"</span><span class="p">:</span><span class="mi">376</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="mi">9287</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='view-invoice-taxes'>View invoice taxes</h2>
+<p>If you want to see the taxes of an invoice </p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_taxes</code></p>
+
+<aside class="notice">
+The taxes of an invoice can also be filtered using ==link==
+</aside>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
+     -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"invoice_taxes"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"invoice_taxes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="mf">7.8000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"HST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"compound"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"identification"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">0.130000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sequence_number"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="mi">9287</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"invoices/9287"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"invoices"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"tax"</span><span class="p">:</span><span class="mi">375</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"invoice_taxes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="mf">3.9900</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"QST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"compound"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"identification"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">0.099750</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sequence_number"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="mi">9287</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"invoices/9287"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"invoices"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"tax"</span><span class="p">:</span><span class="mi">376</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"invoice_taxes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="mf">2.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"GST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"compound"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"identification"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">0.050000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sequence_number"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="mi">9287</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="s2">"invoices/9287"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="s2">"invoices"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"GET"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"tax"</span><span class="p">:</span><span class="mi">376</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='include-invoices'>Include (Invoices)</h2>
 <p>The following entity types can be included in this payload type</p>
 
@@ -2325,16 +2482,14 @@ Use 'include' to embed additional details in the response.
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
-<br>
-<ul>
-  <li>currencies</li>  
-</ul>
 </aside>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/countries/231?includes<span class="o">=</span>currencies
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/countries/231?includes<span class="o">=</span>currencies
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2392,7 +2547,9 @@ Use 'includes' to embed additional details in the response.
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/countries?limit<span class="o">=</span>2&amp;page<span class="o">=</span>20
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/countries?limit<span class="o">=</span>2&amp;page<span class="o">=</span>20
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2555,16 +2712,14 @@ Use 'includes' to embed additional details in the response.
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
-<br>
-<ul>
-  <li>countries</li>  
-</ul>
 </aside>
 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/states/12?includes<span class="o">=</span>countries
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/states/12?includes<span class="o">=</span>countries
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2629,7 +2784,9 @@ Use 'includes' to embed additional details in the response.
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/states?limit<span class="o">=</span>2&amp;page<span class="o">=</span>26
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/states?limit<span class="o">=</span>2&amp;page<span class="o">=</span>26
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2787,7 +2944,9 @@ Use 'includes' to embed additional details in the response.
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/currencies/147
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/currencies/147
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2820,7 +2979,9 @@ Use 'includes' to embed additional details in the response.
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> -H <span class="s1">'api-version: 3'</span> -X GET https://apps.nutcache.com/webapi/currencies?limit<span class="o">=</span>2&amp;page<span class="o">=</span>13
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -X GET https://apps.nutcache.com/webapi/currencies?limit<span class="o">=</span>2&amp;page<span class="o">=</span>13
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2916,7 +3077,12 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> -H <span class="s1">'Content-Type:application/json'</span> -H <span class="s1">'api-version: 3'</span> -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> -X POST https://apps.nutcache.com/webapi/customers/filtered -d <span class="s1">'{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'</span>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'Content-Type:application/json'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
+     -X POST https://apps.nutcache.com/webapi/customers/filtered 
+     -d <span class="s1">'{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'</span>
 </code></pre><h2 id='filter-operators'>Filter Operators</h2>
 <table><thead>
 <tr>
