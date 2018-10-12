@@ -30,7 +30,9 @@ This API allows you to view the details of a currency.
 >Example
 
 ```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/currencies/147
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
+     -H 'api-version: 3' 
+	 -X GET https://apps.nutcache.com/webapi/currencies/147
 ```
 
 >Response
@@ -67,7 +69,9 @@ Using this API, you'd be able to fetch a list of currencies.
 >Example
 
 ```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' -H 'api-version: 3' -X GET https://apps.nutcache.com/webapi/currencies?limit=2&page=13
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
+     -H 'api-version: 3' 
+	 -X GET https://apps.nutcache.com/webapi/currencies?limit=2&page=13
 ```
 
 >Response

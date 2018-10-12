@@ -50,7 +50,12 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 >Example
 
 ```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' -H 'Content-Type:application/json' -H 'api-version: 3' -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' -X POST https://apps.nutcache.com/webapi/customers/filtered -d '{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'Content-Type:application/json' 
+	 -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X POST https://apps.nutcache.com/webapi/customers/filtered 
+	 -d '{"filter_rules": [{"property": "name","operator": "ct","value": "Test"}]}'
 ```
 
 ## Filter Operators

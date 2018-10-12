@@ -191,15 +191,19 @@ If you want to see the details of an invoice
 <span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
 
 <aside class="notice">
-The details of an invoice can also be filtered using
-<span class="http-method http-post">POST</span> `  /api/invoices/[id]/invoice_details/filtered`
+The details of an invoice can also be filtered using ==link==
 </aside>
+
+>Example
+
 ```shell
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3' 
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details
 ```
+
+>Response
 
 ```json
 {
@@ -256,58 +260,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 			"item":337523,
 			"tax":376,
 			"invoice":9287
-		},
-		{
-			"type":"invoice_details",
-			"id":34487,
-			"description":"TESTPRD1",
-			"quantity":1.0000,
-			"price":12.0000,
-			"total_price":12.0000,
-			"invoice_detail_type":0,
-			"project":6667,
-			"links":
-				[
-					{
-					"href":"projects/6667",
-					"rel":"projects",
-					"type":"GET"
-					},
-					{
-					"href":"invoices/9287",
-					"rel":"invoices",
-					"type":"GET"
-					}
-				],
-			"item":342901,
-			"tax":null,
-			"invoice":9287
-		},
-		{
-			"type":"invoice_details",
-			"id":34703,
-			"description":"[Label test destination] [2018-09-28] Expense 4 with project and taxes[Domenic Rico] ",
-			"quantity":1.0000,
-			"price":1200.0000,
-			"total_price":1200.0000,
-			"invoice_detail_type":0,
-			"project":6667,
-			"links":
-				[
-					{
-					"href":"projects/6667",
-					"rel":"projects",
-					"type":"GET"
-					},
-					{
-					"href":"invoices/9287",
-					"rel":"invoices",
-					"type":"GET"
-					}
-				],
-			"item":null,
-			"tax":null,
-			"invoice":9287
 		}
 	]
 }
@@ -319,9 +271,10 @@ If you want to see the taxes of an invoice
 <span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using
-<span class="http-method http-post">POST</span> `  /api/invoices/[id]/invoice_taxes/filtered`
+The taxes of an invoice can also be filtered using ==link==
 </aside>
+
+>Example
 
 ```shell
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
@@ -329,6 +282,8 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes
 ```
+
+>Response
 
 ```json
 {
