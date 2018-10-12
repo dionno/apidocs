@@ -413,8 +413,6 @@
 
 <p>Authorization: nut-basic [Base64(<em>public-key</em>:<em>username</em>:<em>password</em>)]</p>
 <h2 id='organization-context'>Organization Context</h2>
-<p>An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.</p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -422,7 +420,9 @@
      -H <span class="s2">"api-version: 3"</span> 
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span>
      -X GET https://apps.nutcache.com/webapi/customers
-</code></pre><h2 id='schema'>Schema</h2>
+</code></pre>
+<p>An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.</p>
+<h2 id='schema'>Schema</h2>
 <p>Blank Fields: </br>
 Blank fields are made null instead of being omitted.</p>
 
@@ -442,8 +442,6 @@ YYYY-MM-DDTHH:MM:SS±hhmm  </br>
 If the time zone information is not present, it will be assumed to be in UTC. </br>
 A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010-03-23T12:00</p>
 <h2 id='embedding'>Embedding</h2>
-<p>You can request for additional entities using the &quot;include&quot; keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.</p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -452,12 +450,12 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
      -H <span class="s1">'CompanyGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/projects?include<span class="o">=</span>organizations
 </code></pre>
+<p>You can request for additional entities using the &quot;include&quot; keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.</p>
+
 <aside class="notice">
 Refer to each resource for more information on which entities can be included.
 </aside>
 <h2 id='pagination'>Pagination</h2>
-<p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you&#39;d like to retrieve the Time Entries from 11 to 20 use,</p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -465,7 +463,9 @@ Refer to each resource for more information on which entities can be included.
      -H <span class="s2">"api-version: 3"</span> 
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET <span class="s2">"https://apps.nutcache.com/webapi/customers?limit=10&amp;page=2
-</span></code></pre><h2 id='rate-limit'>Rate Limit</h2>
+</span></code></pre>
+<p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you&#39;d like to retrieve the Time Entries from 11 to 20 use,</p>
+<h2 id='rate-limit'>Rate Limit</h2>
 <p>A rate limit of 20 000 api calls per API key is allowed.</p>
 
 <p>If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
@@ -620,28 +620,6 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 </tr>
 </tbody></table>
 <h2 id='viewing-an-organization'>Viewing an Organization</h2>
-<p>This API allows you to view the details of an organization.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/organizations/&lt;id&gt;</code></p>
-
-<p>URL Parameters</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The organization id to retrieve.</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -704,9 +682,29 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h2 id='list-all-organizations'>List all Organizations</h2>
-<p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
+</span></code></pre>
+<p>This API allows you to view the details of an organization.</p>
 
+<p><span class="http-method http-get">GET</span> <code>/api/organizations/&lt;id&gt;</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The organization id to retrieve.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+<h2 id='list-all-organizations'>List all Organizations</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -825,7 +823,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre><h2 id='include-organizations'>Include (Organizations)</h2>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
+<h2 id='include-organizations'>Include (Organizations)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -1006,14 +1006,6 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tr>
 </tbody></table>
 <h2 id='viewing-a-project'>Viewing a Project</h2>
-<p>This API allows you to view the details of a project.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/projects/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1077,11 +1069,15 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-projects'>List all Projects</h2>
-<p><span class="http-method http-get">GET</span> <code>/api/projects</code></p>
+</span></code></pre>
+<p>This API allows you to view the details of a project.</p>
 
-<p>Using this API, you&#39;d be able to fetch a list of projects.</p>
+<p><span class="http-method http-get">GET</span> <code>/api/projects/[id]</code></p>
 
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+<h2 id='list-all-projects'>List all Projects</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1152,7 +1148,11 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include-projects'>Include (Projects)</h2>
+</span></code></pre>
+<p><span class="http-method http-get">GET</span> <code>/api/projects</code></p>
+
+<p>Using this API, you&#39;d be able to fetch a list of projects.</p>
+<h2 id='include-projects'>Include (Projects)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -1290,14 +1290,6 @@ Use 'include' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-a-customer'>Viewing a Customer</h2>
-<p>This API allows you to view the details of a customer.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/customers/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1306,6 +1298,14 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers
 </code></pre>
+<p>This API allows you to view the details of a customer.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/customers/[id]</code></p>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1351,10 +1351,6 @@ Use 'include' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='list-all-customers'>List all Customers</h2>
-<p>Using this API, you&#39;d be able to fetch a list of customers.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1363,6 +1359,10 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers
 </code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of customers.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1528,14 +1528,6 @@ Use 'include' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-a-time-entry'>Viewing a Time Entry</h2>
-<p>This API allows you to view the details of a time entry.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/time_entries/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1588,11 +1580,15 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-time-entries'>List all Time Entries</h2>
-<p>Using this API, you&#39;d be able to fetch a list of time entries.</p>
+</span></code></pre>
+<p>This API allows you to view the details of a time entry.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/time_entries</code></p>
+<p><span class="http-method http-get">GET</span> <code>/api/time_entries/[id]</code></p>
 
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+<h2 id='list-all-time-entries'>List all Time Entries</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1652,7 +1648,11 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='updating-time-entry'>Updating Time Entry</h2>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of time entries.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/time_entries</code></p>
+<h2 id='updating-time-entry'>Updating Time Entry</h2>
 <p>Time entry</br></p>
 
 <p>Depends on organisation setting Time Tracking mode</p>
@@ -1764,14 +1764,6 @@ Use 'include' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-a-timer'>Viewing a Timer</h2>
-<p>This API allows you to view the details of a timer.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/timers/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1780,6 +1772,14 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/timers/3546
 </code></pre>
+<p>This API allows you to view the details of a timer.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/timers/[id]</code></p>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1819,10 +1819,6 @@ Use 'include' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='list-all-timers'>List all Timers</h2>
-<p>Using this API, you&#39;d be able to fetch a list of timers.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/timers</code></p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1831,6 +1827,10 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/timers
 </code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of timers.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/timers</code></p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -2046,14 +2046,6 @@ Use 'include' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-an-invoice'>Viewing an Invoice</h2>
-<p>This API allows you to view an invoice.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2062,6 +2054,14 @@ Use 'include' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices/9287
 </code></pre>
+<p>This API allows you to view an invoice.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]</code></p>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -2120,10 +2120,6 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='list-all-invoices'>List all invoices</h2>
-<p>Using this API, you&#39;d be able to fetch a list of invoices.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/invoices/</code></p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2132,6 +2128,10 @@ Use 'include' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices
 </code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of invoices.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/</code></p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -2190,75 +2190,6 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='view-invoice-details'>View invoice details</h2>
-<p>If you want to see the details of an invoice </p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_details</code></p>
-
-<aside class="notice">
-The details of an invoice can also be filtered using filtered searches
-</aside>
-
-<p>Invoice details data</p>
-
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>description</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>id</td>
-<td>number</td>
-<td>Unique identifier for an invoice detail.</td>
-</tr>
-<tr>
-<td>invoice</td>
-<td>number</td>
-<td>Unique identifier for an invoice.</td>
-</tr>
-<tr>
-<td>invoice_detail_type</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>item</td>
-<td>number</td>
-<td>Unique identifier for an item.</td>
-</tr>
-<tr>
-<td>price</td>
-<td>decimal</td>
-<td></td>
-</tr>
-<tr>
-<td>project</td>
-<td>number</td>
-<td>Unique identifier for a project.</td>
-</tr>
-<tr>
-<td>quantity</td>
-<td>decimal</td>
-<td></td>
-</tr>
-<tr>
-<td>tax</td>
-<td>number</td>
-<td>Unique identifier for an invoice tax.</td>
-</tr>
-<tr>
-<td>total_price</td>
-<td>decimal</td>
-<td></td>
-</tr>
-</tbody></table>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2327,16 +2258,16 @@ The details of an invoice can also be filtered using filtered searches
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='view-invoice-taxes'>View invoice taxes</h2>
-<p>If you want to see the taxes of an invoice </p>
+</span></code></pre>
+<p>If you want to see the details of an invoice </p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_taxes</code></p>
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_details</code></p>
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using filtered searches
+The details of an invoice can also be filtered using filtered searches
 </aside>
 
-<p>Invoice taxes data</p>
+<p>Invoice details data</p>
 
 <table><thead>
 <tr>
@@ -2346,19 +2277,14 @@ The taxes of an invoice can also be filtered using filtered searches
 </tr>
 </thead><tbody>
 <tr>
-<td>code</td>
+<td>description</td>
 <td>string</td>
 <td></td>
 </tr>
 <tr>
-<td>compound</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
-<td>identification</td>
-<td>string</td>
-<td></td>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier for an invoice detail.</td>
 </tr>
 <tr>
 <td>invoice</td>
@@ -2366,13 +2292,28 @@ The taxes of an invoice can also be filtered using filtered searches
 <td>Unique identifier for an invoice.</td>
 </tr>
 <tr>
-<td>rate</td>
+<td>invoice_detail_type</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>item</td>
+<td>number</td>
+<td>Unique identifier for an item.</td>
+</tr>
+<tr>
+<td>price</td>
 <td>decimal</td>
 <td></td>
 </tr>
 <tr>
-<td>sequence_number</td>
+<td>project</td>
 <td>number</td>
+<td>Unique identifier for a project.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>decimal</td>
 <td></td>
 </tr>
 <tr>
@@ -2381,12 +2322,12 @@ The taxes of an invoice can also be filtered using filtered searches
 <td>Unique identifier for an invoice tax.</td>
 </tr>
 <tr>
-<td>total</td>
+<td>total_price</td>
 <td>decimal</td>
 <td></td>
 </tr>
 </tbody></table>
-
+<h2 id='view-invoice-taxes'>View invoice taxes</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2459,7 +2400,66 @@ The taxes of an invoice can also be filtered using filtered searches
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include-invoices'>Include (Invoices)</h2>
+</span></code></pre>
+<p>If you want to see the taxes of an invoice </p>
+
+<p><span class="http-method http-get">GET</span> <code>/api/invoices/[id]/invoice_taxes</code></p>
+
+<aside class="notice">
+The taxes of an invoice can also be filtered using filtered searches
+</aside>
+
+<p>Invoice taxes data</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>compound</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>identification</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>invoice</td>
+<td>number</td>
+<td>Unique identifier for an invoice.</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>decimal</td>
+<td></td>
+</tr>
+<tr>
+<td>sequence_number</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>tax</td>
+<td>number</td>
+<td>Unique identifier for an invoice tax.</td>
+</tr>
+<tr>
+<td>total</td>
+<td>decimal</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='include-invoices'>Include (Invoices)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -2588,14 +2588,6 @@ The taxes of an invoice can also be filtered using filtered searches
 </tr>
 </tbody></table>
 <h2 id='viewing-a-country'>Viewing a Country</h2>
-<p>This API allows you to view the details of a country.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]</code></p>
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2651,11 +2643,15 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-countries'>List all Countries</h2>
-<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+</span></code></pre>
+<p>This API allows you to view the details of a country.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/webapi/countries</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]</code></p>
 
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='list-all-countries'>List all Countries</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2734,7 +2730,11 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='states'>States</h1>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/countries</code></p>
+<h1 id='states'>States</h1>
 <p>Get information about states.</p>
 
 <p>Using the API you can do the following with a state data.</p>
@@ -2818,14 +2818,6 @@ Use 'includes' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-a-state'>Viewing a State</h2>
-<p>This API allows you to view the details of a state.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/states/[id]</code></p>
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2888,11 +2880,15 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-states'>List all States</h2>
-<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+</span></code></pre>
+<p>This API allows you to view the details of a state.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/states/[id]</code></p>
 
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='list-all-states'>List all States</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2965,7 +2961,11 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='currencies'>Currencies</h1>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
+<h1 id='currencies'>Currencies</h1>
 <p>Get information about currencies.</p>
 
 <p>Using the API you can do the following with currency data.</p>
@@ -3049,10 +3049,6 @@ Use 'includes' to embed additional details in the response.
 </tr>
 </tbody></table>
 <h2 id='viewing-a-currency'>Viewing a Currency</h2>
-<p>This API allows you to view the details of a currency.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/currencies/[id]</code></p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3060,6 +3056,10 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/currencies/147
 </code></pre>
+<p>This API allows you to view the details of a currency.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies/[id]</code></p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -3084,10 +3084,6 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='list-all-currencies'>List all Currencies</h2>
-<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3095,6 +3091,10 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/currencies?limit<span class="o">=</span>2&amp;page<span class="o">=</span>13
 </code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
+
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -3149,8 +3149,6 @@ Use 'includes' to embed additional details in the response.
 </span></code></pre><h1 id='search'>Search</h1><h2 id='filtered-searches'>Filtered Searches</h2>
 <p>Filtered searches can be used to find entities that match specific search criteria.</p>
 <h2 id='usage'>Usage</h2>
-<p><span class="http-method http-post">POST</span> <code>_entity_/filtered</code></p>
-
 <blockquote>
 <p>Filter Construct</p>
 </blockquote>
@@ -3164,6 +3162,8 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p><span class="http-method http-post">POST</span> <code>_entity_/filtered</code></p>
+
 <blockquote>
 <p>Filters can be combined together as follows:</p>
 </blockquote>
@@ -3240,8 +3240,6 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 </tr>
 </tbody></table>
 <h2 id='sorting'>Sorting</h2>
-<p>Results from filtered searches can be sorted using filtered actions with sorting rules.</p>
-
 <blockquote>
 <p>Sorting Construct</p>
 </blockquote>
@@ -3256,6 +3254,8 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<p>Results from filtered searches can be sorted using filtered actions with sorting rules.</p>
+
 <aside class="notice">
 Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
 </aside>
