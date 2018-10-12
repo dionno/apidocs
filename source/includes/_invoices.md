@@ -194,6 +194,22 @@ If you want to see the details of an invoice
 The details of an invoice can also be filtered using filtered searches
 </aside>
 
+Invoice details data
+
+| Attribute           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| description         | string  |                                          |
+| id                  | number  | Unique identifier for an invoice detail. |
+| invoice             | number  | Unique identifier for an invoice.        |
+| invoice_detail_type | number  |                                          |
+| item                | number  | Unique identifier for an item.           |
+| price               | decimal |                                          |
+| project             | number  | Unique identifier for a project.         |
+| quantity            | decimal |                                          |
+| tax                 | number  | Unique identifier for an invoice tax.    |
+| total_price         | decimal |                                          |
+
+
 >Example
 
 ```shell
@@ -273,6 +289,17 @@ If you want to see the taxes of an invoice
 <aside class="notice">
 The taxes of an invoice can also be filtered using filtered searches
 </aside>
+
+| Attribute       | Type    | Description                           |
+|-----------------|---------|---------------------------------------|
+| code            | string  |                                       |
+| compound        | boolean |                                       |
+| identification  | string  |                                       |
+| invoice         | number  | Unique identifier for an invoice.     |
+| rate            | decimal |                                       |
+| sequence_number | number  |                                       |
+| tax             | number  | Unique identifier for an invoice tax. |
+| total           | decimal |                                       |
 
 >Example
 
