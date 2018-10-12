@@ -185,8 +185,217 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	]
 }
 ```
+## View invoice details
+If you want to see the details of an invoice 
+
+<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
+
+<aside class="notice">
+The details of an invoice can also be filtered using
+<span class="http-method http-post">POST</span> `  /api/invoices/[id]/invoice_details/filtered`
+</aside>
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details
+```
+
+```json
+{
+	"invoice_details":
+	[
+		{
+			"type":"invoice_details",
+			"id":23925,
+			"description":"Administration - non taxable",
+			"quantity":1.0000,
+			"price":60.0000,
+			"total_price":60.0000,
+			"invoice_detail_type":1,
+			"project":7289,
+			"links":
+				[
+					{
+					"href":"projects/7289",
+					"rel":"projects",
+					"type":"GET"
+					},
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"item":337521,
+			"tax":375,
+			"invoice":9287
+		},
+		{
+			"type":"invoice_details",
+			"id":23926,
+			"description":"Administration - taxable",
+			"quantity":1.0000,
+			"price":40.0000,
+			"total_price":40.0000,
+			"invoice_detail_type":1,
+			"project":7224,
+			"links":
+				[
+					{
+					"href":"projects/7224",
+					"rel":"projects",
+					"type":"GET"
+					},
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"item":337523,
+			"tax":376,
+			"invoice":9287
+		},
+		{
+			"type":"invoice_details",
+			"id":34487,
+			"description":"TESTPRD1",
+			"quantity":1.0000,
+			"price":12.0000,
+			"total_price":12.0000,
+			"invoice_detail_type":0,
+			"project":6667,
+			"links":
+				[
+					{
+					"href":"projects/6667",
+					"rel":"projects",
+					"type":"GET"
+					},
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"item":342901,
+			"tax":null,
+			"invoice":9287
+		},
+		{
+			"type":"invoice_details",
+			"id":34703,
+			"description":"[Label test destination] [2018-09-28] Expense 4 with project and taxes[Domenic Rico] ",
+			"quantity":1.0000,
+			"price":1200.0000,
+			"total_price":1200.0000,
+			"invoice_detail_type":0,
+			"project":6667,
+			"links":
+				[
+					{
+					"href":"projects/6667",
+					"rel":"projects",
+					"type":"GET"
+					},
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"item":null,
+			"tax":null,
+			"invoice":9287
+		}
+	]
+}
+```
+
+## View invoice taxes
+If you want to see the taxes of an invoice 
+
+<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
+
+<aside class="notice">
+The taxes of an invoice can also be filtered using
+<span class="http-method http-post">POST</span> `  /api/invoices/[id]/invoice_taxes/filtered`
+</aside>
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes
+```
+
+```json
+{
+	"invoice_taxes":
+	[
+		{
+			"type":"invoice_taxes",
+			"total":7.8000,
+			"code":"HST",
+			"compound":false,
+			"identification":null,
+			"rate":0.130000,
+			"sequence_number":1,
+			"invoice":9287,
+			"links":
+				[
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"tax":375
+			},
+			{
+			"type":"invoice_taxes",
+			"total":3.9900,
+			"code":"QST",
+			"compound":false,
+			"identification":null,
+			"rate":0.099750,
+			"sequence_number":1,
+			"invoice":9287,
+			"links":
+				[
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"tax":376},
+			{
+			"type":"invoice_taxes",
+			"total":2.0000,
+			"code":"GST",
+			"compound":false,
+			"identification":null,
+			"rate":0.050000,
+			"sequence_number":2,
+			"invoice":9287,
+			"links":
+				[
+					{
+					"href":"invoices/9287",
+					"rel":"invoices",
+					"type":"GET"
+					}
+				],
+			"tax":376
+		}
+	]
+}
+```
 
 ## Include (Invoices)
+
 
 The following entity types can be included in this payload type
 
