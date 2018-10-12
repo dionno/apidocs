@@ -23,10 +23,6 @@ Using the API you can do the following with currency data.
 
 ## Viewing a Currency
 
-This API allows you to view the details of a currency.
-
-<span class="http-method http-get">GET</span> `  /webapi/currencies/[id]`
-
 >Example
 
 ```shell
@@ -34,6 +30,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
      -H 'api-version: 3' 
 	 -X GET https://apps.nutcache.com/webapi/currencies/147
 ```
+
+This API allows you to view the details of a currency.
+
+<span class="http-method http-get">GET</span> `  /webapi/currencies/[id]`
 
 >Response
 
@@ -62,10 +62,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 ## List all Currencies
 
-Using this API, you'd be able to fetch a list of currencies.
-
-<span class="http-method http-get">GET</span> `/webapi/currencies`
-
 >Example
 
 ```shell
@@ -73,6 +69,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
      -H 'api-version: 3' 
 	 -X GET https://apps.nutcache.com/webapi/currencies?limit=2&page=13
 ```
+
+Using this API, you'd be able to fetch a list of currencies.
+
+<span class="http-method http-get">GET</span> `/webapi/currencies`
 
 >Response
 

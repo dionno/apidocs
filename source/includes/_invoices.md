@@ -37,14 +37,6 @@ Using the API you can do the following with invoice data.
 
 ## Viewing an Invoice
 
-This API allows you to view an invoice.
-
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]`
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -53,6 +45,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287
 ```
+
+This API allows you to view an invoice.
+
+<span class="http-method http-get">GET</span> `  /api/invoices/[id]`
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
 
 > Response
 
@@ -114,10 +114,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 ```
 ## List all invoices
 
-Using this API, you'd be able to fetch a list of invoices.
-
-<span class="http-method http-get">GET</span> `  /api/invoices/`
-
 >Example
 
 ```shell
@@ -126,6 +122,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices
 ```
+
+Using this API, you'd be able to fetch a list of invoices.
+
+<span class="http-method http-get">GET</span> `  /api/invoices/`
 
 >Response
 
@@ -186,29 +186,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 ## View invoice details
-If you want to see the details of an invoice 
-
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
-
-<aside class="notice">
-The details of an invoice can also be filtered using filtered searches
-</aside>
-
-Invoice details data
-
-| Attribute           | Type    | Description                              |
-|---------------------|---------|------------------------------------------|
-| description         | string  |                                          |
-| id                  | number  | Unique identifier for an invoice detail. |
-| invoice             | number  | Unique identifier for an invoice.        |
-| invoice_detail_type | number  |                                          |
-| item                | number  | Unique identifier for an item.           |
-| price               | decimal |                                          |
-| project             | number  | Unique identifier for a project.         |
-| quantity            | decimal |                                          |
-| tax                 | number  | Unique identifier for an invoice tax.    |
-| total_price         | decimal |                                          |
-
 
 >Example
 
@@ -281,27 +258,30 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-## View invoice taxes
-If you want to see the taxes of an invoice 
+If you want to see the details of an invoice 
 
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
+<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using filtered searches
+The details of an invoice can also be filtered using filtered searches
 </aside>
 
-Invoice taxes data
+Invoice details data
 
-| Attribute       | Type    | Description                           |
-|-----------------|---------|---------------------------------------|
-| code            | string  |                                       |
-| compound        | boolean |                                       |
-| identification  | string  |                                       |
-| invoice         | number  | Unique identifier for an invoice.     |
-| rate            | decimal |                                       |
-| sequence_number | number  |                                       |
-| tax             | number  | Unique identifier for an invoice tax. |
-| total           | decimal |                                       |
+| Attribute           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| description         | string  |                                          |
+| id                  | number  | Unique identifier for an invoice detail. |
+| invoice             | number  | Unique identifier for an invoice.        |
+| invoice_detail_type | number  |                                          |
+| item                | number  | Unique identifier for an item.           |
+| price               | decimal |                                          |
+| project             | number  | Unique identifier for a project.         |
+| quantity            | decimal |                                          |
+| tax                 | number  | Unique identifier for an invoice tax.    |
+| total_price         | decimal |                                          |
+
+## View invoice taxes
 
 >Example
 
@@ -377,6 +357,27 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	]
 }
 ```
+
+If you want to see the taxes of an invoice 
+
+<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
+
+<aside class="notice">
+The taxes of an invoice can also be filtered using filtered searches
+</aside>
+
+Invoice taxes data
+
+| Attribute       | Type    | Description                           |
+|-----------------|---------|---------------------------------------|
+| code            | string  |                                       |
+| compound        | boolean |                                       |
+| identification  | string  |                                       |
+| invoice         | number  | Unique identifier for an invoice.     |
+| rate            | decimal |                                       |
+| sequence_number | number  |                                       |
+| tax             | number  | Unique identifier for an invoice tax. |
+| total           | decimal |                                       |
 
 ## Include (Invoices)
 

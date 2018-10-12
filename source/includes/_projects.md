@@ -39,14 +39,6 @@ Using the API you can do the following with project data.
 
 ## Viewing a Project
 
-This API allows you to view the details of a project.
-
-<span class="http-method http-get">GET</span> `  /api/projects/[id]`
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -113,11 +105,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
+This API allows you to view the details of a project.
+
+<span class="http-method http-get">GET</span> `  /api/projects/[id]`
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+
 ## List all Projects
-
-<span class="http-method http-get">GET</span> `  /api/projects`
-
-Using this API, you'd be able to fetch a list of projects.
 
 >Example
 
@@ -191,6 +187,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
+
+<span class="http-method http-get">GET</span> `  /api/projects`
+
+Using this API, you'd be able to fetch a list of projects.
 
 ## Include (Projects)
 

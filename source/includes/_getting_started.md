@@ -16,8 +16,6 @@ Authorization: nut-basic [Base64(_public-key_:_username_:_password_)]
 
 ## Organization Context
 
-An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.
-
 >Example
 
 ```shell
@@ -26,6 +24,8 @@ curl -H "Authorization: YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpu
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"
 	 -X GET https://apps.nutcache.com/webapi/customers
 ```
+
+An organization context is required when making requests. To do this, simply include the organization GUID, which can be retrieved via the Organization API from the request header.
 
 ## Schema
 
@@ -50,8 +50,6 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 
 ## Embedding
 
-You can request for additional entities using the "include" keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.
-
 >Example
 
 ```shell
@@ -61,13 +59,13 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/projects?include=organizations
 ```
 
+You can request for additional entities using the "include" keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.
+
 <aside class="notice">
 Refer to each resource for more information on which entities can be included.
 </aside>
 
 ## Pagination
-
-API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you'd like to retrieve the Time Entries from 11 to 20 use,
 
 >Example
 
@@ -77,6 +75,8 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET "https://apps.nutcache.com/webapi/customers?limit=10&page=2
 ```
+
+API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you'd like to retrieve the Time Entries from 11 to 20 use,
 
 ## Rate Limit
 

@@ -7,9 +7,6 @@ Filtered searches can be used to find entities that match specific search criter
 
 ## Usage
 
-<span class="http-method http-post">POST</span> ` _entity_/filtered`
-
-
 >Filter Construct
 
 ```json
@@ -23,6 +20,8 @@ Filtered searches can be used to find entities that match specific search criter
   ]
 }
 ```
+
+<span class="http-method http-post">POST</span> ` _entity_/filtered`
 
 >Filters can be combined together as follows:
 
@@ -74,8 +73,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ## Sorting
 
-Results from filtered searches can be sorted using filtered actions with sorting rules.
-
 >Sorting Construct
 
 ```json
@@ -90,6 +87,8 @@ Results from filtered searches can be sorted using filtered actions with sorting
     }
   ]
 ```
+
+Results from filtered searches can be sorted using filtered actions with sorting rules.
 
 <aside class="notice">
 Filtered requests can combine filter rules with sorting rules by adding both properties to the payload

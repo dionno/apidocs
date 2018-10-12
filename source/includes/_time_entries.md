@@ -24,14 +24,6 @@ Using the API you can do the following with time entry data.
 
 ## Viewing a Time Entry
 
-This API allows you to view the details of a time entry.
-
-<span class="http-method http-get">GET</span> `  /api/time_entries/[id]`
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -87,11 +79,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
+This API allows you to view the details of a time entry.
+
+<span class="http-method http-get">GET</span> `  /api/time_entries/[id]`
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+
 ## List all Time Entries
-
-Using this API, you'd be able to fetch a list of time entries.
-
-<span class="http-method http-get">GET</span> `/api/time_entries`
 
 >Example
 
@@ -154,6 +150,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
+
+Using this API, you'd be able to fetch a list of time entries.
+
+<span class="http-method http-get">GET</span> `/api/time_entries`
 
 ## Updating Time Entry
 

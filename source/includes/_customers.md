@@ -27,14 +27,6 @@ Using the API's you can do the following with project data.
 
 ## Viewing a Customer
 
-This API allows you to view the details of a customer.
-
-<span class="http-method http-get">GET</span> `  /api/customers/[id]`
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -43,6 +35,14 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/customers
 ```
+
+This API allows you to view the details of a customer.
+
+<span class="http-method http-get">GET</span> `  /api/customers/[id]`
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
 
 >Response
 
@@ -92,10 +92,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ## List all Customers
 
-Using this API, you'd be able to fetch a list of customers.
-
-<span class="http-method http-get">GET</span> `/webapi/customers`
-
 >Example
 
 ```shell
@@ -104,6 +100,10 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/customers
 ```
+
+Using this API, you'd be able to fetch a list of customers.
+
+<span class="http-method http-get">GET</span> `/webapi/customers`
 
 >Response
 

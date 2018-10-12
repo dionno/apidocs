@@ -26,14 +26,6 @@ Using the API you can do the following with a country data.
 
 ## Viewing a Country
 
-This API allows you to view the details of a country.
-
-<span class="http-method http-get">GET</span> `  /webapi/countries/[id]`
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -92,11 +84,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 }
 ```
 
+This API allows you to view the details of a country.
+
+<span class="http-method http-get">GET</span> `  /webapi/countries/[id]`
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
 ## List all Countries
-
-Using this API, you'd be able to fetch a list of countries.
-
-<span class="http-method http-get">GET</span> `/webapi/countries`
 
 >Example
 
@@ -178,3 +174,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
   ]
 }
 ```
+
+Using this API, you'd be able to fetch a list of countries.
+
+<span class="http-method http-get">GET</span> `/webapi/countries`

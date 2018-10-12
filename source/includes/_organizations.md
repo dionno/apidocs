@@ -35,20 +35,6 @@ Using the API, you can do the following with organization data.
 
 ## Viewing an Organization
 
-This API allows you to view the details of an organization.
-
-<span class="http-method http-get">GET</span> ` /api/organizations/<id>`
-
-URL Parameters
-
-| Parameter | Description                      |
-|-----------|----------------------------------|
-| id        | The organization id to retrieve. |
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Example
 
 ```shell
@@ -114,10 +100,21 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
+This API allows you to view the details of an organization.
+
+<span class="http-method http-get">GET</span> ` /api/organizations/<id>`
+
+URL Parameters
+
+| Parameter | Description                      |
+|-----------|----------------------------------|
+| id        | The organization id to retrieve. |
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
 
 ## List all Organizations
-
-Using this API, you'd be able to fetch a list of organizations.
 
 >Example
 
@@ -239,6 +236,8 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 
 ```
+
+Using this API, you'd be able to fetch a list of organizations.
 
 ## Include (Organizations)
 
