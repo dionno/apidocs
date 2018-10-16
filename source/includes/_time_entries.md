@@ -233,7 +233,7 @@ The start_time and end_time are used to calculate the time entry in minutes when
 
 The billable_minutes is updated when a project is billable otherwise this value is ignored
 
-<aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
+<aside class="warning">Updating time entries that have already been invoiced is not permitted.</aside>
 
 >Example
 
@@ -261,7 +261,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -X DELETE https://apps.nutcache.com/webapi/time_entries/1
 ```
 
-<aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
+<aside class="warning">Deleting time entries that have already been invoiced is not permitted.</aside>
   
 Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification by setting the notify parameer to true.
 
