@@ -233,4 +233,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 <aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
   
- 
+Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification by setting the notify parameer to true.
+
+<span class="http-method http-get">DELETE</span> `/api/time_entries/1?notify=true`
