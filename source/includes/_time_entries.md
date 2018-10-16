@@ -6,7 +6,7 @@ Using the API you can do the following with time entry data.
 
 | Attribute            | Type     | Description                                                                                                                               |
 |----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable).                                                                                                                 |
+| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable, ignored otherwise).                                                                                                                 |
 | creation_date        | datetime | When this entry has been logged; \ Read only; Can not be updated                                                                          |
 | creation_userprofile | number   | Member that originally created the time entry; Read only; Can not be updated.                                                             |
 | end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.   |
@@ -167,7 +167,22 @@ The following entity types can be included in this payload type
 | members          | The member associated with this time entry  |
 | invoices         | The invoice associated with this time entry |
 
-## Updating Time Entry
+## Creating a Time Entry
+
+This API allows time entries to be created.</br>
+
+<span class="http-method http-get">POST</span> `  /api/time_entries`
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3'
+     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
+     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1
+```
+
+## Updating a Time Entry
 
 This API allows existing time entries to be modified.</br>
 
@@ -188,7 +203,7 @@ The start_time and end_time are used to calculate the time entry in minutes when
 
 The billable_minutes is updated when a project is billable otherwise this value is ignored
 
-Invoiced time entries and not permitted
+<aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
 
 >Example
 
@@ -203,5 +218,19 @@ Time entries for a work_date that have been Approved/Rejected can also notify ad
 
 <span class="http-method http-get">PUT</span> `/api/time_entries?notify=true`
 
+## Deleting a Time Entry
 
-## Creating Time Entry
+<span class="http-method http-get">DELETE</span> `  /api/time_entries/[id]`
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3'
+     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
+     -X DELETE https://apps.nutcache.com/webapi/time_entries/1
+```
+
+<aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
+  
+ 
