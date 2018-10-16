@@ -192,6 +192,38 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of projects.
 
+## Project Members
+
+If you want to see the project members for a project.
+
+<span class="http-method http-get">GET</span> `  /api/projects/[id]/project_members`
+
+<aside class="notice">
+The project members for a project can also be filtered using filtered searches.
+</aside>
+
+## Project Managers
+
+If you want to see the project managers for a project.
+
+<span class="http-method http-get">GET</span> `  /api/projects/[id]/project_managers`
+
+<aside class="notice">
+The project managers for a project can also be filtered using filtered searches.
+</aside>
+
+
+## Project Features
+
+If you want to see the project features for a project.
+
+<span class="http-method http-get">GET</span> `  /api/projects/[id]/project_features`
+
+<aside class="notice">
+The project features for a project can also be filtered using filtered searches.
+</aside>
+
+
 ## Include (Projects)
 
 The following entity types can be included in this payload type
