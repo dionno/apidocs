@@ -1690,13 +1690,56 @@ Use 'include' to embed additional details in the response.
 
 <p><span class="http-method http-get">POST</span> <code>/api/time_entries</code></p>
 
+<p>Using the API you can do the following with time entry data.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>billable_minutes</td>
+<td>number</td>
+<td>Billable time entry in minutes (For projects that are billable, ignored otherwise).</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.</td>
+</tr>
+</tbody></table>
+
+<p>| invoice              | number   | Invoice unique identifier.                                                                                                                |
+| member               | number   | Member unique identifier.                                                                                                                 |
+| minutes              | number   | Number of minutes logged.                                                                                                                 |
+| note                 | string   | Note                                                                                                                                      |
+| project              | number   | Project unique identifier.                                                                                                                |
+| project_feature      | number   | Project Feature unique identifier.                                                                                                        |
+| start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
+| type                 | string   | Payload type(time_entries).                                                                                                                             |
+| working_date         | datetime | A date time that represents the day for the time entry.                                                                                   |</p>
+
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span>
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
-     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries/1
+     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries
+</span></code></pre>
+<aside class="notice">Time entries with a work_date that has already been aproved has the option to notify administrators.</aside>
+
+<p><span class="http-method http-get">DELETE</span> <code>/api/time_entries/1?notify=true</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span>
+     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
+     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries?notify=true
 </span></code></pre><h2 id='updating-a-time-entry'>Updating a Time Entry</h2>
 <p>This API allows existing time entries to be modified.</br></p>
 
@@ -1742,6 +1785,10 @@ Use 'include' to embed additional details in the response.
 </code></pre>
 <aside class="warning">Time entries that have already been invoiced is not permitted.</aside>
   
+
+<p>Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification by setting the notify parameer to true.</p>
+
+<p><span class="http-method http-get">DELETE</span> <code>/api/time_entries/1?notify=true</code></p>
 <h1 id='timers'>Timers</h1>
 <p>A Nutcache timer is a stopwatch used to record time spent on a task.</p>
 
