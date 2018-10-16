@@ -1690,6 +1690,14 @@ Use 'include' to embed additional details in the response.
 
 <p><span class="http-method http-get">POST</span> <code>/api/time_entries</code></p>
 
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span>
+     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
+     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries
+</span></code></pre>
 <p>Using the API you can do the following with time entry data.</p>
 
 <table><thead>
@@ -1756,17 +1764,9 @@ Use 'include' to embed additional details in the response.
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
-     -H <span class="s1">'api-version: 3'</span>
-     -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
-     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries
-</span></code></pre>
-<aside class="notice">Time entries with a work_date that has already been aproved has the option to notify administrators.</aside>
+<aside class="notice">Time entries with a work_date that have already been aproved have the option to notify administrators.</aside>
 
-<p><span class="http-method http-get">DELETE</span> <code>/api/time_entries/1?notify=true</code></p>
+<p><span class="http-method http-get">POST</span> <code>/api/time_entries/1?notify=true</code></p>
 
 <blockquote>
 <p>Example</p>
