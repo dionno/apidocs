@@ -175,14 +175,33 @@ This API allows existing time entries to be modified.</br>
 
 The behavior and parameters of the API depend on the following:
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+   	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	   -X PUT -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",          "project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1
+```
+
 The start_time and end_time are used to calculate the time entry in minutes when the organization's time_tracking_type is 1=Start/End Time. Other wise these values are ignored.
 
 The billable_minutes is updated when a project is billable otherwise this value is ignored
 
 Invoiced time entries and not permitted
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+   	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	   -X PUT -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",          "project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1?notify=true
+```
+
 Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification.
 
+<span class="http-method http-get">GET</span> `/api/time_entries?notify=true`
 
 
 ## Creating Time Entry
