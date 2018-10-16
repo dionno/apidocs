@@ -198,6 +198,72 @@ If you want to see the project members for a project.
 
 <span class="http-method http-get">GET</span> `  /api/projects/[id]/project_members`
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_members
+```
+to do - response
+> Response
+
+```json
+{
+  "projects": [
+    {
+      "type": "projects",
+      "id": 6640,
+      "Organization": 1686,
+      "code": "Agile sample project (non-billable)",
+      "display_color": "#607d8b",
+      "status": 1,
+      "links": [
+        {
+          "href": "organizations/1686",
+          "rel": "organizations",
+          "type": "GET"
+        },
+        {
+          "href": "customers/143222",
+          "rel": "customers",
+          "type": "GET"
+        },
+        {
+          "href": "projects/6640",
+          "rel": "self",
+          "type": "GET"
+        }
+      ],
+      "project_type": 0,
+      "description": "Leverage the Agile approach to organize and manage your projects with boards.",
+      "Vision": "Project vision",
+      "primary_contact_email": null,
+      "primary_contact_name": null,
+      "primary_contact_phone": null,
+      "secondary_contact_email": null,
+      "secondary_contact_name": null,
+      "secondary_contact_phone": null,
+      "start_date": "2018-01-22T00:00:00",
+      "end_date": null,
+      "budget_scope": "1",
+      "budget_type": "1",
+      "EffectiveBudgetAmount": 0,
+      "EffectiveBudgetMinutes": 0,
+      "budget_approved_only": false,
+      "budget_restrictive": false,
+      "billing_method": "NotBillable",
+      "billing_invoice_method_fixed_fee": 0,
+      "billing_invoice_method_hourly_rate": 0,
+      "billing_approved_entries_only": false,
+      "customer": 143222,
+      "project_budget": null
+    }
+  ]
+}
+```
+
 <aside class="notice">
 The project members for a project can also be filtered using filtered searches.
 </aside>
@@ -212,12 +278,142 @@ If you want to see the project managers for a project.
 The project managers for a project can also be filtered using filtered searches.
 </aside>
 
+>Example
 
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_managers
+```
+to do - response
+> Response
+
+```json
+{
+  "projects": [
+    {
+      "type": "projects",
+      "id": 6640,
+      "Organization": 1686,
+      "code": "Agile sample project (non-billable)",
+      "display_color": "#607d8b",
+      "status": 1,
+      "links": [
+        {
+          "href": "organizations/1686",
+          "rel": "organizations",
+          "type": "GET"
+        },
+        {
+          "href": "customers/143222",
+          "rel": "customers",
+          "type": "GET"
+        },
+        {
+          "href": "projects/6640",
+          "rel": "self",
+          "type": "GET"
+        }
+      ],
+      "project_type": 0,
+      "description": "Leverage the Agile approach to organize and manage your projects with boards.",
+      "Vision": "Project vision",
+      "primary_contact_email": null,
+      "primary_contact_name": null,
+      "primary_contact_phone": null,
+      "secondary_contact_email": null,
+      "secondary_contact_name": null,
+      "secondary_contact_phone": null,
+      "start_date": "2018-01-22T00:00:00",
+      "end_date": null,
+      "budget_scope": "1",
+      "budget_type": "1",
+      "EffectiveBudgetAmount": 0,
+      "EffectiveBudgetMinutes": 0,
+      "budget_approved_only": false,
+      "budget_restrictive": false,
+      "billing_method": "NotBillable",
+      "billing_invoice_method_fixed_fee": 0,
+      "billing_invoice_method_hourly_rate": 0,
+      "billing_approved_entries_only": false,
+      "customer": 143222,
+      "project_budget": null
+    }
+  ]
+}
+```
 ## Project Features
 
 If you want to see the project features for a project.
 
 <span class="http-method http-get">GET</span> `  /api/projects/[id]/project_features`
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features
+```
+to do - response
+> Response
+
+```json
+{
+  "projects": [
+    {
+      "type": "projects",
+      "id": 6640,
+      "Organization": 1686,
+      "code": "Agile sample project (non-billable)",
+      "display_color": "#607d8b",
+      "status": 1,
+      "links": [
+        {
+          "href": "organizations/1686",
+          "rel": "organizations",
+          "type": "GET"
+        },
+        {
+          "href": "customers/143222",
+          "rel": "customers",
+          "type": "GET"
+        },
+        {
+          "href": "projects/6640",
+          "rel": "self",
+          "type": "GET"
+        }
+      ],
+      "project_type": 0,
+      "description": "Leverage the Agile approach to organize and manage your projects with boards.",
+      "Vision": "Project vision",
+      "primary_contact_email": null,
+      "primary_contact_name": null,
+      "primary_contact_phone": null,
+      "secondary_contact_email": null,
+      "secondary_contact_name": null,
+      "secondary_contact_phone": null,
+      "start_date": "2018-01-22T00:00:00",
+      "end_date": null,
+      "budget_scope": "1",
+      "budget_type": "1",
+      "EffectiveBudgetAmount": 0,
+      "EffectiveBudgetMinutes": 0,
+      "budget_approved_only": false,
+      "budget_restrictive": false,
+      "billing_method": "NotBillable",
+      "billing_invoice_method_fixed_fee": 0,
+      "billing_invoice_method_hourly_rate": 0,
+      "billing_approved_entries_only": false,
+      "customer": 143222,
+      "project_budget": null
+    }
+  ]
+}
+```
 
 <aside class="notice">
 The project features for a project can also be filtered using filtered searches.
