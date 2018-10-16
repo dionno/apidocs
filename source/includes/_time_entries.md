@@ -6,11 +6,11 @@ Using the API you can do the following with time entry data.
 
 | Attribute            | Type     | Description                                                                                                                               |
 |----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| billable_minutes     | number   | Number of active members.                                                                                                                 |
+| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable).                                                                                                                 |
 | creation_date        | datetime | When this entry has been logged; \ Read only; Can not be updated                                                                          |
-| creation_userprofile | number   | Member that created originally the time entry; Read only; Can not be updated.                                                             |
+| creation_userprofile | number   | Member that originally created the time entry; Read only; Can not be updated.                                                             |
 | end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.   |
-| guid                 | string   | Unique identifier.                                                                                                                        |
+| guid                 | string   | Global Unique identifier.                                                                                                                        |
 | id                   | number   | Unique identifier.                                                                                                                        |
 | invoice              | number   | Invoice unique identifier.                                                                                                                |
 | member               | number   | Member unique identifier.                                                                                                                 |
@@ -19,7 +19,7 @@ Using the API you can do the following with time entry data.
 | project              | number   | Project unique identifier.                                                                                                                |
 | project_feature      | number   | Project Feature unique identifier.                                                                                                        |
 | start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
-| type                 | string   | Payload type.                                                                                                                             |
+| type                 | string   | Payload type(time_entries).                                                                                                                             |
 | working_date         | datetime | A date time that represents the day for the time entry.                                                                                   |
 
 ## Viewing a Time Entry
@@ -155,18 +155,6 @@ Using this API, you'd be able to fetch a list of time entries.
 
 <span class="http-method http-get">GET</span> `/api/time_entries`
 
-## Updating Time Entry
-
-Time entry</br>
-
-Depends on organisation setting Time Tracking mode
-
-Depends on if project is billable
-
-Start and Endtime is timespan only
-
-## Creating Time Entry
-
 ## Include (Time entries)
 
 The following entity types can be included in this payload type
@@ -178,3 +166,23 @@ The following entity types can be included in this payload type
 | project_features | The task associated with this time entry    |
 | members          | The member associated with this time entry  |
 | invoices         | The invoice associated with this time entry |
+
+## Updating Time Entry
+
+This API allows existing time entries to be modified.</br>
+
+<span class="http-method http-get">PUT</span> `  /api/time_entries/[id]`
+
+The behavior and parameters of the API depend on the following:
+
+The start_time and end_time are used to calculate the time entry in minutes when the organization's time_tracking_type is 1=Start/End Time. Other wise these values are ignored.
+
+The billable_minutes is updated when a project is billable otherwise this value is ignored
+
+Invoiced time entries and not permitted
+
+Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification.
+
+
+
+## Creating Time Entry
