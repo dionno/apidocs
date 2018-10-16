@@ -177,18 +177,17 @@ Using the API you can do the following with time entry data.
 
 | Attribute            | Type     | Description                                                                                                                               |
 |----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable, ignored otherwise).                                                                                                                 |
-| end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.   |
-
-| invoice              | number   | Invoice unique identifier.                                                                                                                |
-| member               | number   | Member unique identifier.                                                                                                                 |
-| minutes              | number   | Number of minutes logged.                                                                                                                 |
-| note                 | string   | Note                                                                                                                                      |
-| project              | number   | Project unique identifier.                                                                                                                |
-| project_feature      | number   | Project Feature unique identifier.                                                                                                        |
+| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable, ignored otherwise).|
+| end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.|   
+| invoice              | number   | Invoice unique identifier.|
+| member               | number   | Member unique identifier.|
+| minutes              | number   | Number of minutes logged.|
+| note                 | string   | Note|
+| project              | number   | Project unique identifier.|
+| project_feature      | number   | Project Feature unique identifier.|
 | start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
-| type                 | string   | Payload type(time_entries).                                                                                                                             |
-| working_date         | datetime | A date time that represents the day for the time entry.                                                                                   |
+| type                 | string   | Payload type(time_entries).|
+| working_date         | datetime | A date time that represents the day for the time entry.|
 
 >Example
 
