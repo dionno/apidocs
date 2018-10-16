@@ -173,6 +173,15 @@ This API allows time entries to be created.</br>
 
 <span class="http-method http-get">POST</span> `  /api/time_entries`
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3'
+     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
+     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries
+```
+
 Using the API you can do the following with time entry data.
 
 | Attribute            | Type     | Description                                                                                                                               |
@@ -189,18 +198,9 @@ Using the API you can do the following with time entry data.
 | type                 | string   | Payload type(time_entries).|
 | working_date         | datetime | A date time that represents the day for the time entry.|
 
->Example
+<aside class="notice">Time entries with a work_date that have already been aproved have the option to notify administrators.</aside>
 
-```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
-     -H 'api-version: 3'
-     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
-     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries
-```
-
-<aside class="notice">Time entries with a work_date that has already been aproved has the option to notify administrators.</aside>
-
-<span class="http-method http-get">DELETE</span> `/api/time_entries/1?notify=true`
+<span class="http-method http-get">POST</span> `/api/time_entries/1?notify=true`
 
 >Example
 
