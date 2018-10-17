@@ -17,6 +17,7 @@ includes:
   - customers
   - time_entries
   - timers
+  - expenses
   - invoices
   - countries
   - states
