@@ -24,14 +24,14 @@ Using the API you can do the following with a country data.
 | time_format    | number | Enum for time format set for the organization: </br>0 = ISO format (HH:mm), </br>1 = AM/PM format (hh:mm tt)                                                                                                                                                                                                       |
 | type=countries | string | Payload type.                                                                                                                                                                                                                                                                                                      |
 
-## Viewing a Country
+## Viewing a country
 
 >Example
 
 ```shell
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
      -H 'api-version: 3' 
-	 -X GET https://apps.nutcache.com/webapi/countries/231?includes=currencies
+	 -X GET https://apps.nutcache.com/webapi/countries/231
 ```
 
 >Response
@@ -44,22 +44,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
       "id": 231,
       "code": "USA",
       "short_code": "US",
-      "currency": {
-        "type": "currencies",
-        "id": 147,
-        "code": "USD",
-        "decimal_count": 2,
-        "name_enus": "Dollar - United States of America",
-        "name_frfr": "Dollar - Etats-Unis d'Amérique",
-        "name_frca": "Dollar - Etats-Unis d'Amérique",
-        "name_ruru": "Доллар - Соединенные Штаты Америки",
-        "name_ptbr": "Dólar - Estados Unidos da América",
-        "name_plpl": "dolar amerykański – Stany Zjednoczone",
-        "name_itit": "Dollaro - Stati Uniti d'America",
-        "name_eses": "Dólar - Estados Unidos",
-        "name_esus": "Dólar - Estados Unidos",
-        "name_dede": "Dollar - Vereinigten Staaten von Amerika"
-      },
+      "currency": 147,
       "date_format": 1,
       "time_format": 1,
       "name_enus": "United States",
@@ -92,7 +77,7 @@ This API allows you to view the details of a country.
 Use 'includes' to embed additional details in the response.
 </aside>
 
-## List all Countries
+## List all countries
 
 >Example
 
@@ -178,3 +163,96 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 Using this API, you'd be able to fetch a list of countries.
 
 <span class="http-method http-get">GET</span> `/webapi/countries`
+
+## View country states
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 	 
+	 -X GET https://apps.nutcache.com/webapi/countries/231/states
+```
+
+>Response
+
+```json
+{
+  "links": [
+    {
+      "href": "countries/231/states?limit=10&page=1",
+      "rel": "navigation-previous",
+      "type": "GET"
+    },
+    {
+      "href": "countries/231/states?limit=10&page=3",
+      "rel": "navigation-next",
+      "type": "GET"
+    }
+  ],
+  "states": [
+    {
+      "type": "states",
+      "id": 11,
+      "country": 231,
+      "code": "US_NJ",
+      "name_enus": "New Jersey",
+      "name_frfr": "New Jersey",
+      "name_frca": "New Jersey",
+      "name_ruru": "Нью-Джерси",
+      "name_ptbr": "Nova Jérsei",
+      "name_plpl": "New Jersey",
+      "name_itit": "New Jersey",
+      "name_eses": "Nueva Jersey",
+      "name_esus": "Nueva Jersey",
+      "name_dede": "New Jersey",
+      "links": [
+        {
+          "href": "countries/231",
+          "rel": "countries",
+          "type": "GET"
+        }
+      ]
+    },
+    {
+      "type": "states",
+      "id": 12,
+      "country": 231,
+      "code": "US_NY",
+      "name_enus": "New York",
+      "name_frfr": "New York",
+      "name_frca": "New York",
+      "name_ruru": "Нью-Йорк",
+      "name_ptbr": "Nova York",
+      "name_plpl": "Nowy Jork",
+      "name_itit": "New York",
+      "name_eses": "Nueva York",
+      "name_esus": "Nueva York",
+      "name_dede": "New York",
+      "links": [
+        {
+          "href": "countries/231",
+          "rel": "countries",
+          "type": "GET"
+        }
+      ]
+    }
+  ]
+}
+```
+
+If you want to see the states/provinces of a country
+
+<span class="http-method http-get">GET</span> `  /webapi/countries/[id]/states`
+
+<aside class="notice">
+The states of a country can also be filtered using filtered searches
+</aside>
+
+## Includes (Countries)
+
+The following entity types can be included in this payload type
+
+| Type       | Description                               |
+|------------|-------------------------------------------|
+| currencies | The currency associated with this country |

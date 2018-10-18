@@ -33,7 +33,7 @@ Using the API, you can do the following with organization data.
 | website               | string        | Site identifier for the organization.                                                                                                                                                                                                                                                                                   |
 | zip_code              | string        | Zip code.                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                   
 
-## Viewing an Organization
+## Viewing an organization
 
 >Example
 
@@ -111,10 +111,10 @@ URL Parameters
 | id        | The organization id to retrieve. |
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
-## List all Organizations
+## List all organizations
 
 >Example
 
@@ -239,7 +239,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of organizations.
 
-## Include (Organizations)
+<span class="http-method http-get">GET</span> `/webapi/organizations`
+
+## Includes (Organizations)
 
 The following entity types can be included in this payload type
 

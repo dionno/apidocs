@@ -21,7 +21,7 @@ Using the API you can do the following with currency data.
 | name_ruru       | string | Currency name in Russian         |
 | type=currencies | string | Payload type.                    |
 
-## Viewing a Currency
+## Viewing a currency
 
 >Example
 
@@ -60,7 +60,7 @@ This API allows you to view the details of a currency.
 }
 ```
 
-## List all Currencies
+## List all currencies
 
 >Example
 

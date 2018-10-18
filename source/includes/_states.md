@@ -21,14 +21,14 @@ Using the API you can do the following with a state data.
 | name_ruru   | string | State name in Russian                                                        |
 | type=states | string | Payload type.                                                                |
 
-## Viewing a State
+## Viewing a state
 
 >Example
 
 ```shell
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
      -H 'api-version: 3' 
-	 -X GET https://apps.nutcache.com/webapi/states/12?includes=countries
+	 -X GET https://apps.nutcache.com/webapi/states/12
 ```
 
 >Response
@@ -39,32 +39,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
     {
       "type": "states",
       "id": 12,
-      "country": {
-        "type": "countries",
-        "id": 231,
-        "code": "USA",
-        "short_code": "US",
-        "currency": 147,
-        "date_format": 1,
-        "time_format": 1,
-        "name_enus": "United States",
-        "name_frfr": "États-Unis",
-        "name_frca": "États-Unis",
-        "name_ruru": "Соединенные Штаты Америки",
-        "name_ptbr": "Estados Unidos",
-        "name_plpl": "Stany Zjednoczone",
-        "name_itit": "Stati Uniti",
-        "name_eses": "Estados Unidos",
-        "name_esus": "Estados Unidos",
-        "name_dede": "Vereinigte Staaten von Amerika",
-        "links": [
-          {
-            "href": "countries/231",
-            "rel": "self",
-            "type": "GET"
-          }
-        ]
-      },
+      "country": 231,
       "code": "US_NY",
       "name_enus": "New York",
       "name_frfr": "New York",
@@ -96,7 +71,7 @@ This API allows you to view the details of a state.
 Use 'includes' to embed additional details in the response.
 </aside>
 
-## List all States
+## List all states
 
 >Example
 
@@ -176,3 +151,11 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 Using this API, you'd be able to fetch a list of countries.
 
 <span class="http-method http-get">GET</span> `/webapi/states`
+
+## Includes (States)
+
+The following entity types can be included in this payload type
+
+| Type      | Description                            |
+|-----------|----------------------------------------|
+| countries | The country associated with this state |
