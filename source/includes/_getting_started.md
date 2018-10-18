@@ -1,7 +1,7 @@
-# Getting Started
+# Getting started
 
 
-## Public Key
+## Public key
 
 To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> My Profile" menu. From the My Profile dialog, select the "Manage Access Keys" tab and click the "+ Generate new key" to continue.
 
@@ -14,7 +14,7 @@ Authentication info must be provided along with your request within the Authoriz
 
 Authorization: nut-basic [Base64(_public-key_:_username_:_password_)]
 
-## Organization Context
+## Organization context
 
 >Example
 
