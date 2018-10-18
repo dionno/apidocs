@@ -195,6 +195,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of projects.
 
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
 ## Project members
 
 >Example
@@ -340,9 +344,10 @@ Use 'includes' to embed additional details in the response.
 
 The following entity types can be included in this payload type.
 
-| Type             | Description                               |
-|------------------|-------------------------------------------|
-| organizations    | The organization containing this project  |
-| customers        | The customer associated with this project |
-| project_features | The tasks associated with this project    |
-| project_members  | The members assigned to this project      |
+| Type             | Description                                |
+|------------------|--------------------------------------------|
+| organizations    | The organization containing this project.  |
+| customers        | The customer associated with this project. |
+| project_features | The tasks associated with this project.    |
+| project_members  | The members assigned to this project.      |
+

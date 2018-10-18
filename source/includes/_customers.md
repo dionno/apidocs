@@ -4,28 +4,31 @@ An individual or party with whom you conduct business.
 
 Using the API's you can do the following with project data.
 
-| Attribute                  | Type   | Description                         |
-|----------------------------|--------|-------------------------------------|
-| address                    | string | Address                             |
-| city                       | string | City                                |
-| communication_culture_code | string | Communication culture code          |
-| Organization               | number | Unique identifier for organization. |
-| contact                    | string | Contact                             |
-| country                    | number | Unique identifier for country.      |
-| email                      | string | Email address                       |
-| id                         | number | Unique identifier.                  |
-| legal_notice               | string | Legal notice                        |
-| mobile_phone               | string | Mobile phone number.                |
-| name                       | string | Name                                |
-| notes                      | string | Notes                               |
-| phone                      | string | Phone                               |
-| state                      | string | State                               |
-| Status                     | number | Status                              |
-| tax                        | number | Tax                                 |
-| type                       | string | Payload type.                       |
-| zip_code                   | string | Zip code.                           |
+| Attribute                  | Type      | Description                                                              |
+|----------------------------|-----------|--------------------------------------------------------------------------|
+| address                    | string    | Address.                                                                 |
+| city                       | string    | Name of the city.                                                        |
+| communication_culture_code | string    | Communication culture code. </br>Format: [language]-[country code].      |
+| organization               | number    | Unique identifier for an organization.                                   |
+| contact                    | string    | Contact name.                                                            |
+| country                    | number    | Unique identifier for a country.                                         |
+| email                      | string    | Email address.                                                           |
+| id                         | number    | Unique identifier.                                                       |
+| legal_notice               | string    | Registration number for the customer.                                    |
+| mobile_phone               | string    | Mobile phone number.                                                     |
+| name                       | string    | Name of the customer.                                                    |
+| notes                      | string    | Notes.                                                                   |
+| phone                      | string    | Phone number.                                                            |
+| state                      | number    | Unique identifier for a state.                                           |
+| status                     | number    | Enum for the status of the customer: </br>0 = Active. </br>1 = Inactive. |
+| type                       | customers | Type of response.                                                        |
+| zip_code                   | string    | Zip code.                                                                |
 
-## Viewing a Customer
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
+## Viewing a customer
 
 >Example
 
@@ -33,15 +36,15 @@ Using the API's you can do the following with project data.
 curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
      -H "api-version: 3" 
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
-	 -X GET https://apps.nutcache.com/webapi/customers
+	 -X GET https://apps.nutcache.com/webapi/customers/154528
 ```
 
 This API allows you to view the details of a customer.
 
-<span class="http-method http-get">GET</span> `  /api/customers/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/customers/[id]`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
 >Response
@@ -51,46 +54,50 @@ Use 'include' to embed additional details in the response.
   "customers": [
     {
       "type": "customers",
-      "id": 143222,
-      "Organization": 1686,
-      "name": "Sample client",
+      "id": 154528,
+      "organization": 9244,
+      "name": "Client #1",
       "status": 0,
       "links": [
         {
-          "href": "organizations/1686",
+          "href": "organizations/9244",
           "rel": "organizations",
           "type": "GET"
         },
         {
-          "href": "countries/40",
+          "href": "countries/231",
           "rel": "countries",
           "type": "GET"
         },
         {
-          "href": "customers/143222",
+          "href": "states/2",
+          "rel": "states",
+          "type": "GET"
+        },
+        {
+          "href": "customers/154528",
           "rel": "self",
           "type": "GET"
         }
       ],
-      "email": "143222@example.com",
-      "contact": "Sample contact name",
-      "address": null,
-      "city": null,
-      "zip_code": null,
-      "phone": "123-456-7890",
-      "mobile_phone": null,
-      "country": 40,
-      "state": null,
-      "legal_notice": null,
-      "communication_culture_code": null,
-      "Notes": null,
-      "tax": null
+      "email": "xhbdv260psct@claimab.com",
+      "contact": "Daron D Barrett",
+      "address": "4992  Worley Avenue",
+      "city": "Richmond",
+      "zip_code": "23223",
+      "phone": "434-378-0004",
+      "mobile_phone": "703-725-9475",
+      "country": 231,
+      "state": 2,
+      "legal_notice": "987654321",
+      "communication_culture_code": "en-US",
+      "notes": "This is a note."
     }
   ]
 }
 ```
 
-## List all Customers
+## List all customers
 
 >Example
 
@@ -120,7 +127,7 @@ Using this API, you'd be able to fetch a list of customers.
     {
       "type": "customers",
       "id": 143222,
-      "Organization": 1686,
+      "organization": 1686,
       "name": "Sample client",
       "status": 0,
       "links": [
@@ -151,19 +158,21 @@ Using this API, you'd be able to fetch a list of customers.
       "state": null,
       "legal_notice": null,
       "communication_culture_code": null,
-      "Notes": null,
-      "tax": null
+      "notes": null
     }
 }
 ```
 
-## Include (Customers)
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
-The following entity types can be included in this payload type
+## Includes (Customers)
 
-| Type          | Description                               |
-|---------------|-------------------------------------------|
-| organizations | The organization containing the customer  |
-| taxes         | The taxes associated with this customer   |
-| countries     | The country associated with this customer |
-| states        | The state associated with this customer   |
+The following entity types can be included in this payload type.
+
+| Type          | Description                                |
+|---------------|--------------------------------------------|
+| organizations | The organization containing the customer.  |
+| countries     | The country associated with this customer. |
+| states        | The state associated with this customer.   |

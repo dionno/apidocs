@@ -105,7 +105,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of an organization.
 
-<span class="http-method http-get">GET</span> ` /api/organizations/<id>`
+<span class="http-method http-get">GET</span> ` /webapi/organizations/<id>`
 
 URL Parameters
 
@@ -199,6 +199,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 Using this API, you'd be able to fetch a list of organizations.
 
 <span class="http-method http-get">GET</span> `/webapi/organizations`
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
 ## Includes (Organizations)
 
