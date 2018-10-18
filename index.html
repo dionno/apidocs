@@ -282,13 +282,13 @@
             <a href="#customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-customer" class="toc-h2 toc-link" data-title="Viewing a Customer">Viewing a Customer</a>
+                    <a href="#viewing-a-customer" class="toc-h2 toc-link" data-title="Viewing a customer">Viewing a customer</a>
                   </li>
                   <li>
-                    <a href="#list-all-customers" class="toc-h2 toc-link" data-title="List all Customers">List all Customers</a>
+                    <a href="#list-all-customers" class="toc-h2 toc-link" data-title="List all customers">List all customers</a>
                   </li>
                   <li>
-                    <a href="#include-customers" class="toc-h2 toc-link" data-title="Include (Customers)">Include (Customers)</a>
+                    <a href="#includes-customers" class="toc-h2 toc-link" data-title="Includes (Customers)">Includes (Customers)</a>
                   </li>
               </ul>
           </li>
@@ -721,7 +721,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </span></code></pre>
 <p>This API allows you to view the details of an organization.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/organizations/&lt;id&gt;</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/organizations/&lt;id&gt;</code></p>
 
 <p>URL Parameters</p>
 
@@ -819,6 +819,10 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/organizations</code></p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 <h2 id='includes-organizations'>Includes (Organizations)</h2>
 <p>The following entity types can be included in this payload type.</p>
 
@@ -1145,6 +1149,10 @@ Use 'includes' to embed additional details in the response.
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects</code></p>
 
 <p>Using this API, you&#39;d be able to fetch a list of projects.</p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 <h2 id='project-members'>Project members</h2>
 <blockquote>
 <p>Example</p>
@@ -1400,19 +1408,19 @@ Use 'includes' to embed additional details in the response.
 </thead><tbody>
 <tr>
 <td>organizations</td>
-<td>The organization containing this project</td>
+<td>The organization containing this project.</td>
 </tr>
 <tr>
 <td>customers</td>
-<td>The customer associated with this project</td>
+<td>The customer associated with this project.</td>
 </tr>
 <tr>
 <td>project_features</td>
-<td>The tasks associated with this project</td>
+<td>The tasks associated with this project.</td>
 </tr>
 <tr>
 <td>project_members</td>
-<td>The members assigned to this project</td>
+<td>The members assigned to this project.</td>
 </tr>
 </tbody></table>
 <h1 id='customers'>Customers</h1>
@@ -1430,37 +1438,37 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>address</td>
 <td>string</td>
-<td>Address</td>
+<td>Address.</td>
 </tr>
 <tr>
 <td>city</td>
 <td>string</td>
-<td>City</td>
+<td>Name of the city.</td>
 </tr>
 <tr>
 <td>communication_culture_code</td>
 <td>string</td>
-<td>Communication culture code</td>
+<td>Communication culture code. </br>Format: [language]-[country code].</td>
 </tr>
 <tr>
-<td>Organization</td>
+<td>organization</td>
 <td>number</td>
-<td>Unique identifier for organization.</td>
+<td>Unique identifier for an organization.</td>
 </tr>
 <tr>
 <td>contact</td>
 <td>string</td>
-<td>Contact</td>
+<td>Contact name.</td>
 </tr>
 <tr>
 <td>country</td>
 <td>number</td>
-<td>Unique identifier for country.</td>
+<td>Unique identifier for a country.</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>Email address</td>
+<td>Email address.</td>
 </tr>
 <tr>
 <td>id</td>
@@ -1470,7 +1478,7 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>legal_notice</td>
 <td>string</td>
-<td>Legal notice</td>
+<td>Registration number for the customer.</td>
 </tr>
 <tr>
 <td>mobile_phone</td>
@@ -1480,37 +1488,32 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>name</td>
 <td>string</td>
-<td>Name</td>
+<td>Name of the customer.</td>
 </tr>
 <tr>
 <td>notes</td>
 <td>string</td>
-<td>Notes</td>
+<td>Notes.</td>
 </tr>
 <tr>
 <td>phone</td>
 <td>string</td>
-<td>Phone</td>
+<td>Phone number.</td>
 </tr>
 <tr>
 <td>state</td>
-<td>string</td>
-<td>State</td>
+<td>number</td>
+<td>Unique identifier for a state.</td>
 </tr>
 <tr>
-<td>Status</td>
+<td>status</td>
 <td>number</td>
-<td>Status</td>
-</tr>
-<tr>
-<td>tax</td>
-<td>number</td>
-<td>Tax</td>
+<td>Enum for the status of the customer: </br>0 = Active. </br>1 = Inactive.</td>
 </tr>
 <tr>
 <td>type</td>
-<td>string</td>
-<td>Payload type.</td>
+<td>customers</td>
+<td>Type of response.</td>
 </tr>
 <tr>
 <td>zip_code</td>
@@ -1518,21 +1521,25 @@ Use 'includes' to embed additional details in the response.
 <td>Zip code.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-customer'>Viewing a Customer</h2>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+<h2 id='viewing-a-customer'>Viewing a customer</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk"</span> 
      -H <span class="s2">"api-version: 3"</span> 
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
-     -X GET https://apps.nutcache.com/webapi/customers
+     -X GET https://apps.nutcache.com/webapi/customers/154528
 </code></pre>
 <p>This API allows you to view the details of a customer.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/customers/[id]</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/customers/[id]</code></p>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
 <blockquote>
@@ -1542,44 +1549,48 @@ Use 'include' to embed additional details in the response.
   </span><span class="s2">"customers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">143222</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample client"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">154528</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">9244</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client #1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/1686"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/9244"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/40"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers/143222"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states/2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers/154528"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"143222@example.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample contact name"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-456-7890"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"mobile_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"legal_notice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"communication_culture_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xhbdv260psct@claimab.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daron D Barrett"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4992  Worley Avenue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richmond"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23223"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"434-378-0004"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mobile_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"703-725-9475"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"legal_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"987654321"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"communication_culture_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-customers'>List all Customers</h2>
+</span></code></pre><h2 id='list-all-customers'>List all customers</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1607,7 +1618,7 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">143222</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample client"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1638,12 +1649,15 @@ Use 'include' to embed additional details in the response.
       </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"legal_notice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"communication_culture_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include-customers'>Include (Customers)</h2>
-<p>The following entity types can be included in this payload type</p>
+</span></code></pre>
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='includes-customers'>Includes (Customers)</h2>
+<p>The following entity types can be included in this payload type.</p>
 
 <table><thead>
 <tr>
@@ -1653,19 +1667,15 @@ Use 'include' to embed additional details in the response.
 </thead><tbody>
 <tr>
 <td>organizations</td>
-<td>The organization containing the customer</td>
-</tr>
-<tr>
-<td>taxes</td>
-<td>The taxes associated with this customer</td>
+<td>The organization containing the customer.</td>
 </tr>
 <tr>
 <td>countries</td>
-<td>The country associated with this customer</td>
+<td>The country associated with this customer.</td>
 </tr>
 <tr>
 <td>states</td>
-<td>The state associated with this customer</td>
+<td>The state associated with this customer.</td>
 </tr>
 </tbody></table>
 <h1 id='time-entries'>Time Entries</h1>
