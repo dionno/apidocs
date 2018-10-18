@@ -248,13 +248,13 @@
             <a href="#organizations" class="toc-h1 toc-link" data-title="Organizations">Organizations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-an-organization" class="toc-h2 toc-link" data-title="Viewing an Organization">Viewing an Organization</a>
+                    <a href="#viewing-an-organization" class="toc-h2 toc-link" data-title="Viewing an organization">Viewing an organization</a>
                   </li>
                   <li>
-                    <a href="#list-all-organizations" class="toc-h2 toc-link" data-title="List all Organizations">List all Organizations</a>
+                    <a href="#list-all-organizations" class="toc-h2 toc-link" data-title="List all organizations">List all organizations</a>
                   </li>
                   <li>
-                    <a href="#include-organizations" class="toc-h2 toc-link" data-title="Include (Organizations)">Include (Organizations)</a>
+                    <a href="#includes-organizations" class="toc-h2 toc-link" data-title="Includes (Organizations)">Includes (Organizations)</a>
                   </li>
               </ul>
           </li>
@@ -330,6 +330,20 @@
               </ul>
           </li>
           <li>
+            <a href="#expenses" class="toc-h1 toc-link" data-title="Expenses">Expenses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#viewing-an-expense" class="toc-h2 toc-link" data-title="Viewing an expense">Viewing an expense</a>
+                  </li>
+                  <li>
+                    <a href="#listing-expenses" class="toc-h2 toc-link" data-title="Listing expenses">Listing expenses</a>
+                  </li>
+                  <li>
+                    <a href="#expense-taxes" class="toc-h2 toc-link" data-title="Expense Taxes">Expense Taxes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#invoices" class="toc-h1 toc-link" data-title="Invoices">Invoices</a>
               <ul class="toc-list-h2">
                   <li>
@@ -353,10 +367,16 @@
             <a href="#countries" class="toc-h1 toc-link" data-title="Countries">Countries</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-country" class="toc-h2 toc-link" data-title="Viewing a Country">Viewing a Country</a>
+                    <a href="#viewing-a-country" class="toc-h2 toc-link" data-title="Viewing a country">Viewing a country</a>
                   </li>
                   <li>
-                    <a href="#list-all-countries" class="toc-h2 toc-link" data-title="List all Countries">List all Countries</a>
+                    <a href="#list-all-countries" class="toc-h2 toc-link" data-title="List all countries">List all countries</a>
+                  </li>
+                  <li>
+                    <a href="#view-country-states" class="toc-h2 toc-link" data-title="View country states">View country states</a>
+                  </li>
+                  <li>
+                    <a href="#includes-countries" class="toc-h2 toc-link" data-title="Includes (Countries)">Includes (Countries)</a>
                   </li>
               </ul>
           </li>
@@ -364,10 +384,13 @@
             <a href="#states" class="toc-h1 toc-link" data-title="States">States</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-state" class="toc-h2 toc-link" data-title="Viewing a State">Viewing a State</a>
+                    <a href="#viewing-a-state" class="toc-h2 toc-link" data-title="Viewing a state">Viewing a state</a>
                   </li>
                   <li>
-                    <a href="#list-all-states" class="toc-h2 toc-link" data-title="List all States">List all States</a>
+                    <a href="#list-all-states" class="toc-h2 toc-link" data-title="List all states">List all states</a>
+                  </li>
+                  <li>
+                    <a href="#includes-states" class="toc-h2 toc-link" data-title="Includes (States)">Includes (States)</a>
                   </li>
               </ul>
           </li>
@@ -375,10 +398,10 @@
             <a href="#currencies" class="toc-h1 toc-link" data-title="Currencies">Currencies</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-currency" class="toc-h2 toc-link" data-title="Viewing a Currency">Viewing a Currency</a>
+                    <a href="#viewing-a-currency" class="toc-h2 toc-link" data-title="Viewing a currency">Viewing a currency</a>
                   </li>
                   <li>
-                    <a href="#list-all-currencies" class="toc-h2 toc-link" data-title="List all Currencies">List all Currencies</a>
+                    <a href="#list-all-currencies" class="toc-h2 toc-link" data-title="List all currencies">List all currencies</a>
                   </li>
               </ul>
           </li>
@@ -628,7 +651,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <td>Zip code.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-an-organization'>Viewing an Organization</h2>
+<h2 id='viewing-an-organization'>Viewing an organization</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -711,9 +734,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
-<h2 id='list-all-organizations'>List all Organizations</h2>
+<h2 id='list-all-organizations'>List all organizations</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -834,7 +857,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 </span></code></pre>
 <p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
-<h2 id='include-organizations'>Include (Organizations)</h2>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/organizations</code></p>
+<h2 id='includes-organizations'>Includes (Organizations)</h2>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -2190,6 +2215,423 @@ Use 'include' to embed additional details in the response.
 <td>The member associated with the timer</td>
 </tr>
 </tbody></table>
+<h1 id='expenses'>Expenses</h1>
+<p>Describes the expenses on the company operation, including the amount, taxes, suppliers and other people associated with the expense.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>type=expenses</td>
+<td>String</td>
+<td>Payload type</td>
+</tr>
+<tr>
+<td>expense_number</td>
+<td>String</td>
+<td>The expense’s identification. If not changed by the user, consists in a sequential number.</td>
+</tr>
+<tr>
+<td>amount_after_taxes</td>
+<td>Number</td>
+<td>The total amount to pay, including the taxes.</td>
+</tr>
+<tr>
+<td>amount_before_taxes</td>
+<td>Number</td>
+<td>The subtotal amount, without the taxes.</td>
+</tr>
+<tr>
+<td>amount_due</td>
+<td>Number</td>
+<td>The outstanding amount.</td>
+</tr>
+<tr>
+<td>amount_paid</td>
+<td>Number</td>
+<td>The amount already paid.</td>
+</tr>
+<tr>
+<td>billable</td>
+<td>Boolean</td>
+<td>If the expense is billable.</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>Number</td>
+<td>Unique identifier for an organization.<br />include=organizations</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>The given expense description.</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>Date</td>
+<td>The expense due date.</td>
+</tr>
+<tr>
+<td>expense_category</td>
+<td>Number</td>
+<td>Unique identifier for the category.</td>
+</tr>
+<tr>
+<td>expense_date</td>
+<td>Date</td>
+<td>The date on which the expense was made.</td>
+</tr>
+<tr>
+<td>invoice</td>
+<td>Number</td>
+<td>Unique identifier of a related invoice, if any.<br />include=invoices</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Number</td>
+<td>Unique identifier of a related project.<br />include=projects</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>The expense status (to enumerate)</td>
+</tr>
+<tr>
+<td>taxes_amount</td>
+<td>Number</td>
+<td>The total amount of taxes.</td>
+</tr>
+<tr>
+<td>member</td>
+<td>Number</td>
+<td>Unique identifier of a related user, if any.<br />include=members</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Number</td>
+<td>The expense version. Used to identify changes made by different users.</td>
+</tr>
+<tr>
+<td>expense_tax_details</td>
+<td>Array</td>
+<td>A collection of expense tax details. It’s present only when explicitly included.<br />include=expense_tax_details</td>
+</tr>
+</tbody></table>
+<h2 id='viewing-an-expense'>Viewing an expense</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
+     -X GET https://apps.nutcache.com/webapi/expenses/231564
+
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"expenses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231564</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_after_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_before_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_due"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_paid"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"billable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">7338</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxes_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">23637</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/7338"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/231564"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre>
+<p>This API allows you to view the details of a expense:</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/expenses/[id]</code></p>
+
+<p>URL Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The expense id to retrieve.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+<h2 id='listing-expenses'>Listing expenses</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
+     -X GET https://apps.nutcache.com/webapi/expenses/
+
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"expenses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231564</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_after_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_before_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_due"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_paid"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"billable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">7338</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxes_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">23637</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/7338"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/231564"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231565</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0003"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_after_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1560.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_before_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">1560.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_due"</span><span class="p">:</span><span class="w"> </span><span class="mf">1545.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_paid"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"billable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">7338</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-31T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="mi">26092</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-31T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">17276</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="mi">1166</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxes_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">23637</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/7338"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/17276"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/231565"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231566</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0004"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_after_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_before_taxes"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_due"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount_paid"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.2500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"billable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">7338</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some expense"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="mi">26092</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">17274</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="mi">1166</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxes_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">23632</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/7338"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/17274"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/231566"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre>
+<p>To get a list containing all expenses, do a GET request, omitting the expense ID.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/expenses/</code></p>
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
+<h2 id='expense-taxes'>Expense Taxes</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span> 
+     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
+     -X GET https://apps.nutcache.com/webapi/expenses/234300/expense_taxes
+
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"expense_taxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expense_taxes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense"</span><span class="p">:</span><span class="w"> </span><span class="mi">234300</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">229010</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"component a"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/234300"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expense_taxes/229010"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expense_taxes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expense"</span><span class="p">:</span><span class="w"> </span><span class="mi">234300</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">229011</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manual tax"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses/234300"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expenses"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expense_taxes/229011"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre>
+<p>You can get a detailed list of taxes contained in an expense, using the following path:</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/expenses/[id]/expense_taxes</code></p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>type=expense_taxes</td>
+<td>String</td>
+<td>Payload type</td>
+</tr>
+<tr>
+<td>expense</td>
+<td>Number</td>
+<td>Unique identifier of parent expense.</td>
+</tr>
+<tr>
+<td>tax_amount</td>
+<td>Number</td>
+<td>The amount to be paid on this tax.</td>
+</tr>
+<tr>
+<td>tax_code</td>
+<td>String</td>
+<td>The name or code for this tax.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+The taxes for an expense can also be filtered using filtered searches.
+</aside>
 <h1 id='invoices'>Invoices</h1>
 <p>A Nutcache invoice.</p>
 
@@ -2875,13 +3317,13 @@ The taxes of an invoice can also be filtered using filtered searches
 <td>Payload type.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-country'>Viewing a Country</h2>
+<h2 id='viewing-a-country'>Viewing a country</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
      -H <span class="s1">'api-version: 3'</span> 
-     -X GET https://apps.nutcache.com/webapi/countries/231?includes<span class="o">=</span>currencies
+     -X GET https://apps.nutcache.com/webapi/countries/231
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2893,22 +3335,7 @@ The taxes of an invoice can also be filtered using filtered searches
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
       </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"decimal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - United States of America"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Etats-Unis d'Amérique"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Доллар - Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos da América"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dolar amerykański – Stany Zjednoczone"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollaro - Stati Uniti d'America"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dólar - Estados Unidos"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar - Vereinigten Staaten von Amerika"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
       </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
@@ -2939,7 +3366,7 @@ The taxes of an invoice can also be filtered using filtered searches
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
 </aside>
-<h2 id='list-all-countries'>List all Countries</h2>
+<h2 id='list-all-countries'>List all countries</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3022,6 +3449,101 @@ Use 'includes' to embed additional details in the response.
 <p>Using this API, you&#39;d be able to fetch a list of countries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries</code></p>
+<h2 id='view-country-states'>View country states</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
+     -H <span class="s1">'api-version: 3'</span>     
+     -X GET https://apps.nutcache.com/webapi/countries/231/states
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231/states?limit=10&amp;page=1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-previous"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231/states?limit=10&amp;page=3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation-next"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"states"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US_NJ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Нью-Джерси"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nova Jérsei"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Jersey"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US_NY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Нью-Йорк"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nova York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nowy Jork"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nueva York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>If you want to see the states/provinces of a country</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]/states</code></p>
+
+<aside class="notice">
+The states of a country can also be filtered using filtered searches
+</aside>
+<h2 id='includes-countries'>Includes (Countries)</h2>
+<p>The following entity types can be included in this payload type</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currencies</td>
+<td>The currency associated with this country</td>
+</tr>
+</tbody></table>
 <h1 id='states'>States</h1>
 <p>Get information about states.</p>
 
@@ -3105,13 +3627,13 @@ Use 'includes' to embed additional details in the response.
 <td>Payload type.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-state'>Viewing a State</h2>
+<h2 id='viewing-a-state'>Viewing a state</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM='</span> 
      -H <span class="s1">'api-version: 3'</span> 
-     -X GET https://apps.nutcache.com/webapi/states/12?includes<span class="o">=</span>countries
+     -X GET https://apps.nutcache.com/webapi/states/12
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -3121,32 +3643,7 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"states"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">147</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_frca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"États-Unis"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_ruru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Соединенные Штаты Америки"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_ptbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_plpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stany Zjednoczone"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_itit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stati Uniti"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_eses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_esus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estados Unidos"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name_dede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vereinigte Staaten von Amerika"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/231"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
       </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US_NY"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name_enus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name_frfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
@@ -3176,7 +3673,7 @@ Use 'includes' to embed additional details in the response.
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
 </aside>
-<h2 id='list-all-states'>List all States</h2>
+<h2 id='list-all-states'>List all states</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3253,6 +3750,20 @@ Use 'includes' to embed additional details in the response.
 <p>Using this API, you&#39;d be able to fetch a list of countries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
+<h2 id='includes-states'>Includes (States)</h2>
+<p>The following entity types can be included in this payload type</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>countries</td>
+<td>The country associated with this state</td>
+</tr>
+</tbody></table>
 <h1 id='currencies'>Currencies</h1>
 <p>Get information about currencies.</p>
 
@@ -3336,7 +3847,7 @@ Use 'includes' to embed additional details in the response.
 <td>Payload type.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-currency'>Viewing a Currency</h2>
+<h2 id='viewing-a-currency'>Viewing a currency</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3371,7 +3882,7 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-currencies'>List all Currencies</h2>
+</span></code></pre><h2 id='list-all-currencies'>List all currencies</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
