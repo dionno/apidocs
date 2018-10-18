@@ -4,40 +4,43 @@ A Nutcache project is a planned work or activity that is to be completed over a 
 
 Using the API you can do the following with project data.
 
-| Attribute                          | Type     | Description                            |
-|------------------------------------|----------|----------------------------------------|
-| billing_approved_entries_only      | boolean  | ????                                   |
-| billing_invoice_method_fixed_fee   | number   | ?????                                  |
-| billing_invoice_method_hourly_rate | number   | ?????                                  |
-| billing_method                     | string   | Billing method.????bug returns string  |
-| budget_approved_only               | boolean  |                                        |
-| budget_restrictive                 | boolean  |                                        |
-| budget_scope                       | string   |                                        |
-| budget_type                        | string   |                                        |
-| code                               | string   |                                        |
-| organization                       | number   | Unique identifier for an organization. |
-| customer                           | number   | Unique identifier for a customer.      |
-| description                        | string   | Project description.                   |
-| display_color                      | string   | HTML color                             |
-| EffectiveBudgetAmount              | number   | ??????                                 |
-| EffectiveBudgetMinutes             | number   | ??????                                 |
-| end_date                           | datetime | Phone number.                          |
-| id                                 | number   | Unique identifier.                     |
-| primary_contact_email              | string   | Primary contact email.                 |
-| primary_contact_name               | string   | Primary contact name.                  |
-| primary_contact_phone              | string   | Primary contact phone                  |
-| project_budget                     | number   | ????                                   |
-| project_type                       | number   | Type of project.                       |
-| secondary_contact_email            | string   | Secondary contact email.               |
-| secondary_contact_name             | string   | Secondary contact name.                |
-| secondary_contact_phone            | string   | Secondary contact phone.               |
-| start_date                         | datetime | Project start date.                    |
-| status                             | number   | Project status(to enumerate)           |
-| type                               | string   | Payload type(projects)                 |
-| Vision                             | string   | Project vision                         |
+| Attribute                          | Type     | Description                                                                                                                                                                                                                                                                                                                                          |
+|------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| billing_approved_entries_only      | boolean  | Only consider approved timesheet entries for project billing. </br>Available if billing_method <> 0.                                                                                                                                                                                                                                                 |
+| billing_invoice_method_fixed_fee   | decimal  | Fixed fee for the project. </br>Available if billing_method = 4.                                                                                                                                                                                                                                                                                     |
+| billing_invoice_method_hourly_rate | decimal  | Fixed hourly rate for the project.  </br>Available if billing_method = 3.                                                                                                                                                                                                                                                                            |
+| billing_method                     | number   | Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the features' rate. </br>2 = Billable amount is calculated from the members' rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate. |
+| budget_approved_only               | boolean  | Only consider approved timesheet entries when calculating project budget.                                                                                                                                                                                                                                                                            |
+| budget_restrictive                 | boolean  | Budgets cannot be exceeded for the project, allowing for a better control of worked hours and expenses.                                                                                                                                                                                                                                              |
+| budget_scope                       | number   | Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per feature [Enterprise only].                                                                                                                                                                                                           |
+| budget_type                        | number   | Enum for budget type set for the project: </br>0 = Worked hours. </br>1 = Billable hours. </br>2 = Costs. </br>3 = Billable amounts.                                                                                                                                                                                                                 |
+| customer                           | number   | Unique identifier for a customer.                                                                                                                                                                                                                                                                                                                    |
+| description                        | string   | Description for the project.                                                                                                                                                                                                                                                                                                                         |
+| display_color                      | string   | HTML color code to identify the project.                                                                                                                                                                                                                                                                                                             |
+| EffectiveBudgetAmount              | decimal  | Budget amount of the projet depending on its budget type (budget_type).                                                                                                                                                                                                                                                                              |
+| EffectiveBudgetMinutes             | number   | Budget minutes  of the projet depending on its budget type (budget_type).                                                                                                                                                                                                                                                                            |
+| end_date                           | datetime | End date set for the project.                                                                                                                                                                                                                                                                                                                        |
+| id                                 | number   | Unique identifier for the project.                                                                                                                                                                                                                                                                                                                   |
+| name                               | string   | Unique name for the project.                                                                                                                                                                                                                                                                                                                         |
+| organization                       | number   | Unique identifier for an organization.                                                                                                                                                                                                                                                                                                               |
+| primary_contact_email              | string   | Primary contact email.                                                                                                                                                                                                                                                                                                                               |
+| primary_contact_name               | string   | Primary contact name.                                                                                                                                                                                                                                                                                                                                |
+| primary_contact_phone              | string   | Primary contact phone.                                                                                                                                                                                                                                                                                                                               |
+| project_type                       | number   | Enum for the type of project: </br>0 = Agile. </br>1 = Scrum.                                                                                                                                                                                                                                                                                        |
+| secondary_contact_email            | string   | Secondary contact email.                                                                                                                                                                                                                                                                                                                             |
+| secondary_contact_name             | string   | Secondary contact name.                                                                                                                                                                                                                                                                                                                              |
+| secondary_contact_phone            | string   | Secondary contact phone.                                                                                                                                                                                                                                                                                                                             |
+| start_date                         | datetime | Start date set for the project.                                                                                                                                                                                                                                                                                                                      |
+| status                             | number   | Enum for the status of the project: </br>0 = Planned. </br>1 = In progress. </br>2 = Completed. </br>3 = Canceled. </br>4 = Archived.                                                                                                                                                                                                                |
+| type                               | projects | Type of response.                                                                                                                                                                                                                                                                                                                                    |
+| vision                             | string   | Project vision.                                                                                                                                                                                                                                                                                                                                      |
 
 
-## Viewing a Project
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
+## Viewing a project
 
 >Example
 
@@ -107,13 +110,13 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of a project.
 
-<span class="http-method http-get">GET</span> `  /api/projects/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/projects/[id]`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
-## List all Projects
+## List all projects
 
 >Example
 
@@ -188,15 +191,11 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-<span class="http-method http-get">GET</span> `  /api/projects`
+<span class="http-method http-get">GET</span> `  /webapi/projects`
 
 Using this API, you'd be able to fetch a list of projects.
 
-## Project Members
-
-If you want to see the project members for a project.
-
-<span class="http-method http-get">GET</span> `  /api/projects/[id]/project_members`
+## Project members
 
 >Example
 
@@ -206,74 +205,68 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
      -X GET https://apps.nutcache.com/webapi/projects/6640/project_members
 ```
-to do - response
 > Response
 
 ```json
 {
-  "projects": [
+  "project_members": [
     {
-      "type": "projects",
-      "id": 6640,
-      "Organization": 1686,
-      "code": "Agile sample project (non-billable)",
-      "display_color": "#607d8b",
+      "type": "project_members",
+      "id": 73582,
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "display_color": "#ef6c00",
       "status": 1,
+      "project": 6640,
       "links": [
         {
-          "href": "organizations/1686",
-          "rel": "organizations",
-          "type": "GET"
-        },
-        {
-          "href": "customers/143222",
-          "rel": "customers",
-          "type": "GET"
-        },
-        {
           "href": "projects/6640",
-          "rel": "self",
+          "rel": "projects",
           "type": "GET"
         }
       ],
-      "project_type": 0,
-      "description": "Leverage the Agile approach to organize and manage your projects with boards.",
-      "Vision": "Project vision",
-      "primary_contact_email": null,
-      "primary_contact_name": null,
-      "primary_contact_phone": null,
-      "secondary_contact_email": null,
-      "secondary_contact_name": null,
-      "secondary_contact_phone": null,
-      "start_date": "2018-01-22T00:00:00",
-      "end_date": null,
-      "budget_scope": "1",
-      "budget_type": "1",
-      "EffectiveBudgetAmount": 0,
-      "EffectiveBudgetMinutes": 0,
-      "budget_approved_only": false,
-      "budget_restrictive": false,
-      "billing_method": "NotBillable",
-      "billing_invoice_method_fixed_fee": 0,
-      "billing_invoice_method_hourly_rate": 0,
-      "billing_approved_entries_only": false,
-      "customer": 143222,
-      "project_budget": null
+      "billing_rate": null,
+      "budget_amount": 0,
+      "budget_minutes": 0,      
+      "member": 29550
     }
   ]
 }
 ```
 
+If you want to see the project members for a project.
+
+<span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_members`
+
+| Attribute      | Type            | Description                                                                                                                                            |
+|----------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| billing_rate   | decimal         | Billing rate for the project member. </br>The billing rate is available only if the project invoice method is set to member rate (billing_method = 2). |
+| budget_amount  | decimal         | Budget amount set for the member depending on the project budget type (budget_type)                                                                    |
+| budget_minutes | number          | Budget minutes set for the member depending on the project budget type (budget_type)                                                                   |
+| display_color  | string          | HTML color code to identify the member.                                                                                                                |
+| email          | string          | Member email.                                                                                                                                          |
+| id             | number          | Unique identifier for a project member.                                                                                                                |
+| member         | number          | Unique identifier for the member of the organization.                                                                                                  |
+| name           | string          | Member name.                                                                                                                                           |
+| project        | number          | Unique identifier for the project.                                                                                                                     |
+| status         | number          | Enum for the status of the member in the project: </br>0 = Inactive. </br>1 = Active.                                                                  |
+| type           | project_members | Type of response.                                                                                                                                      |
+
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
 <aside class="notice">
 The project members for a project can also be filtered using filtered searches.
 </aside>
 
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
-## Project Features
 
-If you want to see the project features for a project.
-
-<span class="http-method http-get">GET</span> `  /api/projects/[id]/project_features`
+## Project features
 
 >Example
 
@@ -283,78 +276,73 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features
 ```
-to do - response
+
 > Response
 
 ```json
 {
-  "projects": [
+  "project_features": [
     {
-      "type": "projects",
-      "id": 6640,
-      "Organization": 1686,
-      "code": "Agile sample project (non-billable)",
-      "display_color": "#607d8b",
-      "status": 1,
+      "type": "project_features",
+      "id": 130317,
+      "description": "A feature",
+      "order": 0,
+      "status": 0,
+      "project": 6640,
       "links": [
         {
-          "href": "organizations/1686",
-          "rel": "organizations",
-          "type": "GET"
-        },
-        {
-          "href": "customers/143222",
-          "rel": "customers",
-          "type": "GET"
-        },
-        {
           "href": "projects/6640",
-          "rel": "self",
+          "rel": "projects",
           "type": "GET"
         }
       ],
-      "project_type": 0,
-      "description": "Leverage the Agile approach to organize and manage your projects with boards.",
-      "Vision": "Project vision",
-      "primary_contact_email": null,
-      "primary_contact_name": null,
-      "primary_contact_phone": null,
-      "secondary_contact_email": null,
-      "secondary_contact_name": null,
-      "secondary_contact_phone": null,
-      "start_date": "2018-01-22T00:00:00",
-      "end_date": null,
-      "budget_scope": "1",
-      "budget_type": "1",
-      "EffectiveBudgetAmount": 0,
-      "EffectiveBudgetMinutes": 0,
-      "budget_approved_only": false,
-      "budget_restrictive": false,
-      "billing_method": "NotBillable",
-      "billing_invoice_method_fixed_fee": 0,
-      "billing_invoice_method_hourly_rate": 0,
-      "billing_approved_entries_only": false,
-      "customer": 143222,
-      "project_budget": null
+      "notes": "123",
+      "billing_rate": 10,
+      "budget_amount": 0,
+      "budget_minutes": 0,
+      "item_type": null
     }
   ]
 }
 ```
+If you want to see the project features for a project.
+
+<span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_features`
+
+| Attribute      | Type             | Description                                                                                                                                                     |  |
+|----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
+| billing_rate   | decimal          | Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2). |  |
+| budget_amount  | decimal          | Budget amount set for the feature in the project depending on the budget type of the project (budget_type).                                                     |  |
+| budget_minutes | number           | Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).                                                    |  |
+| description    | string           | Description for the feature in the project.                                                                                                                     |  |
+| id             | number           | Unique identifier for a feature in the project.                                                                                                                 |  |
+| item_types     | number           | Unique identifier for the item type.                                                                                                                            |  |
+| notes          | string           | Additional notes for the feature in the project.                                                                                                                |  |
+| order          | number           | Order of the feature in the project for display purposes.                                                                                                       |  |
+| project        | number           | Unique identifier for the project.                                                                                                                              |  |
+| status         | number           | Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |  |
+| type           | project_features | Type of response.                                                                                                                                               |  |
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
 
 <aside class="notice">
 The project features for a project can also be filtered using filtered searches.
 </aside>
 
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
-## Include (Projects)
 
-The following entity types can be included in this payload type
+## Includes (Projects)
+
+The following entity types can be included in this payload type.
 
 | Type             | Description                               |
 |------------------|-------------------------------------------|
 | organizations    | The organization containing this project  |
 | customers        | The customer associated with this project |
-| project_budgets  | The budget summary of this project        |
 | project_features | The tasks associated with this project    |
 | project_members  | The members assigned to this project      |
-| project_managers | The managers assigned to this project     |
