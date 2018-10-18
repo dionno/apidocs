@@ -219,16 +219,16 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting started">Getting started</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#public-key" class="toc-h2 toc-link" data-title="Public Key">Public Key</a>
+                    <a href="#public-key" class="toc-h2 toc-link" data-title="Public key">Public key</a>
                   </li>
                   <li>
                     <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
                   </li>
                   <li>
-                    <a href="#organization-context" class="toc-h2 toc-link" data-title="Organization Context">Organization Context</a>
+                    <a href="#organization-context" class="toc-h2 toc-link" data-title="Organization context">Organization context</a>
                   </li>
                   <li>
                     <a href="#schema" class="toc-h2 toc-link" data-title="Schema">Schema</a>
@@ -262,19 +262,19 @@
             <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-project" class="toc-h2 toc-link" data-title="Viewing a Project">Viewing a Project</a>
+                    <a href="#viewing-a-project" class="toc-h2 toc-link" data-title="Viewing a project">Viewing a project</a>
                   </li>
                   <li>
-                    <a href="#list-all-projects" class="toc-h2 toc-link" data-title="List all Projects">List all Projects</a>
+                    <a href="#list-all-projects" class="toc-h2 toc-link" data-title="List all projects">List all projects</a>
                   </li>
                   <li>
-                    <a href="#project-members" class="toc-h2 toc-link" data-title="Project Members">Project Members</a>
+                    <a href="#project-members" class="toc-h2 toc-link" data-title="Project members">Project members</a>
                   </li>
                   <li>
-                    <a href="#project-features" class="toc-h2 toc-link" data-title="Project Features">Project Features</a>
+                    <a href="#project-features" class="toc-h2 toc-link" data-title="Project features">Project features</a>
                   </li>
                   <li>
-                    <a href="#include-projects" class="toc-h2 toc-link" data-title="Include (Projects)">Include (Projects)</a>
+                    <a href="#includes-projects" class="toc-h2 toc-link" data-title="Includes (Projects)">Includes (Projects)</a>
                   </li>
               </ul>
           </li>
@@ -436,7 +436,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='getting-started'>Getting Started</h1><h2 id='public-key'>Public Key</h2>
+        <h1 id='getting-started'>Getting started</h1><h2 id='public-key'>Public key</h2>
 <p>To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the &quot;My account -&gt; My Profile&quot; menu. From the My Profile dialog, select the &quot;Manage Access Keys&quot; tab and click the &quot;+ Generate new key&quot; to continue.</p>
 
 <p>To do! Add screen captures</p>
@@ -444,7 +444,7 @@
 <p>Authentication info must be provided along with your request within the Authorization header. The authentication is made of the public key, a username and password, all separated by a colon. The authentication info must be encoded in Base 64.</p>
 
 <p>Authorization: nut-basic [Base64(<em>public-key</em>:<em>username</em>:<em>password</em>)]</p>
-<h2 id='organization-context'>Organization Context</h2>
+<h2 id='organization-context'>Organization context</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -528,7 +528,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>address</td>
 <td>string</td>
-<td>Address</td>
+<td>Address.</td>
 </tr>
 <tr>
 <td>city</td>
@@ -538,17 +538,17 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>country</td>
 <td>number</td>
-<td>Unique identifier for a country.include=countries</td>
+<td>Unique identifier for a country.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td>number</td>
-<td>Unique identifier for a currency.include=currencies</td>
+<td>Unique identifier for a currency.</td>
 </tr>
 <tr>
 <td>date_format</td>
 <td>number</td>
-<td>Enum for date format set for the organization: </br>0 = ISO format (yyyy-MM-dd) </br>1 = US format w/ dash (MM-dd-yyyy) </br>2 = US format w/ slash (MM/dd/yyyy) </br>3 = International format w/ dash(dd-MM-yyyy) </br>4 = International format w/ slash(dd/MM/yyyy) </br>5 = International format w/ dots(dd.MM.yyyy)</td>
+<td>Enum for date format set for the organization: </br>0 = ISO format (yyyy-MM-dd). </br>1 = US format w/ dash (MM-dd-yyyy). </br>2 = US format w/ slash (MM/dd/yyyy). </br>3 = International format w/ dash(dd-MM-yyyy). </br>4 = International format w/ slash(dd/MM/yyyy). </br>5 = International format w/ dots(dd.MM.yyyy).</td>
 </tr>
 <tr>
 <td>email</td>
@@ -578,7 +578,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>last_activity_date</td>
 <td>datetime</td>
-<td>Last date/time this Organization was accessed.</td>
+<td>Last date/time this organization was accessed.</td>
 </tr>
 <tr>
 <td>logo_url</td>
@@ -588,7 +588,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>name</td>
 <td>string</td>
-<td>Organization name.</td>
+<td>Name of the organization.</td>
 </tr>
 <tr>
 <td>notification_count</td>
@@ -603,22 +603,22 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>state</td>
 <td>state</td>
-<td>Stateinclude=states</td>
+<td>Unique identifier for a state.</td>
 </tr>
 <tr>
 <td>status</td>
 <td>number</td>
-<td>0 = Active </br>1 = Inactive </br>2 = Expired</td>
+<td>Enum for the status of the organization: 0 = Active. </br>1 = Inactive. </br>2 = Expired.</td>
 </tr>
 <tr>
 <td>time_format</td>
 <td>number</td>
-<td>Enum for time format set for the organization: </br>0 = ISO format (HH:mm), </br>1 = AM/PM format (hh:mm tt)</td>
+<td>Enum for time format set for the organization: </br>0 = ISO format (HH:mm). </br>1 = AM/PM format (hh:mm tt).</td>
 </tr>
 <tr>
 <td>time_rounding</td>
 <td>number</td>
-<td>Enum for time rounding set for time entries in the organization: </br>0 = None </br>1 = Round to nearest </br>2 = Round up to nearest</td>
+<td>Enum for time rounding set for time entries in the organization: </br>0 = None. </br>1 = Round to nearest. </br>2 = Round up to nearest.</td>
 </tr>
 <tr>
 <td>time_rounding_minutes</td>
@@ -628,17 +628,17 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>time_span_format</td>
 <td>number</td>
-<td>Enum for duration (time) format set for the organization: </br>0 = Decimal (e.g. 2.5) </br>1 = Short time (e.g. 2:30)</td>
+<td>Enum for duration (time) format set for the organization: </br>0 = Decimal (e.g. 2.5). </br>1 = Short time (e.g. 2:30).</td>
 </tr>
 <tr>
 <td>time_tracking_type</td>
 <td>number</td>
-<td>Enum for time tracking mode set for the organization: </br>0 = Duration </br>1 = Start/End time</td>
+<td>Enum for time tracking mode set for the organization: </br>0 = Duration. </br>1 = Start/End time.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>organizations</td>
-<td>Type of response</td>
+<td>Type of response.</td>
 </tr>
 <tr>
 <td>website</td>
@@ -651,6 +651,10 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <td>Zip code.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside>    
 <h2 id='viewing-an-organization'>Viewing an organization</h2>
 <blockquote>
 <p>Example</p>
@@ -807,50 +811,6 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"846e176e-7c4b-4bfd-a894-c98f2988927e"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Justice League"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@example.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_activity_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-06T16:02:09.44"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"notification_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">167</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is_demo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"date_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"time_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"time_span_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"time_rounding"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"time_rounding_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"time_tracking_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"active_user_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries/2"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies/2"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/1686"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -860,7 +820,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/organizations</code></p>
 <h2 id='includes-organizations'>Includes (Organizations)</h2>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type.</p>
 
 <table><thead>
 <tr>
@@ -870,15 +830,15 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </thead><tbody>
 <tr>
 <td>countries</td>
-<td>The country associated with this organization</td>
+<td>The country associated with this organization.</td>
 </tr>
 <tr>
 <td>states</td>
-<td>The state associated with this organization</td>
+<td>The state associated with this organization.</td>
 </tr>
 <tr>
 <td>currencies</td>
-<td>The currency associated with this organization</td>
+<td>The currency associated with this organization.</td>
 </tr>
 </tbody></table>
 <h1 id='projects'>Projects</h1>
@@ -896,52 +856,42 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>billing_approved_entries_only</td>
 <td>boolean</td>
-<td>????</td>
+<td>Only consider approved timesheet entries for project billing. </br>Available if billing_method &lt;&gt; 0.</td>
 </tr>
 <tr>
 <td>billing_invoice_method_fixed_fee</td>
-<td>number</td>
-<td>?????</td>
+<td>decimal</td>
+<td>Fixed fee for the project. </br>Available if billing_method = 4.</td>
 </tr>
 <tr>
 <td>billing_invoice_method_hourly_rate</td>
-<td>number</td>
-<td>?????</td>
+<td>decimal</td>
+<td>Fixed hourly rate for the project.  </br>Available if billing_method = 3.</td>
 </tr>
 <tr>
 <td>billing_method</td>
-<td>string</td>
-<td>Billing method.????bug returns string</td>
+<td>number</td>
+<td>Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the features&#39; rate. </br>2 = Billable amount is calculated from the members&#39; rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate.</td>
 </tr>
 <tr>
 <td>budget_approved_only</td>
 <td>boolean</td>
-<td></td>
+<td>Only consider approved timesheet entries when calculating project budget.</td>
 </tr>
 <tr>
 <td>budget_restrictive</td>
 <td>boolean</td>
-<td></td>
+<td>Budgets cannot be exceeded for the project, allowing for a better control of worked hours and expenses.</td>
 </tr>
 <tr>
 <td>budget_scope</td>
-<td>string</td>
-<td></td>
+<td>number</td>
+<td>Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per feature [Enterprise only].</td>
 </tr>
 <tr>
 <td>budget_type</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>code</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>organization</td>
 <td>number</td>
-<td>Unique identifier for an organization.</td>
+<td>Enum for budget type set for the project: </br>0 = Worked hours. </br>1 = Billable hours. </br>2 = Costs. </br>3 = Billable amounts.</td>
 </tr>
 <tr>
 <td>customer</td>
@@ -951,32 +901,42 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>description</td>
 <td>string</td>
-<td>Project description.</td>
+<td>Description for the project.</td>
 </tr>
 <tr>
 <td>display_color</td>
 <td>string</td>
-<td>HTML color</td>
+<td>HTML color code to identify the project.</td>
 </tr>
 <tr>
 <td>EffectiveBudgetAmount</td>
-<td>number</td>
-<td>??????</td>
+<td>decimal</td>
+<td>Budget amount of the projet depending on its budget type (budget_type).</td>
 </tr>
 <tr>
 <td>EffectiveBudgetMinutes</td>
 <td>number</td>
-<td>??????</td>
+<td>Budget minutes  of the projet depending on its budget type (budget_type).</td>
 </tr>
 <tr>
 <td>end_date</td>
 <td>datetime</td>
-<td>Phone number.</td>
+<td>End date set for the project.</td>
 </tr>
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier.</td>
+<td>Unique identifier for the project.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Unique name for the project.</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>number</td>
+<td>Unique identifier for an organization.</td>
 </tr>
 <tr>
 <td>primary_contact_email</td>
@@ -991,17 +951,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>primary_contact_phone</td>
 <td>string</td>
-<td>Primary contact phone</td>
-</tr>
-<tr>
-<td>project_budget</td>
-<td>number</td>
-<td>????</td>
+<td>Primary contact phone.</td>
 </tr>
 <tr>
 <td>project_type</td>
 <td>number</td>
-<td>Type of project.</td>
+<td>Enum for the type of project: </br>0 = Agile. </br>1 = Scrum.</td>
 </tr>
 <tr>
 <td>secondary_contact_email</td>
@@ -1021,25 +976,29 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>start_date</td>
 <td>datetime</td>
-<td>Project start date.</td>
+<td>Start date set for the project.</td>
 </tr>
 <tr>
 <td>status</td>
 <td>number</td>
-<td>Project status(to enumerate)</td>
+<td>Enum for the status of the project: </br>0 = Planned. </br>1 = In progress. </br>2 = Completed. </br>3 = Canceled. </br>4 = Archived.</td>
 </tr>
 <tr>
 <td>type</td>
-<td>string</td>
-<td>Payload type(projects)</td>
+<td>projects</td>
+<td>Type of response.</td>
 </tr>
 <tr>
-<td>Vision</td>
+<td>vision</td>
 <td>string</td>
-<td>Project vision</td>
+<td>Project vision.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-project'>Viewing a Project</h2>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+<h2 id='viewing-a-project'>Viewing a project</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1106,12 +1065,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </span></code></pre>
 <p>This API allows you to view the details of a project.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/projects/[id]</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]</code></p>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
-<h2 id='list-all-projects'>List all Projects</h2>
+<h2 id='list-all-projects'>List all projects</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1183,14 +1142,10 @@ Use 'include' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><span class="http-method http-get">GET</span> <code>/api/projects</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/projects</code></p>
 
 <p>Using this API, you&#39;d be able to fetch a list of projects.</p>
-<h2 id='project-members'>Project Members</h2>
-<p>If you want to see the project members for a project.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/projects/[id]/project_members</code></p>
-
+<h2 id='project-members'>Project members</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1199,72 +1154,114 @@ Use 'include' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
      -X GET https://apps.nutcache.com/webapi/projects/6640/project_members
 </code></pre>
-<p>to do - response</p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"project_members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6640</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agile sample project (non-billable)"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"display_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#607d8b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_members"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">73582</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ef6c00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6640</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/1686"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers/143222"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
           </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/6640"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leverage the Agile approach to organize and manage your projects with boards."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Vision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project vision"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-22T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"EffectiveBudgetAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"EffectiveBudgetMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_approved_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_restrictive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotBillable"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_invoice_method_fixed_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_invoice_method_hourly_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_approved_entries_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">143222</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"billing_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"budget_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"budget_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">      
+      </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">29550</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>If you want to see the project members for a project.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_members</code></p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>billing_rate</td>
+<td>decimal</td>
+<td>Billing rate for the project member. </br>The billing rate is available only if the project invoice method is set to member rate (billing_method = 2).</td>
+</tr>
+<tr>
+<td>budget_amount</td>
+<td>decimal</td>
+<td>Budget amount set for the member depending on the project budget type (budget_type)</td>
+</tr>
+<tr>
+<td>budget_minutes</td>
+<td>number</td>
+<td>Budget minutes set for the member depending on the project budget type (budget_type)</td>
+</tr>
+<tr>
+<td>display_color</td>
+<td>string</td>
+<td>HTML color code to identify the member.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Member email.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier for a project member.</td>
+</tr>
+<tr>
+<td>member</td>
+<td>number</td>
+<td>Unique identifier for the member of the organization.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Member name.</td>
+</tr>
+<tr>
+<td>project</td>
+<td>number</td>
+<td>Unique identifier for the project.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>Enum for the status of the member in the project: </br>0 = Inactive. </br>1 = Active.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>project_members</td>
+<td>Type of response.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
 <aside class="notice">
 The project members for a project can also be filtered using filtered searches.
 </aside>
-<h2 id='project-features'>Project Features</h2>
-<p>If you want to see the project features for a project.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/api/projects/[id]/project_features</code></p>
-
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='project-features'>Project features</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1273,69 +1270,127 @@ The project members for a project can also be filtered using filtered searches.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/projects/6640/project_features
 </code></pre>
-<p>to do - response</p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"project_features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6640</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agile sample project (non-billable)"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"display_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#607d8b"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">130317</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A feature"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6640</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations/1686"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organizations"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers/143222"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
           </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/6640"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leverage the Agile approach to organize and manage your projects with boards."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Vision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project vision"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"primary_contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secondary_contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-22T00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"EffectiveBudgetAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"EffectiveBudgetMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_approved_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"budget_restrictive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotBillable"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_invoice_method_fixed_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_invoice_method_hourly_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"billing_approved_entries_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">143222</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"billing_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"budget_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"budget_minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"item_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>If you want to see the project features for a project.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_features</code></p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>billing_rate</td>
+<td>decimal</td>
+<td>Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2).</td>
+<td></td>
+</tr>
+<tr>
+<td>budget_amount</td>
+<td>decimal</td>
+<td>Budget amount set for the feature in the project depending on the budget type of the project (budget_type).</td>
+<td></td>
+</tr>
+<tr>
+<td>budget_minutes</td>
+<td>number</td>
+<td>Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Description for the feature in the project.</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Unique identifier for a feature in the project.</td>
+<td></td>
+</tr>
+<tr>
+<td>item_types</td>
+<td>number</td>
+<td>Unique identifier for the item type.</td>
+<td></td>
+</tr>
+<tr>
+<td>notes</td>
+<td>string</td>
+<td>Additional notes for the feature in the project.</td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>number</td>
+<td>Order of the feature in the project for display purposes.</td>
+<td></td>
+</tr>
+<tr>
+<td>project</td>
+<td>number</td>
+<td>Unique identifier for the project.</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>project_features</td>
+<td>Type of response.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
 <aside class="notice">
 The project features for a project can also be filtered using filtered searches.
 </aside>
-<h2 id='include-projects'>Include (Projects)</h2>
-<p>The following entity types can be included in this payload type</p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='includes-projects'>Includes (Projects)</h2>
+<p>The following entity types can be included in this payload type.</p>
 
 <table><thead>
 <tr>
@@ -1352,20 +1407,12 @@ The project features for a project can also be filtered using filtered searches.
 <td>The customer associated with this project</td>
 </tr>
 <tr>
-<td>project_budgets</td>
-<td>The budget summary of this project</td>
-</tr>
-<tr>
 <td>project_features</td>
 <td>The tasks associated with this project</td>
 </tr>
 <tr>
 <td>project_members</td>
 <td>The members assigned to this project</td>
-</tr>
-<tr>
-<td>project_managers</td>
-<td>The managers assigned to this project</td>
 </tr>
 </tbody></table>
 <h1 id='customers'>Customers</h1>
