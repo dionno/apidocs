@@ -1511,6 +1511,11 @@ Use 'includes' to embed additional details in the response.
 <td>Enum for the status of the customer: </br>0 = Active. </br>1 = Inactive.</td>
 </tr>
 <tr>
+<td>tax</td>
+<td>number</td>
+<td>Unique identifier for a tax.</td>
+</tr>
+<tr>
 <td>type</td>
 <td>customers</td>
 <td>Type of response.</td>
@@ -1586,7 +1591,8 @@ Use 'includes' to embed additional details in the response.
       </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"legal_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"987654321"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"communication_culture_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note."</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a note."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">11591</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1649,7 +1655,8 @@ Use 'includes' to embed additional details in the response.
       </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"legal_notice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"communication_culture_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1676,6 +1683,10 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>states</td>
 <td>The state associated with this customer.</td>
+</tr>
+<tr>
+<td>taxes</td>
+<td>The tax associated with this customer.</td>
 </tr>
 </tbody></table>
 <h1 id='time-entries'>Time Entries</h1>
