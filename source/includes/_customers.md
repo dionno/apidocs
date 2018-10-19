@@ -21,8 +21,10 @@ Using the API's you can do the following with project data.
 | phone                      | string    | Phone number.                                                            |
 | state                      | number    | Unique identifier for a state.                                           |
 | status                     | number    | Enum for the status of the customer: </br>0 = Active. </br>1 = Inactive. |
+| tax                        | number    | Unique identifier for a tax.                                             |
 | type                       | customers | Type of response.                                                        |
 | zip_code                   | string    | Zip code.                                                                |
+
 
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.
@@ -91,7 +93,8 @@ Use 'includes' to embed additional details in the response.
       "state": 2,
       "legal_notice": "987654321",
       "communication_culture_code": "en-US",
-      "notes": "This is a note."
+      "notes": "This is a note.",
+      "tax": 11591
     }
   ]
 }
@@ -158,7 +161,8 @@ Using this API, you'd be able to fetch a list of customers.
       "state": null,
       "legal_notice": null,
       "communication_culture_code": null,
-      "notes": null
+      "notes": null,
+      "tax": null
     }
 }
 ```
@@ -176,3 +180,5 @@ The following entity types can be included in this payload type.
 | organizations | The organization containing the customer.  |
 | countries     | The country associated with this customer. |
 | states        | The state associated with this customer.   |
+| taxes         | The tax associated with this customer.     |
+
