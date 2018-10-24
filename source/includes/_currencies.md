@@ -4,22 +4,22 @@ Get information about currencies.
 
 Using the API you can do the following with currency data.
 
-| Attribute       | Type   | Description                      |
-|-----------------|--------|----------------------------------|
-| code            | string | Currency code.                   |
-| decimal_count   | number | Number of decimal places.        |
-| id              | number | Unique identifier                |
-| name_dede       | string | Currency name in German          |
-| name_enus       | string | Currency name in US english.     |
-| name_eses       | string | Currency name in Spanish.        |
-| name_esus       | string | Currency name in Spanish / US    |
-| name_frca       | string | Currency name in French / Canada |
-| name_frfr       | string | Currency name in French / France |
-| name_itit       | string | Currency name in Italian         |
-| name_plpl       | string | Currency name in Polish          |
-| name_ptbr       | string | Currency name in Portuguese      |
-| name_ruru       | string | Currency name in Russian         |
-| type=currencies | string | Payload type.                    |
+| Attribute     | Type       | Description                      |
+|---------------|------------|----------------------------------|
+| code          | string     | Currency code.                   |
+| decimal_count | number     | Number of decimal places.        |
+| id            | number     | Unique identifier                |
+| name_dede     | string     | Currency name in German          |
+| name_enus     | string     | Currency name in US english.     |
+| name_eses     | string     | Currency name in Spanish.        |
+| name_esus     | string     | Currency name in Spanish / US    |
+| name_frca     | string     | Currency name in French / Canada |
+| name_frfr     | string     | Currency name in French / France |
+| name_itit     | string     | Currency name in Italian         |
+| name_plpl     | string     | Currency name in Polish          |
+| name_ptbr     | string     | Currency name in Portuguese      |
+| name_ruru     | string     | Currency name in Russian         |
+| type          | currencies | Type of response.                |
 
 ## Viewing a currency
 

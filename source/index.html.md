@@ -12,16 +12,16 @@ toc_footers:
 
 includes: 
   - getting_started
-  - organizations
-  - projects
+  - countries
   - customers
-  - time_entries
-  - timers
+  - currencies
   - expenses
   - invoices
-  - countries
+  - organizations
+  - projects
   - states
-  - currencies
+  - time_entries
+  - timers
   - search
   - errors
 

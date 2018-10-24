@@ -4,22 +4,22 @@ Get information about states.
 
 Using the API you can do the following with a state data.
 
-| Attribute   | Type   | Description                                                                  |
-|-------------|--------|------------------------------------------------------------------------------|
-| code        | string | State code in the following format: <br>[Country 2 letter code]-[State code] |
-| country     | number | Unique identifier for a country                                              |
-| id          | number | Unique identifier                                                            |
-| name_dede   | string | State name in Germain                                                        |
-| name_enus   | string | State name in US english.                                                    |
-| name_eses   | string | State name in Spanish                                                        |
-| name_esus   | string | State name in Spanish / US                                                   |
-| name_frca   | string | State name in French / Canada                                                |
-| name_frfr   | string | State name in French / France                                                |
-| name_itit   | string | State name in Italian                                                        |
-| name_plpl   | string | State name in Polish                                                         |
-| name_ptbr   | string | State name in Portuguese                                                     |
-| name_ruru   | string | State name in Russian                                                        |
-| type=states | string | Payload type.                                                                |
+| Attribute | Type   | Description                                                                  |
+|-----------|--------|------------------------------------------------------------------------------|
+| code      | string | State code in the following format: <br>[Country 2 letter code]-[State code] |
+| country   | number | Unique identifier for a country                                              |
+| id        | number | Unique identifier                                                            |
+| name_dede | string | State name in Germain                                                        |
+| name_enus | string | State name in US english.                                                    |
+| name_eses | string | State name in Spanish                                                        |
+| name_esus | string | State name in Spanish / US                                                   |
+| name_frca | string | State name in French / Canada                                                |
+| name_frfr | string | State name in French / France                                                |
+| name_itit | string | State name in Italian                                                        |
+| name_plpl | string | State name in Polish                                                         |
+| name_ptbr | string | State name in Portuguese                                                     |
+| name_ruru | string | State name in Russian                                                        |
+| type      | states | Type of response.                                                            |
 
 ## Viewing a state
 
