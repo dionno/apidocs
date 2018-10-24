@@ -1,6 +1,6 @@
 # Projects
 
-A Nutcache project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.
+A project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.
 
 Using the API you can do the following with project data.
 
