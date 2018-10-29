@@ -4,22 +4,25 @@ A Nutcache timer is a stopwatch used to record time spent on a task.
 
 Using the API you can do the following with timer data.
 
-| Attribute           | Type     | Description                        |
-|---------------------|----------|------------------------------------|
-| email_reminder_sent | boolean  | ?????                              |
-| guid                | string   | Unique identifier                  |
-| id                  | number   | Unique identifier                  |
-| max_end_time_utc    | datetime | ?????                              |
-| member              | number   | Member unique identifier.          |
-| minutes             | number   | Minutes                            |
-| project             | number   | Project unique identifier.         |
-| project_feature     | number   | Project feature unique identifier. |
-| status              | string   | Unique identifier.                 |
-| time_start_local    | datetime | Timer start(local time)            |
-| time_start_utc      | datetime | Timer start(utc time)              |
-| type                | string   | Payload type.                      |  
+| Attribute           | Type     | Description                                                                             |
+|---------------------|----------|-----------------------------------------------------------------------------------------|
+| email_reminder_sent | boolean  | True if a reminder was sent when timer running more than 24 hours.                      |
+| id                  | number   | Unique identifier.                                                                      |
+| max_end_time_utc    | datetime | End time maximum value (utc time)                                                       |
+| member              | number   | Unique identifier for a member.                                                         |
+| minutes             | number   | Minutes.                                                                                |
+| project             | number   | Unique identifier for a project.                                                        |
+| project_feature     | number   | Unique identifier for a project feature.                                                |
+| status              | number   | Enum for the timer status: </br>0 = Started. </br>1 = Stopped. </br>2 = System stopped. |
+| time_start_local    | datetime | Timer start (local time).                                                               |
+| time_start_utc      | datetime | Timer start (utc time).                                                                 |
+| type                | timers   | Type of response.                                                                       |
 
-## Viewing a Timer
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
+## Viewing a timer
 
 >Example
 
@@ -29,15 +32,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/timers/3546
 ```
-
-This API allows you to view the details of a timer.
-
-<span class="http-method http-get">GET</span> `  /api/timers/[id]`
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 >Response
 
 ```json
@@ -46,7 +40,6 @@ Use 'include' to embed additional details in the response.
     {
       "type": "timers",
       "id": 3546,
-      "guid": "{d663bb56-53b1-477c-8736-56bac487cfc4}",
       "member": 9015,
       "time_start_local": "2018-09-07T11:55:00",
       "max_end_time_utc": "2018-09-08T04:00:04",
@@ -78,7 +71,19 @@ Use 'include' to embed additional details in the response.
 }
 ```
 
-## List all Timers
+This API allows you to view the details of a timer.
+
+<span class="http-method http-get">GET</span> `  /webapi/timers/[id]`
+
+| Parameter | Description                     |
+|-----------|---------------------------------|
+| id        | Unique identifier of the timer. |
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
+## List all timers
 
 >Example
 
@@ -88,11 +93,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/timers
 ```
-
-Using this API, you'd be able to fetch a list of timers.
-
-<span class="http-method http-get">GET</span> `/api/timers`
-
 >Response
 
 ```json
@@ -140,13 +140,30 @@ Using this API, you'd be able to fetch a list of timers.
 }
 ```
 
-## Include (Timers)
+Using this API, you'd be able to fetch a list of timers.
+
+<span class="http-method http-get">GET</span> `/webapi/timers`
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
+## Includes (Timers)
+
+>Example
+
+```shell
+curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk" 
+     -H "api-version: 3" 
+	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
+	 -X GET https://apps.nutcache.com/webapi/timers/3546?includes=projects,members
+```
 
 The following entity types can be included in this payload type
 
 | Type             | Description                                      |
 |------------------|--------------------------------------------------|
+| members          | The member associated with the timer             |
 | projects         | The project associated with the timer            |
 | project_features | The task associated with the timer               |
 | sprint_stories   | The project board card associated with the timer |
-| members          | The member associated with the timer             |

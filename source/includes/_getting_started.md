@@ -5,9 +5,6 @@
 
 To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> My Profile" menu. From the My Profile dialog, select the "Manage Access Keys" tab and click the "+ Generate new key" to continue.
 
-To do! Add screen captures
-
-
 ## Authentication
 
 Authentication info must be provided along with your request within the Authorization header. The authentication is made of the public key, a username and password, all separated by a colon. The authentication info must be encoded in Base 64.

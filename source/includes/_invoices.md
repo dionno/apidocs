@@ -20,7 +20,7 @@ Using the API you can do the following with invoice data.
 | description               | string   | Description.                                                                                                                                                               |
 | due_date                  | datetime | Due date.                                                                                                                                                                  |
 | estimate                  | number   | Unique identifier for an estimate.                                                                                                                                         |
-| id                        | number   | Unique identifier for an invoice.                                                                                                                                          |
+| id                        | number   | Unique identifier.                                                                                                                                                         |
 | invoice_date              | datetime | Date.                                                                                                                                                                      |
 | invoice_number            | string   | Document number.                                                                                                                                                           |
 | notes                     | string   | Notes visible to the customer.                                                                                                                                             |
@@ -33,6 +33,8 @@ Using the API you can do the following with invoice data.
 | terms                     | string   | Terms.                                                                                                                                                                     |
 | total                     | decimal  | Total amount.                                                                                                                                                              |
 | total_amount_before_taxes | decimal  | Total amount before taxes.                                                                                                                                                 |
+| type                      | invoices | Type of response.                                                                                                                                                          |
+
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.
 </aside> 
@@ -48,15 +50,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287
 ```
-
-This API allows you to view an invoice.
-
-<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]`
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 > Response
 
 ```json
@@ -115,6 +108,19 @@ Use 'includes' to embed additional details in the response.
 	]
 }
 ```
+
+This API allows you to view an invoice.
+
+<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the invoice. |
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
 ## List all invoices
 
 >Example
@@ -125,15 +131,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices
 ```
-
-Using this API, you'd be able to fetch a list of invoices.
-
-<span class="http-method http-get">GET</span> `  /webapi/invoices/`
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 >Response
 
 ```json
@@ -204,6 +201,14 @@ Use 'includes' to embed additional details in the response.
   ]
 }
 ```
+Using this API, you'd be able to fetch a list of invoices.
+
+<span class="http-method http-get">GET</span> `  /webapi/invoices/`
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+
 ## Invoice details
 
 >Example
@@ -214,7 +219,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details
 ```
-
 >Response
 
 ```json
@@ -255,18 +259,23 @@ If you want to see the details of an invoice
 
 <span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_details`
 
-| Attribute           | Type    | Description                                                    |
-|---------------------|---------|----------------------------------------------------------------|
-| description         | string  | Description.                                                   |
-| id                  | number  | Unique identifier for an invoice detail.                       |
-| invoice             | number  | Unique identifier for an invoice.                              |
-| invoice_detail_type | number  | Enum for invoice detail type: </br>0 = Product. </br>1 = Task. |
-| item                | number  | Unique identifier for an item.                                 |
-| price               | decimal | Rate/Unit price.                                               |
-| project             | number  | Unique identifier for a project.                               |
-| quantity            | decimal | Units/Quantity                                                 |
-| tax                 | number  | Unique identifier for an invoice tax.                          |
-| total_price         | decimal | Total price.                                                   |
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the invoice. |
+
+| Attribute           | Type            | Description                                                    |
+|---------------------|-----------------|----------------------------------------------------------------|
+| description         | string          | Description.                                                   |
+| id                  | number          | Unique identifier for an invoice detail.                       |
+| invoice             | number          | Unique identifier for an invoice.                              |
+| invoice_detail_type | number          | Enum for invoice detail type: </br>0 = Product. </br>1 = Task. |
+| item                | number          | Unique identifier for an item.                                 |
+| price               | decimal         | Rate/Unit price.                                               |
+| project             | number          | Unique identifier for a project.                               |
+| quantity            | decimal         | Units/Quantity                                                 |
+| tax                 | number          | Unique identifier for an invoice tax.                          |
+| total_price         | decimal         | Total price.                                                   |
+| type                | invoice_details | Type of response.                                              |
 
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.
@@ -361,16 +370,21 @@ If you want to see the taxes of an invoice
 
 <span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_taxes`
 
-| Attribute       | Type    | Description                           |
-|-----------------|---------|---------------------------------------|
-| code            | string  | Tax code.                             |
-| compound        | boolean | True if tax is compound.              |
-| identification  | string  | Registration / identifier.            |
-| invoice         | number  | Unique identifier for an invoice.     |
-| rate            | decimal | Rate.                                 |
-| sequence_number | number  | Sequence order.                       |
-| tax             | number  | Unique identifier for an invoice tax. |
-| total           | decimal | Total amount for this tax.            |
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the invoice. |
+
+| Attribute       | Type          | Description                           |
+|-----------------|---------------|---------------------------------------|
+| code            | string        | Tax code.                             |
+| compound        | boolean       | True if tax is compound.              |
+| identification  | string        | Registration / identifier.            |
+| invoice         | number        | Unique identifier for an invoice.     |
+| rate            | decimal       | Rate.                                 |
+| sequence_number | number        | Sequence order.                       |
+| tax             | number        | Unique identifier for an invoice tax. |
+| total           | decimal       | Total amount for this tax.            |
+| type            | invoice_taxes | Type of response.                     |
 
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.

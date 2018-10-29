@@ -107,11 +107,9 @@ This API allows you to view the details of an organization.
 
 <span class="http-method http-get">GET</span> ` /webapi/organizations/<id>`
 
-URL Parameters
-
-| Parameter | Description                      |
-|-----------|----------------------------------|
-| id        | The organization id to retrieve. |
+| Parameter | Description                            |
+|-----------|----------------------------------------|
+| id        | Unique identifier of the organization. |
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.

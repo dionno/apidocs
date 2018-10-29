@@ -40,7 +40,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/expenses/234359
 
 ```
-
 >Response
 
 ```json
@@ -92,6 +91,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 This API allows you to view the details of a expense.
 
 <span class="http-method http-get">GET</span> ` /webapi/expenses/[id]`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the expense. |
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
@@ -215,6 +218,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 If you want to get a detailed list of taxes for an expense.
 
 <span class="http-method http-get">GET</span> ` /webapi/expenses/[id]/expense_taxes`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the expense. |
 
 | Attribute  | Type          | Description                       |
 |------------|---------------|-----------------------------------|

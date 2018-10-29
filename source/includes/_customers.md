@@ -25,7 +25,6 @@ Using the API's you can do the following with project data.
 | type                       | customers | Type of response.                                                        |
 | zip_code                   | string    | Zip code.                                                                |
 
-
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.
 </aside> 
@@ -40,15 +39,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/customers/154528
 ```
-
-This API allows you to view the details of a customer.
-
-<span class="http-method http-get">GET</span> `  /webapi/customers/[id]`
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 >Response
 
 ```json
@@ -99,6 +89,17 @@ Use 'includes' to embed additional details in the response.
   ]
 }
 ```
+This API allows you to view the details of a customer.
+
+<span class="http-method http-get">GET</span> `  /webapi/customers/[id]`
+
+| Parameter | Description                        |
+|-----------|------------------------------------|
+| id        | Unique identifier of the customer. |
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
 ## List all customers
 
@@ -110,10 +111,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -H "OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E" 
 	 -X GET https://apps.nutcache.com/webapi/customers
 ```
-
-Using this API, you'd be able to fetch a list of customers.
-
-<span class="http-method http-get">GET</span> `/webapi/customers`
 
 >Response
 
@@ -166,6 +163,9 @@ Using this API, you'd be able to fetch a list of customers.
     }
 }
 ```
+Using this API, you'd be able to fetch a list of customers.
+
+<span class="http-method http-get">GET</span> `/webapi/customers`
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.

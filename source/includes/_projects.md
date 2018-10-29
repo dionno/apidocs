@@ -20,7 +20,7 @@ Using the API you can do the following with project data.
 | EffectiveBudgetAmount              | decimal  | Budget amount of the projet depending on its budget type (budget_type).                                                                                                                                                                                                                                                                              |
 | EffectiveBudgetMinutes             | number   | Budget minutes  of the projet depending on its budget type (budget_type).                                                                                                                                                                                                                                                                            |
 | end_date                           | datetime | End date set for the project.                                                                                                                                                                                                                                                                                                                        |
-| id                                 | number   | Unique identifier for the project.                                                                                                                                                                                                                                                                                                                   |
+| id                                 | number   | Unique identifier.                                                                                                                                                                                                                                                                                                                                   |
 | name                               | string   | Unique name for the project.                                                                                                                                                                                                                                                                                                                         |
 | organization                       | number   | Unique identifier for an organization.                                                                                                                                                                                                                                                                                                               |
 | primary_contact_email              | string   | Primary contact email.                                                                                                                                                                                                                                                                                                                               |
@@ -111,6 +111,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 This API allows you to view the details of a project.
 
 <span class="http-method http-get">GET</span> `  /webapi/projects/[id]`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the project. |
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
@@ -242,6 +246,10 @@ If you want to see the project members for a project.
 
 <span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_members`
 
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the project. |
+
 | Attribute      | Type            | Description                                                                                                                                            |
 |----------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | billing_rate   | decimal         | Billing rate for the project member. </br>The billing rate is available only if the project invoice method is set to member rate (billing_method = 2). |
@@ -312,6 +320,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 If you want to see the project features for a project.
 
 <span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_features`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the project. |
 
 | Attribute      | Type             | Description                                                                                                                                                     |
 |----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
