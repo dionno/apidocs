@@ -410,13 +410,13 @@
             <a href="#timers" class="toc-h1 toc-link" data-title="Timers">Timers</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#viewing-a-timer" class="toc-h2 toc-link" data-title="Viewing a Timer">Viewing a Timer</a>
+                    <a href="#viewing-a-timer" class="toc-h2 toc-link" data-title="Viewing a timer">Viewing a timer</a>
                   </li>
                   <li>
-                    <a href="#list-all-timers" class="toc-h2 toc-link" data-title="List all Timers">List all Timers</a>
+                    <a href="#list-all-timers" class="toc-h2 toc-link" data-title="List all timers">List all timers</a>
                   </li>
                   <li>
-                    <a href="#include-timers" class="toc-h2 toc-link" data-title="Include (Timers)">Include (Timers)</a>
+                    <a href="#includes-timers" class="toc-h2 toc-link" data-title="Includes (Timers)">Includes (Timers)</a>
                   </li>
               </ul>
           </li>
@@ -453,8 +453,6 @@
       <div class="content">
         <h1 id='getting-started'>Getting started</h1><h2 id='public-key'>Public key</h2>
 <p>To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the &quot;My account -&gt; My Profile&quot; menu. From the My Profile dialog, select the &quot;Manage Access Keys&quot; tab and click the &quot;+ Generate new key&quot; to continue.</p>
-
-<p>To do! Add screen captures</p>
 <h2 id='authentication'>Authentication</h2>
 <p>Authentication info must be provided along with your request within the Authorization header. The authentication is made of the public key, a username and password, all separated by a colon. The authentication info must be encoded in Base 64.</p>
 
@@ -543,7 +541,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>currency</td>
 <td>number</td>
-<td>Unique identifier for a currency</td>
+<td>Unique identifier for a currency.</td>
 </tr>
 <tr>
 <td>date_format</td>
@@ -553,12 +551,12 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>name_dede</td>
 <td>string</td>
-<td>Country name in Germain</td>
+<td>Country name in Germain.</td>
 </tr>
 <tr>
 <td>name_enus</td>
@@ -573,42 +571,42 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <tr>
 <td>name_esus</td>
 <td>string</td>
-<td>Country name in Spanish / US</td>
+<td>Country name in Spanish / US.</td>
 </tr>
 <tr>
 <td>name_frca</td>
 <td>string</td>
-<td>Country name in French / Canada</td>
+<td>Country name in French / Canada.</td>
 </tr>
 <tr>
 <td>name_frfr</td>
 <td>string</td>
-<td>Country name in French / France</td>
+<td>Country name in French / France.</td>
 </tr>
 <tr>
 <td>name_itit</td>
 <td>string</td>
-<td>Country name in Italian</td>
+<td>Country name in Italian.</td>
 </tr>
 <tr>
 <td>name_plpl</td>
 <td>string</td>
-<td>Country name in Polish</td>
+<td>Country name in Polish.</td>
 </tr>
 <tr>
 <td>name_ptbr</td>
 <td>string</td>
-<td>Country name in Portuguese</td>
+<td>Country name in Portuguese.</td>
 </tr>
 <tr>
 <td>name_ruru</td>
 <td>string</td>
-<td>Country name in Russian</td>
+<td>Country name in Russian.</td>
 </tr>
 <tr>
 <td>short_code</td>
 <td>string</td>
-<td>Country two letter code</td>
+<td>Country two letter code.</td>
 </tr>
 <tr>
 <td>time_format</td>
@@ -666,6 +664,20 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 <p>This API allows you to view the details of a country.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the country.</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
@@ -971,14 +983,6 @@ Some attributs are available only if the authenticated user has required permiss
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers/154528
 </code></pre>
-<p>This API allows you to view the details of a customer.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/customers/[id]</code></p>
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1028,7 +1032,27 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-customers'>List all customers</h2>
+</span></code></pre>
+<p>This API allows you to view the details of a customer.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/customers/[id]</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the customer.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='list-all-customers'>List all customers</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1037,10 +1061,6 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers
 </code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of customers.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1092,6 +1112,10 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of customers.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
+
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
 </aside>
@@ -1154,12 +1178,12 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>name_dede</td>
 <td>string</td>
-<td>Currency name in German</td>
+<td>Currency name in German.</td>
 </tr>
 <tr>
 <td>name_enus</td>
@@ -1174,37 +1198,37 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>name_esus</td>
 <td>string</td>
-<td>Currency name in Spanish / US</td>
+<td>Currency name in Spanish / US.</td>
 </tr>
 <tr>
 <td>name_frca</td>
 <td>string</td>
-<td>Currency name in French / Canada</td>
+<td>Currency name in French / Canada.</td>
 </tr>
 <tr>
 <td>name_frfr</td>
 <td>string</td>
-<td>Currency name in French / France</td>
+<td>Currency name in French / France.</td>
 </tr>
 <tr>
 <td>name_itit</td>
 <td>string</td>
-<td>Currency name in Italian</td>
+<td>Currency name in Italian.</td>
 </tr>
 <tr>
 <td>name_plpl</td>
 <td>string</td>
-<td>Currency name in Polish</td>
+<td>Currency name in Polish.</td>
 </tr>
 <tr>
 <td>name_ptbr</td>
 <td>string</td>
-<td>Currency name in Portuguese</td>
+<td>Currency name in Portuguese.</td>
 </tr>
 <tr>
 <td>name_ruru</td>
 <td>string</td>
-<td>Currency name in Russian</td>
+<td>Currency name in Russian.</td>
 </tr>
 <tr>
 <td>type</td>
@@ -1220,10 +1244,6 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/currencies/147
 </code></pre>
-<p>This API allows you to view the details of a currency.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/currencies/[id]</code></p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1247,7 +1267,23 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-currencies'>List all currencies</h2>
+</span></code></pre>
+<p>This API allows you to view the details of a currency.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies/[id]</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the currency.</td>
+</tr>
+</tbody></table>
+<h2 id='list-all-currencies'>List all currencies</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1255,10 +1291,6 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/currencies?limit<span class="o">=</span>2&amp;page<span class="o">=</span>13
 </code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1310,7 +1342,11 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='expenses'>Expenses</h1>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
+<h1 id='expenses'>Expenses</h1>
 <p>Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.</p>
 
 <p>Using the API you can do the following with expense data.</p>
@@ -1474,6 +1510,18 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/expenses/[id]</code></p>
 
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the expense.</td>
+</tr>
+</tbody></table>
+
 <aside class="notice">
 Use 'include' to embed additional details in the response.
 </aside>
@@ -1588,6 +1636,18 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p>If you want to get a detailed list of taxes for an expense.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/expenses/[id]/expense_taxes</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the expense.</td>
+</tr>
+</tbody></table>
 
 <table><thead>
 <tr>
@@ -1750,7 +1810,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier for an invoice.</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>invoice_date</td>
@@ -1812,6 +1872,11 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>decimal</td>
 <td>Total amount before taxes.</td>
 </tr>
+<tr>
+<td>type</td>
+<td>invoices</td>
+<td>Type of response.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -1826,14 +1891,6 @@ Some attributs are available only if the authenticated user has required permiss
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices/9287
 </code></pre>
-<p>This API allows you to view an invoice.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]</code></p>
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1891,7 +1948,27 @@ Use 'includes' to embed additional details in the response.
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-invoices'>List all invoices</h2>
+</span></code></pre>
+<p>This API allows you to view an invoice.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the invoice.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='list-all-invoices'>List all invoices</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -1900,14 +1977,6 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices
 </code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of invoices.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/webapi/invoices/</code></p>
-
-<aside class="notice">
-Use 'includes' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -1977,7 +2046,15 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='invoice-details'>Invoice details</h2>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of invoices.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/invoices/</code></p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='invoice-details'>Invoice details</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2024,6 +2101,18 @@ Use 'includes' to embed additional details in the response.
 <p>If you want to see the details of an invoice </p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]/invoice_details</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the invoice.</td>
+</tr>
+</tbody></table>
 
 <table><thead>
 <tr>
@@ -2081,6 +2170,11 @@ Use 'includes' to embed additional details in the response.
 <td>total_price</td>
 <td>decimal</td>
 <td>Total price.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>invoice_details</td>
+<td>Type of response.</td>
 </tr>
 </tbody></table>
 
@@ -2175,6 +2269,18 @@ Use 'includes' to embed additional details in the response.
 
 <table><thead>
 <tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the invoice.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
 <th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
@@ -2219,6 +2325,11 @@ Use 'includes' to embed additional details in the response.
 <td>total</td>
 <td>decimal</td>
 <td>Total amount for this tax.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>invoice_taxes</td>
+<td>Type of response.</td>
 </tr>
 </tbody></table>
 
@@ -2542,8 +2653,6 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/organizations/&lt;id&gt;</code></p>
 
-<p>URL Parameters</p>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2552,7 +2661,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The organization id to retrieve.</td>
+<td>Unique identifier of the organization.</td>
 </tr>
 </tbody></table>
 
@@ -2758,7 +2867,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier for the project.</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -2899,6 +3008,18 @@ Some attributs are available only if the authenticated user has required permiss
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]</code></p>
 
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the project.</td>
+</tr>
+</tbody></table>
+
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
 </aside>
@@ -3024,6 +3145,18 @@ Use 'includes' to embed additional details in the response.
 
 <table><thead>
 <tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the project.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
 <th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
@@ -3137,6 +3270,18 @@ Use 'includes' to embed additional details in the response.
 <p>If you want to see the project features for a project.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_features</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the project.</td>
+</tr>
+</tbody></table>
 
 <table><thead>
 <tr>
@@ -3314,22 +3459,22 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>code</td>
 <td>string</td>
-<td>State code in the following format: <br>[Country 2 letter code]-[State code]</td>
+<td>State code in the following format: <br>[Country 2 letter code]-[State code].</td>
 </tr>
 <tr>
 <td>country</td>
 <td>number</td>
-<td>Unique identifier for a country</td>
+<td>Unique identifier for a country.</td>
 </tr>
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>name_dede</td>
 <td>string</td>
-<td>State name in Germain</td>
+<td>State name in Germain.</td>
 </tr>
 <tr>
 <td>name_enus</td>
@@ -3339,42 +3484,42 @@ Use 'includes' to embed additional details in the response.
 <tr>
 <td>name_eses</td>
 <td>string</td>
-<td>State name in Spanish</td>
+<td>State name in Spanish.</td>
 </tr>
 <tr>
 <td>name_esus</td>
 <td>string</td>
-<td>State name in Spanish / US</td>
+<td>State name in Spanish / US.</td>
 </tr>
 <tr>
 <td>name_frca</td>
 <td>string</td>
-<td>State name in French / Canada</td>
+<td>State name in French / Canada.</td>
 </tr>
 <tr>
 <td>name_frfr</td>
 <td>string</td>
-<td>State name in French / France</td>
+<td>State name in French / France.</td>
 </tr>
 <tr>
 <td>name_itit</td>
 <td>string</td>
-<td>State name in Italian</td>
+<td>State name in Italian.</td>
 </tr>
 <tr>
 <td>name_plpl</td>
 <td>string</td>
-<td>State name in Polish</td>
+<td>State name in Polish.</td>
 </tr>
 <tr>
 <td>name_ptbr</td>
 <td>string</td>
-<td>State name in Portuguese</td>
+<td>State name in Portuguese.</td>
 </tr>
 <tr>
 <td>name_ruru</td>
 <td>string</td>
-<td>State name in Russian</td>
+<td>State name in Russian.</td>
 </tr>
 <tr>
 <td>type</td>
@@ -3424,6 +3569,18 @@ Use 'includes' to embed additional details in the response.
 <p>This API allows you to view the details of a state.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/states/[id]</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the state.</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
 Use 'includes' to embed additional details in the response.
@@ -3923,65 +4080,64 @@ Use 'include' to embed additional details in the response.
 <tr>
 <td>email_reminder_sent</td>
 <td>boolean</td>
-<td>?????</td>
-</tr>
-<tr>
-<td>guid</td>
-<td>string</td>
-<td>Unique identifier</td>
+<td>True if a reminder was sent when timer running more than 24 hours.</td>
 </tr>
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier</td>
+<td>Unique identifier.</td>
 </tr>
 <tr>
 <td>max_end_time_utc</td>
 <td>datetime</td>
-<td>?????</td>
+<td>End time maximum value (utc time)</td>
 </tr>
 <tr>
 <td>member</td>
 <td>number</td>
-<td>Member unique identifier.</td>
+<td>Unique identifier for a member.</td>
 </tr>
 <tr>
 <td>minutes</td>
 <td>number</td>
-<td>Minutes</td>
+<td>Minutes.</td>
 </tr>
 <tr>
 <td>project</td>
 <td>number</td>
-<td>Project unique identifier.</td>
+<td>Unique identifier for a project.</td>
 </tr>
 <tr>
 <td>project_feature</td>
 <td>number</td>
-<td>Project feature unique identifier.</td>
+<td>Unique identifier for a project feature.</td>
 </tr>
 <tr>
 <td>status</td>
-<td>string</td>
-<td>Unique identifier.</td>
+<td>number</td>
+<td>Enum for the timer status: </br>0 = Started. </br>1 = Stopped. </br>2 = System stopped.</td>
 </tr>
 <tr>
 <td>time_start_local</td>
 <td>datetime</td>
-<td>Timer start(local time)</td>
+<td>Timer start (local time).</td>
 </tr>
 <tr>
 <td>time_start_utc</td>
 <td>datetime</td>
-<td>Timer start(utc time)</td>
+<td>Timer start (utc time).</td>
 </tr>
 <tr>
 <td>type</td>
-<td>string</td>
-<td>Payload type.</td>
+<td>timers</td>
+<td>Type of response.</td>
 </tr>
 </tbody></table>
-<h2 id='viewing-a-timer'>Viewing a Timer</h2>
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+<h2 id='viewing-a-timer'>Viewing a timer</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -3990,14 +4146,6 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/timers/3546
 </code></pre>
-<p>This API allows you to view the details of a timer.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/timers/[id]</code></p>
-
-<aside class="notice">
-Use 'include' to embed additional details in the response.
-</aside>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -4006,7 +4154,6 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3546</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{d663bb56-53b1-477c-8736-56bac487cfc4}"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
       </span><span class="s2">"time_start_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-07T11:55:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"max_end_time_utc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-08T04:00:04"</span><span class="p">,</span><span class="w">
@@ -4036,7 +4183,27 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='list-all-timers'>List all Timers</h2>
+</span></code></pre>
+<p>This API allows you to view the details of a timer.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/timers/[id]</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the timer.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='list-all-timers'>List all timers</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -4045,10 +4212,6 @@ Use 'include' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/timers
 </code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of timers.</p>
-
-<p><span class="http-method http-get">GET</span> <code>/api/timers</code></p>
-
 <blockquote>
 <p>Response</p>
 </blockquote>
@@ -4094,7 +4257,23 @@ Use 'include' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='include-timers'>Include (Timers)</h2>
+</span></code></pre>
+<p>Using this API, you&#39;d be able to fetch a list of timers.</p>
+
+<p><span class="http-method http-get">GET</span> <code>/webapi/timers</code></p>
+
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='includes-timers'>Includes (Timers)</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk"</span> 
+     -H <span class="s2">"api-version: 3"</span> 
+     -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
+     -X GET https://apps.nutcache.com/webapi/timers/3546?includes<span class="o">=</span>projects,members
+</code></pre>
 <p>The following entity types can be included in this payload type</p>
 
 <table><thead>
@@ -4103,6 +4282,10 @@ Use 'include' to embed additional details in the response.
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>members</td>
+<td>The member associated with the timer</td>
+</tr>
 <tr>
 <td>projects</td>
 <td>The project associated with the timer</td>
@@ -4114,10 +4297,6 @@ Use 'include' to embed additional details in the response.
 <tr>
 <td>sprint_stories</td>
 <td>The project board card associated with the timer</td>
-</tr>
-<tr>
-<td>members</td>
-<td>The member associated with the timer</td>
 </tr>
 </tbody></table>
 <h1 id='search'>Search</h1><h2 id='filtered-searches'>Filtered Searches</h2>
