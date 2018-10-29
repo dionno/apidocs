@@ -54,7 +54,7 @@ This API allows you to view an invoice.
 <span class="http-method http-get">GET</span> `  /webapi/invoices/[id]`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
 > Response
@@ -131,7 +131,7 @@ Using this API, you'd be able to fetch a list of invoices.
 <span class="http-method http-get">GET</span> `  /webapi/invoices/`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+Use 'includes' to embed additional details in the response.
 </aside>
 
 >Response
@@ -255,8 +255,6 @@ If you want to see the details of an invoice
 
 <span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_details`
 
-Invoice details data
-
 | Attribute           | Type    | Description                                                    |
 |---------------------|---------|----------------------------------------------------------------|
 | description         | string  | Description.                                                   |
@@ -363,26 +361,41 @@ If you want to see the taxes of an invoice
 
 <span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_taxes`
 
+| Attribute       | Type    | Description                           |
+|-----------------|---------|---------------------------------------|
+| code            | string  | Tax code.                             |
+| compound        | boolean | True if tax is compound.              |
+| identification  | string  | Registration / identifier.            |
+| invoice         | number  | Unique identifier for an invoice.     |
+| rate            | decimal | Rate.                                 |
+| sequence_number | number  | Sequence order.                       |
+| tax             | number  | Unique identifier for an invoice tax. |
+| total           | decimal | Total amount for this tax.            |
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
 <aside class="notice">
 The taxes of an invoice can also be filtered using filtered searches
 </aside>
 
-Invoice taxes data
-
-| Attribute       | Type    | Description                           |
-|-----------------|---------|---------------------------------------|
-| code            | string  |                                       |
-| compound        | boolean |                                       |
-| identification  | string  |                                       |
-| invoice         | number  | Unique identifier for an invoice.     |
-| rate            | decimal |                                       |
-| sequence_number | number  |                                       |
-| tax             | number  | Unique identifier for an invoice tax. |
-| total           | decimal |                                       |
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
 ## Includes (Invoices)
 
-The following entity types can be included in this payload type
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/invoices/9287?includes=invoice_details,invoice_taxes
+```
+
+The following entity types can be included in this payload type.
 
 | Type            | Description                               |
 |-----------------|-------------------------------------------|
@@ -394,7 +407,16 @@ The following entity types can be included in this payload type
 
 ## Includes (Invoice details)
 
-The following entity types can be included in this payload type
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details?includes=projects
+```
+
+The following entity types can be included in this payload type.
 
 | Type     | Description                                       |
 |----------|---------------------------------------------------|
@@ -404,7 +426,16 @@ The following entity types can be included in this payload type
 
 ## Includes (Invoice taxes)
 
-The following entity types can be included in this payload type
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes?includes=taxes
+```
+
+The following entity types can be included in this payload type.
 
 | Type     | Description                                      |
 |----------|--------------------------------------------------|

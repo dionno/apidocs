@@ -206,6 +206,16 @@ Use 'includes' to embed additional details in the response.
 
 ## Includes (Organizations)
 
+>Example
+
+```shell
+
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -X GET https://apps.nutcache.com/webapi/organizations/6745?includes=countries,states,currencies
+
+```
+
 The following entity types can be included in this payload type.
 
 | Type       | Description                                     |

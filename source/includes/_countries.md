@@ -251,6 +251,14 @@ The states of a country can also be filtered using filtered searches
 
 ## Includes (Countries)
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
+     -H 'api-version: 3' 
+	 -X GET https://apps.nutcache.com/webapi/countries/231?includes=currencies
+```
+
 The following entity types can be included in this payload type
 
 | Type       | Description                               |

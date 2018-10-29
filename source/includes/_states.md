@@ -154,7 +154,15 @@ Using this API, you'd be able to fetch a list of countries.
 
 ## Includes (States)
 
-The following entity types can be included in this payload type
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycnh2aGl0dDpudXRjYWNoZTFAZ21haWwuY29tOkR5bmFjb20xMjM=' 
+     -H 'api-version: 3' 
+	 -X GET https://apps.nutcache.com/webapi/states/12?includes=countries
+```
+
+The following entity types can be included in this payload type.
 
 | Type      | Description                            |
 |-----------|----------------------------------------|

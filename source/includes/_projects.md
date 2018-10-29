@@ -304,7 +304,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "billing_rate": 10,
       "budget_amount": 0,
       "budget_minutes": 0,
-      "item_type": null
+      "item": null
     }
   ]
 }
@@ -342,6 +342,15 @@ Use 'includes' to embed additional details in the response.
 
 ## Includes (Projects)
 
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640?includes=customers
+```
+
 The following entity types can be included in this payload type.
 
 | Type             | Description                                |
@@ -351,7 +360,34 @@ The following entity types can be included in this payload type.
 | project_features | The tasks associated with this project.    |
 | project_members  | The members assigned to this project.      |
 
+## Includes (Project members)
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_members?includes=members
+```
+
+The following entity types can be included in this payload type
+
+| Type     | Description                                       |
+|----------|---------------------------------------------------|
+| members    | The memebr associated with this project member.    |
+| projects | The project associated with this project member. |
+
 ## Includes (Project features)
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features?includes=items
+```
 
 The following entity types can be included in this payload type
 
