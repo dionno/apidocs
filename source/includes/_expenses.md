@@ -1,6 +1,8 @@
 # Expenses
 
-Describes the expenses on the company operation, including the amount, taxes, suppliers and other people associated with the expense.
+Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.
+
+Using the API you can do the following with expense data.
 
 | Attribute           | Type     | Description                                                                                             |
 |---------------------|----------|---------------------------------------------------------------------------------------------------------|

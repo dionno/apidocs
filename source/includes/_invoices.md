@@ -1,41 +1,44 @@
 
 # Invoices
 
-A Nutcache invoice.
+A document sent to a customer that includes a list of products sold or tasks provided, with a statement of the sum due.
 
 Using the API you can do the following with invoice data.
 
-| Attribute                 | Type     | Description                            |
-|---------------------------|----------|----------------------------------------|
-| balance                   | decimal  |                                        |
-| customer                  | number   | Unique identifier for a customer.      |
-| customer_address          | string   |                                        |
-| customer_city             | string   |                                        |
-| customer_email            | string   |                                        |
-| customer_legal_notice     | string   |                                        |
-| customer_phone            | string   |                                        |
-| customer_phone_mobile     | string   |                                        |
-| customer_postal_zip_code  | string   |                                        |
-| customer_province_state   | string   |                                        |
-| description               | string   | Invoice description.                   |
-| due_date                  | datetime |                                        |
-| estimate                  | decimal  |                                        |
-| id                        | number   | Unique identifier for an invoice.      |
-| invoice_date              | datetime |                                        |
-| invoice_number            | string   |                                        |
-| notes                     | string   |                                        |
-| organization              | number   | Unique identifier for an organization. |
-| paid_to_date              | decimal  |                                        |
-| purchase_order            | string   |                                        |
-| responsible               | string   |                                        |
-| status                    | number   |                                        |
-| taxes_amount              | decimal  |                                        |
-| terms                     | string   |                                        |
-| total                     | decimal  |                                        |
-| total_amount_before_taxes | decimal  |                                        |
+| Attribute                 | Type     | Description                                                                                                                                                                |
+|---------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| balance                   | decimal  | Amount left to paid by customer.                                                                                                                                           |
+| customer                  | number   | Unique identifier for a customer.                                                                                                                                          |
+| customer_address          | string   | The customer address linked to the invoice.                                                                                                                                |
+| customer_city             | string   | The customer city linked to the invoice.                                                                                                                                   |
+| customer_email            | string   | The customer email linked to the invoice.                                                                                                                                  |
+| customer_legal_notice     | string   | The customer registration number linked to the invoice.                                                                                                                    |
+| customer_phone            | string   | The customer phone linked to the invoice.                                                                                                                                  |
+| customer_phone_mobile     | string   | The customer mobile phone linked to the invoice.                                                                                                                           |
+| customer_postal_zip_code  | string   | The customer zip code linked to the invoice.                                                                                                                               |
+| customer_province_state   | string   | The customer state linked to the invoice.                                                                                                                                  |
+| description               | string   | Description.                                                                                                                                                               |
+| due_date                  | datetime | Due date.                                                                                                                                                                  |
+| estimate                  | number   | Unique identifier for an estimate.                                                                                                                                         |
+| id                        | number   | Unique identifier for an invoice.                                                                                                                                          |
+| invoice_date              | datetime | Date.                                                                                                                                                                      |
+| invoice_number            | string   | Document number.                                                                                                                                                           |
+| notes                     | string   | Notes visible to the customer.                                                                                                                                             |
+| organization              | number   | Unique identifier for an organization.                                                                                                                                     |
+| paid_to_date              | decimal  | Amount paid by the customer.                                                                                                                                               |
+| purchase_order            | string   | Purchase order.                                                                                                                                                            |
+| responsible               | number   | Unique identifier for a member responsible for the invoice.                                                                                                                |
+| status                    | number   | Enum for the invoice status : </br>0 = Draft. </br>1 = Sent. </br>2 = Viewed. </br>3 = Partially paid. </br>4 = Paid. </br>5 = Disputed. </br>6 = Vopid. </br>7 = Deleted. |
+| taxes_amount              | decimal  | Amount of taxes to paid.                                                                                                                                                   |
+| terms                     | string   | Terms.                                                                                                                                                                     |
+| total                     | decimal  | Total amount.                                                                                                                                                              |
+| total_amount_before_taxes | decimal  | Total amount before taxes.                                                                                                                                                 |
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
 
 
-## Viewing an Invoice
+## Viewing an invoice
 
 >Example
 
@@ -48,7 +51,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view an invoice.
 
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]`
 
 <aside class="notice">
 Use 'include' to embed additional details in the response.
@@ -125,67 +128,83 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of invoices.
 
-<span class="http-method http-get">GET</span> `  /api/invoices/`
+<span class="http-method http-get">GET</span> `  /webapi/invoices/`
+
+<aside class="notice">
+Use 'include' to embed additional details in the response.
+</aside>
 
 >Response
 
 ```json
 {
- 	"invoices": [
-		{
-			"type":"invoices",
-			"id":9287,
-			"invoice_number":"0005",
-			"customer_name":"Sample client",
-			"balance":1225.7900,
-			"paid_to_date":100.0000,
-			"organization":1686,
-			"customer":143222,
-			"customer_address":null,
-			"customer_city":null,
-			"customer_contact":"Sample contact name",
-			"customer_country":"Canada",
-			"customer_email":"143222@example.com",
-			"customer_legal_notice":null,
-			"customer_phone":"123-456-7890",
-			"customer_phone_mobile":null,
-			"customer_postal_zip_code":null,
-			"customer_province_state":null,
-			"custom_title":null,
-			"description":null,
-			"due_date":"2018-04-18T00:00:00",
-			"estimate":null,
-			"invoice_date":"2018-04-18T00:00:00",
-			"notes":null,
-			"terms":null,
-			"purchase_order":null,
-			"responsible":9015,
-			"status":3,
-			"taxes_amount":13.7900,
-			"total":1325.7900,
-			"total_amount_before_taxes":1312.0000,
-			"links":[
-				{
-				"href":"organizations/1686",
-				"rel":"organizations",
-				"type":"GET"
-				},
-				{
-				"href":"customers/143222",
-				"rel":"customers",
-				"type":"GET"
-				},
-				{
-				"href":"invoices/9287",
-				"rel":"self",
-				"type":"GET"
-				}
-			]
-		}
-	]
+  "links": [
+    {
+      "href": "invoices?limit=1&page=1",
+      "rel": "navigation-previous",
+      "type": "GET"
+    },
+    {
+      "href": "invoices?limit=1&page=3",
+      "rel": "navigation-next",
+      "type": "GET"
+    }
+  ],
+  "invoices": [
+    {
+      "type": "invoices",
+      "id": 14654,
+      "invoice_number": "0002",
+      "customer_name": "Client 1",
+      "balance": 51.5,
+      "paid_to_date": 0,
+      "organization": 9244,
+      "customer": 154528,
+      "customer_address": null,
+      "customer_city": null,
+      "customer_contact": null,
+      "customer_country": "Canada",
+      "customer_email": null,
+      "customer_legal_notice": null,
+      "customer_phone": null,
+      "customer_phone_mobile": null,
+      "customer_postal_zip_code": null,
+      "customer_province_state": null,
+      "custom_title": null,
+      "description": null,
+      "due_date": "2018-09-20T00:00:00",
+      "estimate": null,
+      "invoice_date": "2018-09-20T00:00:00",
+      "notes": null,
+      "terms": null,
+      "purchase_order": null,
+      "responsible": 29550,
+      "status": 0,
+      "taxes_amount": 1.5,
+      "total": 51.5,
+      "total_amount_before_taxes": 50,
+      "links": [
+        {
+          "href": "organizations/9244",
+          "rel": "organizations",
+          "type": "GET"
+        },
+        {
+          "href": "customers/154528",
+          "rel": "customers",
+          "type": "GET"
+        },
+        {
+          "href": "invoices/14654",
+          "rel": "self",
+          "type": "GET"
+        }
+      ]
+    }
+  ]
 }
 ```
-## View invoice details
+## Invoice details
 
 >Example
 
@@ -202,32 +221,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 {
 	"invoice_details":
 	[
-		{
-			"type":"invoice_details",
-			"id":23925,
-			"description":"Administration - non taxable",
-			"quantity":1.0000,
-			"price":60.0000,
-			"total_price":60.0000,
-			"invoice_detail_type":1,
-			"project":7289,
-			"links":
-				[
-					{
-					"href":"projects/7289",
-					"rel":"projects",
-					"type":"GET"
-					},
-					{
-					"href":"invoices/9287",
-					"rel":"invoices",
-					"type":"GET"
-					}
-				],
-			"item":337521,
-			"tax":375,
-			"invoice":9287
-		},
 		{
 			"type":"invoice_details",
 			"id":23926,
@@ -260,28 +253,36 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 If you want to see the details of an invoice 
 
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_details`
+<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_details`
+
+Invoice details data
+
+| Attribute           | Type    | Description                                                    |
+|---------------------|---------|----------------------------------------------------------------|
+| description         | string  | Description.                                                   |
+| id                  | number  | Unique identifier for an invoice detail.                       |
+| invoice             | number  | Unique identifier for an invoice.                              |
+| invoice_detail_type | number  | Enum for invoice detail type: </br>0 = Product. </br>1 = Task. |
+| item                | number  | Unique identifier for an item.                                 |
+| price               | decimal | Rate/Unit price.                                               |
+| project             | number  | Unique identifier for a project.                               |
+| quantity            | decimal | Units/Quantity                                                 |
+| tax                 | number  | Unique identifier for an invoice tax.                          |
+| total_price         | decimal | Total price.                                                   |
+
+<aside class="notice">
+Some attributs are available only if the authenticated user has required permissions.
+</aside> 
 
 <aside class="notice">
 The details of an invoice can also be filtered using filtered searches
 </aside>
 
-Invoice details data
+<aside class="notice">
+Use 'includes' to embed additional details in the response.
+</aside>
 
-| Attribute           | Type    | Description                              |
-|---------------------|---------|------------------------------------------|
-| description         | string  |                                          |
-| id                  | number  | Unique identifier for an invoice detail. |
-| invoice             | number  | Unique identifier for an invoice.        |
-| invoice_detail_type | number  |                                          |
-| item                | number  | Unique identifier for an item.           |
-| price               | decimal |                                          |
-| project             | number  | Unique identifier for a project.         |
-| quantity            | decimal |                                          |
-| tax                 | number  | Unique identifier for an invoice tax.    |
-| total_price         | decimal |                                          |
-
-## View invoice taxes
+## Invoice taxes
 
 >Example
 
@@ -360,7 +361,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 If you want to see the taxes of an invoice 
 
-<span class="http-method http-get">GET</span> `  /api/invoices/[id]/invoice_taxes`
+<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_taxes`
 
 <aside class="notice">
 The taxes of an invoice can also be filtered using filtered searches
@@ -379,8 +380,7 @@ Invoice taxes data
 | tax             | number  | Unique identifier for an invoice tax. |
 | total           | decimal |                                       |
 
-## Include (Invoices)
-
+## Includes (Invoices)
 
 The following entity types can be included in this payload type
 
@@ -391,3 +391,22 @@ The following entity types can be included in this payload type
 | members         | The responsible member for this invoice   |
 | invoice_details | The invoice's detail rows                 |
 | invoice_taxes   | The taxes summary of this invoice         |
+
+## Includes (Invoice details)
+
+The following entity types can be included in this payload type
+
+| Type     | Description                                       |
+|----------|---------------------------------------------------|
+| invoices | The invoice associated with this invoice detail.  |
+| items    | The item associated with this invoice detail.     |
+| projects | The project associated with this invoice details. |
+
+## Includes (Invoice taxes)
+
+The following entity types can be included in this payload type
+
+| Type     | Description                                      |
+|----------|--------------------------------------------------|
+| invoices | The invoice associated with this invoice detail. |
+| taxes    | The tax associated with this invoice detail.     |

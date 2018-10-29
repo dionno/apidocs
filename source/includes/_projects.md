@@ -313,19 +313,19 @@ If you want to see the project features for a project.
 
 <span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_features`
 
-| Attribute      | Type             | Description                                                                                                                                                     |  |
-|----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
-| billing_rate   | decimal          | Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2). |  |
-| budget_amount  | decimal          | Budget amount set for the feature in the project depending on the budget type of the project (budget_type).                                                     |  |
-| budget_minutes | number           | Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).                                                    |  |
-| description    | string           | Description for the feature in the project.                                                                                                                     |  |
-| id             | number           | Unique identifier for a feature in the project.                                                                                                                 |  |
-| item_types     | number           | Unique identifier for the item type.                                                                                                                            |  |
-| notes          | string           | Additional notes for the feature in the project.                                                                                                                |  |
-| order          | number           | Order of the feature in the project for display purposes.                                                                                                       |  |
-| project        | number           | Unique identifier for the project.                                                                                                                              |  |
-| status         | number           | Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |  |
-| type           | project_features | Type of response.                                                                                                                                               |  |
+| Attribute      | Type             | Description                                                                                                                                                     |
+|----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| billing_rate   | decimal          | Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2). |
+| budget_amount  | decimal          | Budget amount set for the feature in the project depending on the budget type of the project (budget_type).                                                     |
+| budget_minutes | number           | Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).                                                    |
+| description    | string           | Description for the feature in the project.                                                                                                                     |
+| id             | number           | Unique identifier for a feature in the project.                                                                                                                 |
+| items          | number           | Unique identifier for the item.                                                                                                                                 |
+| notes          | string           | Additional notes for the feature in the project.                                                                                                                |
+| order          | number           | Order of the feature in the project for display purposes.                                                                                                       |
+| project        | number           | Unique identifier for the project.                                                                                                                              |
+| status         | number           | Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |
+| type           | project_features | Type of response.                                                                                                                                               |
 
 <aside class="notice">
 Some attributs are available only if the authenticated user has required permissions.
@@ -351,3 +351,11 @@ The following entity types can be included in this payload type.
 | project_features | The tasks associated with this project.    |
 | project_members  | The members assigned to this project.      |
 
+## Includes (Project features)
+
+The following entity types can be included in this payload type
+
+| Type     | Description                                       |
+|----------|---------------------------------------------------|
+| items    | The item associated with this project feature.    |
+| projects | The project associated with this project feature. |
