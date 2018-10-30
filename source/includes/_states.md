@@ -2,7 +2,7 @@
 
 Get information about states.
 
-Using the API you can do the following with a state data.
+Using the API allows you to do the following with a state data.
 
 | Attribute | Type   | Description                                                                   |
 |-----------|--------|-------------------------------------------------------------------------------|
@@ -65,14 +65,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 This API allows you to view the details of a state.
 
-<span class="http-method http-get">GET</span> `  /webapi/states/[id]`
+<span class="http-method http-get">GET</span> `/webapi/states/[id]`
 
 | Parameter | Description                     |
 |-----------|---------------------------------|
 | id        | Unique identifier of the state. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all states
@@ -152,7 +152,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 }
 ```
 
-Using this API, you'd be able to fetch a list of countries.
+Using this API, you can fetch a list of countries.
 
 <span class="http-method http-get">GET</span> `/webapi/states`
 
@@ -166,7 +166,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/states/12?includes=countries
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type      | Description                            |
 |-----------|----------------------------------------|

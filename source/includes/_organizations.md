@@ -2,7 +2,7 @@
 
 A Nutcache organization is an entity comprising multiple members with various roles and projects with varying constraints and goals.
 
-Using the API, you can do the following with organization data.
+Using the API allows you to do the following with with organization data.
 
 | Attribute             | Type          | Description                                                                                                                                                                                                                                                                                                                   |
 |-----------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Using the API, you can do the following with organization data.
 | website               | string        | Site identifier for the organization.                                                                                                                                                                                                                                                                                         |
 | zip_code              | string        | Zip code.                                                                                                                                                                                                                                                                                                                     |                                                                                                                                  
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside>    
 
 ## Viewing an organization
@@ -112,7 +112,7 @@ This API allows you to view the details of an organization.
 | id        | Unique identifier of the organization. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all organizations
@@ -194,12 +194,12 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
-Using this API, you'd be able to fetch a list of organizations.
+Using this API, you can fetch a list of organizations.
 
 <span class="http-method http-get">GET</span> `/webapi/organizations`
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Includes (Organizations)
@@ -214,7 +214,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type       | Description                                     |
 |------------|-------------------------------------------------|

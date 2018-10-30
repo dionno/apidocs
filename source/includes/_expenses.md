@@ -2,7 +2,7 @@
 
 Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.
 
-Using the API you can do the following with expense data.
+Using the API allows you to do the following with with expense data.
 
 | Attribute           | Type     | Description                                                                                             |
 |---------------------|----------|---------------------------------------------------------------------------------------------------------|
@@ -25,7 +25,7 @@ Using the API you can do the following with expense data.
 | type                | expenses | Type of response.                                                                                       |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 ## Viewing an expense
@@ -97,7 +97,7 @@ This API allows you to view the details of a expense.
 | id        | Unique identifier of the expense. |
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all expenses
@@ -168,12 +168,12 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
-Using this API, you'd be able to fetch a list of expenses.
+Using this API, you can fetch a list of expenses.
 
 <span class="http-method http-get">GET</span> ` /webapi/expenses/`
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Expense taxes
@@ -215,7 +215,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
-If you want to get a detailed list of taxes for an expense.
+If you want to get a detailed list of taxes for an expense:
 
 <span class="http-method http-get">GET</span> ` /webapi/expenses/[id]/expense_taxes`
 
@@ -232,15 +232,15 @@ If you want to get a detailed list of taxes for an expense.
 | type       | expense_taxes | Type of responses.                |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The taxes for an expense can also be filtered using filtered searches.
+  The taxes for an expense can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Includes (Expenses)
@@ -256,7 +256,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type          | Description                                |
 |---------------|--------------------------------------------|

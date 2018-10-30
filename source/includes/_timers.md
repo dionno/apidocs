@@ -2,7 +2,7 @@
 
 A Nutcache timer is a stopwatch used to record time spent on a task.
 
-Using the API you can do the following with timer data.
+Using the API allows you to do the following with timer data.
 
 | Attribute           | Type     | Description                                                                             |
 |---------------------|----------|-----------------------------------------------------------------------------------------|
@@ -19,7 +19,7 @@ Using the API you can do the following with timer data.
 | type                | timers   | Type of response.                                                                       |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 ## Viewing a timer
@@ -73,14 +73,14 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of a timer.
 
-<span class="http-method http-get">GET</span> `  /webapi/timers/[id]`
+<span class="http-method http-get">GET</span> `/webapi/timers/[id]`
 
 | Parameter | Description                     |
 |-----------|---------------------------------|
 | id        | Unique identifier of the timer. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all timers
@@ -140,12 +140,12 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-Using this API, you'd be able to fetch a list of timers.
+Using this API, you can fetch a list of timers.
 
 <span class="http-method http-get">GET</span> `/webapi/timers`
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Includes (Timers)
@@ -159,11 +159,11 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/timers/3546?includes=projects,members
 ```
 
-The following entity types can be included in this payload type
+The following entity types can be included in this payload type:
 
-| Type             | Description                                      |
-|------------------|--------------------------------------------------|
-| members          | The member associated with the timer             |
-| projects         | The project associated with the timer            |
-| project_features | The task associated with the timer               |
-| sprint_stories   | The project board card associated with the timer |
+| Type             | Description                                       |
+|------------------|---------------------------------------------------|
+| members          | The member associated with the timer.             |
+| projects         | The project associated with the timer.            |
+| project_features | The task associated with the timer.               |
+| sprint_stories   | The project board card associated with the timer. |

@@ -1,9 +1,12 @@
 # Getting started
 
+Nutcache provides the tools for developers to create comprehensive solutions for your business. This guide offers a comprehensive suite of developer resources and web services and help you build applications.
 
 ## Public key
 
-To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> My Profile" menu. From the My Profile dialog, select the "Manage Access Keys" tab and click the "+ Generate new key" to continue.
+To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> My Profile" menu. From the My Profile dialog, select the "MANAGE API KEYS" tab and click the "+ API Key" to continue.
+
+![Manage API Keys](/images/manageapikeys.png)
 
 ## Authentication
 
@@ -59,7 +62,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 You can request for additional entities using the "include" keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.
 
 <aside class="notice">
-Refer to each resource for more information on which entities can be included.
+	Refer to each resource for more information on which entities can be included.
 </aside>
 
 ## Pagination
@@ -73,17 +76,17 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET "https://apps.nutcache.com/webapi/customers?limit=10&page=2
 ```
 
-API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you'd like to retrieve the Time Entries from 11 to 20 use,
+API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100.
 
 ## Rate Limit
 
 A rate limit of 20 000 api calls per API key is allowed.
 
-If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
+If you go over this limits, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
 
 `HTTP/1.1 429 Too Many Requests`
 `Retry-After: 30`
 
 <aside class="warning">
-There is a also a burst limit of 5 api calls per second and 200 per minute.
+	There is a also a burst limit of 5 api calls per second and 200 per minute.
 </aside>

@@ -4,7 +4,6 @@
 
 Filtered searches can be used to find entities that match specific search criteria.
 
-
 ## Usage
 
 >Filter Construct
@@ -21,7 +20,7 @@ Filtered searches can be used to find entities that match specific search criter
 }
 ```
 
-<span class="http-method http-post">POST</span> ` _entity_/filtered`
+<span class="http-method http-post">POST</span> `_entity_/filtered`
 
 >Filters can be combined together as follows:
 
@@ -43,7 +42,7 @@ Filtered searches can be used to find entities that match specific search criter
 ```
 
 <aside class="notice">
-Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+  Filtered requests can combine filter rules with sorting rules by adding both properties to the payload.
 </aside>
 
 >Example
@@ -59,17 +58,17 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 ## Filter Operators
 
-| Operator | Description            |
-|----------|------------------------|
-| eq       | Equals                 |
-| neq      | Not Equals             |
-| gt       | Greater Than           |
-| lt       | Less Than              |
-| gte      | Greater Than or Equals |
-| lte      | Less Than or Equals    |
-| ct       | Contains               |
-| sw       | Starts With            |
-| ew       | Ends With              |
+| Operator | Description             |
+|----------|-------------------------|
+| eq       | Equals.                 |
+| neq      | Not Equals.             |
+| gt       | Greater Than.           |
+| lt       | Less Than.              |
+| gte      | Greater Than or Equals. |
+| lte      | Less Than or Equals.    |
+| ct       | Contains.               |
+| sw       | Starts With.            |
+| ew       | Ends With.              |
 
 ## Sorting
 
@@ -91,12 +90,12 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 Results from filtered searches can be sorted using filtered actions with sorting rules.
 
 <aside class="notice">
-Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+  Filtered requests can combine filter rules with sorting rules by adding both properties to the payload.
 </aside>
 
 ## Sort Directions
 
-| Direction  | Supported Terms  |
-|------------|------------------|
-| Ascending  | asc, ascending   |
-| Descending | desc, descending |
+| Direction  | Supported Terms   |
+|------------|-------------------|
+| Ascending  | asc, ascending.   |
+| Descending | desc, descending. |

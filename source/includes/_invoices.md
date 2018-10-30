@@ -3,7 +3,7 @@
 
 A document sent to a customer that includes a list of products sold or tasks provided, with a statement of the sum due.
 
-Using the API you can do the following with invoice data.
+Using the API allows you to do the following with with invoice data.
 
 | Attribute                 | Type     | Description                                                                                                                                                                |
 |---------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,7 +36,7 @@ Using the API you can do the following with invoice data.
 | type                      | invoices | Type of response.                                                                                                                                                          |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+	Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 
@@ -111,14 +111,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view an invoice.
 
-<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]`
+<span class="http-method http-get">GET</span> `/webapi/invoices/[id]`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
 | id        | Unique identifier of the invoice. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+	Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all invoices
@@ -201,12 +201,12 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
-Using this API, you'd be able to fetch a list of invoices.
+Using this API, you can fetch a list of invoices.
 
-<span class="http-method http-get">GET</span> `  /webapi/invoices/`
+<span class="http-method http-get">GET</span> `/webapi/invoices/`
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+	Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Invoice details
@@ -255,9 +255,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the details of an invoice 
+If you want to see the details of an invoice:
 
-<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_details`
+<span class="http-method http-get">GET</span> `/webapi/invoices/[id]/invoice_details`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
@@ -278,15 +278,15 @@ If you want to see the details of an invoice
 | type                | invoice_details | Type of response.                                              |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+	Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The details of an invoice can also be filtered using filtered searches
+	The details of an invoice can also be filtered using filtered searches
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+	Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Invoice taxes
@@ -366,9 +366,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the taxes of an invoice 
+If you want to see the taxes of an invoice:
 
-<span class="http-method http-get">GET</span> `  /webapi/invoices/[id]/invoice_taxes`
+<span class="http-method http-get">GET</span> `/webapi/invoices/[id]/invoice_taxes`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
@@ -387,15 +387,15 @@ If you want to see the taxes of an invoice
 | type            | invoice_taxes | Type of response.                     |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+	Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using filtered searches
+	The taxes of an invoice can also be filtered using filtered searches
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+	Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Includes (Invoices)
@@ -409,7 +409,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287?includes=invoice_details,invoice_taxes
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type            | Description                               |
 |-----------------|-------------------------------------------|
@@ -430,7 +430,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details?includes=projects
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type     | Description                                       |
 |----------|---------------------------------------------------|
@@ -449,7 +449,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes?includes=taxes
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type     | Description                                      |
 |----------|--------------------------------------------------|

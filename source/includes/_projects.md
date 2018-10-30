@@ -2,7 +2,7 @@
 
 A project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.
 
-Using the API you can do the following with project data.
+Using the API allows you to do the following with project data.
 
 | Attribute                          | Type     | Description                                                                                                                                                                                                                                                                                                                                          |
 |------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,9 +35,8 @@ Using the API you can do the following with project data.
 | type                               | projects | Type of response.                                                                                                                                                                                                                                                                                                                                    |
 | vision                             | string   | Project vision.                                                                                                                                                                                                                                                                                                                                      |
 
-
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 ## Viewing a project
@@ -110,14 +109,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of a project.
 
-<span class="http-method http-get">GET</span> `  /webapi/projects/[id]`
+<span class="http-method http-get">GET</span> `/webapi/projects/[id]`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
 | id        | Unique identifier of the project. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all projects
@@ -195,12 +194,12 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-<span class="http-method http-get">GET</span> `  /webapi/projects`
+<span class="http-method http-get">GET</span> `/webapi/projects`
 
-Using this API, you'd be able to fetch a list of projects.
+Using this API, you can fetch a list of projects.
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Project members
@@ -242,9 +241,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the project members for a project.
+If you want to see the project members for a project:
 
-<span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_members`
+<span class="http-method http-get">GET</span> `/webapi/projects/[id]/project_members`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
@@ -266,15 +265,15 @@ If you want to see the project members for a project.
 
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The project members for a project can also be filtered using filtered searches.
+  The project members for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 
@@ -317,9 +316,10 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
   ]
 }
 ```
-If you want to see the project features for a project.
 
-<span class="http-method http-get">GET</span> `  /webapi/projects/[id]/project_features`
+If you want to see the project features for a project:
+
+<span class="http-method http-get">GET</span> `/webapi/projects/[id]/project_features`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
@@ -340,15 +340,15 @@ If you want to see the project features for a project.
 | type           | project_features | Type of response.                                                                                                                                               |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The project features for a project can also be filtered using filtered searches.
+  The project features for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 
@@ -363,7 +363,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/projects/6640?includes=customers
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type             | Description                                |
 |------------------|--------------------------------------------|
@@ -383,11 +383,11 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_members?includes=members
 ```
 
-The following entity types can be included in this payload type
+The following entity types can be included in this payload type:
 
-| Type     | Description                                       |
-|----------|---------------------------------------------------|
-| members    | The memebr associated with this project member.    |
+| Type     | Description                                      |
+|----------|--------------------------------------------------|
+| members  | The member associated with this project member.  |
 | projects | The project associated with this project member. |
 
 ## Includes (Project features)
@@ -401,7 +401,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features?includes=items
 ```
 
-The following entity types can be included in this payload type
+The following entity types can be included in this payload type:
 
 | Type     | Description                                       |
 |----------|---------------------------------------------------|

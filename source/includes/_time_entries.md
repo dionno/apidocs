@@ -2,7 +2,7 @@
 
 A time entry is a recording of the amount of time a member spent on a specific task.
 
-Using the API you can do the following with time entry data.
+Using the API allows you to do the following with time entry data.
 
 | Attribute            | Type         | Description                                                                                                                                                  |
 |----------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -91,7 +91,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of a time entry.
 
-<span class="http-method http-get">GET</span> `  /webapi/time_entries/[id]`
+<span class="http-method http-get">GET</span> `/webapi/time_entries/[id]`
 
 | Parameter | Description                          |
 |-----------|--------------------------------------|
@@ -164,7 +164,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-Using this API, you'd be able to fetch a list of time entries.
+Using this API, you can fetch a list of time entries.
 
 <span class="http-method http-get">GET</span> `/webapi/time_entries`
 
@@ -183,15 +183,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/time_entries/1?includes=members,projects,project_features
 ```
 
-The following entity types can be included in this payload type
+The following entity types can be included in this payload type:
 
-| Type             | Description                                 |
-|------------------|---------------------------------------------|
-| invoices         | The invoice associated with this time entry |
-| members          | The member associated with this time entry  |
-| organizations    | The organization containing this time entry |
-| projects         | The project associated with this time entry |
-| project_features | The task associated with this time entry    |
+| Type             | Description                                  |
+|------------------|----------------------------------------------|
+| invoices         | The invoice associated with this time entry. |
+| members          | The member associated with this time entry.  |
+| organizations    | The organization containing this time entry. |
+| projects         | The project associated with this time entry. |
+| project_features | The task associated with this time entry.    |
 
 ## Creating a time entry
 
@@ -233,7 +233,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows existing time entries to be modified.
 
-<span class="http-method http-get">PUT</span> `  /webapi/time_entries/[id]`
+<span class="http-method http-get">PUT</span> `/webapi/time_entries/[id]`
 
 | Parameter | Description                          |
 |-----------|--------------------------------------|
@@ -266,7 +266,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -X DELETE https://apps.nutcache.com/webapi/time_entries/1
 ```
 
-<span class="http-method http-get">DELETE</span> `  /webapi/time_entries/[id]`
+<span class="http-method http-get">DELETE</span> `/webapi/time_entries/[id]`
 
 | Parameter | Description                          |
 |-----------|--------------------------------------|

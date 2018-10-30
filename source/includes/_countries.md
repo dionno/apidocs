@@ -2,7 +2,7 @@
 
 Get information about countries.
 
-Using the API you can do the following with a country data.
+Using the API allows you to do the following with a country data.
 
 | Attribute   | Type      | Description                                                                                                                                                                                                                                                                                                        |
 |-------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,16 +72,14 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 
 This API allows you to view the details of a country.
 
-<span class="http-method http-get">GET</span> `  /webapi/countries/[id]`
-
-URL Parameters
+<span class="http-method http-get">GET</span> `/webapi/countries/[id]`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
 | id        | Unique identifier of the country. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all countries
@@ -167,11 +165,15 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 }
 ```
 
-Using this API, you'd be able to fetch a list of countries.
+Using this API, you can fetch a list of countries.
 
 <span class="http-method http-get">GET</span> `/webapi/countries`
 
-## View country states
+<aside class="notice">
+  Use 'includes' to embed additional details in the response.
+</aside>
+
+## Country states
 
 >Example
 
@@ -248,12 +250,16 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the states/provinces of a country
+If you want to see the states/provinces of a country:
 
-<span class="http-method http-get">GET</span> `  /webapi/countries/[id]/states`
+<span class="http-method http-get">GET</span> `/webapi/countries/[id]/states`
+
+| Parameter | Description                       |
+|-----------|-----------------------------------|
+| id        | Unique identifier of the country. |
 
 <aside class="notice">
-The states of a country can also be filtered using filtered searches
+  The states of a country can also be filtered using filtered searches.
 </aside>
 
 ## Includes (Countries)
@@ -266,8 +272,8 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/countries/231?includes=currencies
 ```
 
-The following entity types can be included in this payload type
+The following entity types can be included in this payload type:
 
-| Type       | Description                               |
-|------------|-------------------------------------------|
-| currencies | The currency associated with this country |
+| Type       | Description                                |
+|------------|--------------------------------------------|
+| currencies | The currency associated with this country. |

@@ -2,7 +2,7 @@
 
 An individual or party with whom you conduct business.
 
-Using the API's you can do the following with project data.
+Using the API allows you to do the following with project data.
 
 | Attribute                  | Type      | Description                                                              |
 |----------------------------|-----------|--------------------------------------------------------------------------|
@@ -26,7 +26,7 @@ Using the API's you can do the following with project data.
 | zip_code                   | string    | Zip code.                                                                |
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 ## Viewing a customer
@@ -91,14 +91,14 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 ```
 This API allows you to view the details of a customer.
 
-<span class="http-method http-get">GET</span> `  /webapi/customers/[id]`
+<span class="http-method http-get">GET</span> `/webapi/customers/[id]`
 
 | Parameter | Description                        |
 |-----------|------------------------------------|
 | id        | Unique identifier of the customer. |
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## List all customers
@@ -163,12 +163,12 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
     }
 }
 ```
-Using this API, you'd be able to fetch a list of customers.
+Using this API, you can fetch a list of customers.
 
 <span class="http-method http-get">GET</span> `/webapi/customers`
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
 ## Includes (Customers)
@@ -182,7 +182,7 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 	 -X GET https://apps.nutcache.com/webapi/customers/154528?includes=countries,states
 ```
 
-The following entity types can be included in this payload type.
+The following entity types can be included in this payload type:
 
 | Type          | Description                                |
 |---------------|--------------------------------------------|

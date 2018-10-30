@@ -2,7 +2,7 @@
 
 Get information about currencies.
 
-Using the API you can do the following with currency data.
+Using the API allows you to do the following with currency data.
 
 | Attribute     | Type       | Description                       |
 |---------------|------------|-----------------------------------|
@@ -56,7 +56,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 ```
 This API allows you to view the details of a currency.
 
-<span class="http-method http-get">GET</span> `  /webapi/currencies/[id]`
+<span class="http-method http-get">GET</span> `/webapi/currencies/[id]`
 
 | Parameter | Description                        |
 |-----------|------------------------------------|
@@ -123,6 +123,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
   ]
 }
 ```
-Using this API, you'd be able to fetch a list of currencies.
+Using this API, you can fetch a list of currencies.
 
 <span class="http-method http-get">GET</span> `/webapi/currencies`
