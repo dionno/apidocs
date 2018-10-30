@@ -4,7 +4,7 @@ Nutcache provides the tools for developers to create comprehensive solutions for
 
 ## Public key
 
-To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> My Profile" menu. From the My Profile dialog, select the "MANAGE API KEYS" tab and click the "+ API Key" to continue.
+To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the "My account -> Profile" menu. From the "Profile" dialog, select the "MANAGE API KEYS" tab and click the "+ API Key" to continue.
 
 ![Manage API Keys](/images/manageapikeys.png)
 
