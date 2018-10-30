@@ -199,6 +199,7 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;]">
@@ -254,7 +255,7 @@
                     <a href="#list-all-countries" class="toc-h2 toc-link" data-title="List all countries">List all countries</a>
                   </li>
                   <li>
-                    <a href="#view-country-states" class="toc-h2 toc-link" data-title="View country states">View country states</a>
+                    <a href="#country-states" class="toc-h2 toc-link" data-title="Country states">Country states</a>
                   </li>
                   <li>
                     <a href="#includes-countries" class="toc-h2 toc-link" data-title="Includes (Countries)">Includes (Countries)</a>
@@ -445,14 +446,18 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://www.nutcache.com'>Powered by Nutcache</a></li>
+            <li><a href='https://www.nutcache.com'>© 2018 Nutcache. All Rights Reserved.</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='getting-started'>Getting started</h1><h2 id='public-key'>Public key</h2>
-<p>To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the &quot;My account -&gt; My Profile&quot; menu. From the My Profile dialog, select the &quot;Manage Access Keys&quot; tab and click the &quot;+ Generate new key&quot; to continue.</p>
+        <h1 id='getting-started'>Getting started</h1>
+<p>Nutcache provides the tools for developers to create comprehensive solutions for your business. This guide offers a comprehensive suite of developer resources and web services and help you build applications.</p>
+<h2 id='public-key'>Public key</h2>
+<p>To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the &quot;My account -&gt; My Profile&quot; menu. From the My Profile dialog, select the &quot;MANAGE API KEYS&quot; tab and click the &quot;+ API Key&quot; to continue.</p>
+
+<p><img src="images/manageapikeys.png" alt="Manage API Keys" /></p>
 <h2 id='authentication'>Authentication</h2>
 <p>Authentication info must be provided along with your request within the Authorization header. The authentication is made of the public key, a username and password, all separated by a colon. The authentication info must be encoded in Base 64.</p>
 
@@ -498,7 +503,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 <p>You can request for additional entities using the &quot;include&quot; keyword up to one level. For example, you can embed an organization entity when requesting a list of projects.</p>
 
 <aside class="notice">
-Refer to each resource for more information on which entities can be included.
+    Refer to each resource for more information on which entities can be included.
 </aside>
 <h2 id='pagination'>Pagination</h2>
 <blockquote>
@@ -509,22 +514,22 @@ Refer to each resource for more information on which entities can be included.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET <span class="s2">"https://apps.nutcache.com/webapi/customers?limit=10&amp;page=2
 </span></code></pre>
-<p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100. For example, if you&#39;d like to retrieve the Time Entries from 11 to 20 use,</p>
+<p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100.</p>
 <h2 id='rate-limit'>Rate Limit</h2>
 <p>A rate limit of 20 000 api calls per API key is allowed.</p>
 
-<p>If you go over these limits, nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
+<p>If you go over this limits, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
 
 <p><code>HTTP/1.1 429 Too Many Requests</code>
 <code>Retry-After: 30</code></p>
 
 <aside class="warning">
-There is a also a burst limit of 5 api calls per second and 200 per minute.
+    There is a also a burst limit of 5 api calls per second and 200 per minute.
 </aside>
 <h1 id='countries'>Countries</h1>
 <p>Get information about countries.</p>
 
-<p>Using the API you can do the following with a country data.</p>
+<p>Using the API allows you to do the following with a country data.</p>
 
 <table><thead>
 <tr>
@@ -665,8 +670,6 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]</code></p>
 
-<p>URL Parameters</p>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -680,7 +683,7 @@ There is a also a burst limit of 5 api calls per second and 200 per minute.
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-countries'>List all countries</h2>
 <blockquote>
@@ -762,10 +765,14 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+<p>Using this API, you can fetch a list of countries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries</code></p>
-<h2 id='view-country-states'>View country states</h2>
+
+<aside class="notice">
+  Use 'includes' to embed additional details in the response.
+</aside>
+<h2 id='country-states'>Country states</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -839,12 +846,24 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the states/provinces of a country</p>
+<p>If you want to see the states/provinces of a country:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]/states</code></p>
 
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier of the country.</td>
+</tr>
+</tbody></table>
+
 <aside class="notice">
-The states of a country can also be filtered using filtered searches
+  The states of a country can also be filtered using filtered searches.
 </aside>
 <h2 id='includes-countries'>Includes (Countries)</h2>
 <blockquote>
@@ -854,7 +873,7 @@ The states of a country can also be filtered using filtered searches
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/countries/231?includes<span class="o">=</span>currencies
 </code></pre>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -864,13 +883,13 @@ The states of a country can also be filtered using filtered searches
 </thead><tbody>
 <tr>
 <td>currencies</td>
-<td>The currency associated with this country</td>
+<td>The currency associated with this country.</td>
 </tr>
 </tbody></table>
 <h1 id='customers'>Customers</h1>
 <p>An individual or party with whom you conduct business.</p>
 
-<p>Using the API&#39;s you can do the following with project data.</p>
+<p>Using the API allows you to do the following with project data.</p>
 
 <table><thead>
 <tr>
@@ -972,7 +991,7 @@ The states of a country can also be filtered using filtered searches
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 <h2 id='viewing-a-customer'>Viewing a customer</h2>
 <blockquote>
@@ -1050,7 +1069,7 @@ Some attributs are available only if the authenticated user has required permiss
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-customers'>List all customers</h2>
 <blockquote>
@@ -1112,12 +1131,12 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of customers.</p>
+<p>Using this API, you can fetch a list of customers.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/customers</code></p>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-customers'>Includes (Customers)</h2>
 <blockquote>
@@ -1128,7 +1147,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/customers/154528?includes<span class="o">=</span>countries,states
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -1156,7 +1175,7 @@ Use 'includes' to embed additional details in the response.
 <h1 id='currencies'>Currencies</h1>
 <p>Get information about currencies.</p>
 
-<p>Using the API you can do the following with currency data.</p>
+<p>Using the API allows you to do the following with currency data.</p>
 
 <table><thead>
 <tr>
@@ -1343,13 +1362,13 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of currencies.</p>
+<p>Using this API, you can fetch a list of currencies.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
 <h1 id='expenses'>Expenses</h1>
 <p>Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.</p>
 
-<p>Using the API you can do the following with expense data.</p>
+<p>Using the API allows you to do the following with with expense data.</p>
 
 <table><thead>
 <tr>
@@ -1446,7 +1465,7 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 <h2 id='viewing-an-expense'>Viewing an expense</h2>
 <blockquote>
@@ -1523,7 +1542,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-expenses'>List all expenses</h2>
 <blockquote>
@@ -1590,12 +1609,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of expenses.</p>
+<p>Using this API, you can fetch a list of expenses.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/expenses/</code></p>
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='expense-taxes'>Expense taxes</h2>
 <blockquote>
@@ -1633,7 +1652,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 
 
 </span></code></pre>
-<p>If you want to get a detailed list of taxes for an expense.</p>
+<p>If you want to get a detailed list of taxes for an expense:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/expenses/[id]/expense_taxes</code></p>
 
@@ -1684,15 +1703,15 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The taxes for an expense can also be filtered using filtered searches.
+  The taxes for an expense can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-expenses'>Includes (Expenses)</h2>
 <blockquote>
@@ -1705,7 +1724,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
      -X GET https://apps.nutcache.com/webapi/expenses/234359?includes<span class="o">=</span>customers
 
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -1733,7 +1752,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <h1 id='invoices'>Invoices</h1>
 <p>A document sent to a customer that includes a list of products sold or tasks provided, with a statement of the sum due.</p>
 
-<p>Using the API you can do the following with invoice data.</p>
+<p>Using the API allows you to do the following with with invoice data.</p>
 
 <table><thead>
 <tr>
@@ -1880,7 +1899,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+    Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 <h2 id='viewing-an-invoice'>Viewing an invoice</h2>
 <blockquote>
@@ -1966,7 +1985,7 @@ Some attributs are available only if the authenticated user has required permiss
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+    Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-invoices'>List all invoices</h2>
 <blockquote>
@@ -2047,12 +2066,12 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of invoices.</p>
+<p>Using this API, you can fetch a list of invoices.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/</code></p>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+    Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='invoice-details'>Invoice details</h2>
 <blockquote>
@@ -2098,7 +2117,7 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the details of an invoice </p>
+<p>If you want to see the details of an invoice:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]/invoice_details</code></p>
 
@@ -2179,15 +2198,15 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+    Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The details of an invoice can also be filtered using filtered searches
+    The details of an invoice can also be filtered using filtered searches
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+    Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='invoice-taxes'>Invoice taxes</h2>
 <blockquote>
@@ -2263,7 +2282,7 @@ Use 'includes' to embed additional details in the response.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the taxes of an invoice </p>
+<p>If you want to see the taxes of an invoice:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]/invoice_taxes</code></p>
 
@@ -2334,15 +2353,15 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+    Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The taxes of an invoice can also be filtered using filtered searches
+    The taxes of an invoice can also be filtered using filtered searches
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+    Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-invoices'>Includes (Invoices)</h2>
 <blockquote>
@@ -2353,7 +2372,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices/9287?includes<span class="o">=</span>invoice_details,invoice_taxes
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -2391,7 +2410,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_details?includes<span class="o">=</span>projects
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -2421,7 +2440,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/invoices/9287/invoice_taxes?includes<span class="o">=</span>taxes
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -2441,7 +2460,7 @@ Use 'includes' to embed additional details in the response.
 <h1 id='organizations'>Organizations</h1>
 <p>A Nutcache organization is an entity comprising multiple members with various roles and projects with varying constraints and goals.</p>
 
-<p>Using the API, you can do the following with organization data.</p>
+<p>Using the API allows you to do the following with with organization data.</p>
 
 <table><thead>
 <tr>
@@ -2583,7 +2602,7 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside>    
 <h2 id='viewing-an-organization'>Viewing an organization</h2>
 <blockquote>
@@ -2666,7 +2685,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-organizations'>List all organizations</h2>
 <blockquote>
@@ -2744,12 +2763,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of organizations.</p>
+<p>Using this API, you can fetch a list of organizations.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/organizations</code></p>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-organizations'>Includes (Organizations)</h2>
 <blockquote>
@@ -2761,7 +2780,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
      -X GET https://apps.nutcache.com/webapi/organizations/6745?includes<span class="o">=</span>countries,states,currencies
 
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -2785,7 +2804,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <h1 id='projects'>Projects</h1>
 <p>A project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.</p>
 
-<p>Using the API you can do the following with project data.</p>
+<p>Using the API allows you to do the following with project data.</p>
 
 <table><thead>
 <tr>
@@ -2937,7 +2956,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 <h2 id='viewing-a-project'>Viewing a project</h2>
 <blockquote>
@@ -3021,7 +3040,7 @@ Some attributs are available only if the authenticated user has required permiss
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-projects'>List all projects</h2>
 <blockquote>
@@ -3097,10 +3116,10 @@ Use 'includes' to embed additional details in the response.
 </span></code></pre>
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects</code></p>
 
-<p>Using this API, you&#39;d be able to fetch a list of projects.</p>
+<p>Using this API, you can fetch a list of projects.</p>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='project-members'>Project members</h2>
 <blockquote>
@@ -3139,7 +3158,7 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the project members for a project.</p>
+<p>If you want to see the project members for a project:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_members</code></p>
 
@@ -3220,15 +3239,15 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The project members for a project can also be filtered using filtered searches.
+  The project members for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='project-features'>Project features</h2>
 <blockquote>
@@ -3267,7 +3286,7 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the project features for a project.</p>
+<p>If you want to see the project features for a project:</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_features</code></p>
 
@@ -3348,15 +3367,15 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 
 <aside class="notice">
-The project features for a project can also be filtered using filtered searches.
+  The project features for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-projects'>Includes (Projects)</h2>
 <blockquote>
@@ -3367,7 +3386,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/projects/6640?includes<span class="o">=</span>customers
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -3401,7 +3420,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/projects/6640/project_members?includes<span class="o">=</span>members
 </code></pre>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -3411,7 +3430,7 @@ Use 'includes' to embed additional details in the response.
 </thead><tbody>
 <tr>
 <td>members</td>
-<td>The memebr associated with this project member.</td>
+<td>The member associated with this project member.</td>
 </tr>
 <tr>
 <td>projects</td>
@@ -3427,7 +3446,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/projects/6640/project_features?includes<span class="o">=</span>items
 </code></pre>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -3447,7 +3466,7 @@ Use 'includes' to embed additional details in the response.
 <h1 id='states'>States</h1>
 <p>Get information about states.</p>
 
-<p>Using the API you can do the following with a state data.</p>
+<p>Using the API allows you to do the following with a state data.</p>
 
 <table><thead>
 <tr>
@@ -3583,7 +3602,7 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-states'>List all states</h2>
 <blockquote>
@@ -3659,7 +3678,7 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of countries.</p>
+<p>Using this API, you can fetch a list of countries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
 <h2 id='includes-states'>Includes (States)</h2>
@@ -3670,7 +3689,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'api-version: 3'</span> 
      -X GET https://apps.nutcache.com/webapi/states/12?includes<span class="o">=</span>countries
 </code></pre>
-<p>The following entity types can be included in this payload type.</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -3686,7 +3705,7 @@ Use 'includes' to embed additional details in the response.
 <h1 id='time-entries'>Time Entries</h1>
 <p>A time entry is a recording of the amount of time a member spent on a specific task.</p>
 
-<p>Using the API you can do the following with time entry data.</p>
+<p>Using the API allows you to do the following with time entry data.</p>
 
 <table><thead>
 <tr>
@@ -3910,7 +3929,7 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of time entries.</p>
+<p>Using this API, you can fetch a list of time entries.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/time_entries</code></p>
 
@@ -3926,7 +3945,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
      -X GET https://apps.nutcache.com/webapi/time_entries/1?includes<span class="o">=</span>members,projects,project_features
 </code></pre>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -3936,23 +3955,23 @@ Use 'includes' to embed additional details in the response.
 </thead><tbody>
 <tr>
 <td>invoices</td>
-<td>The invoice associated with this time entry</td>
+<td>The invoice associated with this time entry.</td>
 </tr>
 <tr>
 <td>members</td>
-<td>The member associated with this time entry</td>
+<td>The member associated with this time entry.</td>
 </tr>
 <tr>
 <td>organizations</td>
-<td>The organization containing this time entry</td>
+<td>The organization containing this time entry.</td>
 </tr>
 <tr>
 <td>projects</td>
-<td>The project associated with this time entry</td>
+<td>The project associated with this time entry.</td>
 </tr>
 <tr>
 <td>project_features</td>
-<td>The task associated with this time entry</td>
+<td>The task associated with this time entry.</td>
 </tr>
 </tbody></table>
 <h2 id='creating-a-time-entry'>Creating a time entry</h2>
@@ -4056,7 +4075,7 @@ Use 'includes' to embed additional details in the response.
 <h1 id='timers'>Timers</h1>
 <p>A Nutcache timer is a stopwatch used to record time spent on a task.</p>
 
-<p>Using the API you can do the following with timer data.</p>
+<p>Using the API allows you to do the following with timer data.</p>
 
 <table><thead>
 <tr>
@@ -4123,7 +4142,7 @@ Use 'includes' to embed additional details in the response.
 </tbody></table>
 
 <aside class="notice">
-Some attributs are available only if the authenticated user has required permissions.
+  Some attributs are available only if the authenticated user has required permissions.
 </aside> 
 <h2 id='viewing-a-timer'>Viewing a timer</h2>
 <blockquote>
@@ -4189,7 +4208,7 @@ Some attributs are available only if the authenticated user has required permiss
 </tbody></table>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='list-all-timers'>List all timers</h2>
 <blockquote>
@@ -4246,12 +4265,12 @@ Use 'includes' to embed additional details in the response.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you&#39;d be able to fetch a list of timers.</p>
+<p>Using this API, you can fetch a list of timers.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/timers</code></p>
 
 <aside class="notice">
-Use 'includes' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 <h2 id='includes-timers'>Includes (Timers)</h2>
 <blockquote>
@@ -4262,7 +4281,7 @@ Use 'includes' to embed additional details in the response.
      -H <span class="s2">"OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E"</span> 
      -X GET https://apps.nutcache.com/webapi/timers/3546?includes<span class="o">=</span>projects,members
 </code></pre>
-<p>The following entity types can be included in this payload type</p>
+<p>The following entity types can be included in this payload type:</p>
 
 <table><thead>
 <tr>
@@ -4272,19 +4291,19 @@ Use 'includes' to embed additional details in the response.
 </thead><tbody>
 <tr>
 <td>members</td>
-<td>The member associated with the timer</td>
+<td>The member associated with the timer.</td>
 </tr>
 <tr>
 <td>projects</td>
-<td>The project associated with the timer</td>
+<td>The project associated with the timer.</td>
 </tr>
 <tr>
 <td>project_features</td>
-<td>The task associated with the timer</td>
+<td>The task associated with the timer.</td>
 </tr>
 <tr>
 <td>sprint_stories</td>
-<td>The project board card associated with the timer</td>
+<td>The project board card associated with the timer.</td>
 </tr>
 </tbody></table>
 <h1 id='search'>Search</h1><h2 id='filtered-searches'>Filtered Searches</h2>
@@ -4324,7 +4343,7 @@ Use 'includes' to embed additional details in the response.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <aside class="notice">
-Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+  Filtered requests can combine filter rules with sorting rules by adding both properties to the payload.
 </aside>
 
 <blockquote>
@@ -4345,39 +4364,39 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 </thead><tbody>
 <tr>
 <td>eq</td>
-<td>Equals</td>
+<td>Equals.</td>
 </tr>
 <tr>
 <td>neq</td>
-<td>Not Equals</td>
+<td>Not Equals.</td>
 </tr>
 <tr>
 <td>gt</td>
-<td>Greater Than</td>
+<td>Greater Than.</td>
 </tr>
 <tr>
 <td>lt</td>
-<td>Less Than</td>
+<td>Less Than.</td>
 </tr>
 <tr>
 <td>gte</td>
-<td>Greater Than or Equals</td>
+<td>Greater Than or Equals.</td>
 </tr>
 <tr>
 <td>lte</td>
-<td>Less Than or Equals</td>
+<td>Less Than or Equals.</td>
 </tr>
 <tr>
 <td>ct</td>
-<td>Contains</td>
+<td>Contains.</td>
 </tr>
 <tr>
 <td>sw</td>
-<td>Starts With</td>
+<td>Starts With.</td>
 </tr>
 <tr>
 <td>ew</td>
-<td>Ends With</td>
+<td>Ends With.</td>
 </tr>
 </tbody></table>
 <h2 id='sorting'>Sorting</h2>
@@ -4398,7 +4417,7 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 <p>Results from filtered searches can be sorted using filtered actions with sorting rules.</p>
 
 <aside class="notice">
-Filtered requests can combine filter rules with sorting rules by adding both properties to the payload
+  Filtered requests can combine filter rules with sorting rules by adding both properties to the payload.
 </aside>
 <h2 id='sort-directions'>Sort Directions</h2>
 <table><thead>
@@ -4409,11 +4428,11 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 </thead><tbody>
 <tr>
 <td>Ascending</td>
-<td>asc, ascending</td>
+<td>asc, ascending.</td>
 </tr>
 <tr>
 <td>Descending</td>
-<td>desc, descending</td>
+<td>desc, descending.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
@@ -4434,7 +4453,7 @@ Filtered requests can combine filter rules with sorting rules by adding both pro
 <tr>
 <td>401</td>
 <td>Access Denied</td>
-<td>Indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header <a href="#authentication">here</a></td>
+<td>Indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header <a href="#authentication">here</a>.</td>
 </tr>
 <tr>
 <td>403</td>
