@@ -4,25 +4,36 @@ A time entry is a recording of the amount of time a member spent on a specific t
 
 Using the API you can do the following with time entry data.
 
-| Attribute            | Type     | Description                                                                                                                               |
-|----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable, ignored otherwise).                                                                                                                 |
-| creation_date        | datetime | When this entry has been logged; \ Read only; Can not be updated                                                                          |
-| creation_userprofile | number   | Member that originally created the time entry; Read only; Can not be updated.                                                             |
-| end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.   |
-| guid                 | string   | Global Unique identifier.                                                                                                                        |
-| id                   | number   | Unique identifier.                                                                                                                        |
-| invoice              | number   | Invoice unique identifier.                                                                                                                |
-| member               | number   | Member unique identifier.                                                                                                                 |
-| minutes              | number   | Number of minutes logged.                                                                                                                 |
-| note                 | string   | Note                                                                                                                                      |
-| project              | number   | Project unique identifier.                                                                                                                |
-| project_feature      | number   | Project Feature unique identifier.                                                                                                        |
-| start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
-| type                 | string   | Payload type(time_entries).                                                                                                                             |
-| working_date         | datetime | A date time that represents the day for the time entry.                                                                                   |
+| Attribute            | Type         | Description                                                                                                                                                  |
+|----------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| billable_minutes     | number       | Billable time entry in minutes. </br>Available for projects that are billable (project.billing_method <> 0).                                                 |
+| creation_date        | datetime     | Date the time entry was created.                                                                                                                             |
+| creation_userprofile | number       | Unique identifier for a member that originally created the time entry.                                                                                       |
+| end_time             | datetime     | Date time that represents the end of the time entry. </br>Available if time tracking mode is set to Start/End time (organization.time_tracking_type = 1)).   |
+| id                   | number       | Unique identifier.                                                                                                                                           |
+| invoice              | number       | Unique identifier for an invoice.                                                                                                                            |
+| member               | number       | Unique identifier for a member.                                                                                                                              |
+| minutes              | number       | Number of minutes logged.                                                                                                                                    |
+| note                 | string       | Notes.                                                                                                                                                       |
+| project              | number       | Unique identifier for a project.                                                                                                                             |
+| project_feature      | number       | Unique identifier for a project feature.                                                                                                                     |
+| start_time           | datetime     | Date time that represents the start of the time entry. </br>Available if time tracking mode is set to Start/End time (organization.time_tracking_type = 1)). |
+| type                 | time_entries | Type of response.                                                                                                                                            |
+| working_date         | datetime     | Date time that represents the day of the time entry.                                                                                                         |
 
-## Viewing a Time Entry
+<aside class="notice">
+  Some attributs are read-only.
+</aside> 
+
+<aside class="notice">
+  Some attributs are available base on the organization and/or project settings.
+</aside> 
+
+<aside class="notice">
+  Some attributs are available only if the authenticated user has required permissions.
+</aside> 
+
+## Viewing a time entry
 
 >Example
 
@@ -41,7 +52,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
     {
       "type": "time_entries",
       "id": 201001,
-      "guid": "{71094532-926e-41a1-bda5-3ce0bcb40180}",
       "billable_minutes": 0,
       "creation_date": "2018-03-06T22:01:09.25",
       "creation_userprofile": 2814,
@@ -81,13 +91,17 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 This API allows you to view the details of a time entry.
 
-<span class="http-method http-get">GET</span> `  /api/time_entries/[id]`
+<span class="http-method http-get">GET</span> `  /webapi/time_entries/[id]`
+
+| Parameter | Description                          |
+|-----------|--------------------------------------|
+| id        | Unique identifier of the time entry. |
 
 <aside class="notice">
-Use 'include' to embed additional details in the response.
+  Use 'includes' to embed additional details in the response.
 </aside>
 
-## List all Time Entries
+## List all time entries
 
 >Example
 
@@ -113,7 +127,6 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
     {
       "type": "time_entries",
       "id": 201001,
-      "guid": "{66700be6-2d82-4fde-bd69-cd2a1161e0d4}",
       "billable_minutes": 0,
       "creation_date": "2018-03-06T22:01:09.25",
       "creation_userprofile": null,
@@ -153,25 +166,34 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 Using this API, you'd be able to fetch a list of time entries.
 
-<span class="http-method http-get">GET</span> `/api/time_entries`
+<span class="http-method http-get">GET</span> `/webapi/time_entries`
 
-## Include (Time entries)
+<aside class="notice">
+  Use 'includes' to embed additional details in the response.
+</aside>
+
+## Includes (Time entries)
+
+>Example
+
+```shell
+curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
+     -H 'api-version: 3' 
+	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
+	 -X GET https://apps.nutcache.com/webapi/time_entries/1?includes=members,projects,project_features
+```
 
 The following entity types can be included in this payload type
 
 | Type             | Description                                 |
 |------------------|---------------------------------------------|
-| organizations    | The organisation containing this time entry |
+| invoices         | The invoice associated with this time entry |
+| members          | The member associated with this time entry  |
+| organizations    | The organization containing this time entry |
 | projects         | The project associated with this time entry |
 | project_features | The task associated with this time entry    |
-| members          | The member associated with this time entry  |
-| invoices         | The invoice associated with this time entry |
 
-## Creating a Time Entry
-
-This API allows time entries to be created.</br>
-
-<span class="http-method http-get">POST</span> `  /api/time_entries`
+## Creating a time entry
 
 >Example
 
@@ -182,43 +204,23 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries
 ```
 
-Using the API you can do the following with time entry data.
+This API allows time entries to be created.
 
-| Attribute            | Type     | Description                                                                                                                               |
-|----------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| billable_minutes     | number   | Billable time entry in minutes (For projects that are billable, ignored otherwise).|
-| end_time             | datetime | A date time that represents the end of the time entry; Only available when time tracking mode is set to Start/End for the organization.|   
-| invoice              | number   | Invoice unique identifier.|
-| member               | number   | Member unique identifier.|
-| minutes              | number   | Number of minutes logged.|
-| note                 | string   | Note|
-| project              | number   | Project unique identifier.|
-| project_feature      | number   | Project Feature unique identifier.|
-| start_time           | datetime | A date time that represents the start of the time entry; Only available when time tracking mode is set to Start/End for the organization. |
-| type                 | string   | Payload type(time_entries).|
-| working_date         | datetime | A date time that represents the day for the time entry.|
+<span class="http-method http-get">POST</span> `/webapi/time_entries`
 
-<aside class="notice">Time entries with a work_date that have already been aproved have the option to notify administrators.</aside>
+Time entries created (working_date) inside an approved day/week have the option to notify administrators.
 
-<span class="http-method http-get">POST</span> `/api/time_entries/1?notify=true`
+<span class="http-method http-get">POST</span> `/webapi/time_entries?notify=true`
 
->Example
+<aside class="notice">
+  Some attributs are available base on the organization and/or project settings.
+</aside> 
 
-```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
-     -H 'api-version: 3'
-     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
-     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries?notify=true
-```
+<aside class="notice">
+  The authenticated user must have required permissions to create a time entry.
+</aside> 
 
-
-## Updating a Time Entry
-
-This API allows existing time entries to be modified.</br>
-
-<span class="http-method http-get">PUT</span> `  /api/time_entries/[id]`
-
-The behavior and parameters of the API depend on the following:
+## Updating a time entry
 
 >Example
 
@@ -229,28 +231,31 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -X PUT -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1
 ```
 
-The start_time and end_time are used to calculate the time entry in minutes when the organization's time_tracking_type is 1=Start/End Time. Other wise these values are ignored.
+This API allows existing time entries to be modified.
 
-The billable_minutes is updated when a project is billable otherwise this value is ignored
+<span class="http-method http-get">PUT</span> `  /webapi/time_entries/[id]`
 
-<aside class="warning">Updating time entries that have already been invoiced is not permitted.</aside>
+| Parameter | Description                          |
+|-----------|--------------------------------------|
+| id        | Unique identifier of the time entry. |
 
->Example
+Time entries updated inside an approved day/week have the option to notify administrators.
 
-```shell
-curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
-     -H 'api-version: 3'
-     -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
-     -X PUT -d {"timeentries":[{"start_time":"2018-09-20T09:00","end_time":"2018-09-20T21:45","note":"Modified from API 3","project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1?notify=true
-```
+<span class="http-method http-get">PUT</span> `/webapi/time_entries/[id]?notify=true`
 
-Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification by setting the notify parameer to true.
+<aside class="notice">
+  Some attributs are available base on the organization and/or project settings.
+</aside>
 
-<span class="http-method http-get">PUT</span> `/api/time_entries?notify=true`
+<aside class="notice">
+  The authenticated user must have required permissions to update a time entry.
+</aside> 
 
-## Deleting a Time Entry
+<aside class="warning">
+  Updating a time entry that have already been invoiced is not permitted.
+</aside>
 
-<span class="http-method http-get">DELETE</span> `  /api/time_entries/[id]`
+## Deleting a time entry
 
 >Example
 
@@ -261,8 +266,20 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
      -X DELETE https://apps.nutcache.com/webapi/time_entries/1
 ```
 
-<aside class="warning">Deleting time entries that have already been invoiced is not permitted.</aside>
-  
-Time entries for a work_date that have been Approved/Rejected can also notify administrators of modification by setting the notify parameer to true.
+<span class="http-method http-get">DELETE</span> `  /webapi/time_entries/[id]`
 
-<span class="http-method http-get">DELETE</span> `/api/time_entries/1?notify=true`
+| Parameter | Description                          |
+|-----------|--------------------------------------|
+| id        | Unique identifier of the time entry. |
+
+Time entries deleted inside an approved day/week have the option to notify administrators.
+
+<span class="http-method http-get">DELETE</span> `/webapi/time_entries/[id]?notify=true`
+
+<aside class="notice">
+  The authenticated user must have required permissions to delete a time entry.
+</aside> 
+
+<aside class="warning">
+  Deleting a time entry that have already been invoiced is not permitted.
+</aside>
