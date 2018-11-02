@@ -357,7 +357,7 @@
                     <a href="#project-members" class="toc-h2 toc-link" data-title="Project members">Project members</a>
                   </li>
                   <li>
-                    <a href="#project-features" class="toc-h2 toc-link" data-title="Project features">Project features</a>
+                    <a href="#project-services" class="toc-h2 toc-link" data-title="Project services">Project services</a>
                   </li>
                   <li>
                     <a href="#includes-projects" class="toc-h2 toc-link" data-title="Includes (Projects)">Includes (Projects)</a>
@@ -366,7 +366,7 @@
                     <a href="#includes-project-members" class="toc-h2 toc-link" data-title="Includes (Project members)">Includes (Project members)</a>
                   </li>
                   <li>
-                    <a href="#includes-project-features" class="toc-h2 toc-link" data-title="Includes (Project features)">Includes (Project features)</a>
+                    <a href="#includes-project-services" class="toc-h2 toc-link" data-title="Includes (Project services)">Includes (Project services)</a>
                   </li>
               </ul>
           </li>
@@ -453,7 +453,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='getting-started'>Getting started</h1>
-<p>Nutcache provides the tools for developers to create comprehensive solutions for your business. This guide offers a comprehensive suite of developer resources and web services and help you build applications.</p>
+<p>Welcome to The Nutcache API! Use this API to easily interact with your Nutache account programmatically. This guide offers a comprehensive suite of developer resources and web services to connect Nutcache to your existing tools and workflow.</p>
 <h2 id='public-key'>Public key</h2>
 <p>To use the Nutcache API, an owner must first generate a public key. This action can be done directly in Nutcache under the &quot;My account -&gt; Profile&quot; menu. From the &quot;Profile&quot; dialog, select the &quot;MANAGE API KEYS&quot; tab and click the &quot;+ API Key&quot; to continue.</p>
 
@@ -516,15 +516,14 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 </span></code></pre>
 <p>API responses that return a list of objects, such as Projects, Customers or Time Entries are paginated. To scroll through the pages, add the parameter page to the query string. The page number starts with 1. By default, the number of objects returned per page is 10 and is limited to 100.</p>
 <h2 id='rate-limit'>Rate Limit</h2>
-<p>A rate limit of 20 000 api calls per API key is allowed.</p>
-
-<p>If you go over this limits, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
+<p>A rate limit of 20 000 API calls per API key is allowed.</br>
+If you go over this limits, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.</p>
 
 <p><code>HTTP/1.1 429 Too Many Requests</code>
 <code>Retry-After: 30</code></p>
 
 <aside class="warning">
-    There is a also a burst limit of 5 api calls per second and 200 per minute.
+    There is also a burst limit of 5 API calls per second and 200 per minute.
 </aside>
 <h1 id='countries'>Countries</h1>
 <p>Get information about countries.</p>
@@ -846,7 +845,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the states/provinces of a country:</p>
+<p>This endpoint retrieves the states/provinces of a country.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/countries/[id]/states</code></p>
 
@@ -889,7 +888,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 <h1 id='customers'>Customers</h1>
 <p>An individual or party with whom you conduct business.</p>
 
-<p>Using the API allows you to do the following with project data.</p>
+<p>Using the API allows you to do the following with customer data.</p>
 
 <table><thead>
 <tr>
@@ -991,7 +990,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-a-customer'>Viewing a customer</h2>
 <blockquote>
@@ -1366,7 +1365,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/currencies</code></p>
 <h1 id='expenses'>Expenses</h1>
-<p>Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.</p>
+<p>Describes the expenses incurred in connection with a company&#39;s operations, including the expense amount, taxes, suppliers and other people associated with the expense.</p>
 
 <p>Using the API allows you to do the following with with expense data.</p>
 
@@ -1455,7 +1454,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 <tr>
 <td>taxes_amount</td>
 <td>decimal</td>
-<td>The total amount of taxes.</td>
+<td>Amount of taxes to paid.</td>
 </tr>
 <tr>
 <td>type</td>
@@ -1465,7 +1464,7 @@ A few valid date fields - 2016-02-15T21:16:25Z , 2012-12-24T12:56:15+05:30, 2010
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-an-expense'>Viewing an expense</h2>
 <blockquote>
@@ -1698,12 +1697,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>type</td>
 <td>expense_taxes</td>
-<td>Type of responses.</td>
+<td>Type of response.</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -1752,7 +1751,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <h1 id='invoices'>Invoices</h1>
 <p>A document sent to a customer that includes a list of products sold or tasks provided, with a statement of the sum due.</p>
 
-<p>Using the API allows you to do the following with with invoice data.</p>
+<p>Using the API allows you to do the following with invoice data.</p>
 
 <table><thead>
 <tr>
@@ -1764,7 +1763,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>balance</td>
 <td>decimal</td>
-<td>Amount left to paid by customer.</td>
+<td>The customer due amount.</td>
 </tr>
 <tr>
 <td>customer</td>
@@ -1819,7 +1818,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>due_date</td>
 <td>datetime</td>
-<td>Due date.</td>
+<td>The customer due date.</td>
 </tr>
 <tr>
 <td>estimate</td>
@@ -1869,7 +1868,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>status</td>
 <td>number</td>
-<td>Enum for the invoice status : </br>0 = Draft. </br>1 = Sent. </br>2 = Viewed. </br>3 = Partially paid. </br>4 = Paid. </br>5 = Disputed. </br>6 = Vopid. </br>7 = Deleted.</td>
+<td>Enum for the invoice status : </br>0 = Draft. </br>1 = Sent. </br>2 = Viewed. </br>3 = Partially paid. </br>4 = Paid. </br>5 = Disputed. </br>6 = Void. </br>7 = Deleted.</td>
 </tr>
 <tr>
 <td>taxes_amount</td>
@@ -1899,7 +1898,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-    Some attributs are available only if the authenticated user has required permissions.
+    Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-an-invoice'>Viewing an invoice</h2>
 <blockquote>
@@ -2117,7 +2116,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the details of an invoice:</p>
+<p>This endpoint retrieves the invoice details.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]/invoice_details</code></p>
 
@@ -2198,7 +2197,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-    Some attributs are available only if the authenticated user has required permissions.
+    Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -2282,7 +2281,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the taxes of an invoice:</p>
+<p>This endpoint retrieves the taxes of an invoice.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/invoices/[id]/invoice_taxes</code></p>
 
@@ -2353,7 +2352,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-    Some attributs are available only if the authenticated user has required permissions.
+    Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -2460,7 +2459,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <h1 id='organizations'>Organizations</h1>
 <p>A Nutcache organization is an entity comprising multiple members with various roles and projects with varying constraints and goals.</p>
 
-<p>Using the API allows you to do the following with with organization data.</p>
+<p>Using the API allows you to do the following with organization data.</p>
 
 <table><thead>
 <tr>
@@ -2557,7 +2556,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>status</td>
 <td>number</td>
-<td>Enum for the status of the organization: 0 = Active. </br>1 = Inactive. </br>2 = Expired.</td>
+<td>Enum for the status of the organization: </br>0 = Active. </br>1 = Inactive. </br>2 = Expired.</td>
 </tr>
 <tr>
 <td>time_format</td>
@@ -2602,7 +2601,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside>    
 <h2 id='viewing-an-organization'>Viewing an organization</h2>
 <blockquote>
@@ -2802,7 +2801,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tr>
 </tbody></table>
 <h1 id='projects'>Projects</h1>
-<p>A project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.</p>
+<p>A project is a planned work or activity that is to be completed over a period of time using the Scrum or any other Agile methodology.</p>
 
 <p>Using the API allows you to do the following with project data.</p>
 
@@ -2831,7 +2830,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>billing_method</td>
 <td>number</td>
-<td>Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the features&#39; rate. </br>2 = Billable amount is calculated from the members&#39; rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate.</td>
+<td>Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the services&#39; rate. </br>2 = Billable amount is calculated from the members&#39; rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate.</td>
 </tr>
 <tr>
 <td>budget_approved_only</td>
@@ -2846,7 +2845,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>budget_scope</td>
 <td>number</td>
-<td>Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per feature [Enterprise only].</td>
+<td>Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per service [Enterprise only].</td>
 </tr>
 <tr>
 <td>budget_type</td>
@@ -2956,7 +2955,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-a-project'>Viewing a project</h2>
 <blockquote>
@@ -3158,7 +3157,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the project members for a project:</p>
+<p>This endpoint retrieves the project members for a project.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_members</code></p>
 
@@ -3239,7 +3238,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -3249,24 +3248,24 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <aside class="notice">
   Use 'includes' to embed additional details in the response.
 </aside>
-<h2 id='project-features'>Project features</h2>
+<h2 id='project-services'>Project services</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span> 
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
-     -X GET https://apps.nutcache.com/webapi/projects/6640/project_features
+     -X GET https://apps.nutcache.com/webapi/projects/6640/project_services
 </code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"project_features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"project_services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_services"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">130317</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A feature"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A service"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6640</span><span class="p">,</span><span class="w">
@@ -3286,9 +3285,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>If you want to see the project features for a project:</p>
+<p>This endpoint retrieves the project services for a project.</p>
 
-<p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_features</code></p>
+<p><span class="http-method http-get">GET</span> <code>/webapi/projects/[id]/project_services</code></p>
 
 <table><thead>
 <tr>
@@ -3312,42 +3311,42 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>billing_rate</td>
 <td>decimal</td>
-<td>Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2).</td>
+<td>Billing rate for the service in the project. </br>The billing rate is available only if the project invoice method is set to service rate (billing_method = 2).</td>
 </tr>
 <tr>
 <td>budget_amount</td>
 <td>decimal</td>
-<td>Budget amount set for the feature in the project depending on the budget type of the project (budget_type).</td>
+<td>Budget amount set for the service in the project depending on the budget type of the project (budget_type).</td>
 </tr>
 <tr>
 <td>budget_minutes</td>
 <td>number</td>
-<td>Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).</td>
+<td>Budget minutes set for the service in the project depending on the budget type of the project (budget_type).</td>
 </tr>
 <tr>
 <td>description</td>
 <td>string</td>
-<td>Description for the feature in the project.</td>
+<td>Description for the service in the project.</td>
 </tr>
 <tr>
 <td>id</td>
 <td>number</td>
-<td>Unique identifier for a feature in the project.</td>
+<td>Unique identifier for a service in the project.</td>
 </tr>
 <tr>
-<td>items</td>
+<td>item</td>
 <td>number</td>
 <td>Unique identifier for the item.</td>
 </tr>
 <tr>
 <td>notes</td>
 <td>string</td>
-<td>Additional notes for the feature in the project.</td>
+<td>Additional notes for the service in the project.</td>
 </tr>
 <tr>
 <td>order</td>
 <td>number</td>
-<td>Order of the feature in the project for display purposes.</td>
+<td>Order of the service in the project for display purposes.</td>
 </tr>
 <tr>
 <td>project</td>
@@ -3357,21 +3356,21 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>status</td>
 <td>number</td>
-<td>Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.</td>
+<td>Enum for the status of the service in the project: </br>0 = Active. </br>1 = Inactive.</td>
 </tr>
 <tr>
 <td>type</td>
-<td>project_features</td>
+<td>project_services</td>
 <td>Type of response.</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
-  The project features for a project can also be filtered using filtered searches.
+  The project services for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
@@ -3403,8 +3402,8 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>The customer associated with this project.</td>
 </tr>
 <tr>
-<td>project_features</td>
-<td>The tasks associated with this project.</td>
+<td>project_services</td>
+<td>The services associated with this project.</td>
 </tr>
 <tr>
 <td>project_members</td>
@@ -3437,14 +3436,14 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>The project associated with this project member.</td>
 </tr>
 </tbody></table>
-<h2 id='includes-project-features'>Includes (Project features)</h2>
+<h2 id='includes-project-services'>Includes (Project services)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span> 
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
-     -X GET https://apps.nutcache.com/webapi/projects/6640/project_features?includes<span class="o">=</span>items
+     -X GET https://apps.nutcache.com/webapi/projects/6640/project_services?includes<span class="o">=</span>items
 </code></pre>
 <p>The following entity types can be included in this payload type:</p>
 
@@ -3456,15 +3455,15 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </thead><tbody>
 <tr>
 <td>items</td>
-<td>The item associated with this project feature.</td>
+<td>The item associated with this project service.</td>
 </tr>
 <tr>
 <td>projects</td>
-<td>The project associated with this project feature.</td>
+<td>The project associated with this project service.</td>
 </tr>
 </tbody></table>
 <h1 id='states'>States</h1>
-<p>Get information about states.</p>
+<p>Retrieve information about states associated to a country, mostly used for organization and customer payloads.</p>
 
 <p>Using the API allows you to do the following with a state data.</p>
 
@@ -3678,7 +3677,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Using this API, you can fetch a list of countries.</p>
+<p>Using this API, you can fetch a list of states.</p>
 
 <p><span class="http-method http-get">GET</span> <code>/webapi/states</code></p>
 <h2 id='includes-states'>Includes (States)</h2>
@@ -3765,9 +3764,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>Unique identifier for a project.</td>
 </tr>
 <tr>
-<td>project_feature</td>
+<td>project_service</td>
 <td>number</td>
-<td>Unique identifier for a project feature.</td>
+<td>Unique identifier for a project service.</td>
 </tr>
 <tr>
 <td>start_time</td>
@@ -3787,15 +3786,15 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are read-only.
+  Some attributes are read-only.
 </aside> 
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside> 
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-a-time-entry'>Viewing a time entry</h2>
 <blockquote>
@@ -3820,7 +3819,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
       </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-07T00:00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
       </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
       </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
       </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6641</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3830,8 +3829,8 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features/106963"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_services/106963"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_services"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -3899,7 +3898,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
       </span><span class="s2">"working_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-07T00:00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
       </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_service"</span><span class="p">:</span><span class="w"> </span><span class="mi">106963</span><span class="p">,</span><span class="w">
       </span><span class="s2">"member"</span><span class="p">:</span><span class="w"> </span><span class="mi">9015</span><span class="p">,</span><span class="w">
       </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">6641</span><span class="p">,</span><span class="w">
       </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3909,7 +3908,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_features/106963"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_services/106963"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectitems"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -3943,7 +3942,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span> 
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span> 
-     -X GET https://apps.nutcache.com/webapi/time_entries/1?includes<span class="o">=</span>members,projects,project_features
+     -X GET https://apps.nutcache.com/webapi/time_entries/1?includes<span class="o">=</span>members,projects,project_services
 </code></pre>
 <p>The following entity types can be included in this payload type:</p>
 
@@ -3970,7 +3969,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>The project associated with this time entry.</td>
 </tr>
 <tr>
-<td>project_features</td>
+<td>project_services</td>
 <td>The task associated with this time entry.</td>
 </tr>
 </tbody></table>
@@ -3981,7 +3980,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span>
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
-     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries
+     -X POST -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_service<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries
 </span></code></pre>
 <p>This API allows time entries to be created.</p>
 
@@ -3992,11 +3991,11 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p><span class="http-method http-get">POST</span> <code>/webapi/time_entries?notify=true</code></p>
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside> 
 
 <aside class="notice">
-  The authenticated user must have required permissions to create a time entry.
+  The authenticated user must have the required permissions to create a time entry.
 </aside> 
 <h2 id='updating-a-time-entry'>Updating a time entry</h2>
 <blockquote>
@@ -4005,7 +4004,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <pre class="highlight shell tab-shell"><code>curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk'</span> 
      -H <span class="s1">'api-version: 3'</span>
      -H <span class="s1">'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'</span>
-     -X PUT -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_feature<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries/1
+     -X PUT -d <span class="o">{</span><span class="s2">"timeentries"</span>: <span class="o">[{</span><span class="s2">"start_time"</span>:<span class="s2">"2018-09-20T09:00"</span>, <span class="s2">"end_time"</span>:<span class="s2">"2018-09-20T21:45"</span>,<span class="s2">"note"</span>:<span class="s2">"Modified from API 3"</span>,project_service<span class="s2">":106972,"</span>member<span class="s2">":9015,"</span>project<span class="s2">":6645,"</span>invoice<span class="s2">":""}]} https://apps.nutcache.com/webapi/time_entries/1
 </span></code></pre>
 <p>This API allows existing time entries to be modified.</p>
 
@@ -4028,15 +4027,15 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p><span class="http-method http-get">PUT</span> <code>/webapi/time_entries/[id]?notify=true</code></p>
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside>
 
 <aside class="notice">
-  The authenticated user must have required permissions to update a time entry.
+  The authenticated user must have the required permissions to update a time entry.
 </aside> 
 
 <aside class="warning">
-  Updating a time entry that have already been invoiced is not permitted.
+  Updating a time entry that has already been invoiced is not permitted.
 </aside>
 <h2 id='deleting-a-time-entry'>Deleting a time entry</h2>
 <blockquote>
@@ -4066,11 +4065,11 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <p><span class="http-method http-get">DELETE</span> <code>/webapi/time_entries/[id]?notify=true</code></p>
 
 <aside class="notice">
-  The authenticated user must have required permissions to delete a time entry.
+  The authenticated user must have the required permissions to delete a time entry.
 </aside> 
 
 <aside class="warning">
-  Deleting a time entry that have already been invoiced is not permitted.
+  Deleting a time entry that has already been invoiced is not permitted.
 </aside>
 <h1 id='timers'>Timers</h1>
 <p>A Nutcache timer is a stopwatch used to record time spent on a task.</p>
@@ -4087,7 +4086,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>email_reminder_sent</td>
 <td>boolean</td>
-<td>True if a reminder was sent when timer running more than 24 hours.</td>
+<td>Set to True if a reminder is sent when a timer runs more than 24 hours.</td>
 </tr>
 <tr>
 <td>id</td>
@@ -4097,7 +4096,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>max_end_time_utc</td>
 <td>datetime</td>
-<td>End time maximum value (utc time)</td>
+<td>End time maximum value (UTC time)</td>
 </tr>
 <tr>
 <td>member</td>
@@ -4115,9 +4114,9 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>Unique identifier for a project.</td>
 </tr>
 <tr>
-<td>project_feature</td>
+<td>project_service</td>
 <td>number</td>
-<td>Unique identifier for a project feature.</td>
+<td>Unique identifier for a project service.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -4132,7 +4131,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>time_start_utc</td>
 <td>datetime</td>
-<td>Timer start (utc time).</td>
+<td>Timer start (UTC time).</td>
 </tr>
 <tr>
 <td>type</td>
@@ -4142,7 +4141,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 </tbody></table>
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 <h2 id='viewing-a-timer'>Viewing a timer</h2>
 <blockquote>
@@ -4186,7 +4185,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"project_service"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4260,7 +4259,7 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"project_feature"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"project_service"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4298,8 +4297,8 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <td>The project associated with the timer.</td>
 </tr>
 <tr>
-<td>project_features</td>
-<td>The task associated with the timer.</td>
+<td>project_services</td>
+<td>The service associated with the timer.</td>
 </tr>
 <tr>
 <td>sprint_stories</td>
@@ -4448,12 +4447,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>400</td>
 <td>Client or Validation Error</td>
-<td>Indicates that the request is not in the correct format.</td>
+<td>This indicates that the request is not in the correct format.</td>
 </tr>
 <tr>
 <td>401</td>
 <td>Access Denied</td>
-<td>Indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header <a href="#authentication">here</a>.</td>
+<td>This indicates that the Authorization header is either missing or incorrect. You can learn more about the Authorization header <a href="#authentication">here</a>.</td>
 </tr>
 <tr>
 <td>403</td>
@@ -4468,12 +4467,12 @@ curl -H <span class="s1">'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6c
 <tr>
 <td>429</td>
 <td>Too Many Requests</td>
-<td>This code appears when the user has exceeded the API rate limit. In Nutcache, this limit is 20000 API requests per day per API key.</td>
+<td>This code appears when the user has exceeded the API rate limit. In Nutcache, this limit is set to 20000 API requests per day per API key.</td>
 </tr>
 <tr>
 <td>500</td>
 <td>Unexpected Server Error</td>
-<td>This indicates an error on Nutcache&#39;s side. Please email us at <a href="mailto:support@nutcache.com">support@nutcache.com</a> with any relevant informations. We will reach out to you and fix this ASAP.</td>
+<td>This indicates an error on Nutcache&#39;s side. Please email us at <a href="mailto:support@nutcache.com">support@nutcache.com</a> with any relevant information. We will reach out to you and fix this ASAP.</td>
 </tr>
 </tbody></table>
 
