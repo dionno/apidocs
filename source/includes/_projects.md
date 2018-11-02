@@ -1,6 +1,6 @@
 # Projects
 
-A project is a planned work or activity that is to be completed over a period of time using Agile or Scrum methodology.
+A project is a planned work or activity that is to be completed over a period of time using the Scrum or any other Agile methodology.
 
 Using the API allows you to do the following with project data.
 
@@ -9,10 +9,10 @@ Using the API allows you to do the following with project data.
 | billing_approved_entries_only      | boolean  | Only consider approved timesheet entries for project billing. </br>Available if billing_method <> 0.                                                                                                                                                                                                                                                 |
 | billing_invoice_method_fixed_fee   | decimal  | Fixed fee for the project. </br>Available if billing_method = 4.                                                                                                                                                                                                                                                                                     |
 | billing_invoice_method_hourly_rate | decimal  | Fixed hourly rate for the project.  </br>Available if billing_method = 3.                                                                                                                                                                                                                                                                            |
-| billing_method                     | number   | Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the features' rate. </br>2 = Billable amount is calculated from the members' rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate. |
+| billing_method                     | number   | Enum for billing method set for the project : </br>0 = No invoice will be created for this project. </br>1 = Billable amount is calculated from the services' rate. </br>2 = Billable amount is calculated from the members' rate. </br>3 = Billable amount is a fixed-fee. </br>4 = Billable amount is calculated from a project fixed hourly rate. |
 | budget_approved_only               | boolean  | Only consider approved timesheet entries when calculating project budget.                                                                                                                                                                                                                                                                            |
 | budget_restrictive                 | boolean  | Budgets cannot be exceeded for the project, allowing for a better control of worked hours and expenses.                                                                                                                                                                                                                                              |
-| budget_scope                       | number   | Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per feature [Enterprise only].                                                                                                                                                                                                           |
+| budget_scope                       | number   | Enum for budget scope set for the project: </br>0 - Global. </br>1 = Per member [Enterprise only]. </br>2 = Per service [Enterprise only].                                                                                                                                                                                                           |
 | budget_type                        | number   | Enum for budget type set for the project: </br>0 = Worked hours. </br>1 = Billable hours. </br>2 = Costs. </br>3 = Billable amounts.                                                                                                                                                                                                                 |
 | customer                           | number   | Unique identifier for a customer.                                                                                                                                                                                                                                                                                                                    |
 | description                        | string   | Description for the project.                                                                                                                                                                                                                                                                                                                         |
@@ -36,7 +36,7 @@ Using the API allows you to do the following with project data.
 | vision                             | string   | Project vision.                                                                                                                                                                                                                                                                                                                                      |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 ## Viewing a project
@@ -241,7 +241,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the project members for a project:
+This endpoint retrieves the project members for a project.
 
 <span class="http-method http-get">GET</span> `/webapi/projects/[id]/project_members`
 
@@ -265,7 +265,7 @@ If you want to see the project members for a project:
 
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -277,7 +277,7 @@ If you want to see the project members for a project:
 </aside>
 
 
-## Project features
+## Project services
 
 >Example
 
@@ -285,18 +285,18 @@ If you want to see the project members for a project:
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3' 
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
-	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_services
 ```
 
 > Response
 
 ```json
 {
-  "project_features": [
+  "project_services": [
     {
-      "type": "project_features",
+      "type": "project_services",
       "id": 130317,
-      "description": "A feature",
+      "description": "A service",
       "order": 0,
       "status": 0,
       "project": 6640,
@@ -317,9 +317,9 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the project features for a project:
+This endpoint retrieves the project services for a project.
 
-<span class="http-method http-get">GET</span> `/webapi/projects/[id]/project_features`
+<span class="http-method http-get">GET</span> `/webapi/projects/[id]/project_services`
 
 | Parameter | Description                       |
 |-----------|-----------------------------------|
@@ -327,24 +327,24 @@ If you want to see the project features for a project:
 
 | Attribute      | Type             | Description                                                                                                                                                     |
 |----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| billing_rate   | decimal          | Billing rate for the feature in the project. </br>The billing rate is available only if the project invoice method is set to feature rate (billing_method = 2). |
-| budget_amount  | decimal          | Budget amount set for the feature in the project depending on the budget type of the project (budget_type).                                                     |
-| budget_minutes | number           | Budget minutes set for the feature in the project depending on the budget type of the project (budget_type).                                                    |
-| description    | string           | Description for the feature in the project.                                                                                                                     |
-| id             | number           | Unique identifier for a feature in the project.                                                                                                                 |
-| items          | number           | Unique identifier for the item.                                                                                                                                 |
-| notes          | string           | Additional notes for the feature in the project.                                                                                                                |
-| order          | number           | Order of the feature in the project for display purposes.                                                                                                       |
+| billing_rate   | decimal          | Billing rate for the service in the project. </br>The billing rate is available only if the project invoice method is set to service rate (billing_method = 2). |
+| budget_amount  | decimal          | Budget amount set for the service in the project depending on the budget type of the project (budget_type).                                                     |
+| budget_minutes | number           | Budget minutes set for the service in the project depending on the budget type of the project (budget_type).                                                    |
+| description    | string           | Description for the service in the project.                                                                                                                     |
+| id             | number           | Unique identifier for a service in the project.                                                                                                                 |
+| item           | number           | Unique identifier for the item.                                                                                                                                 |
+| notes          | string           | Additional notes for the service in the project.                                                                                                                |
+| order          | number           | Order of the service in the project for display purposes.                                                                                                       |
 | project        | number           | Unique identifier for the project.                                                                                                                              |
-| status         | number           | Enum for the status of the feature in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |
-| type           | project_features | Type of response.                                                                                                                                               |
+| status         | number           | Enum for the status of the service in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |
+| type           | project_services | Type of response.                                                                                                                                               |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
-  The project features for a project can also be filtered using filtered searches.
+  The project services for a project can also be filtered using filtered searches.
 </aside>
 
 <aside class="notice">
@@ -369,7 +369,7 @@ The following entity types can be included in this payload type:
 |------------------|--------------------------------------------|
 | organizations    | The organization containing this project.  |
 | customers        | The customer associated with this project. |
-| project_features | The tasks associated with this project.    |
+| project_services | The services associated with this project. |
 | project_members  | The members assigned to this project.      |
 
 ## Includes (Project members)
@@ -390,7 +390,7 @@ The following entity types can be included in this payload type:
 | members  | The member associated with this project member.  |
 | projects | The project associated with this project member. |
 
-## Includes (Project features)
+## Includes (Project services)
 
 >Example
 
@@ -398,12 +398,12 @@ The following entity types can be included in this payload type:
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3' 
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
-	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_features?includes=items
+	 -X GET https://apps.nutcache.com/webapi/projects/6640/project_services?includes=items
 ```
 
 The following entity types can be included in this payload type:
 
 | Type     | Description                                       |
 |----------|---------------------------------------------------|
-| items    | The item associated with this project feature.    |
-| projects | The project associated with this project feature. |
+| items    | The item associated with this project service.    |
+| projects | The project associated with this project service. |

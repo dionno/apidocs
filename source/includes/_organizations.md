@@ -2,7 +2,7 @@
 
 A Nutcache organization is an entity comprising multiple members with various roles and projects with varying constraints and goals.
 
-Using the API allows you to do the following with with organization data.
+Using the API allows you to do the following with organization data.
 
 | Attribute             | Type          | Description                                                                                                                                                                                                                                                                                                                   |
 |-----------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ Using the API allows you to do the following with with organization data.
 | notification_count    | number        | Number of notifications.                                                                                                                                                                                                                                                                                                      |
 | phone                 | string        | Phone number.                                                                                                                                                                                                                                                                                                                 |
 | state                 | state         | Unique identifier for a state.                                                                                                                                                                                                                                                                                                |
-| status                | number        | Enum for the status of the organization: 0 = Active. </br>1 = Inactive. </br>2 = Expired.                                                                                                                                                                                                                                     |
+| status                | number        | Enum for the status of the organization: </br>0 = Active. </br>1 = Inactive. </br>2 = Expired.                                                                                                                                                                                                                                     |
 | time_format           | number        | Enum for time format set for the organization: </br>0 = ISO format (HH:mm). </br>1 = AM/PM format (hh:mm tt).                                                                                                                                                                                                                 |
 | time_rounding         | number        | Enum for time rounding set for time entries in the organization: </br>0 = None. </br>1 = Round to nearest. </br>2 = Round up to nearest.                                                                                                                                                                                      |
 | time_rounding_minutes | number        | Number, in minutes, set to automatically round time entries, if time rounding is set.                                                                                                                                                                                                                                         |
@@ -33,7 +33,7 @@ Using the API allows you to do the following with with organization data.
 | website               | string        | Site identifier for the organization.                                                                                                                                                                                                                                                                                         |
 | zip_code              | string        | Zip code.                                                                                                                                                                                                                                                                                                                     |                                                                                                                                  
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside>    
 
 ## Viewing an organization

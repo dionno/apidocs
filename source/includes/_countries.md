@@ -250,7 +250,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the states/provinces of a country:
+This endpoint retrieves the states/provinces of a country.
 
 <span class="http-method http-get">GET</span> `/webapi/countries/[id]/states`
 

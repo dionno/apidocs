@@ -16,21 +16,21 @@ Using the API allows you to do the following with time entry data.
 | minutes              | number       | Number of minutes logged.                                                                                                                                    |
 | note                 | string       | Notes.                                                                                                                                                       |
 | project              | number       | Unique identifier for a project.                                                                                                                             |
-| project_feature      | number       | Unique identifier for a project feature.                                                                                                                     |
+| project_service     | number       | Unique identifier for a project service.                                                                                                                     |
 | start_time           | datetime     | Date time that represents the start of the time entry. </br>Available if time tracking mode is set to Start/End time (organization.time_tracking_type = 1)). |
 | type                 | time_entries | Type of response.                                                                                                                                            |
 | working_date         | datetime     | Date time that represents the day of the time entry.                                                                                                         |
 
 <aside class="notice">
-  Some attributs are read-only.
+  Some attributes are read-only.
 </aside> 
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside> 
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 ## Viewing a time entry
@@ -58,7 +58,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "working_date": "2018-03-07T00:00:00",
       "minutes": 480,
       "note": null,
-      "project_feature": 106963,
+      "project_service": 106963,
       "member": 9015,
       "project": 6641,
       "links": [
@@ -68,8 +68,8 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
           "type": "GET"
         },
         {
-          "href": "project_features/106963",
-          "rel": "project_features",
+          "href": "project_services/106963",
+          "rel": "project_services",
           "type": "GET"
         },
         {
@@ -133,7 +133,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "working_date": "2018-03-07T00:00:00",
       "minutes": 480,
       "note": null,
-      "project_feature": 106963,
+      "project_service": 106963,
       "member": 9015,
       "project": 6641,
       "links": [
@@ -143,7 +143,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
           "type": "GET"
         },
         {
-          "href": "project_features/106963",
+          "href": "project_services/106963",
           "rel": "projectitems",
           "type": "GET"
         },
@@ -180,7 +180,7 @@ Using this API, you can fetch a list of time entries.
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3' 
 	 -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E' 
-	 -X GET https://apps.nutcache.com/webapi/time_entries/1?includes=members,projects,project_features
+	 -X GET https://apps.nutcache.com/webapi/time_entries/1?includes=members,projects,project_services
 ```
 
 The following entity types can be included in this payload type:
@@ -191,7 +191,7 @@ The following entity types can be included in this payload type:
 | members          | The member associated with this time entry.  |
 | organizations    | The organization containing this time entry. |
 | projects         | The project associated with this time entry. |
-| project_features | The task associated with this time entry.    |
+| project_services | The task associated with this time entry.    |
 
 ## Creating a time entry
 
@@ -201,7 +201,7 @@ The following entity types can be included in this payload type:
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3'
      -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
-     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries
+     -X POST -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_service":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries
 ```
 
 This API allows time entries to be created.
@@ -213,11 +213,11 @@ Time entries created (working_date) inside an approved day/week have the option 
 <span class="http-method http-get">POST</span> `/webapi/time_entries?notify=true`
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside> 
 
 <aside class="notice">
-  The authenticated user must have required permissions to create a time entry.
+  The authenticated user must have the required permissions to create a time entry.
 </aside> 
 
 ## Updating a time entry
@@ -228,7 +228,7 @@ Time entries created (working_date) inside an approved day/week have the option 
 curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycnh2aGl0ZDphcGlkb2NzQGFwaWRvY3MuY29tOnBhc3N3b3Jk' 
      -H 'api-version: 3'
      -H 'OrganizationGuid: 846E176E-7C4B-4BFD-A894-C98F2988927E'
-     -X PUT -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_feature":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1
+     -X PUT -d {"timeentries": [{"start_time":"2018-09-20T09:00", "end_time":"2018-09-20T21:45","note":"Modified from API 3",project_service":106972,"member":9015,"project":6645,"invoice":""}]} https://apps.nutcache.com/webapi/time_entries/1
 ```
 
 This API allows existing time entries to be modified.
@@ -244,15 +244,15 @@ Time entries updated inside an approved day/week have the option to notify admin
 <span class="http-method http-get">PUT</span> `/webapi/time_entries/[id]?notify=true`
 
 <aside class="notice">
-  Some attributs are available base on the organization and/or project settings.
+  Some attributes are available based on the organization and/or project settings.
 </aside>
 
 <aside class="notice">
-  The authenticated user must have required permissions to update a time entry.
+  The authenticated user must have the required permissions to update a time entry.
 </aside> 
 
 <aside class="warning">
-  Updating a time entry that have already been invoiced is not permitted.
+  Updating a time entry that has already been invoiced is not permitted.
 </aside>
 
 ## Deleting a time entry
@@ -277,9 +277,9 @@ Time entries deleted inside an approved day/week have the option to notify admin
 <span class="http-method http-get">DELETE</span> `/webapi/time_entries/[id]?notify=true`
 
 <aside class="notice">
-  The authenticated user must have required permissions to delete a time entry.
+  The authenticated user must have the required permissions to delete a time entry.
 </aside> 
 
 <aside class="warning">
-  Deleting a time entry that have already been invoiced is not permitted.
+  Deleting a time entry that has already been invoiced is not permitted.
 </aside>

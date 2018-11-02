@@ -2,7 +2,7 @@
 
 An individual or party with whom you conduct business.
 
-Using the API allows you to do the following with project data.
+Using the API allows you to do the following with customer data.
 
 | Attribute                  | Type      | Description                                                              |
 |----------------------------|-----------|--------------------------------------------------------------------------|
@@ -26,7 +26,7 @@ Using the API allows you to do the following with project data.
 | zip_code                   | string    | Zip code.                                                                |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 ## Viewing a customer

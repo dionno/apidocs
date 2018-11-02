@@ -1,6 +1,6 @@
 # Expenses
 
-Describes the expenses on the organization operation, including the amount, taxes, suppliers and other people associated with the expense.
+Describes the expenses incurred in connection with a company's operations, including the expense amount, taxes, suppliers and other people associated with the expense.
 
 Using the API allows you to do the following with with expense data.
 
@@ -21,11 +21,11 @@ Using the API allows you to do the following with with expense data.
 | organization        | number   | Unique identifier for an organization.                                                                  |
 | project             | number   | Unique identifier of a project.                                                                         |
 | status              | number   | Enum for the expense status: </br>0 = To pay. </br>1 = Partially paid. </br>2 = Paid. </br>3 = Deleted. |
-| taxes_amount        | decimal  | The total amount of taxes.                                                                              |
+| taxes_amount        | decimal  | Amount of taxes to paid.                                                                                |
 | type                | expenses | Type of response.                                                                                       |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 ## Viewing an expense
@@ -229,10 +229,10 @@ If you want to get a detailed list of taxes for an expense:
 | id         | number        | Unique identifier.                |
 | tax_amount | decimal       | The amount to be paid.            |
 | tax_code   | string        | The name or code.                 |
-| type       | expense_taxes | Type of responses.                |
+| type       | expense_taxes | Type of response.                |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">

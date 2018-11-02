@@ -1,6 +1,6 @@
 # States
 
-Get information about states.
+Retrieve information about states associated to a country, mostly used for organization and customer payloads.
 
 Using the API allows you to do the following with a state data.
 
@@ -152,7 +152,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6bUpqR29GY2Z3Z1Eycn
 }
 ```
 
-Using this API, you can fetch a list of countries.
+Using this API, you can fetch a list of states.
 
 <span class="http-method http-get">GET</span> `/webapi/states`
 

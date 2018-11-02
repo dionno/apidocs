@@ -3,40 +3,40 @@
 
 A document sent to a customer that includes a list of products sold or tasks provided, with a statement of the sum due.
 
-Using the API allows you to do the following with with invoice data.
+Using the API allows you to do the following with invoice data.
 
-| Attribute                 | Type     | Description                                                                                                                                                                |
-|---------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| balance                   | decimal  | Amount left to paid by customer.                                                                                                                                           |
-| customer                  | number   | Unique identifier for a customer.                                                                                                                                          |
-| customer_address          | string   | The customer address linked to the invoice.                                                                                                                                |
-| customer_city             | string   | The customer city linked to the invoice.                                                                                                                                   |
-| customer_email            | string   | The customer email linked to the invoice.                                                                                                                                  |
-| customer_legal_notice     | string   | The customer registration number linked to the invoice.                                                                                                                    |
-| customer_phone            | string   | The customer phone linked to the invoice.                                                                                                                                  |
-| customer_phone_mobile     | string   | The customer mobile phone linked to the invoice.                                                                                                                           |
-| customer_postal_zip_code  | string   | The customer zip code linked to the invoice.                                                                                                                               |
-| customer_province_state   | string   | The customer state linked to the invoice.                                                                                                                                  |
-| description               | string   | Description.                                                                                                                                                               |
-| due_date                  | datetime | Due date.                                                                                                                                                                  |
-| estimate                  | number   | Unique identifier for an estimate.                                                                                                                                         |
-| id                        | number   | Unique identifier.                                                                                                                                                         |
-| invoice_date              | datetime | Date.                                                                                                                                                                      |
-| invoice_number            | string   | Document number.                                                                                                                                                           |
-| notes                     | string   | Notes visible to the customer.                                                                                                                                             |
-| organization              | number   | Unique identifier for an organization.                                                                                                                                     |
-| paid_to_date              | decimal  | Amount paid by the customer.                                                                                                                                               |
-| purchase_order            | string   | Purchase order.                                                                                                                                                            |
-| responsible               | number   | Unique identifier for a member responsible for the invoice.                                                                                                                |
-| status                    | number   | Enum for the invoice status : </br>0 = Draft. </br>1 = Sent. </br>2 = Viewed. </br>3 = Partially paid. </br>4 = Paid. </br>5 = Disputed. </br>6 = Vopid. </br>7 = Deleted. |
-| taxes_amount              | decimal  | Amount of taxes to paid.                                                                                                                                                   |
-| terms                     | string   | Terms.                                                                                                                                                                     |
-| total                     | decimal  | Total amount.                                                                                                                                                              |
-| total_amount_before_taxes | decimal  | Total amount before taxes.                                                                                                                                                 |
-| type                      | invoices | Type of response.                                                                                                                                                          |
+| Attribute                 | Type     | Description                                                                                                                                                               |
+|---------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| balance                   | decimal  | The customer due amount.                                                                                                                                                  |
+| customer                  | number   | Unique identifier for a customer.                                                                                                                                         |
+| customer_address          | string   | The customer address linked to the invoice.                                                                                                                               |
+| customer_city             | string   | The customer city linked to the invoice.                                                                                                                                  |
+| customer_email            | string   | The customer email linked to the invoice.                                                                                                                                 |
+| customer_legal_notice     | string   | The customer registration number linked to the invoice.                                                                                                                   |
+| customer_phone            | string   | The customer phone linked to the invoice.                                                                                                                                 |
+| customer_phone_mobile     | string   | The customer mobile phone linked to the invoice.                                                                                                                          |
+| customer_postal_zip_code  | string   | The customer zip code linked to the invoice.                                                                                                                              |
+| customer_province_state   | string   | The customer state linked to the invoice.                                                                                                                                 |
+| description               | string   | Description.                                                                                                                                                              |
+| due_date                  | datetime | The customer due date.                                                                                                                                                    |
+| estimate                  | number   | Unique identifier for an estimate.                                                                                                                                        |
+| id                        | number   | Unique identifier.                                                                                                                                                        |
+| invoice_date              | datetime | Date.                                                                                                                                                                     |
+| invoice_number            | string   | Document number.                                                                                                                                                          |
+| notes                     | string   | Notes visible to the customer.                                                                                                                                            |
+| organization              | number   | Unique identifier for an organization.                                                                                                                                    |
+| paid_to_date              | decimal  | Amount paid by the customer.                                                                                                                                              |
+| purchase_order            | string   | Purchase order.                                                                                                                                                           |
+| responsible               | number   | Unique identifier for a member responsible for the invoice.                                                                                                               |
+| status                    | number   | Enum for the invoice status : </br>0 = Draft. </br>1 = Sent. </br>2 = Viewed. </br>3 = Partially paid. </br>4 = Paid. </br>5 = Disputed. </br>6 = Void. </br>7 = Deleted. |
+| taxes_amount              | decimal  | Amount of taxes to paid.                                                                                                                                                  |
+| terms                     | string   | Terms.                                                                                                                                                                    |
+| total                     | decimal  | Total amount.                                                                                                                                                             |
+| total_amount_before_taxes | decimal  | Total amount before taxes.                                                                                                                                                |
+| type                      | invoices | Type of response.                                                                                                                                                         |
 
 <aside class="notice">
-	Some attributs are available only if the authenticated user has required permissions.
+	Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 
@@ -255,7 +255,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the details of an invoice:
+This endpoint retrieves the invoice details.
 
 <span class="http-method http-get">GET</span> `/webapi/invoices/[id]/invoice_details`
 
@@ -278,7 +278,7 @@ If you want to see the details of an invoice:
 | type                | invoice_details | Type of response.                                              |
 
 <aside class="notice">
-	Some attributs are available only if the authenticated user has required permissions.
+	Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">
@@ -366,7 +366,7 @@ curl -H 'Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 }
 ```
 
-If you want to see the taxes of an invoice:
+This endpoint retrieves the taxes of an invoice.
 
 <span class="http-method http-get">GET</span> `/webapi/invoices/[id]/invoice_taxes`
 
@@ -387,7 +387,7 @@ If you want to see the taxes of an invoice:
 | type            | invoice_taxes | Type of response.                     |
 
 <aside class="notice">
-	Some attributs are available only if the authenticated user has required permissions.
+	Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 <aside class="notice">

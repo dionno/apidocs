@@ -6,20 +6,20 @@ Using the API allows you to do the following with timer data.
 
 | Attribute           | Type     | Description                                                                             |
 |---------------------|----------|-----------------------------------------------------------------------------------------|
-| email_reminder_sent | boolean  | True if a reminder was sent when timer running more than 24 hours.                      |
+| email_reminder_sent | boolean  | Set to True if a reminder is sent when a timer runs more than 24 hours.                 |
 | id                  | number   | Unique identifier.                                                                      |
-| max_end_time_utc    | datetime | End time maximum value (utc time)                                                       |
+| max_end_time_utc    | datetime | End time maximum value (UTC time)                                                       |
 | member              | number   | Unique identifier for a member.                                                         |
 | minutes             | number   | Minutes.                                                                                |
 | project             | number   | Unique identifier for a project.                                                        |
-| project_feature     | number   | Unique identifier for a project feature.                                                |
+| project_service     | number   | Unique identifier for a project service.                                                |
 | status              | number   | Enum for the timer status: </br>0 = Started. </br>1 = Stopped. </br>2 = System stopped. |
 | time_start_local    | datetime | Timer start (local time).                                                               |
-| time_start_utc      | datetime | Timer start (utc time).                                                                 |
+| time_start_utc      | datetime | Timer start (UTC time).                                                                 |
 | type                | timers   | Type of response.                                                                       |
 
 <aside class="notice">
-  Some attributs are available only if the authenticated user has required permissions.
+  Some attributes are available only if the authenticated user has the required permissions.
 </aside> 
 
 ## Viewing a timer
@@ -65,7 +65,7 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
           "type": "GET"
         }
       ],
-      "project_feature": null
+      "project_service": null
     }
   ]
 }
@@ -134,7 +134,7 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
           "type": "GET"
         }
       ],
-      "project_feature": null
+      "project_service": null
     }
   ]
 }
@@ -165,5 +165,5 @@ The following entity types can be included in this payload type:
 |------------------|---------------------------------------------------|
 | members          | The member associated with the timer.             |
 | projects         | The project associated with the timer.            |
-| project_features | The task associated with the timer.               |
+| project_services | The service associated with the timer.            |
 | sprint_stories   | The project board card associated with the timer. |
