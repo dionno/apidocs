@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 #  - java: Java
 
 toc_footers:  
-  - <a href='https://www.nutcache.com'>© 2018 Nutcache. All Rights Reserved.</a>
+  - <a href='https://www.nutcache.com'>© 2018 Nutcache. All Rights Reserved. Test</a>
 
 includes: 
   - getting_started
