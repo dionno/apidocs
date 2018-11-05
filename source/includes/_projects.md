@@ -334,7 +334,7 @@ This endpoint retrieves the project services for a project.
 | id             | number           | Unique identifier for a service in the project.                                                                                                                 |
 | item           | number           | Unique identifier for the item.                                                                                                                                 |
 | notes          | string           | Additional notes for the service in the project.                                                                                                                |
-| order          | number           | Order of the service in the project for display purposes.                                                                                                       |
+| order          | number           | Display order of the feature (project service) in the project.                                                                                                  |
 | project        | number           | Unique identifier for the project.                                                                                                                              |
 | status         | number           | Enum for the status of the service in the project: </br>0 = Active. </br>1 = Inactive.                                                                          |
 | type           | project_services | Type of response.                                                                                                                                               |

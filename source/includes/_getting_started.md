@@ -1,6 +1,6 @@
 # Getting started
 
-Welcome to The Nutcache API! Use this API to easily interact with your Nutache account programmatically. This guide offers a comprehensive suite of developer resources and web services to connect Nutcache to your existing tools and workflow.
+Welcome to The Nutcache API! Use this API to easily interact with your Nutcache account programmatically. This guide offers a comprehensive suite of developer resources and web services to connect Nutcache to your existing tools and workflow.
 
 ## Public key
 
@@ -81,7 +81,7 @@ API responses that return a list of objects, such as Projects, Customers or Time
 ## Rate Limit
 
 A rate limit of 20 000 API calls per API key is allowed.</br>
-If you go over this limits, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
+If you go over this limit, Nutcache will start returning a HTTP 429 Too Many Requests error, and a Retry-After HTTP header containing the number of seconds until you can retry.
 
 `HTTP/1.1 429 Too Many Requests`
 `Retry-After: 30`
