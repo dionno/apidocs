@@ -17,7 +17,6 @@ Using the API allows you to do the following with customer data.
 | legal_notice               | string    | Registration number for the customer.                                    |
 | mobile_phone               | string    | Mobile phone number.                                                     |
 | name                       | string    | Name of the customer.                                                    |
-| notes                      | string    | Notes.                                                                   |
 | phone                      | string    | Phone number.                                                            |
 | state                      | number    | Unique identifier for a state.                                           |
 | status                     | number    | Enum for the status of the customer: </br>0 = Active. </br>1 = Inactive. |
@@ -83,7 +82,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "state": 2,
       "legal_notice": "987654321",
       "communication_culture_code": "en-US",
-      "notes": "This is a note.",
       "tax": 11591
     }
   ]
@@ -158,7 +156,6 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "state": null,
       "legal_notice": null,
       "communication_culture_code": null,
-      "notes": null,
       "tax": null
     }
 }
