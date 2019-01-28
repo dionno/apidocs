@@ -12,6 +12,7 @@ Using the API allows you to do the following with customer data.
 | organization               | number    | Unique identifier for an organization.                                   |
 | contact                    | string    | Contact name.                                                            |
 | country                    | number    | Unique identifier for a country.                                         |
+| currency                   | number    | Unique identifier for a currency.                                        |
 | email                      | string    | Email address.                                                           |
 | id                         | number    | Unique identifier.                                                       |
 | legal_notice               | string    | Registration number for the customer.                                    |
@@ -82,7 +83,8 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "state": 2,
       "legal_notice": "987654321",
       "communication_culture_code": "en-US",
-      "tax": 11591
+      "tax": 11591,
+      "currency": 147
     }
   ]
 }
@@ -156,7 +158,8 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
       "state": null,
       "legal_notice": null,
       "communication_culture_code": null,
-      "tax": null
+      "tax": null,
+      "currency": null
     }
 }
 ```
@@ -181,10 +184,10 @@ curl -H "Authorization: nut-basic YVl6T1JtbkdpMHhwaXhCdTQ5b3l6ckpqR2ZGY2Z3Z1Eycn
 
 The following entity types can be included in this payload type:
 
-| Type          | Description                                |
-|---------------|--------------------------------------------|
-| organizations | The organization containing the customer.  |
-| countries     | The country associated with this customer. |
-| states        | The state associated with this customer.   |
-| taxes         | The tax associated with this customer.     |
-
+| Type          | Description                                 |
+|---------------|---------------------------------------------|
+| organizations | The organization containing the customer.   |
+| countries     | The country associated with this customer.  |
+| currencies    | The currency associated with this customer. |
+| states        | The state associated with this customer.    |
+| taxes         | The tax associated with this customer.      |
